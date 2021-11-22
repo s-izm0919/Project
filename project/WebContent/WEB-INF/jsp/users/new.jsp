@@ -10,8 +10,8 @@
         <form method="POST" action="add">
             ユーザー名<input type="text" name="名前"><br>
             ユーザーID（半角英数）<input type="text" name="ユーザーID"><br>
-            パスワード（半角英数）<input type="text" name="パスワード"><br>
-            メールアドレス<input type="text" name="メールアドレス"><br>
+            パスワード（半角英数）<input type="password" name="パスワード"><br>
+            メールアドレス<input type="email" name="メールアドレス"><br>
             <input type="submit" value="登録">
         </form>
     </body>
