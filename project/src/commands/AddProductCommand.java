@@ -45,18 +45,3 @@ public class AddProductCommand extends AbstractCommand {
 		return resc;
 	}
 }
-//Map map = getParameters();
-//String[] nameArray = (String[]) map.get("name");
-//String[] priceArray = (String[]) map.get("price");
-//
-//String name = String.join("", nameArray);
-//String price = String.join("", priceArray);
-//
-//System.out.println("AddProductCommand: " + name);
-//System.out.println("AddProductCommand: " + price);
-//
-//Product product = new Product();
-//product.setName(name);
-//product.setPrice(price);
-//
-//DbDummy.addProduct(product);
