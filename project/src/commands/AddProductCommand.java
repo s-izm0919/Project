@@ -1,40 +1,42 @@
 package commands;
-import dao.AbstractDaoFactory;
-import context.RequestContext;
-import context.ResponseContext;
-import bean.User;
-import dao.MySQLUserDao;
-import dao.UserDao;
 
-public class AddProductCommand extends AbstractCommand {
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+
+import dao.AbstractDaoFactory;
+
+public class AddUserCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- AddProductCommand --");
 
 		RequestContext reqc = getRequestContext();
 
-		String[] pids = reqc.getParameter("pid");
-		String pid=pids[0];
+
+		//String[] names = reqc.getParameter("name");
+		//String name=names[0];
+		String nickName=reqc.getParameter("nickName")[0];
+		String userName =reqc.getParameter("userName")[0];
+		String password=reqc.getParameter("password")[0];
+		String mail=reqc.getParameter("mail")[0];
 
 
-		String[] names = reqc.getParameter("name");
-		String name=names[0];
-		//String name=reqc.getParameter("name")[0];
 
-		String[] prices = reqc.getParameter("price");
-		String price = prices[0];
-
-		System.out.println("AddProductCommand: " + pid);
-		System.out.println("AddProductCommand: " + price);
-		System.out.println("AddProductCommand: " + name);
+		System.out.println("AddProductCommand: " + nickName);
+		System.out.println("AddProductCommand: " + userName);
+		System.out.println("AddProductCommand: " + password);
+		System.out.println("AddProductCommand: " + mail);
 
 
-		User user = new user();
-		user.setPid(pid);
-		user.setName(name);
-		user.setPrice(price);
+		User user = new User();
+		user.setUserIdentifiedName(nickName);
+		user.setUserName(userName);
+		user.setUserPassword(password);
+		user.setUserMail(mail);
+
+
+
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
-		UserDao dao=factory.getProductsDao();
+		ProductsDao dao=factory.getProductsDao();
 		dao.addProduct(user);
 
 		System.out.println("-- AddProductCommand --");
@@ -45,18 +47,3 @@ public class AddProductCommand extends AbstractCommand {
 		return resc;
 	}
 }
-//Map map = getParameters();
-//String[] nameArray = (String[]) map.get("name");
-//String[] priceArray = (String[]) map.get("price");
-//
-//String name = String.join("", nameArray);
-//String price = String.join("", priceArray);
-//
-//System.out.println("AddProductCommand: " + name);
-//System.out.println("AddProductCommand: " + price);
-//
-//Product product = new Product();
-//product.setName(name);
-//product.setPrice(price);
-//
-//DbDummy.addProduct(product);
