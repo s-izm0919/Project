@@ -3,8 +3,8 @@ import dao.AbstractDaoFactory;
 import context.RequestContext;
 import context.ResponseContext;
 import bean.User;
-import dao.OraProductsDao;
-import dao.ProductsDao;
+import dao.MySQLUserDao;
+import dao.UserDao;
 
 public class AddProductCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
@@ -34,7 +34,7 @@ public class AddProductCommand extends AbstractCommand {
 		user.setPrice(price);
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
-		ProductsDao dao=factory.getProductsDao();
+		UserDao dao=factory.getProductsDao();
 		dao.addProduct(user);
 
 		System.out.println("-- AddProductCommand --");

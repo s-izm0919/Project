@@ -1,10 +1,11 @@
 package dao;
 
 
-import  java.io.FileInputStream;
 import  java.io.FileNotFoundException;
 import  java.io.IOException;
 import  java.util.Properties;
+
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
 
 public abstract class AbstractDaoFactory{
     @SuppressWarnings("deprecation")
@@ -43,5 +44,5 @@ public abstract class AbstractDaoFactory{
 		}
         return factory;
         }
-        public abstract ProductsDao getProductsDao();
+        public abstract UserDao getUserDao();
     }

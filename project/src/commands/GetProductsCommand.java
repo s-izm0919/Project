@@ -1,5 +1,5 @@
 package commands;
-import dao.OraProductsDao;
+import dao.MySQLUserDao;
 import context.ResponseContext;
 import bean.Product;
 
@@ -12,7 +12,7 @@ class GetProductsCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- GetProductsCommand -- ");
 		List<Product> products = new ArrayList<Product>();
-		OraProductsDao dao=new OraProductsDao();
+		MySQLUserDao dao=new MySQLUserDao();
 		products = dao.getAllProducts();
 
 
