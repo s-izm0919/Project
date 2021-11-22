@@ -8,10 +8,10 @@
     <body>
         <h1>ユーザー登録</h1>
         <form method="POST" action="add">
-            ユーザー名<input type="text" name="名前"><br>
-            ユーザーID（半角英数）<input type="text" name="ユーザーID"><br>
-            パスワード（半角英数）<input type="text" name="パスワード"><br>
-            メールアドレス<input type="text" name="メールアドレス"><br>
+            ニックネーム<input type="text" name="nickNAme"><br>
+            ユーザ-名<input type="text" name="userName"><br>
+            パスワード<input type="text" name="password"><br>
+            メールアドレス<input type="text" name="mail"><br>
             <input type="submit" value="登録">
         </form>
     </body>
