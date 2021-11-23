@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public abstract class CommandFactory {
+	@SuppressWarnings("deprecation")
 	public static AbstractCommand getCommand(RequestContext reqc) {
 		// name縺ｫ繧医▲縺ｦ逡ｰ縺ｪ繧気oncreteFactory繧定ｿ斐☆
 		AbstractCommand command = null;

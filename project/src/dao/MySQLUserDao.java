@@ -1,6 +1,4 @@
 package dao;
-import bean.Product;
-
 import  java.sql.Connection;
 import  java.sql.DriverManager;
 import  java.sql.PreparedStatement;
@@ -9,32 +7,37 @@ import  java.sql.SQLException;
 import  java.util.ArrayList;
 import  java.util.List;
 
-import exp.ResourceAccessException;
 
-public class OraProductsDao implements ProductsDao{
+import bean.User;
 
-    public void addProduct(Product p){
+public class MySQLUserDao implements UserDao{
+
+    public void addUser(User u){
         Connection cn=null;
         PreparedStatement st=null;
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/nozawa?characterEncoding=UTF-8&serverTimezone=JST",
-			"infox","prox");
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
 
             cn.setAutoCommit(false);
 
-            String sql="insert into t_products(pid,name,price)"+"values(?,?,?)";
+            String sql="insert into user(user_id,user_identified_name,user_name,user_password,user_mail,user_point)" + " values('u20',?,?,?,?) ";
 
             st=cn.prepareStatement(sql);
 
-            st.setString(1, p.getPid());
-            st.setString(2, p.getName());
-            st.setString(3, p.getPrice());
+            //st.setString(1, u.getUserId());
+            st.setString(2, u.getUserIdentifiedName());
+            st.setString(3, u.getUserName());
+            st.setString(4, u.getUserPassword());
+            st.setString(5, u.getUserMail());
+            //st.setInt(6, u.getUserPoint());
 
             st.executeUpdate();
 
             cn.commit();
+
 
         }catch (ClassNotFoundException e){
         	System.out.println(e.getMessage());
@@ -68,36 +71,40 @@ public class OraProductsDao implements ProductsDao{
             }
         }
     }
-    public Product getProduct(String pid){
+    public User getUser(String userId){
         return null;
     }
-    public List getAllProducts(){
+    public List getAllUsers(){
         Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
-        ArrayList products=new ArrayList();
+        ArrayList Users=new ArrayList();
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
              cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/nozawa?characterEncoding=UTF-8&serverTimezone=JST",
-			"infox","prox");
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
 
             cn.setAutoCommit(false);
 
-            String sql="select pid,name,price from t_products";
+            String sql="select * from user";
 
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
             while(rs.next()){
-                Product p=new Product();
+                User u=new User();
 
-                p.setPid(rs.getString(1));
-                p.setName(rs.getString(2));
-                p.setPrice(rs.getString(3));
+                u.setUserId(rs.getString(1));
+                u.setUserIdentifiedName(rs.getString(2));
+                u.setUserName(rs.getString(3));
+                u.setUserPassword(rs.getString(4));
+                u.setUserMail(rs.getString(5));
+                u.setUserPoint(rs.getInt(6));
 
-                products.add(p);
+
+                Users.add(u);
             }
             cn.commit();
         }catch(ClassNotFoundException e){
@@ -129,8 +136,6 @@ public class OraProductsDao implements ProductsDao{
                 }
             }
         }
-        return products;
+        return Users;
     }
 }
-
-

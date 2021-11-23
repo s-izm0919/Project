@@ -3,12 +3,12 @@ import dao.AbstractDaoFactory;
 import context.RequestContext;
 import context.ResponseContext;
 import bean.User;
-import dao.OraProductsDao;
-import dao.ProductsDao;
+import dao.MySQLUserDao;
+import dao.UserDao;
 
 public class AddUserCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
-		System.out.println("-- AddProductCommand --");
+		System.out.println("-- AddUserCommand --");
 
 		RequestContext reqc = getRequestContext();
 
@@ -22,10 +22,10 @@ public class AddUserCommand extends AbstractCommand {
 
 
 
-		System.out.println("AddProductCommand: " + nickName);
-		System.out.println("AddProductCommand: " + userName);
-		System.out.println("AddProductCommand: " + password);
-		System.out.println("AddProductCommand: " + mail);
+		System.out.println("identifidname: " + nickName);
+		System.out.println("username: " + userName);
+		System.out.println("password: " + password);
+		System.out.println("email: " + mail);
 
 
 		User user = new User();
@@ -38,14 +38,14 @@ public class AddUserCommand extends AbstractCommand {
 
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
-		ProductsDao dao=factory.getProductsDao();
-		dao.addProduct(user);
+		UserDao dao=factory.getUserDao();
+		dao.addUser(user);
 
-		System.out.println("-- AddProductCommand --");
+		System.out.println("-- AddUserCommand --");
 		System.out.println("");
 
 
-	resc.setTarget("start");
+	resc.setTarget("users/new");
 		return resc;
 	}
 }

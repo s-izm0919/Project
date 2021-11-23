@@ -1,7 +1,7 @@
 package commands;
-import dao.OraProductsDao;
+import dao.MySQLUserDao;
 import context.ResponseContext;
-import bean.Product;
+import bean.User;
 
 import java.util.ArrayList;
 
@@ -11,23 +11,28 @@ class GetProductsCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- GetProductsCommand -- ");
-		List<Product> products = new ArrayList<Product>();
-		OraProductsDao dao=new OraProductsDao();
-		products = dao.getAllProducts();
+		List<User> users = new ArrayList<User>();
+		MySQLUserDao dao=new MySQLUserDao();
+		users = dao.getAllUsers();
 
 
-		resc.setResult(products);
+		resc.setResult(users);
 
-		for (Product product : products) {
+		/*for (User product : products) {
 				System.out.println("pid: "+ product.getPid()+"Name: " + product.getName() + " Price: " + product.getPrice());
 		}
 
+
 		System.out.println("-- GetProductsCommand -- ");
+		*/
 
 	resc.setTarget("view");
 		return resc;
 
 	}
 }
+
+
+
 
 
