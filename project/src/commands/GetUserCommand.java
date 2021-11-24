@@ -7,20 +7,18 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-class GetProductsCommand extends AbstractCommand {
+class GetUserCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- GetProductsCommand -- ");
-		List<User> users = new ArrayList<User>();
+		User user = new User();
 		MySQLUserDao dao=new MySQLUserDao();
-		users = dao.getAllUsers();
+		user = dao.getUser("u10");
 
 
-		resc.setResult(users);
+		resc.setResult(user);
 
-
-
-	resc.setTarget("view");
+	resc.setTarget("users/user_edit");
 		return resc;
 
 	}
