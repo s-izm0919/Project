@@ -42,7 +42,7 @@ public class AddUserCommand extends AbstractCommand {
 		dao.addUser(user);
 
 		System.out.println("-- AddUserCommand --");
-		System.out.println("");
+
 
 
 	resc.setTarget("users/new");

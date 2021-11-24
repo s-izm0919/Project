@@ -18,13 +18,7 @@ class GetProductsCommand extends AbstractCommand {
 
 		resc.setResult(users);
 
-		/*for (User product : products) {
-				System.out.println("pid: "+ product.getPid()+"Name: " + product.getName() + " Price: " + product.getPrice());
-		}
 
-
-		System.out.println("-- GetProductsCommand -- ");
-		*/
 
 	resc.setTarget("view");
 		return resc;
