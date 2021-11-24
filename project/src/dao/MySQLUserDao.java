@@ -22,6 +22,7 @@ public class MySQLUserDao implements UserDao{
 			"booth","pass");
 
             cn.setAutoCommit(false);
+            //
 
             String sql="insert into user(user_id,user_identified_name,user_name,user_password,user_mail)" + " values(?,?,?,?,?) ";
 
