@@ -28,7 +28,7 @@ public class MySQLUserDao implements UserDao{
 
             st=cn.prepareStatement(sql);
 
-            st.setString(1, "u11");
+            st.setString(1, "u22");
             st.setString(2, u.getUserIdentifiedName());
             st.setString(3, u.getUserName());
             st.setString(4, u.getUserPassword());
@@ -73,8 +73,74 @@ public class MySQLUserDao implements UserDao{
         }
     }
     public User getUser(String userId){
-        return null;
+        Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        User u = null;
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+             cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
+
+            cn.setAutoCommit(false);
+
+            String sql="select * from user where user_id='"+userId+"'" ;
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+
+            rs.next();
+
+            u=new User();
+
+            //u.setUserId(rs.getString(1));
+            u.setUserIdentifiedName(rs.getString(2));
+            u.setUserName(rs.getString(3));
+            u.setUserPassword(rs.getString(4));
+            u.setUserMail(rs.getString(5));
+            u.setUserPoint(rs.getInt(6));
+
+            System.out.println(rs.getString(3));
+
+            cn.commit();
+        }catch(ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
+        return u;
     }
+}
+
+
+    /*
     public List getAllUsers(){
         Connection cn=null;
         PreparedStatement st=null;
@@ -140,3 +206,4 @@ public class MySQLUserDao implements UserDao{
         return Users;
     }
 }
+    */

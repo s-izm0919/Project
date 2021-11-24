@@ -45,7 +45,7 @@ public class AddUserCommand extends AbstractCommand {
 
 
 
-	resc.setTarget("users/new");
+	resc.setTarget("user_edit");
 		return resc;
 	}
 }
