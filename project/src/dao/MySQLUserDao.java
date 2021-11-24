@@ -23,11 +23,11 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="insert into user(user_id,user_identified_name,user_name,user_password,user_mail,user_point)" + " values('u20',?,?,?,?) ";
+            String sql="insert into user(user_id,user_identified_name,user_name,user_password,user_mail,user_point)" + " values('10',?,?,?,?) ";
 
             st=cn.prepareStatement(sql);
 
-            //st.setString(1, u.getUserId());
+            st.setString(1, "u10");
             st.setString(2, u.getUserIdentifiedName());
             st.setString(3, u.getUserName());
             st.setString(4, u.getUserPassword());
