@@ -12,9 +12,8 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/jsp/start.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/users/new.jsp</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
@@ -27,4 +26,3 @@
 	</servlet-mapping>
 
 </web-app>
-

@@ -14,15 +14,13 @@
 			<th>productName</th>
 			<th>price</th>
 		</tr>
-		<c:forEach var="product" items="${result}">
 			<tr>
-			<td>${product.pid}</td>
+			<td>${result.userIdentifi}</td>
 				<td>${product.name}</td>
 				<td>${product.price}</td>
 			</tr>
-		</c:forEach>
 	</table>
 
 </body>
 </html>
-	
+

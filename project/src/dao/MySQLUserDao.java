@@ -4,9 +4,6 @@ import  java.sql.DriverManager;
 import  java.sql.PreparedStatement;
 import  java.sql.ResultSet;
 import  java.sql.SQLException;
-import  java.util.ArrayList;
-import  java.util.List;
-
 
 import bean.User;
 
@@ -86,12 +83,14 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="select * from user where user_id=userId";
+            String sql="select * from user where user_id='"+userId+"'";
 
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
             u=new User();
+
+            rs.next();
 
             u.setUserId(rs.getString(1));
             u.setUserIdentifiedName(rs.getString(2));
