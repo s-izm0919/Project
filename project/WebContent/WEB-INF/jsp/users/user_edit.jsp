@@ -10,14 +10,18 @@
 	<h1>ユーザー一覧</h1>
 	<table border="1">
 		<tr>
-		<th>productNumber</th>
-			<th>productName</th>
-			<th>price</th>
+		<th>nickname</th>
+			<th>userName</th>
+			<th>password</th>
+				<th>mail</th>
+			<th>point</th>
 		</tr>
 			<tr>
-			<td>${result.userIdentifi}</td>
-				<td>${product.name}</td>
-				<td>${product.price}</td>
+			<td>${result.userIdentifiedName}</td>
+				<td>${result.userName}</td>
+				<td>${result.userPassword}</td>
+				<td>${result.userMail}</td>
+				<td>${result.userPoint}</td>
 			</tr>
 	</table>
 
