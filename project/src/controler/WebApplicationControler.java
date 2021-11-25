@@ -27,6 +27,10 @@ public class WebApplicationControler implements ApplicationControler {
 		HttpServletRequest req=(HttpServletRequest)reqc.getRequest();
 		HttpServletResponse res=(HttpServletResponse)resc.getResponse();
 		req.setAttribute("result", resc.getResult());
+
+		System.out.println("取得結果： " + resc.getResult());
+		System.out.println("転送先 : " + resc.getTarget());
+
 		RequestDispatcher rd=req.getRequestDispatcher(resc.getTarget());
 		try {
 			rd.forward(req, res);
