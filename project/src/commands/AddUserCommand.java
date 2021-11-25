@@ -15,7 +15,7 @@ public class AddUserCommand extends AbstractCommand {
 
 		//String[] names = reqc.getParameter("name");
 		//String name=names[0];
-		String nickName=reqc.getParameter("nickName")[0];
+		String nickName=reqc.getParameter("userIdentifiedName")[0];
 		String userName =reqc.getParameter("userName")[0];
 		String password=reqc.getParameter("password")[0];
 		String mail=reqc.getParameter("mail")[0];
