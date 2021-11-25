@@ -7,11 +7,22 @@
 <title>ユーザー編集画面</title>
 </head>
 <body>
-	<h1>ユーザー編集画面</h1>
-		<form method="" action="">
-		ニックネームの変更<input type="text" name="名前"><dr>
-		メールアドレスの変更<input type="text" name="メールアドレス"><dr>
-		<input type="submit" value="更新">
-		</form>
+	<h1>ユーザー一覧</h1>
+	<table border="1">
+		<tr>
+		<th>productNumber</th>
+			<th>productName</th>
+			<th>price</th>
+		</tr>
+		<c:forEach var="product" items="${result}">
+			<tr>
+			<td>${product.pid}</td>
+				<td>${product.name}</td>
+				<td>${product.price}</td>
+			</tr>
+		</c:forEach>
+	</table>
+
 </body>
 </html>
+	
