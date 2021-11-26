@@ -25,7 +25,7 @@ public class MySQLUserDao implements UserDao{
 
             st=cn.prepareStatement(sql);
 
-            st.setString(1, "u11");
+            st.setString(1, "U7");
             st.setString(2, u.getUserIdentifiedName());
             st.setString(3, u.getUserName());
             st.setString(4, u.getUserPassword());

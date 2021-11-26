@@ -15,6 +15,7 @@
             メールアドレス<input type="email" name="mail"><br>
             <input type="submit" value="登録">
         </form>
+
     </body>
 
 </html>
