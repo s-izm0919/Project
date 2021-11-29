@@ -21,15 +21,15 @@ public class MySQLUserDao implements UserDao{
             cn.setAutoCommit(false);
             //
 
-            String sql="insert into user(user_id,user_identified_name,user_name,user_password,user_mail)" + " values(?,?,?,?,?) ";
+            String sql="insert into user(user_identified_name,user_name,user_password,user_mail)" + " values(?,?,?,?) ";
 
             st=cn.prepareStatement(sql);
 
-            st.setString(1, "U7");
-            st.setString(2, u.getUserIdentifiedName());
-            st.setString(3, u.getUserName());
-            st.setString(4, u.getUserPassword());
-            st.setString(5, u.getUserMail());
+           // st.setString(1, "U34");
+            st.setString(1, u.getUserIdentifiedName());
+            st.setString(2, u.getUserName());
+            st.setString(3, u.getUserPassword());
+            st.setString(4, u.getUserMail());
             //st.setInt(6, u.getUserPoint());
 
             st.executeUpdate();
