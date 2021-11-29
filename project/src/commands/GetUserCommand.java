@@ -9,7 +9,7 @@ class GetUserCommand extends AbstractCommand {
 		System.out.println("-- GetProductsCommand -- ");
 		User user = new User();
 		MySQLUserDao dao=new MySQLUserDao();
-		user = dao.getUser("U34");
+		user = dao.getUserInfo("U34");
 
 
 		resc.setResult(user);
@@ -19,6 +19,7 @@ class GetUserCommand extends AbstractCommand {
 
 	}
 }
+//
 
 
 
