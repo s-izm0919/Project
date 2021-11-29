@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ユーザー編集画面</title>
+<title>ユーザー編集画面１</title>
 </head>
 <body>
 	<h1>ユーザー編集画面</h1>
