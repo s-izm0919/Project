@@ -11,7 +11,6 @@ public class Item implements Serializable{
 	private String itemDataPath;
 	private String shopId;
 	private int itemIsOpen;
-	private int searchCount;
 
 	public Item() {
 		super();
@@ -75,12 +74,6 @@ public class Item implements Serializable{
 	}
 	public void setItemIsOpen(int itemIsOpen) {
 		this.itemIsOpen = itemIsOpen;
-	}
-	public int getSearchCount() {
-		return searchCount;
-	}
-	public void setSearchCount(int searchCount) {
-		this.searchCount = searchCount;
 	}
 
 }

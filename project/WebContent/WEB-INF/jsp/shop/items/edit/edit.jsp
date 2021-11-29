@@ -7,11 +7,11 @@
     </head>
     <body>
         <h1>商品登録</h1>
-        <form method="POST" action="add">
-            商品タイトル<input type="text" name="itemName" required><br>
-            価格<input type="number" name="itemPrice" required><br>
+        <form method="POST" action="edititem">
+            商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
+            価格<input type="number" name="itemPrice"  required><br>
             サムネイル<input type="file" name="mainImagePath" required><br>
-            商品説明<br><textarea cols="24" rows="5" name="itemExplanation"></textarea><br>
+            商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
             カテゴリ<select name="categoryId" required>
                         <option value="猫">猫</option>
                         <option value="犬">犬</option>
@@ -28,3 +28,4 @@
         </form>
     </body>
 </html>
+

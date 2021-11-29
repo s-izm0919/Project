@@ -5,7 +5,7 @@ import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
 
-public class AddUserCommand extends AbstractCommand {
+public class LoginUserCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- AddUserCommand --");
 
@@ -14,10 +14,10 @@ public class AddUserCommand extends AbstractCommand {
 
 		//String[] names = reqc.getParameter("name");
 		//String name=names[0];
-		String nickName=reqc.getParameter("userName")[0];
-		String userName =reqc.getParameter("userIdentifiedName")[0];
-		String password=reqc.getParameter("userPassword")[0];
-		String mail=reqc.getParameter("userMail")[0];
+		String nickName=reqc.getParameter("nickName")[0];
+		String userName =reqc.getParameter("userName")[0];
+		String password=reqc.getParameter("password")[0];
+		String mail=reqc.getParameter("mail")[0];
 
 
 
