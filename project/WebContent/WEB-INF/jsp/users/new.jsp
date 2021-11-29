@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>ユーザー登録</h1>
-        <form method="POST" action="add">
+        <form method="POST" action="adduser">
             ユーザー名<input type="text" name="userName"><br>
             ユーザーID（半角英数）<input type="text" name="nickName"><br>
             パスワード（半角英数）<input type="password" name="password"><br>
