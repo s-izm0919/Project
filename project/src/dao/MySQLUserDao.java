@@ -83,7 +83,7 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="select * from user where (user_identified_name='"+userIdentifiedName+" or user_mail='"+userMail+"') and user_password="+userPassword+"'";
+            String sql="select * from user where ((user_identified_name='"+userIdentifiedName+" or user_mail='"+userMail+"') and user_password="+userPassword+"') and unused=1";
 
             st=cn.prepareStatement(sql);
 
@@ -248,7 +248,57 @@ public class MySQLUserDao implements UserDao{
         }
     }
     public void removeUser(String userIdentifiedName,String userMail,String userPassword) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+            cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
 
+            cn.setAutoCommit(false);
+            //
+
+            String sql="update user set unused=0 where (user_identified_name='"+userIdentifiedName+" or user_mail='"+userMail+"') and user_password="+userPassword+"'";
+
+            st=cn.prepareStatement(sql);
+
+            st.executeUpdate();
+
+            cn.commit();
+
+
+        }catch (ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            System.out.println(e.getMessage());
+
+            }
+        }
+        finally{
+            try{
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
     }
 
 }
