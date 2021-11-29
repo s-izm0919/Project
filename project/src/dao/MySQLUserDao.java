@@ -69,7 +69,7 @@ public class MySQLUserDao implements UserDao{
             }
         }
     }
-    public User login(String userIdentifiedId,String userMail,String userPassword){
+    public User login(String userIdentifiedName,String userMail,String userPassword){
         Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -83,7 +83,7 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="select * from user where (user_identified='"+userIdentifiedId+" or user_mail='"+userMail+"') and user_password="+userPassword+"'";
+            String sql="select * from user where (user_identified_name='"+userIdentifiedName+" or user_mail='"+userMail+"') and user_password="+userPassword+"'";
 
             st=cn.prepareStatement(sql);
 
@@ -247,7 +247,7 @@ public class MySQLUserDao implements UserDao{
             }
         }
     }
-    public void removeUser(String userIdentifiedId,String userMail,String userPassword) {
+    public void removeUser(String userIdentifiedName,String userMail,String userPassword) {
 
     }
 
