@@ -83,7 +83,7 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="select * from user where (user_identified_name='"+userIdentifiedName+" or user_mail='"+userMail+"') and user_password="+userPassword+"'";
+            String sql="select * from user where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'";
 
             st=cn.prepareStatement(sql);
 

@@ -7,40 +7,52 @@ import dao.UserDao;
 
 public class LoginUserCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
-		System.out.println("-- AddUserCommand --");
+		System.out.println("-- LoginUserCommand --");
 
 		RequestContext reqc = getRequestContext();
+		String mail=null;
+		String userIdentifiedName=null;
+
+
 
 
 		//String[] names = reqc.getParameter("name");
 		//String name=names[0];
-		String nickName=reqc.getParameter("nickName")[0];
-		String userName =reqc.getParameter("userName")[0];
-		String password=reqc.getParameter("password")[0];
-		String mail=reqc.getParameter("mail")[0];
+		String userIdenNameOrEmail=reqc.getParameter("userIdenNameOrEmail")[0];
+
+		if(userIdenNameOrEmail.contains("@")) {
+			mail=userIdenNameOrEmail;
+		}else {
+			userIdentifiedName=userIdenNameOrEmail;
+
+		}
+
+		String password=reqc.getParameter("userPassword")[0];
 
 
 
-		System.out.println("identifidname: " + nickName);
-		System.out.println("username: " + userName);
+
+		System.out.println("identifidname: " + userIdentifiedName);
+
 		System.out.println("password: " + password);
 		System.out.println("email: " + mail);
 
 
 		User user = new User();
-		user.setUserIdentifiedName(nickName);
-		user.setUserName(userName);
-		user.setUserPassword(password);
-		user.setUserMail(mail);
-
-
-
+		user=null;
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
-		dao.addUser(user);
+		if(userIdentifiedName!=null&&mail==null) {
+			user=dao.login(userIdentifiedName,null,password);
+		} else if(userIdentifiedName==null&&mail!=null) {
+			user=dao.login(null,mail,password);
+		}
+		else {
+			System.out.println("loginできない");
+		}
 
-		System.out.println("-- AddUserCommand --");
+		System.out.println(user);
 
 
 

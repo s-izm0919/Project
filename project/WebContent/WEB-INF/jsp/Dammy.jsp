@@ -12,7 +12,7 @@
 	<p>ユーザー系</p>
 	<a href="new">ユーザー登録</a>
 	<a href="user_edit">ユーザー情報の確認</a>
-		<a href="users/sign_in.jsp">ログイン</a>
+		<a href="sign_in">ログイン</a>
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>
 	<a href="settings">ユーザーの編集</a>
 	<a href="users/delete.jsp">アカウントの消去</a>
