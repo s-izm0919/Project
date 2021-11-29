@@ -1,11 +1,7 @@
 package commands;
-import dao.MySQLUserDao;
-import context.ResponseContext;
 import bean.User;
-
-import java.util.ArrayList;
-
-import java.util.List;
+import context.ResponseContext;
+import dao.MySQLUserDao;
 
 class GetUserCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
@@ -13,7 +9,7 @@ class GetUserCommand extends AbstractCommand {
 		System.out.println("-- GetProductsCommand -- ");
 		User user = new User();
 		MySQLUserDao dao=new MySQLUserDao();
-		user = dao.getUser("u10");
+		user = dao.getUser("U7");
 
 
 		resc.setResult(user);

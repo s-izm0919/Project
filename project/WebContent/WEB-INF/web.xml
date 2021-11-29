@@ -4,17 +4,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>project</display-name>
+
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
-	</welcome-file-list>
-	
-	<welcome-file-list>
-		<welcome-file>/WEB-INF/jsp/start.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/Dammy.jsp</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
@@ -27,4 +19,3 @@
 	</servlet-mapping>
 
 </web-app>
-

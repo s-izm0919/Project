@@ -1,9 +1,8 @@
 package commands;
-import dao.AbstractDaoFactory;
+import bean.User;
 import context.RequestContext;
 import context.ResponseContext;
-import bean.User;
-import dao.MySQLUserDao;
+import dao.AbstractDaoFactory;
 import dao.UserDao;
 
 public class AddUserCommand extends AbstractCommand {
