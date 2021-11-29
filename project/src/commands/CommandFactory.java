@@ -1,10 +1,9 @@
 package commands;
-import java.io.FileInputStream;
-
-import context.RequestContext;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
+import context.RequestContext;
 
 public abstract class CommandFactory {
 	@SuppressWarnings("deprecation")
@@ -20,6 +19,7 @@ public abstract class CommandFactory {
 			prop.load(CommandFactory.class.getClassLoader().getResourceAsStream("properties/commands.properties"));
 
 
+			System.out.println("パス ：" + reqc.getCommandPath());
 			String name = prop.getProperty(reqc.getCommandPath());
 
 

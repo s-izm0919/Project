@@ -1,5 +1,6 @@
 package commands;
 import bean.User;
+import context.RequestContext;
 import context.ResponseContext;
 import dao.MySQLUserDao;
 
@@ -9,12 +10,17 @@ class GetUserCommand extends AbstractCommand {
 		System.out.println("-- GetProductsCommand -- ");
 		User user = new User();
 		MySQLUserDao dao=new MySQLUserDao();
-		user = dao.getUserInfo("U34");
+
+		RequestContext reqc = getRequestContext();
+
+		String user_id = reqc.getParameter("user_id")[0];
+
+		user = dao.getUserInfo(user_id);
 
 
 		resc.setResult(user);
 
-	resc.setTarget("users/user_edit");
+		resc.setTarget("users/settings");
 		return resc;
 
 	}
