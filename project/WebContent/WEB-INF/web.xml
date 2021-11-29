@@ -6,7 +6,7 @@
 	<display-name>project</display-name>
 
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/jsp/top.jsp</welcome-file>
+		<welcome-file>/WEB-INF/jsp/Dammy.jsp</welcome-file>
 	</welcome-file-list>
 
 	<servlet>
