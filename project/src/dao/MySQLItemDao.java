@@ -26,9 +26,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(iname==null) {	//検索文字がnullのとき全部検索する
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 ORDER BY item_register_date DESC";
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_name like '%"+iname+"%'";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_name like '%"+iname+"%'AND item_is_open=1 ORDER BY item_register_date DESC";
             }
 
             st=cn.prepareStatement(sql);
@@ -160,4 +160,122 @@ public class MySQLItemDao implements ItemDao{
         }
         return Items;
     }
+
+	@Override
+	public int searchItemCount(String iname) {
+		int count = 0;
+		Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+             cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
+
+            cn.setAutoCommit(false);
+            String sql=null;
+            if(iname==null) {
+            	sql="select COUNT(*) from item where item_is_open=1 ORDER BY item_register_date DESC";
+            }else {
+            	sql="select COUNT(*) from item where item_name like '%"+iname+"%'AND item_is_open=1 ORDER BY item_register_date DESC";
+            }
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+            rs.next();
+            count = rs.getInt(1);
+            cn.commit();
+        }catch(ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
+		return count;
+	}
+
+	@Override
+	public int searchShopCount(String sname) {
+		int count = 0;
+		Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+             cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
+
+            cn.setAutoCommit(false);
+            String sql=null;
+            if(sname==null) {
+            	sql="select COUNT(*) from item where item_is_open=1";
+            }else {
+            	sql="select COUNT(*) from item where item_is_open=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%')";
+            }
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+            rs.next();
+            count = rs.getInt(1);
+            cn.commit();
+        }catch(ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
+		return count;
+	}
 }
