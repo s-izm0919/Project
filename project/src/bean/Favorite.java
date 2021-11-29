@@ -27,10 +27,10 @@ public class Favorite implements Serializable{
 	public void setFavoriteDate(String favoriteDate) {
 		this.favoriteDate = favoriteDate;
 	}
-	public void getFavoriteCount(){
+	public int getFavoriteCount(){
 		return favoriteCount;
 	}
-	public int setFavoriteCount(int favoriteCount){
+	public void setFavoriteCount(int favoriteCount){
 		this.favoriteCount = favoriteCount;
 	}
 
