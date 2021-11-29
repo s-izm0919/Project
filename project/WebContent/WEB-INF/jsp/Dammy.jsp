@@ -16,7 +16,7 @@
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>
 	<a href="settings?user_id=" >ユーザーの編集</a>
 	<a href="users/delete.jsp">アカウントの消去</a>
-	<a href="???.jsp">トップページ</a>
+	<a href="top.jsp">トップページ</a>
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<p>商品関係</p>
