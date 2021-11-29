@@ -14,7 +14,7 @@
 	<a href="user_edit">ユーザー情報の確認</a>
 		<a href="sign_in">ログイン</a>
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>
-	<a href="settings">ユーザーの編集</a>
+	<a href="settings?user_id=" >ユーザーの編集</a>
 	<a href="users/delete.jsp">アカウントの消去</a>
 	<a href="???.jsp">トップページ</a>
 	<a href="users/deposite.jsp">入金</a>
