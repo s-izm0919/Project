@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>ユーザー登録1</title>
+        <title>ユーザー登録</title>
     </head>
     <body>
         <h1>ユーザー登録</h1>
