@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>ユーザーログイン</h1>
-        <form method="POST" action="add">
+        <form method="POST" action="loginuser">
             ユーザーID（半角英数）またはメールアドレス<input type="text" name="userIdenNameOrEmail"><br>
 
             パスワード（半角英数）<input type="password" name="userPassword" required><br>
