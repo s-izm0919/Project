@@ -10,3 +10,4 @@ public interface UserDao{
     public void removeUser(String userIdentifiedId,String userMail,String userPassword);
     //public List getAllUsers();
 }
+//
