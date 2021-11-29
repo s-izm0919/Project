@@ -10,19 +10,21 @@
 	        <input type="text" name="search" value="検索" >
 
 
-	        <select name="example">
-	            <option value="ユーザー登録">ユーザー登録</option>
-	            <option value="ログイン">ログイン</option>
-	            <option value="ショップ開設ガイド">ショップ開設ガイド</option>
-	            <option value="ユーザーアカウント設定">ユーザーアカウント設定</option>
-	            <option value="ログイン">フォローしたショップ</option>
-	            <option value="ログイン">フォローしたショップの新着商品</option>
-	            <option value="ログイン">ショップとのチャット</option>
-	            <option value="ログイン">購入履歴</option>
-	            <option value="ログイン">ショップ管理</option>
-	            <option value="ログイン">注文一覧</option>
-	            <option value="ログイン">売上管理</option>
-	            <option value="ログイン">ユーザーとのチャット</option>
+	        <select name="select" onChange="location.href=value;">
+	        	<option>ユーザー名</option>
+	            <option value="new">ユーザー登録</option>
+	            <option value="sign_in">ログイン</option>
+	            <option value="guide_shop">ショップ開設ガイド</option>
+	            <option value="setting">ユーザーアカウント設定</option>
+	            <option value="following">フォローしたショップ</option>
+	            <option value="follow_items">フォローしたショップの新着商品</option>
+	            <option value="users_chatlist">ショップとのチャット</option>
+	            <option value="uders_orders">購入履歴</option>
+	            <option value="shop_top">ショップ管理</option>
+	            <option value="shop_items">商品管理</option>
+	            <option value="shop_orders">注文一覧</option>
+	            <option value="shop_sales">売上管理</option>
+	            <option value="shop_chatlist">ユーザーとのチャット</option>
 	            <option value="">ログアウト</option>
 	        </select>
 
