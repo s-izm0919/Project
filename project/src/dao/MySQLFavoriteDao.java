@@ -10,7 +10,7 @@ import java.util.List;
 
 import bean.Favorite;
 
-public class MySQLFavoriteDao {
+public class MySQLFavoriteDao implements FavoriteDao{
 	public List getSearchItemFavoriteCount(String itemName) {
 		Connection cn=null;
         PreparedStatement st=null;
