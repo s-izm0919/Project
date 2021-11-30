@@ -7,4 +7,3 @@ public interface FavoriteDao {
 	public List getSearchShopFavoriteCount(String shopName);
 
 }
-//
