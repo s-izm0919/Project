@@ -75,6 +75,7 @@ public class MySQLUserDao implements UserDao{
         ResultSet rs=null;
 
         User u = null;
+
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
              cn = DriverManager.getConnection(
@@ -89,16 +90,16 @@ public class MySQLUserDao implements UserDao{
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
-            u=new User();
 
-            rs.next();
-
-            u.setUserId(rs.getString(1));
-            u.setUserIdentifiedName(rs.getString(2));
-            u.setUserName(rs.getString(3));
-            u.setUserPassword(rs.getString(4));
-            u.setUserMail(rs.getString(5));
-            u.setUserPoint(rs.getInt(6));
+            while(rs.next()){
+                u=new User();
+	            u.setUserId(rs.getString(1));
+	            u.setUserIdentifiedName(rs.getString(2));
+	            u.setUserName(rs.getString(3));
+	            u.setUserPassword(rs.getString(4));
+	            u.setUserMail(rs.getString(5));
+	            u.setUserPoint(rs.getInt(6));
+            }
 
             cn.commit();
         }catch(ClassNotFoundException e){

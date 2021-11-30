@@ -11,6 +11,10 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import bean.User;
+import dao.AbstractDaoFactory;
+import dao.UserDao;
+
 
 public class LoginCheckFilter implements Filter {
     private FilterConfig config;
@@ -24,21 +28,51 @@ public class LoginCheckFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
     throws IOException, ServletException{
-        String n = config.getInitParameter("username");
-        String p = config.getInitParameter("userpass");
 
-        String name = req.getParameter("name");
-        String pass = req.getParameter("pass");
+    	String mail=null;
+		String userIdentifiedName=null;
 
-        if(name!=null && pass!=null){
-            if(name.equals(n) && pass.equals(p)){
-                HttpSession session = ((HttpServletRequest)req).getSession();
+		String userIdenNameOrEmail=null;
 
-                session.setAttribute("token","OK");
+		userIdenNameOrEmail=req.getParameter("userIdenNameOrEmail");
 
-            }
+		if(userIdenNameOrEmail != null){
+			if(userIdenNameOrEmail.contains("@")) {
+				mail=userIdenNameOrEmail;
+			}else {
+				userIdentifiedName=userIdenNameOrEmail;
 
-        }
+			}
+
+			String password=req.getParameter("userPassword");
+
+			System.out.println("identifidname: " + userIdentifiedName);
+			System.out.println("password: " + password);
+			System.out.println("email: " + mail);
+
+
+			User user = new User();
+			user=null;
+
+			HttpSession session = ((HttpServletRequest)req).getSession();
+
+			AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
+			UserDao dao=factory.getUserDao();
+			if(userIdentifiedName!=null&&mail==null) {
+				user=dao.login(userIdentifiedName,null,password);
+				System.out.println(user);
+			}else if(userIdentifiedName==null&&mail!=null) {
+				user=dao.login(null,mail,password);
+			}
+			else {
+				System.out.println("loginできない");
+			}
+
+			if(user!=null) {
+				session.setAttribute("token","OK");
+				session.setAttribute("result", user);
+			}
+		}
 
         chain.doFilter(req,res);
 

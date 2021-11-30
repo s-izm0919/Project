@@ -3,16 +3,43 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	<display-name>project</display-name>
 
-	<welcome-file-list>
-		<welcome-file>/WEB-INF/jsp/Dammy.jsp</welcome-file>
+	<display-name>project</display-name>
+	<filter>
+        <filter-name>loginCheckFilter</filter-name>
+        <filter-class>filter.LoginCheckFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>loginCheckFilter</filter-name>
+        <url-pattern>/callusersettings</url-pattern>
+        <url-pattern>/callsigninpage</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>authenticatedFilter</filter-name>
+        <filter-class>filter.AuthenticatedFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>authenticatedFilter</filter-name>
+        <url-pattern>/callusersettings</url-pattern>
+        <url-pattern>/callsigninpage</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+
+
+    <welcome-file-list>
+		<welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
 	</welcome-file-list>
+
 
 	<servlet>
 		<servlet-name>FrontServlet</servlet-name>
 		<servlet-class>servlet.FrontServlet</servlet-class>
 	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>FrontServlet</servlet-name>
 		<url-pattern>/</url-pattern>

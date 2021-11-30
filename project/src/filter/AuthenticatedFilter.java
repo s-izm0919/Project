@@ -32,9 +32,11 @@ public class AuthenticatedFilter implements Filter {
 
             String servletPath = hreq.getServletPath();
 
+            System.out.println(servletPath);
+
             hreq.setAttribute("target",servletPath);
 
-            RequestDispatcher dis = req.getRequestDispatcher("/orderlogin");
+            RequestDispatcher dis = req.getRequestDispatcher("callsignin");
             dis.forward(req,res);
 
         }else{

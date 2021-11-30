@@ -13,9 +13,6 @@ public class LoginUserCommand extends AbstractCommand {
 		String mail=null;
 		String userIdentifiedName=null;
 
-
-
-
 		//String[] names = reqc.getParameter("name");
 		//String name=names[0];
 		String userIdenNameOrEmail=reqc.getParameter("userIdenNameOrEmail")[0];
@@ -28,9 +25,6 @@ public class LoginUserCommand extends AbstractCommand {
 		}
 
 		String password=reqc.getParameter("userPassword")[0];
-
-
-
 
 		System.out.println("identifidname: " + userIdentifiedName);
 

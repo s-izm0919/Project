@@ -1,7 +1,3 @@
-
-
-
-
 package commands;
 
 import context.ResponseContext;
