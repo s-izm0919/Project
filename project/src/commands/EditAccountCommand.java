@@ -16,17 +16,17 @@ class EditAccountCommand extends AbstractCommand {
 
 		RequestContext reqc = getRequestContext();
 		String userId = reqc.getParameter("userId")[0];
-		String identifiedName = reqc.getParameter("userIdentifiedName")[0];
+		//String identifiedName = reqc.getParameter("userIdentifiedName")[0];
 		String userName = reqc.getParameter("userName")[0];
 		String userMail = reqc.getParameter("mail")[0];
 
 		System.out.println("userId:"+userId);
 
-		System.out.println("identifiedName:"+identifiedName);
+		//System.out.println("identifiedName:"+identifiedName);
 		System.out.println("userName:"+userName);
 		System.out.println("usermail:"+userMail);
 
-		dao.updateUser(identifiedName, userName, userMail);
+		dao.updateUser(userId, userName, userMail);
 
 		User user=dao.getUserInfo(userId);
 		resc.setResult(user);
