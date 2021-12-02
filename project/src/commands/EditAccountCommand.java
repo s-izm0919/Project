@@ -3,7 +3,6 @@ import bean.User;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
-import dao.MySQLUserDao;
 import dao.UserDao;
 
 class EditAccountCommand extends AbstractCommand {
@@ -30,6 +29,8 @@ class EditAccountCommand extends AbstractCommand {
 
 		User user=dao.getUserInfo(userId);
 		resc.setResult(user);
+
+		reqc.setSession(user);
 
 		resc.setTarget("index");
 		return resc;
