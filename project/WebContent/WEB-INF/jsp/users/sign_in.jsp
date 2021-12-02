@@ -11,7 +11,8 @@
             ユーザーID（半角英数）またはメールアドレス<input type="text" name="userIdenNameOrEmail"><br>
 
             パスワード（半角英数）<input type="password" name="userPassword" required><br>
-            <input type="submit" value="ログイン">
+            <input type="submit" value="ログイン"><br><br>
+            <a href="new">アカウントを作る</a>
         </form>
     </body>
 </html>
