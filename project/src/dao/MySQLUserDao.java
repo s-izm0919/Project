@@ -208,7 +208,7 @@ public class MySQLUserDao implements UserDao{
             cn.setAutoCommit(false);
             //
 
-            String sql="update user set user_name='"+userName+"', user_mail='"+userMail+"' where user_identified_name='"+userId+"'";
+            String sql="update user set user_name='"+userName+"', user_mail='"+userMail+"' where user_id='"+userId+"'";
 
             st=cn.prepareStatement(sql);
 
