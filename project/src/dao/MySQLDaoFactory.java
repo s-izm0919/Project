@@ -57,4 +57,5 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 		return new MySQLAdministratorMessageDao();
 	}
 	*/
+
 }

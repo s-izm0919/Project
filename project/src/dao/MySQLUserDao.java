@@ -87,6 +87,7 @@ public class MySQLUserDao implements UserDao{
             String sql="select * from user where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'"+" and unused = 1";
 
 
+
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
