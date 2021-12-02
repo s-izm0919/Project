@@ -18,6 +18,7 @@
 	<a href="callusersettings" >ユーザーの編集</a>
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
+	<a href="top">トップ</a>
 	<p>商品関係</p>
 	<a href="search.jsp">検索結果</a>
 	<a href="items">商品ページ</a>
