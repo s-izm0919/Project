@@ -22,7 +22,7 @@
 
 				<li>
 			        <select name="select" onChange="location.href=value;">
-			        	<option value="#">ユーザー名</option>
+			        	<option value="#">${result.userName}</option>
 			            <option value="new">ユーザー登録</option>
 			            <option value="sign_in">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
@@ -36,7 +36,7 @@
 			            <option value="shop_orders">注文一覧</option>
 			            <option value="shop_sales">売上管理</option>
 			            <option value="shop_chatlist">ユーザーとのチャット</option>
-			            <option value="">ログアウト</option>
+			            <option value="logoutuser">ログアウト</option>
 			        </select>
 					</li>
 
@@ -51,9 +51,11 @@
 	        </nav>
     </header>
 
-    	<h1 class="future">
-        	特集ページ左 &nbsp; 特集ページ中 &nbsp; 特集ページ右
-        </h1>
+    	<h2 class="future">
+        	<p class="left"><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
+        	<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
+			<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"></p>
+        </h2>
 
         <h1>閲覧履歴 &nbsp; もっと見る</h1>
 

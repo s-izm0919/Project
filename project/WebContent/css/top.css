@@ -15,7 +15,6 @@ body {
 header {
 	background-color:white;
 	position: fixed; top: 0;
-	position: fixed;
    	top: 0;
    	left: 0; /* 左から配置の基準位置を決める */
 	width: 100%; /* ヘッダーの横幅を指定する */
@@ -23,6 +22,7 @@ header {
 	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
    	display: flex;
     align-items: center;
+    z-index:100;
 }
 
 /* aタグの設定*/
@@ -50,9 +50,17 @@ li {
 nav {
    margin: 0 0 0 auto;
 }
-h1.future {
+
+
+/* 特集の設定*/
+h2 img{
+    width: 200px;
+}
+
+h2.future {
+	z-index:10;
 	position: relative;
-	top: 30px;
+	top: 50px;
 	left: 30px;
 	overflow: auto;
 }
