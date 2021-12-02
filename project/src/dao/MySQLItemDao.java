@@ -11,7 +11,7 @@ import java.util.List;
 import bean.Item;
 
 public class MySQLItemDao implements ItemDao{
-	public List getItemsItemName(String iname) {
+	public List getItemsItemName(String itemname) {
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -25,10 +25,10 @@ public class MySQLItemDao implements ItemDao{
 
             cn.setAutoCommit(false);
             String sql=null;
-            if(iname==null) {	//検索文字がnullのとき全部検索する
+            if(itemname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+iname+"%' ORDER BY item_register_date DESC";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+itemname+"%' ORDER BY item_register_date DESC";
             }
 
             st=cn.prepareStatement(sql);
@@ -86,7 +86,7 @@ public class MySQLItemDao implements ItemDao{
         return Items;
 	}
 
-    public List getItemsShopName(String sname) {
+    public List getItemsShopName(String shopname) {
     	Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -100,10 +100,10 @@ public class MySQLItemDao implements ItemDao{
 
             cn.setAutoCommit(false);
             String sql=null;
-            if(sname==null) {	//検索文字がnullのとき全部検索する
+            if(shopname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%') ORDER BY item_register_date DESC";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+shopname+"%') ORDER BY item_register_date DESC";
             }
 
             st=cn.prepareStatement(sql);
@@ -160,7 +160,8 @@ public class MySQLItemDao implements ItemDao{
         }
         return Items;
     }
-    public List getItemsItemName(String iname, String sort) {
+    //いいねを除く
+    public List getItemsItemName(String itemname, String sort) {
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -174,10 +175,10 @@ public class MySQLItemDao implements ItemDao{
 
             cn.setAutoCommit(false);
             String sql=null;
-            if(iname==null) {	//検索文字がnullのとき全部検索する
+            if(itemname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 order by "+sort;
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+iname+"%' order by "+sort;
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+itemname+"%' order by "+sort;
             }
 
             st=cn.prepareStatement(sql);
@@ -234,7 +235,7 @@ public class MySQLItemDao implements ItemDao{
         }
         return Items;
 	}
-    public List getItemsShopName(String sname, String sort) {
+    public List getItemsShopName(String shopname, String sort) {
     	Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -248,10 +249,10 @@ public class MySQLItemDao implements ItemDao{
 
             cn.setAutoCommit(false);
             String sql=null;
-            if(sname==null) {	//検索文字がnullのとき全部検索する
+            if(shopname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 order by "+sort;
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%') order by "+sort;
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+shopname+"%') order by "+sort;
             }
 
             st=cn.prepareStatement(sql);
@@ -308,6 +309,158 @@ public class MySQLItemDao implements ItemDao{
         }
         return Items;
     }
+    //いいねソート用
+    public List getItemsItemNameFavorite(String itemname) {
+		Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        List Items=new ArrayList();
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+             cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
+
+            cn.setAutoCommit(false);
+            String sql=null;
+            if(itemname==null) {	//検索文字がnullのとき全部検索する
+            	sql="select item.item_id, item_name, item_price, main_image_path, shop_id ,count(favorite.item_id) from item left join favorite on item.item_id=favorite.item_id where item_is_open=1 AND unused=1 group by item_id order by count(favorite.item_id) desc";
+            }else {
+            	sql="select item.item_id, item_name, item_price, main_image_path, shop_id ,count(favorite.item_id) from item left join favorite on item.item_id=favorite.item_id where item_is_open=1 AND unused=1 AND item_name like '%"+itemname+"%' group by item_id order by count(favorite.item_id) desc";
+            }
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+            while(rs.next()){
+                Item i=new Item();
+
+                BigDecimal _itemid =rs.getBigDecimal(1);
+				int itemid=_itemid.intValue();
+				i.setItemId(itemid);
+
+                i.setItemName(rs.getString(2));
+
+                BigDecimal _itemprice =rs.getBigDecimal(3);
+				int itemprice=_itemprice.intValue();
+				i.setItemId(itemprice);
+
+                i.setMainImagePath(rs.getString(4));
+
+                i.setShopId(rs.getString(5));
+
+                //ここでカウントは取得しない
+
+                Items.add(i);
+            }
+            cn.commit();
+        }catch(ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
+        return Items;
+	}
+    public List getItemsShopNameFavorite(String shopname) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        List Items=new ArrayList();
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+             cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"booth","pass");
+
+            cn.setAutoCommit(false);
+            String sql=null;
+            if(shopname==null) {	//検索文字がnullのとき全部検索する
+            	sql="select item.item_id, item_name, item_price, main_image_path, shop_id ,count(favorite.item_id) from item left join favorite on item.item_id=favorite.item_id where item_is_open=1 AND unused=1 group by item_id order by count(favorite.item_id) desc";
+            }else {
+            	sql="select item.item_id, item_name, item_price, main_image_path, shop_id ,count(favorite.item_id) from item left join favorite on item.item_id=favorite.item_id where item_is_open=1 AND unused=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%\"+shopname+\"%') group by item_id order by count(favorite.item_id) desc";
+            }
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+            while(rs.next()){
+                Item i=new Item();
+
+                BigDecimal _itemid =rs.getBigDecimal(1);
+				int itemid=_itemid.intValue();
+				i.setItemId(itemid);
+
+                i.setItemName(rs.getString(2));
+
+                BigDecimal _itemprice =rs.getBigDecimal(3);
+				int itemprice=_itemprice.intValue();
+				i.setItemId(itemprice);
+
+                i.setMainImagePath(rs.getString(4));
+
+                i.setShopId(rs.getString(5));
+
+                Items.add(i);
+            }
+            cn.commit();
+        }catch(ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
+        return Items;
+    }
+
     @Override
 	public int getSearchItemCount(String itemname) {
 		int count = 0;
