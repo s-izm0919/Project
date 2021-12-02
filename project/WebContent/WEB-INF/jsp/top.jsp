@@ -5,13 +5,14 @@
     <head>
         <title>トップページ</title>
 		<%@include file="../../css/top.css" %>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
     <header>
 
     		<h1>
-			<href="http://localhost:8080/project/top">
-			<img src="<%=application.getRealPath("/")%>images\icon.jpg">
+			<a href="top">
+			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
 			</h1>
 			<nav class="hd-nav">
 				<ul>
@@ -43,7 +44,7 @@
 
 		        <li>いいね</li>
 
-		        <li>カート</li>
+		        <li><i class="fas fa-shopping-cart"></i>カート</li>
 
 		        </ul>
 	        </nav>
