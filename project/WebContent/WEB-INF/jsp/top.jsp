@@ -40,15 +40,17 @@
 			        </select>
 					</li>
 
-		        <li>お知らせ</li>
+		        <li><a href=notification""><i class="far fa-bell"></i>お知らせ</a></li>
 
-		        <li>いいね</li>
+		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
 
-		        <li><i class="fas fa-shopping-cart"></i>カート</li>
+
+		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
 
 		        </ul>
 	        </nav>
     </header>
+
     	<h1 class="future">
         	特集ページ左 &nbsp; 特集ページ中 &nbsp; 特集ページ右
         </h1>
