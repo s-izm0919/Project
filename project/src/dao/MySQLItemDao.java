@@ -26,9 +26,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(iname==null) {	//検索文字がnullのとき全部検索する
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_name like '%"+iname+"%'";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+iname+"%' ORDER BY item_register_date DESC";
             }
 
             st=cn.prepareStatement(sql);
@@ -101,9 +101,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(sname==null) {	//検索文字がnullのとき全部検索する
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%')";
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%') ORDER BY item_register_date DESC";
             }
 
             st=cn.prepareStatement(sql);
@@ -175,9 +175,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(iname==null) {	//検索文字がnullのとき全部検索する
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 order by "+sort;
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 order by "+sort;
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_name like '%"+iname+"%'"+sort;
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+iname+"%' order by "+sort;
             }
 
             st=cn.prepareStatement(sql);
@@ -249,9 +249,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(sname==null) {	//検索文字がnullのとき全部検索する
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1"+sort;
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 order by "+sort;
             }else {
-            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%')"+sort;
+            	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 shop_id =ANY (select shop_id from shop where shop_name like '%"+sname+"%') order by "+sort;
             }
 
             st=cn.prepareStatement(sql);
@@ -324,9 +324,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(itemname==null) {
-            	sql="select COUNT(*) from item where item_is_open=1 ORDER BY item_register_date DESC";
+            	sql="select COUNT(*) from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
             }else {
-            	sql="select COUNT(*) from item where item_name like '%"+itemname+"%'AND item_is_open=1 ORDER BY item_register_date DESC";
+            	sql="select COUNT(*) from item where item_name like '%"+itemname+"%' AND item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
             }
 
             st=cn.prepareStatement(sql);
@@ -383,9 +383,9 @@ public class MySQLItemDao implements ItemDao{
             cn.setAutoCommit(false);
             String sql=null;
             if(shopname==null) {
-            	sql="select COUNT(*) from item where item_is_open=1";
+            	sql="select COUNT(*) from item where item_is_open=1 AND unused=1";
             }else {
-            	sql="select COUNT(*) from item where item_is_open=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+shopname+"%')";
+            	sql="select COUNT(*) from item where item_is_open=1 AND unused=1 AND shop_id =ANY (select shop_id from shop where shop_name like '%"+shopname+"%')";
             }
 
             st=cn.prepareStatement(sql);
