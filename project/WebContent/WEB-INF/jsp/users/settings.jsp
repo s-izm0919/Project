@@ -15,5 +15,11 @@
 		メールアドレスの変更<input type="email" name="mail" maxlength="300"  value="${result.userMail}"  required><br>
 		<input type="submit" value="更新">
 		</form>
+
+	<h1>ユーザー削除</h1>
+		<form method="POST" action="removeaccount">
+			<input type="text" name="userPassword">
+			<input type="submit" value="ユーザーの削除">
+		</form>
 </body>
 </html>

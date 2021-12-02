@@ -84,7 +84,7 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="select * from user where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'";
+            String sql="select * from user where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'"+" and unused = 1";
 
 
             st=cn.prepareStatement(sql);
@@ -261,7 +261,7 @@ public class MySQLUserDao implements UserDao{
             cn.setAutoCommit(false);
             //
 
-            String sql="update user set unused=0 where (user_identified_name='"+userIdentifiedName+" or user_mail='"+userMail+"') and user_password="+userPassword+"'";
+            String sql="update user set unused=0 where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'";
 
             st=cn.prepareStatement(sql);
 

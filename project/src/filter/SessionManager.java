@@ -24,7 +24,5 @@ public class SessionManager {
 	public static void invalidate(){
 		session.invalidate();
 	}
-
-
-public  static String path=req.getServletPath().substring(1);
 }
+

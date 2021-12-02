@@ -8,15 +8,15 @@
 </head>
 <body>
 	<h1>簡易ページリンク一覧(html式)</h1>
+	user名:${result.userName}
 	<a href=""></a>
 	<p>ユーザー系</p>
 	<a href="new">ユーザー登録</a>
-	<a href="user_edit">ユーザー情報の確認</a>
-		<a href="callsigninpage">ログイン</a>
+	<a href="callsigninpage">ログイン</a>
+	<a href="logoutuser">ログアウト</a>
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>
 	<a href="callusersettings" >ユーザーの編集</a>
-	<a href="users/delete.jsp">アカウントの消去</a>
-	<a href="top.jsp">トップページ</a>
+	<a href="callindex">トップページ</a>
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<p>商品関係</p>

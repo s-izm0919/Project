@@ -40,6 +40,7 @@ public class WebRequestContext implements RequestContext {
 
 	public void setSession(Object obj) {
 		session.setAttribute("result", obj);
+		session.setAttribute("token", "OK");
 	}
 
 
