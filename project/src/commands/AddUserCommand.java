@@ -33,18 +33,15 @@ public class AddUserCommand extends AbstractCommand {
 		user.setUserPassword(password);
 		user.setUserMail(mail);
 
-
-
-
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
 		dao.addUser(user);
 
+		reqc.setSession(user);
+
 		System.out.println("-- AddUserCommand --");
 
-
-
-	resc.setTarget("users/new");
+		resc.setTarget("index");
 		return resc;
 	}
 }
