@@ -26,7 +26,7 @@
 	<a href="carts.jsp">カート</a>
 	<p>ショップ</p>
 	<a href="guide/shop.jsp">ショップ開設ガイド</a>
-	<a href="open">ショップ解説ページ</a>
+	<a href="callopen">ショップ解説ページ</a>
 	<a href="shop/top.jsp">ショップ管理</a>
 	<a href="shop/setting">ショップ情報編集</a>
 	<a href="shop/items.jsp">商品管理</a>

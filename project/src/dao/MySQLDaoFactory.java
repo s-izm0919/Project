@@ -16,6 +16,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ItemImageDao getItemImageDao() {
 		return new MySQLItemImageDao();
 	}
+	/*
 	public CartDao getCartDao() {
 		return new MySQLCartDao();
 	}
@@ -55,4 +56,6 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public AdministratorMessageDao getAdministratorMessageDao() {
 		return new MySQLAdministratorMessageDao();
 	}
+	*/
+
 }
