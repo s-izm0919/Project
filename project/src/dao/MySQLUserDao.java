@@ -15,11 +15,12 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
             //
+
 
             String sql="insert into user(user_identified_name,user_name,user_password,user_mail)" + " values(?,?,?,?) ";
 
@@ -79,7 +80,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
              cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -143,7 +144,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
              cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -203,7 +204,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -256,7 +257,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
