@@ -16,12 +16,11 @@
 	<a href="logoutuser">ログアウト</a>
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>
 	<a href="callusersettings" >ユーザーの編集</a>
-	<a href="callindex">トップページ</a>
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<p>商品関係</p>
 	<a href="search.jsp">検索結果</a>
-	<a href="items.jsp"></a>
+	<a href="items">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
 	<a href="carts.jsp">カート</a>

@@ -1,0 +1,59 @@
+
+
+<style>
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   background-color: #e6e6e6;
+}
+/*--ヘッダー設定*/
+header {
+	background-color:white;
+	position: fixed; top: 0;
+	position: fixed;
+   	top: 0;
+   	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+   	display: flex;
+    align-items: center;
+}
+
+/* aタグの設定*/
+a {
+   text-decoration: none;
+   color: #4b4b4b;
+}
+
+/* iconの設定*/
+h1 img{
+    width: 35px;
+}
+/* ul要素の設定*/
+ul {
+   list-style: none;
+   margin: 0;
+   display: flex;
+}
+/* li要素の設定*/
+li {
+   margin: 0 0 0 15px;
+   font-size: 14px;
+}
+/* nav要素の設定*/
+nav {
+   margin: 0 0 0 auto;
+}
+h1.future {
+	position: relative;
+	top: 30px;
+	left: 30px;
+	overflow: auto;
+}
+</style>

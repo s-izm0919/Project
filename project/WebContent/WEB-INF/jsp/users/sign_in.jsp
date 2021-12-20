@@ -14,6 +14,10 @@
             <input type="submit" value="ログイン">
 
             <a href="forgetpassword">Forgetpassword </a>
+
+            <input type="submit" value="ログイン"><br><br>
+            <a href="new">アカウントを作る</a>
+
         </form>
     </body>
 </html>
