@@ -12,6 +12,8 @@
 
             パスワード（半角英数）<input type="password" name="userPassword" required><br>
             <input type="submit" value="ログイン">
+
+            <a href="forgetpassword">Forgetpassword </a>
         </form>
     </body>
 </html>
