@@ -11,20 +11,27 @@ public class AddShopCommand extends AbstractCommand {
 		System.out.println("-- AddShopCommand --");
 
 		RequestContext reqc = getRequestContext();
+		boolean f=false;
 
 
 		String userId=reqc.getParameter("userId")[0];
 		String shopName=reqc.getParameter("shopName")[0];
 		String shopExplanation =reqc.getParameter("shopExplanation")[0];
 		String sellerWord=reqc.getParameter("shopSellerword")[0];
-		//String shopIsopen=reqc.getParameter("shopIspoen")[0];
+
+		int shopIsopen=Integer.parseInt(reqc.getParameter("shopIspoen")[0]);
+		if("close".equals(shopIsopen)) {
+			shopIsopen=0;
+
+		}
+		else shopIsopen=1;
 
 
 		System.out.println("userId: " + userId);
 		System.out.println("shopName: " + shopName);
 		System.out.println("explanation: " + shopExplanation);
 		System.out.println("sellerword: " + sellerWord);
-		//System.out.println("isOpen: " + shopIsopen);
+		System.out.println("isOpen: " + shopIsopen);
 
 /*
 		User user = new User();
@@ -39,11 +46,13 @@ public class AddShopCommand extends AbstractCommand {
 		shop.setShopName(shopName);
 		shop.setShopExplanation(shopExplanation);
 		shop.setShopSellerword(sellerWord);
+		shop.setShopIsOpen(shopIsopen);
 
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopDao dao=factory.getShopDao();
 		dao.addShop(shop);
+
 
 		//reqc.setSession(shop);
 
