@@ -19,7 +19,7 @@
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<p>商品関係</p>
-	<a href="search.jsp">検索結果</a>
+	<a href="callitemlist">検索結果表示</a>
 	<a href="items">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
