@@ -14,12 +14,13 @@
             お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
 
 
-            <input type="radio" name="shopIsOpen" value="公開">公開
+            <input type="radio" name="shopIsOpen" value="open">公開
 
-            <input type="radio" name="shopIsOpen" value="非公開" checked>非公開
+            <input type="radio" name="shopIsOpen" value="close" checked>非公開
 
 
             <input type="submit" value="ショップを開設する">
+
         </form>
     </body>
 </html>
