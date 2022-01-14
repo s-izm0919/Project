@@ -24,7 +24,7 @@
 			        <select name="select" onChange="location.href=value;">
 
 			            <option value="new">ユーザー登録</option>
-			            <option value="sign_in">ログイン</option>
+			            <option value="callsigninpage">ログイン</option>
 
 			        </select>
 					</li>

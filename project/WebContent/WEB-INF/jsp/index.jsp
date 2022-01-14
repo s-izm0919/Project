@@ -20,7 +20,7 @@
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<a href="top">トップ</a>
 	<p>商品関係</p>
-	<a href="search.jsp">検索結果</a>
+	<a href="callitemlist">検索結果</a>
 	<a href="items">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
@@ -28,7 +28,7 @@
 	<p>ショップ</p>
 	<a href="guide/shop.jsp">ショップ開設ガイド</a>
 	<a href="callopen">ショップ解説ページ</a>
-	<a href="shop/top.jsp">ショップ管理</a>
+	<a href="callshopsettings">ショップ管理</a>
 	<a href="shop/setting">ショップ情報編集</a>
 	<a href="shop/items.jsp">商品管理</a>
 	<a href="shop/items/register.jsp">商品登録</a>

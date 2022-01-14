@@ -23,7 +23,7 @@
 
 				<li>
 			        <select name="select" onChange="location.href=value;">
-			        	<option value="#">${result.userName}</option>
+			        	<option value="#">${user.userName}</option>
 			            <option value="new">ユーザー登録</option>
 			            <option value="callsigninpage">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
@@ -38,6 +38,7 @@
 			            <option value="shop_sales">売上管理</option>
 			            <option value="shop_chatlist">ユーザーとのチャット</option>
 			            <option value="logoutuser">ログアウト</option>
+			            <option value="callopen">ショップ開設ページ</option>
 			        </select>
 					</li>
 
@@ -64,7 +65,7 @@
 		  <c:forEach begin="1" end="10" step="1" var="i">
 		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
 		  </c:forEach>
-		  <button type="button" onclick="alert('hello!')>もっと見る</button>
+
 		</ul>
 
         <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
