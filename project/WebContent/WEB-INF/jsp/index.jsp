@@ -14,7 +14,7 @@
 	<a href="callnew">ユーザー登録</a>
 	<a href="callsigninpage">ログイン</a>
 	<a href="logoutuser">ログアウト</a>
-	<a href="users/pass_reissue.jsp">パスワードの再発行</a>
+	<a href="callforgotpassword">パスワードの再発行</a>
 	<a href="callusersettings" >ユーザーの編集</a>
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
