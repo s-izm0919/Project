@@ -5,7 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.Shop;
 import bean.User;
-import context.RequestContext;
+
 
 public class SessionManager {
 	private static HttpServletRequest req;
@@ -13,8 +13,8 @@ public class SessionManager {
 
 	private SessionManager(){}
 
-	public static void getSession(RequestContext reqc) {
-		req=(HttpServletRequest)reqc.getRequest();
+	public static void getSession(HttpServletRequest request) {
+		req=request;
 		session=req.getSession();
 	}
 	public static void setAttribute(User user){

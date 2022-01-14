@@ -38,8 +38,6 @@ public class AddUserCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 		dao.addUser(user);
 
-		//reqc.setSession(user);
-		SessionManager.getSession(reqc);
 		SessionManager.setAttribute(user);
 
 		System.out.println("-- AddUserCommand --");
