@@ -24,7 +24,7 @@
 				<li>
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">${user.userName}</option>
-			            <option value="new">ユーザー登録</option>
+			            <option value="callnew">ユーザー登録</option>
 			            <option value="callsigninpage">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
 			            <option value="callusersettings">ユーザーアカウント設定</option>
@@ -66,6 +66,7 @@
 		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
 		  </c:forEach>
 		  <button type="button" >もっと見る</button>
+
 		</ul>・漫画、イラスト
 
 	<ul>
@@ -78,6 +79,7 @@
         <li>動物(イラスト)</li>
         <li>風景(イラスト)</li>
         <li>イラスト(その他)</li>
+
 	</ul>
 
 
@@ -116,7 +118,7 @@
 
 <h1>イラスト作品</h1>
 
-	
+
     </body>
     <footer>
         <p>ガイドページガイドページガイドページお知らせページ</p>

@@ -15,7 +15,7 @@
             
             <br>
 
-            <a href="forgetpassword">Forgetpassword </a>
+            <a href="forgetpassword"> </a>
             <a href="new">アカウントを作る</a>
 
         </form>
