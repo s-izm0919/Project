@@ -12,7 +12,7 @@ public class RemoveAccountCommand extends AbstractCommand {
 
 		RequestContext reqc = getRequestContext();
 
-		User user = (User)reqc.getSessionAttribute("result");
+		User user = (User)SessionManager.getAttribute("user");
 
 		System.out.println(user.getUserName());
 
@@ -20,8 +20,6 @@ public class RemoveAccountCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 		dao.removeUser(user.getUserIdentifiedName(),user.getUserMail(),user.getUserPassword());
 		System.out.println("ユーザーの削除(unused)");
-
-		SessionManager.getSession(reqc);
 
 		SessionManager.invalidate();
 
