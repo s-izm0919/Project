@@ -15,7 +15,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -79,8 +79,8 @@ public class MySQLUserDao implements UserDao{
 
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+            cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -143,8 +143,8 @@ public class MySQLUserDao implements UserDao{
         User u = null;
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+            cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -204,7 +204,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -257,7 +257,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -303,6 +303,72 @@ public class MySQLUserDao implements UserDao{
                 }
             }
         }
+    }
+    public User getUserPassword(String email){
+        Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        User u = null;
+        try{
+        	Class.forName("com.mysql.cj.jdbc.Driver");
+             cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/nozawa?characterEncoding=UTF-8&serverTimezone=JST",
+			"infox","prox");
+
+            cn.setAutoCommit(false);
+
+            String sql="select * from user where email='"+email+"'";
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+
+
+            while(rs.next()) {
+            u=new User();
+
+           // u.setUserId(rs.getString(1));
+            u.setUserId(rs.getString(1));
+            u.setUserMail(rs.getString(2));
+            u.setUserPassword(rs.getString(3));
+
+
+
+            }
+
+
+            cn.commit();
+        }catch(ClassNotFoundException e){
+        	System.out.println(e.getMessage());
+        }catch(SQLException e){
+            try{
+                cn.rollback();
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                try{
+                    if(cn !=null){
+                        cn.close();
+                    }
+                }catch(SQLException e3){
+                	System.out.println(e3.getMessage());
+                }
+            }
+        }
+        return u;
     }
 
 }

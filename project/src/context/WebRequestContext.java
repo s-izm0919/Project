@@ -3,12 +3,12 @@ package context;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
+import filter.SessionManager;
 
 public class WebRequestContext implements RequestContext {
 	private Map parameters;
 	private HttpServletRequest request;
-	private HttpSession session;
 	public WebRequestContext() {}
 
 	public String getCommandPath() {
@@ -30,18 +30,7 @@ public class WebRequestContext implements RequestContext {
 	public void setRequest(Object req) {
 		request = (HttpServletRequest) req;
 		parameters = request.getParameterMap();
-		session = (HttpSession)request.getSession();
+		SessionManager.getSession(request);
 	}
-
-	public Object getSessionAttribute(String name) {
-		return session.getAttribute(name);
-	}
-
-
-	public void setSession(Object obj) {
-		session.setAttribute("result", obj);
-		session.setAttribute("token", "OK");
-	}
-
 
 }
