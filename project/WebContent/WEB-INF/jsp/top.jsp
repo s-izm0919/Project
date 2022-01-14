@@ -23,11 +23,11 @@
 
 				<li>
 			        <select name="select" onChange="location.href=value;">
-			        	<option value="#">${result.userName}</option>
+			        	<option value="#">${user.userName}</option>
 			            <option value="new">ユーザー登録</option>
 			            <option value="callsigninpage">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
-			            <option value="setting">ユーザーアカウント設定</option>
+			            <option value="callusersettings">ユーザーアカウント設定</option>
 			            <option value="following">フォローしたショップ</option>
 			            <option value="follow_items">フォローしたショップの新着商品</option>
 			            <option value="users_chatlist">ショップとのチャット</option>
@@ -37,6 +37,7 @@
 			            <option value="shop_orders">注文一覧</option>
 			            <option value="shop_sales">売上管理</option>
 			            <option value="shop_chatlist">ユーザーとのチャット</option>
+			            <option value="callopen">ショップ解説ページ</option>
 			            <option value="logoutuser">ログアウト</option>
 			        </select>
 					</li>
@@ -65,13 +66,57 @@
 		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
 		  </c:forEach>
 		  <button type="button" >もっと見る</button>
-		</ul>
+		</ul>・漫画、イラスト
 
-        <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
-        <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
-        <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
-        <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
-        <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
+	<ul>
+        <li>壁紙</li>
+        <li>漫画作品</li>
+         <li>人物(漫画)</li>
+        <li>動物(漫画)</li>
+        <li>漫画(その他)</li>
+        <li>人物(イラスト)</li>
+        <li>動物(イラスト)</li>
+        <li>風景(イラスト)</li>
+        <li>イラスト(その他)</li>
+	</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+・写真
+
+風景(写真)
+
+人物(写真)
+
+動物(写真)
+
+集合
+
+アート写真
+
+モノクロ
+
+写真(その他)
+
+<h1>イラスト作品</h1>
+
+	
     </body>
     <footer>
         <p>ガイドページガイドページガイドページお知らせページ</p>
