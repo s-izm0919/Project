@@ -22,8 +22,8 @@ class GetShopInfoCommand extends AbstractCommand {
 		SessionManager.getSession(reqc);
 
 
-		String userId=((User)SessionManager.getAttribute("result")).getUserId();
-		System.out.println("userId"+userId);
+		String userId=((User)SessionManager.getAttribute("user")).getUserId();
+		System.out.println("userId:"+userId);
 
 		Shop shop=null;
 
@@ -33,7 +33,7 @@ class GetShopInfoCommand extends AbstractCommand {
 
 
 
-		shop = dao.getShopInfo(userId);
+		shop = dao.getUserShopInfo(userId);
 		System.out.println(shop);
 		System.out.println("shopId:"+shop.getShopId());
 
@@ -41,7 +41,7 @@ class GetShopInfoCommand extends AbstractCommand {
 
 		//resc.setResult(shop);
 		if(shop!=null) {
-			SessionManager.setAttribute("shopresult", shop);
+			SessionManager.setAttribute( shop);
 		}
 
 

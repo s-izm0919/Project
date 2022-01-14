@@ -4,6 +4,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
+import filter.SessionManager;
 
 class EditAccountCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
@@ -14,7 +15,13 @@ class EditAccountCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 
 		RequestContext reqc = getRequestContext();
-		String userId = reqc.getParameter("userId")[0];
+		SessionManager.getSession(reqc);
+
+
+		String userId=((User)SessionManager.getAttribute("user")).getUserId();
+		System.out.println("userId:"+userId);
+
+		//String userId = reqc.getParameter("userId")[0];
 		//String identifiedName = reqc.getParameter("userIdentifiedName")[0];
 		String userName = reqc.getParameter("userName")[0];
 		String userMail = reqc.getParameter("mail")[0];

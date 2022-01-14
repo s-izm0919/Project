@@ -3,6 +3,7 @@ import bean.User;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.MySQLUserDao;
+import filter.SessionManager;
 
 class GetUserCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
@@ -12,10 +13,16 @@ class GetUserCommand extends AbstractCommand {
 		MySQLUserDao dao=new MySQLUserDao();
 
 		RequestContext reqc = getRequestContext();
+		SessionManager.getSession(reqc);
 
-		String user_id = reqc.getParameter("user_id")[0];
+		String userId=((User)SessionManager.getAttribute("user")).getUserId();
+		System.out.println("userId"+userId);
 
-		user = dao.getUserInfo(user_id);
+
+
+
+		user = dao.getUserInfo(userId);
+
 
 
 		resc.setResult(user);

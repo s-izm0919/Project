@@ -3,6 +3,8 @@ package filter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import bean.Shop;
+import bean.User;
 import context.RequestContext;
 
 public class SessionManager {
@@ -15,14 +17,18 @@ public class SessionManager {
 		req=(HttpServletRequest)reqc.getRequest();
 		session=req.getSession();
 	}
-	public static void setAttribute(String name,Object result){
-		session.setAttribute(name,result);
+	public static void setAttribute(User user){
+		session.setAttribute("user",user);
 	}
+	public static void setAttribute(Shop shop) {
+		session.setAttribute("shop", shop);
+	}
+
 	public static Object getAttribute(String name){
 		return session.getAttribute(name);
 	}
+
 	public static void invalidate(){
 		session.invalidate();
 	}
 }
-

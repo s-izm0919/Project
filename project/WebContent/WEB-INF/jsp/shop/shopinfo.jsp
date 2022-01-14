@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-shopId:${shopresult.shopId}<br>
-shopName:${shopresult.shopName}
+shopId:${shop.shopId}<br>
+shopName:${shop.shopName}
 
 </body>
 </html>

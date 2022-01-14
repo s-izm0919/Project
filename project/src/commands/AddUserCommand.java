@@ -4,6 +4,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
+import filter.SessionManager;
 
 public class AddUserCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
@@ -37,7 +38,9 @@ public class AddUserCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 		dao.addUser(user);
 
-		reqc.setSession(user);
+		//reqc.setSession(user);
+		SessionManager.getSession(reqc);
+		SessionManager.setAttribute(user);
 
 		System.out.println("-- AddUserCommand --");
 
