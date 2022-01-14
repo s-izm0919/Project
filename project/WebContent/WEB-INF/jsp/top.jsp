@@ -40,7 +40,7 @@
 			        </select>
 					</li>
 
-		        <li><a href=notification""><i class="far fa-bell"></i>お知らせ</a></li>
+		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
 		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
 
