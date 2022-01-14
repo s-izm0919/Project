@@ -32,7 +32,7 @@ class EditAccountCommand extends AbstractCommand {
 
 		reqc.setSession(user);
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 
 	}
