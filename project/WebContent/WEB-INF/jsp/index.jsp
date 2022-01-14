@@ -11,7 +11,7 @@
 	user名:${user.userName}
 	<a href=""></a>
 	<p>ユーザー系</p>
-	<a href="new">ユーザー登録</a>
+	<a href="callnew">ユーザー登録</a>
 	<a href="callsigninpage">ログイン</a>
 	<a href="logoutuser">ログアウト</a>
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>

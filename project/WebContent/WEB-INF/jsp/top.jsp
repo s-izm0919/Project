@@ -24,7 +24,7 @@
 				<li>
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">${user.userName}</option>
-			            <option value="new">ユーザー登録</option>
+			            <option value="callnew">ユーザー登録</option>
 			            <option value="callsigninpage">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
 			            <option value="setting">ユーザーアカウント設定</option>
