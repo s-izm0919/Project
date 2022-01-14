@@ -4,6 +4,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
+import filter.SessionManager;
 
 class EditAccountCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
@@ -14,7 +15,11 @@ class EditAccountCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 
 		RequestContext reqc = getRequestContext();
-		String userId = reqc.getParameter("userId")[0];
+
+		String userId=((User)SessionManager.getAttribute("user")).getUserId();
+		System.out.println("userId:"+userId);
+
+		//String userId = reqc.getParameter("userId")[0];
 		//String identifiedName = reqc.getParameter("userIdentifiedName")[0];
 		String userName = reqc.getParameter("userName")[0];
 		String userMail = reqc.getParameter("mail")[0];
@@ -28,9 +33,8 @@ class EditAccountCommand extends AbstractCommand {
 		dao.updateUser(userId, userName, userMail);
 
 		User updatedser=dao.getUserInfo(userId);
-		resc.setResult(updatedser);
 
-		reqc.setSession(updatedser);
+		SessionManager.setAttribute(updatedser);
 
 		resc.setTarget("top");
 		return resc;
