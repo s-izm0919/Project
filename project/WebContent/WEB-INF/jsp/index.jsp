@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%--JSTL 1.1.2 core タグライブラリ--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,5 +40,14 @@
 	<a href="shop/sales.jsp">売上管理</a>
 	<a href="shop/chatlist.jsp">ユーザーとのチャット一覧</a>
 	<a href=""></a>
+	<p>いずみ</p>
+	<a href="try">実験</a><br>
+	${result["item"].itemName}<br>
+	${result["item"].itemPrice }<br>
+	<c:forEach var="list" items='${result["list"]}'>
+        <th><c:out value="${list}"/></th>
+        </c:forEach>
+
+
 </body>
 </html>
