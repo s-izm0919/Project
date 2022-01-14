@@ -9,6 +9,8 @@
 <body>
 	<h1>簡易ページリンク一覧(html式)</h1>
 	user名:${user.userName}
+	<br>
+	shop名:${shop }
 	<a href=""></a>
 	<p>ユーザー系</p>
 	<a href="new">ユーザー登録</a>
