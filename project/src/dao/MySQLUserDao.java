@@ -1,11 +1,11 @@
 package dao;
 import  java.sql.Connection;
-import  java.sql.DriverManager;
 import  java.sql.PreparedStatement;
 import  java.sql.ResultSet;
 import  java.sql.SQLException;
 
 import bean.User;
+import utility.Connector;
 
 public class MySQLUserDao implements UserDao{
 
@@ -13,12 +13,7 @@ public class MySQLUserDao implements UserDao{
         Connection cn=null;
         PreparedStatement st=null;
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
-
-            cn.setAutoCommit(false);
+        	cn = Connector.getInstance().beginTransaction();
             //
 
             String sql="insert into user(user_identified_name,user_name,user_password,user_mail)" + " values(?,?,?,?) ";
@@ -34,21 +29,11 @@ public class MySQLUserDao implements UserDao{
 
             st.executeUpdate();
 
-            cn.commit();
+            Connector.getInstance().commit();
 
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            System.out.println(e.getMessage());
-
-            }
+            Connector.getInstance().rollback();
         }
         finally{
             try{
@@ -59,12 +44,8 @@ public class MySQLUserDao implements UserDao{
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -77,12 +58,7 @@ public class MySQLUserDao implements UserDao{
         User u = null;
 
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
-
-            cn.setAutoCommit(false);
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="select * from user where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'"+" and unused = 1";
 
@@ -102,15 +78,9 @@ public class MySQLUserDao implements UserDao{
 	            u.setUserPoint(rs.getInt(6));
             }
 
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -123,13 +93,9 @@ public class MySQLUserDao implements UserDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
-                }
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
+            	}
             }
         }
         return u;
@@ -141,12 +107,7 @@ public class MySQLUserDao implements UserDao{
 
         User u = null;
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
-
-            cn.setAutoCommit(false);
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="select * from user where user_id='"+userId+"'";
 
@@ -164,15 +125,10 @@ public class MySQLUserDao implements UserDao{
             u.setUserMail(rs.getString(5));
             u.setUserPoint(rs.getInt(6));
 
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -185,12 +141,8 @@ public class MySQLUserDao implements UserDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -201,12 +153,7 @@ public class MySQLUserDao implements UserDao{
     	Connection cn=null;
         PreparedStatement st=null;
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
-
-            cn.setAutoCommit(false);
+        	cn = Connector.getInstance().beginTransaction();
             //
 
             String sql="update user set user_name='"+userName+"', user_mail='"+userMail+"' where user_id='"+userId+"'";
@@ -215,21 +162,11 @@ public class MySQLUserDao implements UserDao{
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
         }
         finally{
             try{
@@ -240,12 +177,8 @@ public class MySQLUserDao implements UserDao{
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -254,12 +187,7 @@ public class MySQLUserDao implements UserDao{
     	Connection cn=null;
         PreparedStatement st=null;
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
-
-            cn.setAutoCommit(false);
+        	cn = Connector.getInstance().beginTransaction();
             //
 
             String sql="update user set unused=0 where (user_identified_name='"+userIdentifiedName+"' or user_mail='"+userMail+"') and user_password='"+userPassword+"'";
@@ -268,21 +196,11 @@ public class MySQLUserDao implements UserDao{
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
         }
         finally{
             try{
@@ -293,12 +211,8 @@ public class MySQLUserDao implements UserDao{
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
                 }
             }
         }
