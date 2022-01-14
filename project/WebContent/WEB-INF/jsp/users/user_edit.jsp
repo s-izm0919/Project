@@ -17,11 +17,11 @@
 			<th>point</th>
 		</tr>
 			<tr>
-			<td>${result.userIdentifiedName}</td>
-				<td>${result.userName}</td>
-				<td>${result.userPassword}</td>
-				<td>${result.userMail}</td>
-				<td>${result.userPoint}</td>
+			<td>${user.userIdentifiedName}</td>
+				<td>${user.userName}</td>
+				<td>${user.userPassword}</td>
+				<td>${user.userMail}</td>
+				<td>${user.userPoint}</td>
 			</tr>
 	</table>
 
