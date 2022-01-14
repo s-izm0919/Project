@@ -1,11 +1,10 @@
 package commands;
 import bean.Shop;
 import bean.User;
-import dao.ShopDao;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
-import dao.UserDao;
+import dao.ShopDao;
 import filter.SessionManager;
 
 public class AddShopCommand extends AbstractCommand {
@@ -14,8 +13,6 @@ public class AddShopCommand extends AbstractCommand {
 
 		RequestContext reqc = getRequestContext();
 		boolean f=false;
-
-		SessionManager.getSession(reqc);
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId"+userId);
@@ -61,7 +58,6 @@ public class AddShopCommand extends AbstractCommand {
 		ShopDao dao=factory.getShopDao();
 		dao.addShop(shop);
 
-		SessionManager.getSession(reqc);
 		SessionManager.setAttribute(shop);
 
 

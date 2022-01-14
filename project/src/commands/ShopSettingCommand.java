@@ -1,6 +1,6 @@
 package commands;
-import bean.User;
 import bean.Shop;
+import bean.User;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
@@ -16,7 +16,6 @@ class ShopSettingCommand extends AbstractCommand {
 		RequestContext reqc = getRequestContext();
 		//String shopId=reqc.getParameter("shopId")[0];
 		//String userId = reqc.getParameter("userId")[0];
-		SessionManager.getSession(reqc);
 		System.out.println("testsetting");
 
 
@@ -53,7 +52,7 @@ class ShopSettingCommand extends AbstractCommand {
 		ShopDao dao=factory.getShopDao();
 		dao.updateShop(shop);
 		System.out.println("test-------");
-		Shop newShopInfo=dao.getShopInfo(userId);
+		Shop newShopInfo=dao.getUserShopInfo(userId);
 		System.out.println("newShopInfo:"+newShopInfo.getShopName());
 		 			//reqc.setSession(newShopInfo);
 			if(shop!=null) {

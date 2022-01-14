@@ -1,11 +1,11 @@
 package commands;
-import bean.User;
 import bean.Shop;
+import bean.User;
 import context.RequestContext;
 import context.ResponseContext;
+import dao.AbstractDaoFactory;
 //import dao.MySQLUserDao;
 import dao.ShopDao;
-import dao.AbstractDaoFactory;
 import filter.SessionManager;
 //import dao.MySQLShopDao;
 
@@ -18,11 +18,7 @@ class GetShopInfoCommand extends AbstractCommand {
 		//String userId = reqc.getParameter("user_id")[0];
 		//System.out.println("userId"+userId);
 
-
-		SessionManager.getSession(reqc);
-
-
-		String userId=((User)SessionManager.getAttribute("result")).getUserId();
+		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId"+userId);
 
 		Shop shop=null;

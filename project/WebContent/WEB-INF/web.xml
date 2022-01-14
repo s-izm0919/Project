@@ -29,6 +29,7 @@
         <filter-name>authenticatedFilter</filter-name>
         <url-pattern>/callusersettings</url-pattern>
         <url-pattern>/callopen</url-pattern>
+        <url-pattern>/callsigninpage</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
 
