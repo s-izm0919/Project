@@ -45,5 +45,6 @@ public abstract class AbstractDaoFactory{
         return factory;
         }
         public abstract UserDao getUserDao();
+        public  abstract ShopDao getShopDao();
 
     }
