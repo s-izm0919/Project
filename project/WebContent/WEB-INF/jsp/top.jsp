@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
-
+        <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
     <head>
         <title>トップページ</title>
@@ -57,7 +58,14 @@
 			<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"></p>
         </h2>
 
-        <h1>閲覧履歴 &nbsp; もっと見る</h1>
+        <h3 class="history">閲覧履歴</h3>
+
+        <ul class="historyimg">
+		  <c:forEach begin="1" end="10" step="1" var="i">
+		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
+		  </c:forEach>
+		  <button type="button" onclick="alert('hello!')>もっと見る</button>
+		</ul>
 
         <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
         <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>

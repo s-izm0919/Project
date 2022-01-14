@@ -66,4 +66,20 @@ h2.future {
 	left: 30px;
 	overflow: auto;
 }
+/* 閲覧履歴の設定*/
+ul.historyimg{
+	justify-content:center;
+}
+
+ul.historyimg li {
+	display: flex;
+
+}
+
+
+h3.history{
+	text-align: center;
+
+}
+
 </style>
