@@ -13,6 +13,7 @@
     <filter-mapping>
         <filter-name>loginCheckFilter</filter-name>
         <url-pattern>/callusersettings</url-pattern>
+        <url-pattern>/callsignin</url-pattern>
         <url-pattern>/callsigninpage</url-pattern>
          <url-pattern>/callopen</url-pattern>
           <url-pattern>/callshopsettings</url-pattern>
@@ -28,9 +29,9 @@
         <filter-name>authenticatedFilter</filter-name>
         <url-pattern>/callusersettings</url-pattern>
         <url-pattern>/callopen</url-pattern>
-         <url-pattern>/callshopsettings</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
+
     </filter-mapping>
 
 

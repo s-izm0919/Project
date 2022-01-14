@@ -15,8 +15,6 @@ class EditAccountCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 
 		RequestContext reqc = getRequestContext();
-		SessionManager.getSession(reqc);
-
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId:"+userId);
@@ -35,9 +33,7 @@ class EditAccountCommand extends AbstractCommand {
 		dao.updateUser(userId, userName, userMail);
 
 		User updatedser=dao.getUserInfo(userId);
-		resc.setResult(updatedser);
-
-		reqc.setSession(updatedser);
+		SessionManager.setAttribute(updatedser);
 
 		resc.setTarget("index");
 		return resc;
