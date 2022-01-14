@@ -103,7 +103,7 @@ public class PasswordRemainderCommand extends AbstractCommand {
 
 
 
-	resc.setTarget("index");
+	resc.setTarget("adduser");
 		return resc;
 	}
 }

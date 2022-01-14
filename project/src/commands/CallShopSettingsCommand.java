@@ -10,5 +10,3 @@ public class CallShopSettingsCommand extends AbstractCommand {
 		return resc;
 	}
 }
-
-//

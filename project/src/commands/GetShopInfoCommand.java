@@ -22,8 +22,8 @@ class GetShopInfoCommand extends AbstractCommand {
 		SessionManager.getSession(reqc);
 
 
-		String userId=((User)SessionManager.getAttribute("user")).getUserId();
-		System.out.println("userId:"+userId);
+		String userId=((User)SessionManager.getAttribute("result")).getUserId();
+		System.out.println("userId"+userId);
 
 		Shop shop=null;
 
