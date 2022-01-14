@@ -42,7 +42,7 @@ public class AddUserCommand extends AbstractCommand {
 
 		System.out.println("-- AddUserCommand --");
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 	}
 }

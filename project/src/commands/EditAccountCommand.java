@@ -36,7 +36,7 @@ class EditAccountCommand extends AbstractCommand {
 
 		SessionManager.setAttribute(updatedser);
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 
 	}

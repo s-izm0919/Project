@@ -9,7 +9,8 @@ body {
    margin: 0;
    padding: 0;
    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   background-color: #e6e6e6;
+   background-color: #EEEEEE;
+
 }
 /*--ヘッダー設定*/
 header {
@@ -23,6 +24,7 @@ header {
    	display: flex;
     align-items: center;
     z-index:100;
+    border: 1.25px solid #ddd;
 }
 
 /* aタグの設定*/
@@ -33,7 +35,12 @@ a {
 
 /* iconの設定*/
 h1 img{
-    width: 35px;
+  width:  32.5px;
+  height: 32.5px;
+  object-fit: contain;
+  position: absolute;
+  top: 0px;
+
 }
 /* ul要素の設定*/
 ul {
@@ -52,34 +59,55 @@ nav {
 }
 
 
-/* 特集の設定*/
-h2 img{
-    width: 200px;
-}
-
-h2.future {
-  	display: flex;
-    justify-content: center;
+h1.yohaku {
 	z-index:10;
 	position: relative;
-	top: 50px;
-	left: 30px;
+	top: 3px;
 	overflow: auto;
-}
-/* 閲覧履歴の設定*/
-ul.historyimg{
-	justify-content:center;
+	color : #000000;
 }
 
-ul.historyimg li {
-	display: flex;
+div.sent
+{;
+    justify-content: center;
 
 }
 
+/* レイアウト用スタイル */
+.boxwrap{
+  margin:40px auto;
+  width:400px;
+  padding:20px 60px;
 
-h3.history{
-	text-align: center;
+}
+.wrap{
+     margin: auto;
+    width: 300px;
+    background-color: white;
+    color: #fff;
+    border-radius: 15px;
 
+    border:1px solid #ddd;
+
+}
+
+.mgb-20{
+  margin-bottom: 20px;
+}
+
+.mgb-80{
+  margin-bottom: 80px;
+}
+/* ③tableレイアウトとvertical-alignで中央配置 */
+.wrap.pattern-3{
+  height:60px;
+  display:table;
+  text-align:center;
+}
+
+.wrap.pattern-3 div{
+  display:table-cell;
+  vertical-align:middle;
 }
 
 </style>

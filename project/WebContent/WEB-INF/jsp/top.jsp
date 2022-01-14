@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
-
+        <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
     <head>
         <title>トップページ</title>
@@ -22,9 +23,9 @@
 
 				<li>
 			        <select name="select" onChange="location.href=value;">
-			        	<option value="#">ユーザー名</option>
+			        	<option value="#">${result.userName}</option>
 			            <option value="new">ユーザー登録</option>
-			            <option value="sign_in">ログイン</option>
+			            <option value="callsigninpage">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
 			            <option value="setting">ユーザーアカウント設定</option>
 			            <option value="following">フォローしたショップ</option>
@@ -36,11 +37,11 @@
 			            <option value="shop_orders">注文一覧</option>
 			            <option value="shop_sales">売上管理</option>
 			            <option value="shop_chatlist">ユーザーとのチャット</option>
-			            <option value="">ログアウト</option>
+			            <option value="logoutuser">ログアウト</option>
 			        </select>
 					</li>
 
-		        <li><a href=notification""><i class="far fa-bell"></i>お知らせ</a></li>
+		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
 		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
 
@@ -51,11 +52,20 @@
 	        </nav>
     </header>
 
-    	<h1 class="future">
-        	特集ページ左 &nbsp; 特集ページ中 &nbsp; 特集ページ右
-        </h1>
+    	<h2 class="future">
+        	<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
+        	<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
+			<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"></p>
+        </h2>
 
-        <h1>閲覧履歴 &nbsp; もっと見る</h1>
+        <h3 class="history">閲覧履歴</h3>
+
+        <ul class="historyimg">
+		  <c:forEach begin="1" end="10" step="1" var="i">
+		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
+		  </c:forEach>
+		  <button type="button" >もっと見る</button>
+		</ul>
 
         <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
         <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>

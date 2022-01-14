@@ -1,21 +1,59 @@
-
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
 
 <html>
     <head>
         <title>ユーザー登録</title>
+		<%@include file="../../../css/new.css" %>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
-        <h1>ユーザー登録</h1>
-        <form method="POST" action="adduser">
-            ユーザー名<input type="text" name="userName" maxlength="20" required><br>
-            ユーザーID（半角英数）<input type="text" name="userIdentifiedName" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br>
-            パスワード（半角英数）<input type="password" name="userPassword" maxlength="20" pattern="^[a-zA-Z0-9]+$"  required><br>
-            メールアドレス<input type="email" name="userMail" maxlength="300" required><br>
-            <input type="submit" value="登録">
-        </form>
+        <header>
 
+    		<h1>
+			<a href="top">
+			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
+			</h1>
+			<nav class="hd-nav">
+				<ul>
+				<li>
+		        <input type="text" name="search" value="検索" >
+		        </li>
+
+				<li>
+			        <select name="select" onChange="location.href=value;">
+
+			            <option value="new">ユーザー登録</option>
+			            <option value="sign_in">ログイン</option>
+
+			        </select>
+					</li>
+
+		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
+
+		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
+
+
+		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
+
+		        </ul>
+	        </nav>
+    </header>
+<br><br><br><br><br><br>
+	<div class="boxwrap">
+		<div class="wrap pattern-3 mhb-20">
+
+        <h1 class="yohaku">ユーザー登録</h1>
+        <form method="POST" action="adduser">
+           	<input type="text" name="userName" placeholder="ユーザー名" maxlength="20" required><br><br>
+            <input type="text" name="userIdentifiedName" placeholder="ユーザーID（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><br>
+            <input type="password" name="userPassword" placeholder="パスワード（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$"  required><br><br>
+            <input type="email" name="userMail" placeholder="メールアドレス" maxlength="300" required><br><br>
+            <input type="submit" value="登録する">
+        </form>
+        </div>
+
+	</div>
 
     </body>
 
