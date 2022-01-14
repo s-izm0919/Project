@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
-	user名:${result.userName}
+	user名:${user.userName}
 	<a href=""></a>
 	<p>ユーザー系</p>
 	<a href="new">ユーザー登録</a>
