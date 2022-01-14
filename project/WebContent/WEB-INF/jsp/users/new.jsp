@@ -25,18 +25,7 @@
 
 			            <option value="new">ユーザー登録</option>
 			            <option value="sign_in">ログイン</option>
-			            <option value="guide_shop">ショップ開設ガイド</option>
-			            <option value="setting">ユーザーアカウント設定</option>
-			            <option value="following">フォローしたショップ</option>
-			            <option value="follow_items">フォローしたショップの新着商品</option>
-			            <option value="users_chatlist">ショップとのチャット</option>
-			            <option value="uders_orders">購入履歴</option>
-			            <option value="shop_top">ショップ管理</option>
-			            <option value="shop_items">商品管理</option>
-			            <option value="shop_orders">注文一覧</option>
-			            <option value="shop_sales">売上管理</option>
-			            <option value="shop_chatlist">ユーザーとのチャット</option>
-			            <option value="logoutuser">ログアウト</option>
+
 			        </select>
 					</li>
 
@@ -50,16 +39,21 @@
 		        </ul>
 	        </nav>
     </header>
+<br><br><br><br><br><br>
+	<div class="boxwrap">
+		<div class="wrap pattern-3 mhb-20">
 
         <h1 class="yohaku">ユーザー登録</h1>
         <form method="POST" action="adduser">
-           	<input type="text" name="userName" placeholder="ユーザー名" maxlength="20" required><br>
-            <input type="text" name="userIdentifiedName" placeholder="ユーザーID（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br>
-            <input type="password" name="userPassword" placeholder="パスワード（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$"  required><br>
-            <input type="email" name="userMail" placeholder="メールアドレス" maxlength="300" required><br>
-            <input type="submit" value="登録">
+           	<input type="text" name="userName" placeholder="ユーザー名" maxlength="20" required><br><br>
+            <input type="text" name="userIdentifiedName" placeholder="ユーザーID（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><br>
+            <input type="password" name="userPassword" placeholder="パスワード（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$"  required><br><br>
+            <input type="email" name="userMail" placeholder="メールアドレス" maxlength="300" required><br><br>
+            <input type="submit" value="登録する">
         </form>
+        </div>
 
+	</div>
 
     </body>
 
