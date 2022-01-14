@@ -15,7 +15,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -79,8 +79,8 @@ public class MySQLUserDao implements UserDao{
 
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+            cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -143,8 +143,8 @@ public class MySQLUserDao implements UserDao{
         User u = null;
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+            cn = DriverManager.getConnection(
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -204,7 +204,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);
@@ -257,7 +257,7 @@ public class MySQLUserDao implements UserDao{
         try{
         	Class.forName("com.mysql.cj.jdbc.Driver");
             cn = DriverManager.getConnection(
-			"jdbc:mysql://aws-and-infra-web.cmhqjlcrgf5h.ap-northeast-1.rds.amazonaws.com:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
+			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
 			"booth","pass");
 
             cn.setAutoCommit(false);

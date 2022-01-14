@@ -4,6 +4,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
+import filter.SessionManager;
 
 class EditAccountCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
@@ -28,9 +29,7 @@ class EditAccountCommand extends AbstractCommand {
 		dao.updateUser(userId, userName, userMail);
 
 		User updatedser=dao.getUserInfo(userId);
-		resc.setResult(updatedser);
-
-		reqc.setSession(updatedser);
+		SessionManager.setAttribute(updatedser);
 
 		resc.setTarget("index");
 		return resc;

@@ -70,7 +70,7 @@ public class LoginCheckFilter implements Filter {
 
 			if(user!=null) {
 				session.setAttribute("token","OK");
-				session.setAttribute("result", user);
+				session.setAttribute("user", user);
 			}
 		}
 
