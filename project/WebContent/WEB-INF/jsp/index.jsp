@@ -7,7 +7,7 @@
 <title>ページ移動画面</title>
 </head>
 <body>
-	<h1>簡易ページリンク一覧(html式)</h1>
+	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
 	user名:${result.userName}
 	<a href=""></a>
 	<p>ユーザー系</p>
@@ -18,6 +18,7 @@
 	<a href="callusersettings" >ユーザーの編集</a>
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
+	<a href="top">トップ</a>
 	<p>商品関係</p>
 	<a href="callitemlist">検索結果表示</a>
 	<a href="items">商品ページ</a>

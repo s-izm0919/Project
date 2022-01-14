@@ -8,18 +8,23 @@
     <body>
         <h1>ショップ開設</h1>
         <form method="POST" action="addshop">
-        <input type="hidden" name="userId"  value="${result.userId}"><br>
+
             ショップ名<input type="text" name="shopName" maxlength="40" required><br>
            	紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
+<<<<<<< HEAD
+            お礼の一言<input type="text" name="shopSellerWord" maxlength="400" ><br>
+=======
             お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
 
+>>>>>>> branch 'master' of git@github.com:s-izm0919/Project.git
 
-            <input type="radio" name="shopIsOpen" value="公開">公開
+            <input type="radio" name="shopIsOpen" value="open">公開
 
-            <input type="radio" name="shopIsOpen" value="非公開" checked>非公開
+            <input type="radio" name="shopIsOpen" value="close" checked>非公開
 
 
             <input type="submit" value="ショップを開設する">
+
         </form>
     </body>
 </html>

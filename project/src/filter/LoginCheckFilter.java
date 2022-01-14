@@ -51,8 +51,8 @@ public class LoginCheckFilter implements Filter {
 			System.out.println("email: " + mail);
 
 
-			User user = new User();
-			user=null;
+
+		User	user=null;
 
 			HttpSession session = ((HttpServletRequest)req).getSession();
 
@@ -60,9 +60,10 @@ public class LoginCheckFilter implements Filter {
 			UserDao dao=factory.getUserDao();
 			if(userIdentifiedName!=null&&mail==null) {
 				user=dao.login(userIdentifiedName,null,password);
-				System.out.println(user);
+				System.out.println("user:"+user);
 			}else if(userIdentifiedName==null&&mail!=null) {
 				user=dao.login(null,mail,password);
+				System.out.println("user:"+user);
 			}
 			else {
 				System.out.println("loginできない");
@@ -70,7 +71,7 @@ public class LoginCheckFilter implements Filter {
 
 			if(user!=null) {
 				session.setAttribute("token","OK");
-				session.setAttribute("result", user);
+				session.setAttribute("user", user);
 			}
 		}
 
