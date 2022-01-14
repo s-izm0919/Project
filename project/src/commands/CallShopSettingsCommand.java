@@ -2,13 +2,11 @@ package commands;
 
 import context.ResponseContext;
 
-public class CallForgetPasswordCommand extends AbstractCommand {
+public class CallShopSettingsCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 
 
-		resc.setTarget("users/reissue");
+		resc.setTarget("shop/settings");
 		return resc;
 	}
 }
-
-//

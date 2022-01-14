@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import bean.Shop;
 import bean.User;
 
+
 public class SessionManager {
 	private static HttpServletRequest req;
 	private static HttpSession session;
@@ -31,4 +32,3 @@ public class SessionManager {
 		session.invalidate();
 	}
 }
-

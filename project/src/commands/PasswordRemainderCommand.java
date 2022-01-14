@@ -1,11 +1,6 @@
 package commands;
-import dao.AbstractDaoFactory;
-import dao.UserDao;
-import bean.User;
-
-
-
 import java.util.Properties;
+
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
@@ -14,8 +9,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import bean.User;
 import context.RequestContext;
 import context.ResponseContext;
+import dao.AbstractDaoFactory;
+import dao.UserDao;
 
 public class PasswordRemainderCommand extends AbstractCommand {
 	@SuppressWarnings("unused")
@@ -107,8 +105,4 @@ public class PasswordRemainderCommand extends AbstractCommand {
 		return resc;
 	}
 }
-
-
-
-
 

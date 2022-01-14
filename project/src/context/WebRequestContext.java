@@ -32,5 +32,4 @@ public class WebRequestContext implements RequestContext {
 		parameters = request.getParameterMap();
 		SessionManager.getSession(request);
 	}
-
 }
