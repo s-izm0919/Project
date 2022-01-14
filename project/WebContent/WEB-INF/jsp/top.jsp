@@ -64,7 +64,7 @@
 		  <c:forEach begin="1" end="10" step="1" var="i">
 		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
 		  </c:forEach>
-		  <button type="button" onclick="alert('hello!')>もっと見る</button>
+		  <button type="button" >もっと見る</button>
 		</ul>
 
         <p>カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ&nbsp;&nbsp;カテゴリ</p>
