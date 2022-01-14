@@ -12,4 +12,3 @@ class CallShopInfoCommand extends AbstractCommand {
 	}
 }
 
-

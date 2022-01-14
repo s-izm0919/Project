@@ -38,13 +38,7 @@ public class AddShopCommand extends AbstractCommand {
 		System.out.println("sellerword: " + sellerWord);
 		System.out.println("isOpen: " + shopIsopen);
 
-/*
-		User user = new User();
-		user.setUserIdentifiedName(nickName);
-		user.setUserName(userName);
-		user.setUserPassword(password);
-		user.setUserMail(mail);
-		*/
+
 
 		Shop shop=new Shop();
 		shop.setUserId(userId);
