@@ -33,9 +33,10 @@ class EditAccountCommand extends AbstractCommand {
 		dao.updateUser(userId, userName, userMail);
 
 		User updatedser=dao.getUserInfo(userId);
+
 		SessionManager.setAttribute(updatedser);
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 
 	}

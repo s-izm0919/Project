@@ -1,4 +1,3 @@
-
 package commands;
 
 import context.ResponseContext;
@@ -12,3 +11,4 @@ class CallShopInfoCommand extends AbstractCommand {
 
 	}
 }
+

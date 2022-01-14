@@ -13,7 +13,6 @@ class GetUserCommand extends AbstractCommand {
 		MySQLUserDao dao=new MySQLUserDao();
 
 		RequestContext reqc = getRequestContext();
-		SessionManager.getSession(reqc);
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId"+userId);
