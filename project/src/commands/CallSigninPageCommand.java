@@ -6,7 +6,7 @@ class CallSigninPageCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 
-	resc.setTarget("index");
+	resc.setTarget("top");
 		return resc;
 
 	}

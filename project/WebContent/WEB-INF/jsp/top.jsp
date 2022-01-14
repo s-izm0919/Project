@@ -24,7 +24,7 @@
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">${result.userName}</option>
 			            <option value="new">ユーザー登録</option>
-			            <option value="sign_in">ログイン</option>
+			            <option value="callsigninpage">ログイン</option>
 			            <option value="guide_shop">ショップ開設ガイド</option>
 			            <option value="setting">ユーザーアカウント設定</option>
 			            <option value="following">フォローしたショップ</option>
@@ -52,7 +52,7 @@
     </header>
 
     	<h2 class="future">
-        	<p class="left"><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
+        	<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
         	<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"> &nbsp;</p>
 			<p><img src="<%=application.getRealPath("/")%>images\toku.jpg"></p>
         </h2>

@@ -58,6 +58,8 @@ h2 img{
 }
 
 h2.future {
+  	display: flex;
+    justify-content: center;
 	z-index:10;
 	position: relative;
 	top: 50px;
