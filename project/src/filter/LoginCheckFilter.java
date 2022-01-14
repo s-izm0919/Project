@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import bean.User;
+import bean.Shop;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
+import dao.ShopDao;
 
 
 public class LoginCheckFilter implements Filter {
@@ -70,12 +72,19 @@ public class LoginCheckFilter implements Filter {
 			}
 
 			if(user!=null) {
+
 				session.setAttribute("token","OK");
 				session.setAttribute("user", user);
 			}
+			System.out.println("start shop session");
+
+
+
 		}
 
+
         chain.doFilter(req,res);
+
 
     }
 }
