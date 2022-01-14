@@ -27,10 +27,10 @@ class EditAccountCommand extends AbstractCommand {
 
 		dao.updateUser(userId, userName, userMail);
 
-		User user=dao.getUserInfo(userId);
-		resc.setResult(user);
+		User updatedser=dao.getUserInfo(userId);
+		resc.setResult(updatedser);
 
-		reqc.setSession(user);
+		reqc.setSession(updatedser);
 
 		resc.setTarget("index");
 		return resc;

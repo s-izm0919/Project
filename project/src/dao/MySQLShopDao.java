@@ -24,19 +24,22 @@ public class MySQLShopDao implements ShopDao {
             cn.setAutoCommit(false);
             //
 
-            String sql="insert into shop(shop_id,user_id,shop_name,shop_explanation,shop_earning,shop_is_open,shop_sellerword)" + " values(?,?,?,?,?,?,?) ";
+           // String sql="insert into shop(shop_id,user_id,shop_name,shop_explanation,shop_earning,shop_is_open,shop_sellerword)" + " values(?,?,?,?,?,?,?) ";
+
+            String sql="insert into shop(user_id,shop_name,shop_explanation,shop_earning,shop_is_open,shop_sellerword)" + " values(?,?,?,?,?,?) ";
+
 
             st=cn.prepareStatement(sql);
 
-            st.setString(1, "S10");
-            st.setString(2, shopInfo.getUserId());
-            st.setString(3, shopInfo.getShopName());
-            st.setString(4, shopInfo.getShopExplanation());
-            st.setInt(5, 0);	//notnull制約のため
+
+            st.setString(1, shopInfo.getUserId());
+            st.setString(2, shopInfo.getShopName());
+            st.setString(3, shopInfo.getShopExplanation());
+            st.setInt(4, 0);	//notnull制約のため
             					//nullでなければ問題ないので
             					//commandでsetterを使っている場合は消してください
-            st.setInt(6, shopInfo.getShopIsOpen());
-            st.setString(7, shopInfo.getShopSellerword());
+           st.setInt(5, 1);
+            st.setString(6, shopInfo.getShopSellerword());
 
             st.executeUpdate();
 
