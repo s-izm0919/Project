@@ -82,7 +82,7 @@ div.sent
 }
 .wrap{
      margin: auto;
-    width: 300px;
+    width: 420px;
     background-color: white;
     color: #fff;
     border-radius: 15px;
@@ -110,4 +110,8 @@ div.sent
   vertical-align:middle;
 }
 
+a.color
+{
+	color: Black;
+}
 </style>

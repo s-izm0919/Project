@@ -20,14 +20,9 @@
 		        <input type="text" name="search" value="検索" >
 		        </li>
 
-				<li>
-			        <select name="select" onChange="location.href=value;">
+		        <li><a href="callnew">ユーザー登録</a></li>
 
-			            <option value="callnew">ユーザー登録</option>
-			            <option value="callsigninpage">ログイン</option>
-
-			        </select>
-					</li>
+		        <li><a href="callsigninpage">ログイン</a></li>
 
 		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
@@ -39,7 +34,7 @@
 		        </ul>
 	        </nav>
     </header>
-<br><br><br><br><br><br>
+<br><br><br><br>
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20">
 
