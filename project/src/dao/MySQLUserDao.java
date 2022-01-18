@@ -10,8 +10,10 @@ import utility.Connector;
 public class MySQLUserDao implements UserDao{
 
     public void addUser(User userInfo){
+
         Connection cn=null;
         PreparedStatement st=null;
+
         try{
         	cn = Connector.getInstance().beginTransaction();
             //
@@ -30,7 +32,6 @@ public class MySQLUserDao implements UserDao{
             st.executeUpdate();
 
             Connector.getInstance().commit();
-
 
         }catch(SQLException e){
             Connector.getInstance().rollback();
@@ -51,6 +52,7 @@ public class MySQLUserDao implements UserDao{
         }
     }
     public User login(String userIdentifiedName,String userMail,String userPassword){
+
         Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -79,6 +81,7 @@ public class MySQLUserDao implements UserDao{
             }
 
             Connector.getInstance().commit();
+
         }catch(SQLException e){
             Connector.getInstance().rollback();
             System.out.println(e.getMessage());
@@ -101,11 +104,13 @@ public class MySQLUserDao implements UserDao{
         return u;
     }
     public User getUserInfo(String userId){
+
         Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         User u = null;
+
         try{
         	cn = Connector.getInstance().beginTransaction();
 
@@ -150,8 +155,10 @@ public class MySQLUserDao implements UserDao{
     }
 
     public void updateUser(String userId,String userName,String userMail) {
+
     	Connection cn=null;
         PreparedStatement st=null;
+
         try{
         	cn = Connector.getInstance().beginTransaction();
             //
@@ -184,8 +191,10 @@ public class MySQLUserDao implements UserDao{
         }
     }
     public void removeUser(String userIdentifiedName,String userMail,String userPassword) {
+
     	Connection cn=null;
         PreparedStatement st=null;
+
         try{
         	cn = Connector.getInstance().beginTransaction();
             //
