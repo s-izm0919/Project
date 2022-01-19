@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ユーザー編集画面</title>
-<%@include file="../../../css/settings.css" %>
+<title>ショップ開設ガイドページ</title>
+<%@include file="../../../css/shop_open.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
@@ -26,7 +26,7 @@
 			        	<option value="#">${user.userName}</option>
 			            <option value="callnew">ユーザー登録</option>
 			            <option value="callsigninpage">ログイン</option>
-			            <option value="shopopen">ショップ開設ガイド</option>
+			            <option value="gshopopen">ショップ開設ガイド</option>
 			            <option value="callusersettings">ユーザーアカウント設定</option>
 			            <option value="following">フォローしたショップ</option>
 			            <option value="follow_items">フォローしたショップの新着商品</option>
@@ -55,19 +55,17 @@
 <br><br><br>
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20">
-			<h1 class="yohaku">ユーザー編集画面</h1>
-			<form method="POST" action="editaccount">
-				<input type="hidden" name="userId"  value="${user.userId}" ><br>
-				<input type="hidden" name="userIdentifiedName" maxlength="20" value="${user.userIdentifiedName}" ><br>
-				<a class="color">ユーザー名の変更</a><input type="text" name="userName" maxlength="20" value="${user.userName}" required><br>
-				<a class="color">メールアドレスの変更</a><input type="email" name="mail" maxlength="300"  value="${user.userMail}"  required><br>
-				<input type="submit" value="更新"><br><br>
-			</form>
-			<form method="POST" action="removeaccount">
-				<a class="color">ユーザーの削除</a><input type="text" name="userPassword"><br>
-				<input type="submit" value="ユーザーを削除する"><br>
+		<div class="color">
+			<h1 class="yohaku">ショップを開設するにあたって。</h1>
+			<p>
+			<a>販売可能なものは、電子コンテンツのダウンロード販売のみに限定されています。</a><br>
+			<a>売上から5%が、利用料として差し引かれた売上が、振り込まれます。</a><br>
+			<a>また、利用規約等は<a href="callshopguide">こちら</a>からご覧ください。</a><br>
+			</p>
+
+				<a href="callopen">ショップを開く</a><br>
 				<a>　</a>
-			</form>
+			</div>
 		</div>
 	</div>
 </body>

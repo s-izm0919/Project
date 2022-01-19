@@ -1,3 +1,5 @@
+
+
 <style>
 * {
    box-sizing: border-box;
@@ -73,8 +75,8 @@ div.sent
 
 /* レイアウト用スタイル */
 .boxwrap{
-  margin:40px auto;
-  width:400px;
+  margin: auto;
+  width:50%;
   padding:20px 60px;
 
 }
@@ -107,5 +109,9 @@ div.sent
   display:table-cell;
   vertical-align:middle;
 }
+
+a.help
+{
+	font-size: 15px;}
 
 </style>

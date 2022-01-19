@@ -1,3 +1,5 @@
+
+
 <style>
 * {
    box-sizing: border-box;
@@ -73,14 +75,14 @@ div.sent
 
 /* レイアウト用スタイル */
 .boxwrap{
-  margin:40px auto;
-  width:400px;
+  margin: auto;
+  width:50%;
   padding:20px 60px;
 
 }
 .wrap{
      margin: auto;
-    width: 300px;
+    width: 420px;
     background-color: white;
     color: #fff;
     border-radius: 15px;
@@ -108,4 +110,8 @@ div.sent
   vertical-align:middle;
 }
 
+a.color
+{
+	color: Black;
+}
 </style>
