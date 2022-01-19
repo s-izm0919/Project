@@ -12,6 +12,12 @@
 
             パスワード（半角英数）<input type="password" name="userPassword" required><br>
             <input type="submit" value="ログイン">
+            
+            <br>
+
+            <a href="forgetpassword">Forgetpassword </a>
+            <a href="new">アカウントを作る</a>
+
         </form>
     </body>
 </html>
