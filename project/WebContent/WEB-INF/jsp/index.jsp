@@ -9,11 +9,15 @@
 <title>ページ移動画面</title>
 </head>
 <body>
+	<h1>簡易ページリンク一覧(html式)</h1>
+	user名:${user.userName}
+	<br>
+	shop名:${shop }
 	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
 	user名:${result.userName}
 	<a href=""></a>
 	<p>ユーザー系</p>
-	<a href="new">ユーザー登録</a>
+	<a href="callnew">ユーザー登録</a>
 	<a href="callsigninpage">ログイン</a>
 	<a href="logoutuser">ログアウト</a>
 	<a href="users/pass_reissue.jsp">パスワードの再発行</a>

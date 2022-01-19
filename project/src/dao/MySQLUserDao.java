@@ -1,6 +1,5 @@
 package dao;
 import  java.sql.Connection;
-import java.sql.DriverManager;
 import  java.sql.PreparedStatement;
 import  java.sql.ResultSet;
 import  java.sql.SQLException;
@@ -231,14 +230,10 @@ public class MySQLUserDao implements UserDao{
 
         User u = null;
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/nozawa?characterEncoding=UTF-8&serverTimezone=JST",
-			"infox","prox");
+        	cn = Connector.getInstance().beginTransaction();
 
-            cn.setAutoCommit(false);
 
-            String sql="select * from user where email='"+email+"'";
+            String sql="select * from user where user_mail='"+email+"'";
 
             st=cn.prepareStatement(sql);
 
@@ -247,20 +242,18 @@ public class MySQLUserDao implements UserDao{
 
             while(rs.next()) {
             u=new User();
-
-           // u.setUserId(rs.getString(1));
             u.setUserId(rs.getString(1));
-            u.setUserMail(rs.getString(2));
-            u.setUserPassword(rs.getString(3));
-
+            u.setUserIdentifiedName(rs.getString(2));
+            u.setUserName(rs.getString(3));
+            u.setUserPassword(rs.getString(4));
+            u.setUserMail(rs.getString(5));
+            u.setUserPoint(rs.getInt(6));
 
 
             }
 
 
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
         }catch(SQLException e){
             Connector.getInstance().rollback();
             System.out.println(e.getMessage());
