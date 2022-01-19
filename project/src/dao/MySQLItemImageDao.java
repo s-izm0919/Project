@@ -1,26 +1,22 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import bean.ItemImage;
+import utility.Connector;
 
 public class MySQLItemImageDao implements ItemImageDao {
 
 	@Override
 	public void addItemImage(ItemImage itemimage) {
+
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
-            //
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="insert into item_image(image_id, sub_image_path, item_id)" + " values(?,?,?) ";
 
@@ -32,23 +28,12 @@ public class MySQLItemImageDao implements ItemImageDao {
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
-        }
-        finally{
+        }finally{
             try{
                 if(st !=null){
                     st.close();
@@ -57,50 +42,32 @@ public class MySQLItemImageDao implements ItemImageDao {
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
 
 	}
 	public void removeItemImage(int itemid) {
+
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="delete from item_image where item_id="+itemid;
 
             st=cn.prepareStatement(sql);
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
-        }
-        finally{
+        }finally{
             try{
                 if(st !=null){
                     st.close();
@@ -109,12 +76,8 @@ public class MySQLItemImageDao implements ItemImageDao {
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }

@@ -1,7 +1,6 @@
 package dao;
 import java.math.BigDecimal;
 import  java.sql.Connection;
-import  java.sql.DriverManager;
 import  java.sql.PreparedStatement;
 import  java.sql.ResultSet;
 import  java.sql.SQLException;
@@ -9,21 +8,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Item;
+import utility.Connector;
 
 public class MySQLItemDao implements ItemDao{
 	public List getItemsItemName(String itemname) {
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Items=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(itemname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
@@ -53,15 +51,11 @@ public class MySQLItemDao implements ItemDao{
 
                 Items.add(i);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -74,12 +68,8 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -87,18 +77,16 @@ public class MySQLItemDao implements ItemDao{
 	}
 
     public List getItemsShopName(String shopname) {
+
     	Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Items=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(shopname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
@@ -128,15 +116,11 @@ public class MySQLItemDao implements ItemDao{
 
                 Items.add(i);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -149,12 +133,8 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -162,18 +142,16 @@ public class MySQLItemDao implements ItemDao{
     }
     //いいねを除く
     public List getItemsItemName(String itemname, String sort) {
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Items=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(itemname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 order by "+sort;
@@ -203,15 +181,11 @@ public class MySQLItemDao implements ItemDao{
 
                 Items.add(i);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -224,30 +198,24 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
         return Items;
 	}
     public List getItemsShopName(String shopname, String sort) {
+
     	Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Items=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(shopname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 order by "+sort;
@@ -277,15 +245,11 @@ public class MySQLItemDao implements ItemDao{
 
                 Items.add(i);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -298,12 +262,8 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -311,18 +271,16 @@ public class MySQLItemDao implements ItemDao{
     }
     //いいねソート用
     public List getItemsItemNameFavorite(String itemname) {
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Items=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(itemname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item.item_id, item_name, item_price, main_image_path, shop_id ,count(favorite.item_id) from item left join favorite on item.item_id=favorite.item_id where item_is_open=1 AND unused=1 group by item_id order by count(favorite.item_id) desc";
@@ -354,15 +312,11 @@ public class MySQLItemDao implements ItemDao{
 
                 Items.add(i);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -375,30 +329,24 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
         return Items;
 	}
     public List getItemsShopNameFavorite(String shopname) {
+
     	Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Items=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(shopname==null) {	//検索文字がnullのとき全部検索する
             	sql="select item.item_id, item_name, item_price, main_image_path, shop_id ,count(favorite.item_id) from item left join favorite on item.item_id=favorite.item_id where item_is_open=1 AND unused=1 group by item_id order by count(favorite.item_id) desc";
@@ -428,15 +376,11 @@ public class MySQLItemDao implements ItemDao{
 
                 Items.add(i);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -449,12 +393,8 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -463,18 +403,16 @@ public class MySQLItemDao implements ItemDao{
 
     @Override
 	public int getSearchItemCount(String itemname) {
-		int count = 0;
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
+        int count = 0;
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(itemname==null) {
             	sql="select COUNT(*) from item where item_is_open=1 AND unused=1 ORDER BY item_register_date DESC";
@@ -487,15 +425,11 @@ public class MySQLItemDao implements ItemDao{
             rs=st.executeQuery();
             rs.next();
             count = rs.getInt(1);
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -508,12 +442,8 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -522,18 +452,16 @@ public class MySQLItemDao implements ItemDao{
 
 	@Override
 	public int getSearchShopCount(String shopname) {
-		int count = 0;
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
+        int count = 0;
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             if(shopname==null) {
             	sql="select COUNT(*) from item where item_is_open=1 AND unused=1";
@@ -546,15 +474,11 @@ public class MySQLItemDao implements ItemDao{
             rs=st.executeQuery();
             rs.next();
             count = rs.getInt(1);
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -567,27 +491,21 @@ public class MySQLItemDao implements ItemDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
 		return count;
 	}
 	public void addItem(Item item) {
+
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             //item_register_dateはデフォルトでsysdateが設定されているので入れていない
             String sql="insert into item(item_id, item_name, item_price, item_explanation, main_image_path, category_id, item_data_path, shop_id, item_is_open)" + " values(?,?,?,?,?,?,?,?,?) ";
 
@@ -606,23 +524,12 @@ public class MySQLItemDao implements ItemDao{
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
-        }
-        finally{
+        }finally{
             try{
                 if(st !=null){
                     st.close();
@@ -631,30 +538,25 @@ public class MySQLItemDao implements ItemDao{
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
 	}
 	public void updateItem(Item item) {
+
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             //データに変更がない項目は取ってきたデータをcommand内で再びsetすること
             //(setしないとnullで上書きされるため)
             String sql="update item set item_name=?, item_price=?, item_explanation=?, main_image_path=?, category_id=?, item_data_path=?, item_is_open=? where item_id=?";
+
+            st=cn.prepareStatement(sql);
 
             st.setString(1, item.getItemName());
             st.setInt(2, item.getItemPrice());
@@ -665,28 +567,14 @@ public class MySQLItemDao implements ItemDao{
             st.setInt(7, item.getItemIsOpen());
             st.setInt(8, item.getItemId());
 
-
-            st=cn.prepareStatement(sql);
-
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
-        }
-        finally{
+        }finally{
             try{
                 if(st !=null){
                     st.close();
@@ -695,26 +583,19 @@ public class MySQLItemDao implements ItemDao{
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
 	}
 	public void removeItem(int itemid) {
+
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="update item set unused=0 where item_id="+itemid;
 
@@ -722,21 +603,11 @@ public class MySQLItemDao implements ItemDao{
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
         }
         finally{
             try{
@@ -747,12 +618,8 @@ public class MySQLItemDao implements ItemDao{
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }

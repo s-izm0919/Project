@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Shop;
+import utility.Connector;
 
 public class MySQLShopDao implements ShopDao {
 
@@ -16,14 +17,9 @@ public class MySQLShopDao implements ShopDao {
 
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
-            //
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
            // String sql="insert into shop(shop_id,user_id,shop_name,shop_explanation,shop_earning,shop_is_open,shop_sellerword)" + " values(?,?,?,?,?,?,?) ";
 
@@ -44,23 +40,11 @@ public class MySQLShopDao implements ShopDao {
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            System.out.println(e.getMessage());
-
-            }
-        }
-        finally{
+            Connector.getInstance().rollback();
+        }finally{
             try{
                 if(st !=null){
                     st.close();
@@ -69,12 +53,8 @@ public class MySQLShopDao implements ShopDao {
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                    Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -86,13 +66,9 @@ public class MySQLShopDao implements ShopDao {
         ResultSet rs=null;
 
         Shop s = null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="select * from shop where user_id='"+userId+"'";
 
@@ -113,16 +89,10 @@ public class MySQLShopDao implements ShopDao {
            }
 
 
+            Connector.getInstance().commit();
 
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -135,12 +105,8 @@ public class MySQLShopDao implements ShopDao {
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -219,23 +185,21 @@ public class MySQLShopDao implements ShopDao {
 
 
 	public void updateShop(Shop shopInfo) {
+
 		Connection cn=null;
         PreparedStatement st=null;
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
-            System.out.println("hello");
-            System.out.println("newshopInfo:"+shopInfo.getShopName());
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
 
             //データに変更がない項目は取ってきたデータをcommand内で再びsetすること
             //(setしないとnullで上書きされるため)
             String sql="update shop set shop_name=?, shop_explanation=?, shop_sellerword=?, shop_is_open=? where shop_id=?";
             st=cn.prepareStatement(sql);
 
+
+            st=cn.prepareStatement(sql);
 
             st.setString(1, shopInfo.getShopName());
 
@@ -249,23 +213,12 @@ public class MySQLShopDao implements ShopDao {
 
             st.executeUpdate();
 
-            cn.commit();
-
-
-        }catch (ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
 
         }catch(SQLException e){
-            try{
-                cn.rollback();
-
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
-
-            }
-        }
-        finally{
+        }finally{
             try{
                 if(st !=null){
                     st.close();
@@ -274,29 +227,23 @@ public class MySQLShopDao implements ShopDao {
             	System.out.println(e2.getMessage());
 
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
 	}
 	public List getShopNamesSearchItem(String searchWord) {
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Shop=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             //shop表とitem表を内部結合し並び替えている
             if(searchWord==null) {	//検索文字がnullのとき全部検索する
@@ -316,15 +263,11 @@ public class MySQLShopDao implements ShopDao {
 
                 Shop.add(s);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -337,12 +280,8 @@ public class MySQLShopDao implements ShopDao {
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -350,18 +289,16 @@ public class MySQLShopDao implements ShopDao {
 
 	}
     public List getShopNamesSearchShop(String searchWord) {
+
     	Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         List Shop=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
             String sql=null;
             //shop表とitem表を内部結合し並び替えている
             if(searchWord==null) {	//検索文字がnullのとき全部検索する
@@ -381,15 +318,11 @@ public class MySQLShopDao implements ShopDao {
 
                 Shop.add(s);
             }
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -402,12 +335,8 @@ public class MySQLShopDao implements ShopDao {
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }

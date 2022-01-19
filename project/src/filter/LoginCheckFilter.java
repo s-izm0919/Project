@@ -72,6 +72,7 @@ public class LoginCheckFilter implements Filter {
 			}
 
 			if(user!=null) {
+
 				session.setAttribute("token","OK");
 				session.setAttribute("user", user);
 				String userId=user.getUserId();
@@ -90,12 +91,16 @@ public class LoginCheckFilter implements Filter {
 
 			}
 
+			System.out.println("start shop session");
+
+
+
 
 		}
 
 
-
         chain.doFilter(req,res);
+
 
     }
 }
