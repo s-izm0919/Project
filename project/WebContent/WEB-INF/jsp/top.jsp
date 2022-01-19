@@ -26,7 +26,7 @@
 			        	<option value="#">${user.userName}</option>
 			            <option value="callnew">ユーザー登録</option>
 			            <option value="callsigninpage">ログイン</option>
-			            <option value="guide_shop">ショップ開設ガイド</option>
+			            <option value="shopopen">ショップ開設ガイド</option>
 			            <option value="callusersettings">ユーザーアカウント設定</option>
 			            <option value="following">フォローしたショップ</option>
 			            <option value="follow_items">フォローしたショップの新着商品</option>

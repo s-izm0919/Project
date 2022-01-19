@@ -26,12 +26,12 @@
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
 	<a href="carts.jsp">カート</a>
 	<p>ショップ</p>
-	<a href="guide/shop.jsp">ショップ開設ガイド</a>
+	<a href="shopopen">ショップ開設ガイド</a>
 	<a href="callopen">ショップ解説ページ</a>
 	<a href="callshopsettings">ショップ管理</a>
 	<a href="shop/setting">ショップ情報編集</a>
 	<a href="shop/items.jsp">商品管理</a>
-	<a href="shop/items/register.jsp">商品登録</a>
+	<a href="additem">商品登録</a>
 	<a href="shop/itwems/edit.jsp">商品編集</a>
 	<a href="shop/orders_list.jsp">注文一覧</a>
 	<a href="users/orders">注文詳細</a>
