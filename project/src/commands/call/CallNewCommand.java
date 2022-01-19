@@ -3,7 +3,7 @@ package commands.call;
 import commands.AbstractCommand;
 import context.ResponseContext;
 
-class CallNewCommand extends AbstractCommand {
+ public class CallNewCommand extends AbstractCommand {
 	//@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 

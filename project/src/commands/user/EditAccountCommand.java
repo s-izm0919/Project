@@ -7,7 +7,7 @@ import dao.AbstractDaoFactory;
 import dao.UserDao;
 import utility.SessionManager;
 
-class EditAccountCommand extends AbstractCommand {
+ public class EditAccountCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- EditAccountCommand -- ");

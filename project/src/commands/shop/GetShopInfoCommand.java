@@ -11,7 +11,7 @@ import utility.SessionManager;
 //import dao.MySQLShopDao;
 
 
-class GetShopInfoCommand extends AbstractCommand {
+ public class GetShopInfoCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- GetShopInfoCommand -- ");

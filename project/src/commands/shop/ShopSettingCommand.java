@@ -8,7 +8,7 @@ import dao.AbstractDaoFactory;
 import dao.ShopDao;
 import utility.SessionManager;;
 
-class ShopSettingCommand extends AbstractCommand {
+ public class ShopSettingCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- ShopSettingCommandCommand -- ");

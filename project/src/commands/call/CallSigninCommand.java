@@ -3,7 +3,7 @@ package commands.call;
 import commands.AbstractCommand;
 import context.ResponseContext;
 
-class CallSigninCommand extends AbstractCommand {
+ public class CallSigninCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 

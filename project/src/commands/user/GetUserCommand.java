@@ -6,7 +6,7 @@ import context.ResponseContext;
 import dao.MySQLUserDao;
 import utility.SessionManager;
 
-class GetUserCommand extends AbstractCommand {
+ public class GetUserCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- GetProductsCommand -- ");
