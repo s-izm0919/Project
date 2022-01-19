@@ -1,4 +1,8 @@
 package commands;
+import commands.call.*;
+import commands.user.*;
+import commands.shop.*;
+import commands.item.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;

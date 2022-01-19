@@ -16,6 +16,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ItemImageDao getItemImageDao() {
 		return new MySQLItemImageDao();
 	}
+
 	/*
 	public CartDao getCartDao() {
 		return new MySQLCartDao();
@@ -56,6 +57,43 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public AdministratorMessageDao getAdministratorMessageDao() {
 		return new MySQLAdministratorMessageDao();
 	}
-	*/
 
+	public ItemSearchDao getItemSearchDao() {
+		return new MySQLItemSearchDao();
+	}
+	public NewItemDao getNewItemDao() {
+		return new MySQLNewItemDao();
+	}
+	public ItemDetailsDao getItemDetailsDao() {
+		return new MySQLItemDetailsDao();
+	}
+	public ShopItemListDao getShopItemListDao() {
+		return new MySQLShopItemListDao();
+	}
+	public ItemEditDao getItemEditDao() {
+		return new MySQLItemEditDao();
+	}
+	public OrderLIstDao getOrderLIstDao() {
+		return new MySQLOrderLIstDao();
+	}
+	public ShopOrderItemDetailsDao getShopOrderItemDetailsDao() {
+		return new MySQLShopOrderItemDetailsDao();
+	}
+	public ViewCartDao getViewCartDao() {
+		return new MySQLViewCartDao();
+	}
+	public OrderConfirmDao getOrderConfirmDao() {
+		return new MySQLOrderConfirmDao();
+	}
+	public OrderCompleteDao getOrderCompleteDao() {
+		return new MySQLOrderCompleteDao();
+	}
+	public BoughtItemListDao getBoughtItemListDao() {
+		return new MySQLBoughtItemListDao();
+	}
+	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
+		return new MySQLUserOrderItemDetailsDao();
+	}
+
+	*/
 }
