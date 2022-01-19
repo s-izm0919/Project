@@ -6,7 +6,7 @@
     <head>
         <title>トップページ</title>
 		<%@include file="../../css/top.css" %>
-		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
     <header>
@@ -46,7 +46,6 @@
 
 		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
 
-
 		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
 
 		        </ul>
@@ -65,60 +64,58 @@
 		  <c:forEach begin="1" end="10" step="1" var="i">
 		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
 		  </c:forEach>
-		  <button type="button" >もっと見る</button>
+		</ul>
 
-		</ul>・漫画、イラスト
+		<h1 class="cate_title">カテゴリー</h1>
 
-	<ul>
-        <li>壁紙</li>
-        <li>漫画作品</li>
-         <li>人物(漫画)</li>
-        <li>動物(漫画)</li>
-        <li>漫画(その他)</li>
-        <li>人物(イラスト)</li>
-        <li>動物(イラスト)</li>
-        <li>風景(イラスト)</li>
-        <li>イラスト(その他)</li>
-
-	</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-・写真
-
-風景(写真)
-
-人物(写真)
-
-動物(写真)
-
-集合
-
-アート写真
-
-モノクロ
-
-写真(その他)
-
-<h1>イラスト作品</h1>
-
-
+		<div class="cate_human">
+			<img src="<%=application.getRealPath("/")%>images\human.jpg" class="human">
+			<div class="mask">
+				<div class="caption">人物</div>
+			</div>
+		</div>
+		<div class="cate_animal">
+			<img src="<%=application.getRealPath("/")%>images\animal.jpg" class="animal">
+			<div class="mask">
+				<div class="caption">動物</div>
+			</div>
+		</div>
+		<div class="cate_wallpaper">
+			<img src="<%=application.getRealPath("/")%>images\wallpaper.jpg" class="wallpaper">
+			<div class="mask">
+				<div class="caption">壁紙</div>
+			</div>
+		</div>
+		<div class="cate_comic">
+			<img src="<%=application.getRealPath("/")%>images\comic.jpg" class="comic">
+			<div class="mask">
+				<div class="caption">漫画</div>
+			</div>
+		</div>
+		<div class="cate_other">
+			<img src="<%=application.getRealPath("/")%>images\other.jpg" class="other">
+			<div class="mask">
+				<div class="caption">その他</div>
+			</div>
+		</div>
+		<div class="cate_human-p">
+			<img src="<%=application.getRealPath("/")%>images\human-p.jpg" class="human-p">
+			<div class="mask">
+				<div class="caption">人物</div>
+			</div>
+		</div>
+		<div class="cate_animal-p">
+			<img src="<%=application.getRealPath("/")%>images\animal-p.jpg" class="animal-p">
+			<div class="mask">
+				<div class="caption">動物</div>
+			</div>
+		</div>
+		<div class="cate_landscape">
+			<img src="<%=application.getRealPath("/")%>images\landscape.jpg" class="landscape">
+			<div class="mask">
+				<div class="caption">風景</div>
+			</div>
+		</div>
     </body>
     <footer>
         <p>ガイドページガイドページガイドページお知らせページ</p>
