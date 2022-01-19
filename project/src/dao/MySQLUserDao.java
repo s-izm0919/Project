@@ -11,8 +11,10 @@ import utility.Connector;
 public class MySQLUserDao implements UserDao{
 
     public void addUser(User userInfo){
+
         Connection cn=null;
         PreparedStatement st=null;
+
         try{
         	cn = Connector.getInstance().beginTransaction();
             //
@@ -31,7 +33,6 @@ public class MySQLUserDao implements UserDao{
             st.executeUpdate();
 
             Connector.getInstance().commit();
-
 
         }catch(SQLException e){
             Connector.getInstance().rollback();
@@ -52,6 +53,7 @@ public class MySQLUserDao implements UserDao{
         }
     }
     public User login(String userIdentifiedName,String userMail,String userPassword){
+
         Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -80,6 +82,7 @@ public class MySQLUserDao implements UserDao{
             }
 
             Connector.getInstance().commit();
+
         }catch(SQLException e){
             Connector.getInstance().rollback();
             System.out.println(e.getMessage());
@@ -102,11 +105,13 @@ public class MySQLUserDao implements UserDao{
         return u;
     }
     public User getUserInfo(String userId){
+
         Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
 
         User u = null;
+
         try{
         	cn = Connector.getInstance().beginTransaction();
 
@@ -257,11 +262,7 @@ public class MySQLUserDao implements UserDao{
         }catch(ClassNotFoundException e){
         	System.out.println(e.getMessage());
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -274,20 +275,14 @@ public class MySQLUserDao implements UserDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
                 }
             }
         }
         return u;
     }
-
 }
-
 
     /*
     public List getAllUsers(){
