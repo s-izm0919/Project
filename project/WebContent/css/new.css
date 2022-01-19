@@ -1,5 +1,3 @@
-
-
 <style>
 * {
    box-sizing: border-box;
@@ -75,8 +73,8 @@ div.sent
 
 /* レイアウト用スタイル */
 .boxwrap{
-  margin: auto;
-  width:50%;
+  margin:40px auto;
+  width:400px;
   padding:20px 60px;
 
 }
