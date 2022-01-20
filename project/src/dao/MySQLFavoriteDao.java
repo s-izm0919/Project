@@ -1,7 +1,6 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,20 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Favorite;
+import utility.Connector;
 
 public class MySQLFavoriteDao implements FavoriteDao{
 	public List getSearchItemFavoriteCount(String itemName) {
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
-        ArrayList favoriteCount=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        ArrayList favoriteCount=new ArrayList();
+
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="select item_id,COUNT(*) from favorite where item_id IN (select item_id from item where item_name like '%"+itemName+"%'AND item_is_open=1)";
 
@@ -39,15 +37,10 @@ public class MySQLFavoriteDao implements FavoriteDao{
                 favoriteCount.add(f);
             }
 
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -60,29 +53,23 @@ public class MySQLFavoriteDao implements FavoriteDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
         return favoriteCount;
 	}
 	public List getSearchShopFavoriteCount(String shopName) {
+
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
-        ArrayList favoriteCount=new ArrayList();
-        try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
 
-            cn.setAutoCommit(false);
+        ArrayList favoriteCount=new ArrayList();
+
+        try{
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="select item_id,COUNT(*) from favorite where item_id IN (select item_id from item where item_is_open=1 AND shop_id IN (select shop_id from shop where shop_name like '%"+shopName+"% AND shop_is_open=1))";
 
@@ -99,15 +86,10 @@ public class MySQLFavoriteDao implements FavoriteDao{
                 favoriteCount.add(f);
             }
 
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
+            Connector.getInstance().commit();
+
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -120,12 +102,8 @@ public class MySQLFavoriteDao implements FavoriteDao{
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
