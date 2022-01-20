@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import bean.User;
+import bean.Shop;
 import dao.AbstractDaoFactory;
 import dao.UserDao;
+import dao.ShopDao;
 
 
 public class LoginCheckFilter implements Filter {
@@ -51,8 +53,8 @@ public class LoginCheckFilter implements Filter {
 			System.out.println("email: " + mail);
 
 
-			User user = new User();
-			user=null;
+
+		User	user=null;
 
 			HttpSession session = ((HttpServletRequest)req).getSession();
 
@@ -60,21 +62,29 @@ public class LoginCheckFilter implements Filter {
 			UserDao dao=factory.getUserDao();
 			if(userIdentifiedName!=null&&mail==null) {
 				user=dao.login(userIdentifiedName,null,password);
-				System.out.println(user);
+				System.out.println("user:"+user);
 			}else if(userIdentifiedName==null&&mail!=null) {
 				user=dao.login(null,mail,password);
+				System.out.println("user:"+user);
 			}
 			else {
 				System.out.println("loginできない");
 			}
 
 			if(user!=null) {
+
 				session.setAttribute("token","OK");
-				session.setAttribute("result", user);
+				session.setAttribute("user", user);
 			}
+			System.out.println("start shop session");
+
+
+
 		}
 
+
         chain.doFilter(req,res);
+
 
     }
 }
