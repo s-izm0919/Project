@@ -118,15 +118,10 @@ img.landscape {
 }
 
 .cate {
+	justify-content:center;
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap
-
-	box-sizing: border-box;
-
-}
-
-.cate div {
 
 }
 
