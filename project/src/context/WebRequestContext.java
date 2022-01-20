@@ -4,7 +4,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import filter.SessionManager;
+import utility.SessionManager;
 
 public class WebRequestContext implements RequestContext {
 	private Map parameters;
@@ -30,6 +30,6 @@ public class WebRequestContext implements RequestContext {
 	public void setRequest(Object req) {
 		request = (HttpServletRequest) req;
 		parameters = request.getParameterMap();
-		SessionManager.getSession(request);
+		utility.SessionManager.getSession(request);
 	}
 }
