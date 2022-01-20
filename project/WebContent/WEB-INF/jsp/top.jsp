@@ -67,6 +67,7 @@
 		</ul>
 
 		<h1 class="cate_title">カテゴリー</h1>
+		<h2>illustration</h2>
 
 		<div class="cate">
 
@@ -104,6 +105,12 @@
 					<div class="caption">その他</div>
 				</div>
 			</div>
+
+		</div>
+
+		<h2>photograph</h2>
+
+		<div class="cate">
 
 			<div class="cate_human-p">
 				<img src="<%=application.getRealPath("/")%>images\human-p.jpg" class="human-p">
