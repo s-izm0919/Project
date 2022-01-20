@@ -118,6 +118,18 @@ img.landscape {
 	height: 188px;
 }
 
+.cate {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap
+
+	box-sizing: border-box;
+
+}
+
+.cate div {
+
+}
 
 
 .cate_human {

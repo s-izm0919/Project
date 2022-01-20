@@ -40,7 +40,7 @@
 			            <option value="callopen">ショップ解説ページ</option>
 			            <option value="logoutuser">ログアウト</option>
 			        </select>
-					</li>
+				</li>
 
 		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
@@ -68,53 +68,64 @@
 
 		<h1 class="cate_title">カテゴリー</h1>
 
-		<div class="cate_human">
-			<img src="<%=application.getRealPath("/")%>images\human.jpg" class="human">
-			<div class="mask">
-				<div class="caption">人物</div>
+		<div class="cate">
+
+			<div class="cate_human">
+				<img src="<%=application.getRealPath("/")%>images\human.jpg" class="human">
+				<div class="mask">
+					<div class="caption">人物</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_animal">
-			<img src="<%=application.getRealPath("/")%>images\animal.jpg" class="animal">
-			<div class="mask">
-				<div class="caption">動物</div>
+
+			<div class="cate_animal">
+				<img src="<%=application.getRealPath("/")%>images\animal.jpg" class="animal">
+				<div class="mask">
+					<div class="caption">動物</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_wallpaper">
-			<img src="<%=application.getRealPath("/")%>images\wallpaper.jpg" class="wallpaper">
-			<div class="mask">
-				<div class="caption">壁紙</div>
+
+			<div class="cate_wallpaper">
+				<img src="<%=application.getRealPath("/")%>images\wallpaper.jpg" class="wallpaper">
+				<div class="mask">
+					<div class="caption">壁紙</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_comic">
-			<img src="<%=application.getRealPath("/")%>images\comic.jpg" class="comic">
-			<div class="mask">
-				<div class="caption">漫画</div>
+
+			<div class="cate_comic">
+				<img src="<%=application.getRealPath("/")%>images\comic.jpg" class="comic">
+				<div class="mask">
+					<div class="caption">漫画</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_other">
-			<img src="<%=application.getRealPath("/")%>images\other.jpg" class="other">
-			<div class="mask">
-				<div class="caption">その他</div>
+
+			<div class="cate_other">
+				<img src="<%=application.getRealPath("/")%>images\other.jpg" class="other">
+				<div class="mask">
+					<div class="caption">その他</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_human-p">
-			<img src="<%=application.getRealPath("/")%>images\human-p.jpg" class="human-p">
-			<div class="mask">
-				<div class="caption">人物</div>
+
+			<div class="cate_human-p">
+				<img src="<%=application.getRealPath("/")%>images\human-p.jpg" class="human-p">
+				<div class="mask">
+					<div class="caption">人物</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_animal-p">
-			<img src="<%=application.getRealPath("/")%>images\animal-p.jpg" class="animal-p">
-			<div class="mask">
-				<div class="caption">動物</div>
+
+			<div class="cate_animal-p">
+				<img src="<%=application.getRealPath("/")%>images\animal-p.jpg" class="animal-p">
+				<div class="mask">
+					<div class="caption">動物</div>
+				</div>
 			</div>
-		</div>
-		<div class="cate_landscape">
-			<img src="<%=application.getRealPath("/")%>images\landscape.jpg" class="landscape">
-			<div class="mask">
-				<div class="caption">風景</div>
+
+			<div class="cate_landscape">
+				<img src="<%=application.getRealPath("/")%>images\landscape.jpg" class="landscape">
+				<div class="mask">
+					<div class="caption">風景</div>
+				</div>
 			</div>
+
 		</div>
     </body>
     <footer>
