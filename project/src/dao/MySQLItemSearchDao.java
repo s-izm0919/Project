@@ -49,9 +49,9 @@ public class MySQLItemSearchDao implements ItemSearchDao {
                 i.setFavoriteCount(rs.getInt(9));
 
                 //検索件数を最後のListに追加する
-                if(rs.last()) {
-                	i.setSearchCount(rs.getRow());
-                }
+                //if(rs.last()) {
+                //	i.setSearchCount(rs.getRow());
+                //}
 
                 Items.add(i);
             }

@@ -26,7 +26,10 @@
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<a href="top">トップ</a>
 	<p>商品関係</p>
-	<a href="callitemlist">検索結果表示</a>
+	<form method="POST" action="searchitem">
+    	検索項目<input type="text" name="itemName" maxlength="20" ><br>
+      			<input type="submit" value="検索">
+   	</form>商品検索ページ
 	<a href="items">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>

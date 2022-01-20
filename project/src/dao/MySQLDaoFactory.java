@@ -57,10 +57,11 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public AdministratorMessageDao getAdministratorMessageDao() {
 		return new MySQLAdministratorMessageDao();
 	}
-
+	*/
 	public ItemSearchDao getItemSearchDao() {
 		return new MySQLItemSearchDao();
 	}
+	/*
 	public NewItemDao getNewItemDao() {
 		return new MySQLNewItemDao();
 	}

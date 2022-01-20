@@ -1,10 +1,12 @@
-package commands;
+package commands.call;
 
 import java.util.ArrayList;
 
+import commands.AbstractCommand;
+import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
-import dao.ItemDao;
+import dao.ItemSearchDao;
 
 class CallItemListCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
@@ -13,13 +15,16 @@ class CallItemListCommand extends AbstractCommand {
 		System.out.println("-- CallItemListCommand -- ");
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
-		ItemDao dao=factory.getItemDao();
+		ItemSearchDao dao = factory.getItemSearchDao();
 
-		String itemName = null;
+		RequestContext reqc = getRequestContext();
+		String itemName = reqc.getParameter("itemName")[0];
 
-		//ここの表示ができない
+		if(itemName=="") {
+			itemName=null;
+		}
 
-		ArrayList list = (ArrayList)dao.getItemsItemName(itemName);
+		ArrayList list = (ArrayList)dao.getItemSearch(itemName);
 
 		resc.setResult(list);
 
