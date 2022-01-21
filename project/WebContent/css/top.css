@@ -6,7 +6,7 @@
 body {
    margin: 0;
    padding: 0;
-   font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-family: 'Mochiy Pop P One', sans-serif;
    text-align:	center;
    background-color: #EEEEEE;
 
@@ -362,6 +362,10 @@ img.landscape {
 }
 .cate_landscape:hover .mask {
 	opacity:		1;	/* マスクを表示する */
+}
+
+footer {
+  background-color: white;
 }
 
 
