@@ -9,6 +9,8 @@ public interface UserDao{
     public void updateUser(String userId,String userName,String userMail);
     public void removeUser(String userIdentifiedName,String userMail,String userPassword);
     public User getUserPassword(String email);
+    public User getPoint(String userid);
+    public void updatePoint(String userid,String point);
     //public List getAllUsers();
 }
 //
