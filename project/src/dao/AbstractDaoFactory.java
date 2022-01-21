@@ -2,7 +2,6 @@
 package dao;
 
 
-import  java.io.FileInputStream;
 import  java.io.FileNotFoundException;
 import  java.io.IOException;
 import  java.util.Properties;
@@ -45,6 +44,9 @@ public abstract class AbstractDaoFactory{
         return factory;
         }
         public abstract UserDao getUserDao();
+        public abstract ItemDao getItemDao();
         public  abstract ShopDao getShopDao();
+        public abstract ItemSearchDao getItemSearchDao();
+        public abstract ItemDetailsDao getItemDetailsDao();
 
     }
