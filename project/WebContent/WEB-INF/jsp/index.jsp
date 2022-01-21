@@ -35,7 +35,7 @@
     	ショップ検索項目<input type="text" name="shopName" maxlength="20" ><br>
       			<input type="submit" value="検索">
    	</form>商品検索ページ
-	<a href="items">商品ページ</a>
+	<a href="callitempage">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
 	<a href="carts.jsp">カート</a>
@@ -61,7 +61,7 @@
         </c:forEach>
 
 	<a href="callsearch">あ</a>
-	<a href="callitem">a</a>
+	<a href="callitempage">a</a>
 
 
 </body>

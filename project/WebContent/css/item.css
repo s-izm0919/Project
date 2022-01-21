@@ -74,7 +74,7 @@ div.sent
 /* レイアウト用スタイル */
 .boxwrap{
   margin:40px auto;
-  width:400px;
+  width:50%;
   padding:20px 60px;
 
 }
@@ -83,7 +83,7 @@ div.sent
     width: auto;
     background-color: white;
     color: #fff;
-    border-radius: 15px
+    border-radius: 15px;
     padding:15px;;
     border:1px solid #ddd;
 
