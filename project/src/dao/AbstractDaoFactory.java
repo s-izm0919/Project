@@ -47,5 +47,6 @@ public abstract class AbstractDaoFactory{
         public abstract ItemDao getItemDao();
         public  abstract ShopDao getShopDao();
         public abstract ItemSearchDao getItemSearchDao();
+        public abstract ItemDetailsDao getItemDetailsDao();
 
     }

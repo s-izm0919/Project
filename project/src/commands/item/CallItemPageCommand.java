@@ -3,11 +3,12 @@ package commands.item;
 import java.util.HashMap;
 import java.util.Map;
 
+import bean.ItemDetails;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
-import dao.ItemSearchDao;
+import dao.ItemDetailsDao;
 
 public class CallItemPageCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
@@ -15,16 +16,19 @@ public class CallItemPageCommand extends AbstractCommand{
 		System.out.println("-- CallItemPageCommand -- ");
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
-		ItemSearchDao dao = factory.getItemSearchDao();
+		ItemDetailsDao dao = factory.getItemDetailsDao();
 
 		RequestContext reqc = getRequestContext();
 		String itemId = reqc.getParameter("itemId")[0];
+		System.out.println("itemID="+itemId);
 
 		Map result = new HashMap();
 
-		//ArrayList list = (ArrayList)dao.getItemSearch(itemName);
+		ItemDetails bean = (ItemDetails)dao.getItemDetails(itemId);
 
-		result.put("itemsearch", itemId);
+		System.out.println(bean.getItemName());
+
+		result.put("itemdetails", bean);
 
 		resc.setResult(result);
 

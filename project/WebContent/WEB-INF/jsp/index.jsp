@@ -27,7 +27,12 @@
 	<a href="top">トップ</a>
 	<p>商品関係</p>
 	<form method="POST" action="searchitem">
-    	検索項目<input type="text" name="itemName" maxlength="20" ><br>
+    	アイテム検索項目<input type="text" name="itemName" maxlength="20" ><br>
+      			<input type="submit" value="検索">
+   	</form>商品検索ページ
+   	<br>
+   		<form method="POST" action="searchshop">
+    	ショップ検索項目<input type="text" name="shopName" maxlength="20" ><br>
       			<input type="submit" value="検索">
    	</form>商品検索ページ
 	<a href="items">商品ページ</a>

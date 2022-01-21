@@ -65,9 +65,12 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public NewItemDao getNewItemDao() {
 		return new MySQLNewItemDao();
 	}
+	*/
 	public ItemDetailsDao getItemDetailsDao() {
 		return new MySQLItemDetailsDao();
 	}
+	
+	/*
 	public ShopItemListDao getShopItemListDao() {
 		return new MySQLShopItemListDao();
 	}

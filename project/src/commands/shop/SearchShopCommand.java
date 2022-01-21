@@ -1,4 +1,4 @@
-package commands.item;
+package commands.shop;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,29 +10,28 @@ import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.ItemSearchDao;
 
-public class SearchItemCommand extends AbstractCommand{
+public class SearchShopCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 
-		System.out.println("-- SearchItemCommand -- ");
+		System.out.println("-- SearchShopCommand -- ");
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ItemSearchDao dao = factory.getItemSearchDao();
 
 		RequestContext reqc = getRequestContext();
-		String itemName = reqc.getParameter("itemName")[0];
+		String shopName = reqc.getParameter("shopName")[0];
 
-		if(itemName=="") {
-			itemName=null;
+		if(shopName=="") {
+			shopName=null;
 		}
 
 		Map result = new HashMap();
 
-		ArrayList list = (ArrayList)dao.getItemSearch(itemName);
+		ArrayList list = (ArrayList)dao.getShopSearch(shopName);
 
 		result.put("itemsearch", list);
 
 		int itemcount = list.size();
-		System.out.println(itemcount+"件ヒット");
 
 		result.put("itemcount", itemcount);
 

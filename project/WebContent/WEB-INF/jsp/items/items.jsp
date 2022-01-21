@@ -10,13 +10,9 @@
     </head>
     <body>
         <h1>商品一覧</h1>
-		<h2>商品検索</h2>
-		<form method="POST" action="searchitem">
-            検索項目<input type="text" name="itemName" maxlength="20" ><br>
-        	<input type="submit" value="検索">
-   		</form>
-
    		<br>
+
+   		対象商品が  ${result["itemcount"]}  件ヒットしました。
 
    		<table border="1">
 
