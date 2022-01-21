@@ -26,7 +26,7 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	if(itemname==null) {
         		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC";
         	}else {
-        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE i.item_name LIKE '%"+itemname+"%' shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC";
+        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE i.item_name LIKE '%"+itemname+"%' AND shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC";
         	}
         	/*
         	SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC
@@ -49,9 +49,9 @@ public class MySQLItemSearchDao implements ItemSearchDao {
                 i.setFavoriteCount(rs.getInt(9));
 
                 //検索件数を最後のListに追加する
-                if(rs.last()) {
-                	i.setSearchCount(rs.getRow());
-                }
+                //if(rs.last()) {
+                //	i.setSearchCount(rs.getRow());
+                //}
 
                 Items.add(i);
             }
@@ -95,7 +95,7 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	if(itemname==null) {
         		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id";
         	}else {
-        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE i.item_name LIKE '%"+itemname+"%' shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id";
+        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE i.item_name LIKE '%"+itemname+"%' AND shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id";
         	}
         	if(sort!=null) {	//sortがnullでもエラーが起こらないように分けている
         		sql+=" ORDER BY"+sort;
@@ -161,7 +161,7 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	if(shopname==null) {
         		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC";
         	}else {
-        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE s.shop_name LIKE '%"+shopname+"%' shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC";
+        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE s.shop_name LIKE '%"+shopname+"%' AND shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC";
         	}
 
             st=cn.prepareStatement(sql);
@@ -180,10 +180,12 @@ public class MySQLItemSearchDao implements ItemSearchDao {
                 i.setShopName(rs.getString(8));
                 i.setFavoriteCount(rs.getInt(9));
 
+                /*書くとエラー
                 //検索件数を最後のListに追加する
                 if(rs.last()) {
                 	i.setSearchCount(rs.getRow());
                 }
+                */
 
                 Items.add(i);
             }
@@ -225,7 +227,7 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	if(shopname==null) {
         		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id";
         	}else {
-        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE s.shop_name LIKE '%"+shopname+"%' shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id";
+        		sql="SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE s.shop_name LIKE '%"+shopname+"%' AND shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id";
         	}
         	if(sort!=null) {	//sortがnullでもエラーが起こらないように分けている
         		sql+=" ORDER BY"+sort;
