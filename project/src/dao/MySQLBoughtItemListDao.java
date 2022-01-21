@@ -7,12 +7,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.UserOrderItemDetails;
+import bean.BoughtItemList;
 import utility.Connector;
 
-public class MySQLBoughtItemListDao{
+public class MySQLBoughtItemListDao implements BoughtItemListDao{
 
-	public List getAllOrderInfo(String itemid,String userid){
+	public List getAllOrderInfo(String userid){
 		Connection cn=null;
         PreparedStatement st=null;
         ResultSet rs=null;
@@ -21,27 +21,24 @@ public class MySQLBoughtItemListDao{
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-        	String sql= "";
+        	String sql="SELECT i.main_image_path, i.item_name, i.item_id, os.purchase_date FROM orders AS os " +
+        				"INNER JOIN order_detail AS od ON os.order_id = od.order_id " +
+        				"INNER JOIN item AS i ON od.item_id=i.item_id " +
+        				"WHERE i.item_id IN (SELECT item_id FROM order_detail WHERE order_id IN (SELECT order_id FROM orders WHERE user_id='U1')) " +
+        				"AND os.order_id IN (SELECT order_id FROM orders WHERE user_id='U1');";
 
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
             while(rs.next()){
-                UserOrderItemDetails u=new UserOrderItemDetails();
+            	BoughtItemList b=new BoughtItemList();
 
-                u.setPurchaseDate(rs.getString(1));
-                u.setOrderId(rs.getInt(2));
-                u.setTotalPayment(rs.getInt(3));
-                u.setBoostAmount(rs.getInt(4));
-                u.setShopName(rs.getString(5));
-                u.setShopId(rs.getString(6));
-                u.setItemImagePath(rs.getString(7));
-                u.setItemId(rs.getString(8));
-                u.setItemName(rs.getString(9));
-                u.setItemPrice(rs.getInt(10));
-                u.setItemDataPath(rs.getString(11));
+                b.setItemImagePath(rs.getString(1)); //Beanに合わせてitemimagepathにしている(データベースではmain_image_path)
+                b.setItemName(rs.getString(2));
+                b.setItemId(rs.getInt(3)); //
+                b.setPurchaseDate(rs.getString(4));
 
-                orderinfo.add(u);
+                orderinfo.add(b);
             }
 
             Connector.getInstance().commit();

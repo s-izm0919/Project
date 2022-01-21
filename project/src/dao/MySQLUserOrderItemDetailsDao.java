@@ -10,7 +10,7 @@ import java.util.List;
 import bean.UserOrderItemDetails;
 import utility.Connector;
 
-public class MySQLUserOrderItemDetailsDao{
+public class MySQLUserOrderItemDetailsDao implements UserOrderItemDetailsDao{
 
 	public List getOrderInfo(String itemid,String userid){
 		Connection cn=null;
