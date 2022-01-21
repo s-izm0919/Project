@@ -43,7 +43,7 @@
            			<input type="text" name="userIdenNameOrEmail"  placeholder="ユーザーIDまたはメールアドレス"><br><br>
            			<input type="password" name="userPassword" placeholder="パスワード" required><br><br>
            			<input type="submit" value="ログイン"><br><br>
-           			<a href="forgetpassword" class="help">パスワードをお忘れのの方</a><br>
+           			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
         	</div>
