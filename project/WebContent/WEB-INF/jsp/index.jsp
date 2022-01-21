@@ -52,6 +52,9 @@
         <th><c:out value="${list}"/></th>
         </c:forEach>
 
+	<a href="callsearch">あ</a>
+	<a href="callitem">a</a>
+
 
 </body>
 </html>

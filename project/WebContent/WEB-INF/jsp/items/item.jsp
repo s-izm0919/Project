@@ -3,12 +3,11 @@
 
 <html>
     <head>
-        <title>商品登録ページ</title>
-		<%@include file="../../../css/open.css" %>
+        <title>商品の詳細ページ</title>
+		<%@include file="..//../../css/item.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
-
     <header>
 
     		<h1>
@@ -51,24 +50,30 @@
 		        </ul>
 	        </nav>
     </header>
-	<br><br><br><br>
+    <br><br><br><br>
+
 		<div class="boxwrap">
 			<div class="wrap pattern-3 mhb-20">
-				<div class="color">
-        			<h1 class="yohaku">ショップ開設</h1>
-        		        		<form method="POST" action="addshop">
-	            		ショップ名<input type="text" name="shopName" maxlength="40" required><br>
-	           			紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
-	            		お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
-
-	            		<input type="radio" name="shopIsOpen" value="open">公開
-
-	            		<input type="radio" name="shopIsOpen" value="close" checked>非公開
-
-            			<input type="submit" value="ショップを開設する">
-	        		</form>
-        		</div>
-        	</div>
-        </div>
+			<div class="color">
+			<div class="example">
+			<!--商品画像など -->
+			<div><a></a>
+				<p class="item">
+					<img src="<%=application.getRealPath("/")%>images\item.jpg">
+				</p>
+				<p>商品テキスト</p>
+				</div>
+				<!--カートに入れるなど -->
+				<div><a>test</a>
+				<p>ショップ情報</p>
+				<p>商品名</p>
+				<input type="submit" value="いいねする">
+				<p>商品の値段</p>
+				<input type="submit" value="カートに入れる">
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
     </body>
 </html>
