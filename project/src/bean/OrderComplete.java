@@ -7,6 +7,8 @@ public class OrderComplete implements Serializable{
 	private String shopId;
 	private int orderId;
 	private String itemDataPath;
+	private int itemId;
+	private String itemName;
 	public OrderComplete(){
 		super();
 	}
@@ -40,4 +42,17 @@ public class OrderComplete implements Serializable{
 	public void setItemDataPath(String itemDataPath) {
 		this.itemDataPath = itemDataPath;
 	}
+	public int getItemId() {
+		return itemId;
+	}
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+	public String getItemName() {
+		return itemName;
+	}
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
 }
