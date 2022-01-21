@@ -68,25 +68,26 @@ h2.future {
 	z-index:10;
 	position: relative;
 	top: 50px;
-	left: 30px;
 	overflow: auto;
 }
 /* 閲覧履歴の設定*/
 ul.historyimg{
-	justify-content:center;
+justify-content:center;
 }
-
+.k{
+	transition: 0.3s;
+}
+.k:hover{
+transform: scale(2.5);
+}
 ul.historyimg li {
 	display: flex;
-
 }
-
-
 h3.history{
 	text-align: center;
-
 }
 
+/* カテゴリーの設定*/
 
 h1.cate_title {
 	text-align: center;

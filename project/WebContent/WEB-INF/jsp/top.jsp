@@ -62,11 +62,11 @@
 
         <ul class="historyimg">
 		  <c:forEach begin="1" end="10" step="1" var="i">
-		    <li class="flex-item item${i}"><img src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
+		    <li class="flex-item item${i}"><img class="k" src="<%=application.getRealPath("/")%>images\rireki.jpg" width="50" height="50"></li>
 		  </c:forEach>
 		</ul>
 
-		<h1 class="cate_title">カテゴリー</h1>
+		<h1 class="cate_title">category</h1>
 		<h2>illustration</h2>
 
 		<div class="cate">
