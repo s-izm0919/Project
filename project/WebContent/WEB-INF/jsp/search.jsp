@@ -4,7 +4,7 @@
 
 <html>
     <head>
-        <title>検索結果ページ</title>
+        <title>検索結果ページ-</title>
     </head>
   	<body>
 	<table border="1">
