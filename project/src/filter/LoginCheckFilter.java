@@ -11,11 +11,11 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import bean.User;
 import bean.Shop;
+import bean.User;
 import dao.AbstractDaoFactory;
-import dao.UserDao;
 import dao.ShopDao;
+import dao.UserDao;
 
 
 public class LoginCheckFilter implements Filter {
@@ -48,13 +48,14 @@ public class LoginCheckFilter implements Filter {
 
 			String password=req.getParameter("userPassword");
 
+			System.out.println("----loginCheckFilter------");
 			System.out.println("identifidname: " + userIdentifiedName);
 			System.out.println("password: " + password);
 			System.out.println("email: " + mail);
 
 
 
-		User	user=null;
+			User user=null;
 
 			HttpSession session = ((HttpServletRequest)req).getSession();
 
@@ -62,10 +63,10 @@ public class LoginCheckFilter implements Filter {
 			UserDao dao=factory.getUserDao();
 			if(userIdentifiedName!=null&&mail==null) {
 				user=dao.login(userIdentifiedName,null,password);
-				System.out.println("user:"+user);
+				System.out.println("user:"+user.getUserName());
 			}else if(userIdentifiedName==null&&mail!=null) {
 				user=dao.login(null,mail,password);
-				System.out.println("user:"+user);
+				System.out.println("user:"+user.getUserName());
 			}
 			else {
 				System.out.println("loginできない");
@@ -75,8 +76,24 @@ public class LoginCheckFilter implements Filter {
 
 				session.setAttribute("token","OK");
 				session.setAttribute("user", user);
+				String userId=user.getUserId();
+				ShopDao shopDao=factory.getShopDao();
+				Shop shopInfo=shopDao.getUserShopInfo(userId);
+				System.out.println("shopinfo:"+shopInfo);
+				if(shopInfo!=null) {
+					session.setAttribute("shop", shopInfo);
+
+				}
+				else {
+					shopInfo = new Shop();
+					session.setAttribute("shop", shopInfo);
+				}
+
+
 			}
+
 			System.out.println("start shop session");
+
 
 
 
