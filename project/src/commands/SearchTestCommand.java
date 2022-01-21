@@ -9,6 +9,7 @@ public class SearchTestCommand extends AbstractCommand {
 		resc.setTarget("search");
 		return resc;
 
+
 	}
 
 }
