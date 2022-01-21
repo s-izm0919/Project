@@ -17,6 +17,7 @@
         <url-pattern>/callsigninpage</url-pattern>
         <url-pattern>/callopen</url-pattern>
         <url-pattern>/callshopsettings</url-pattern>
+        <url-pattern>/addcart</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
@@ -29,6 +30,7 @@
         <url-pattern>/callusersettings</url-pattern>
         <url-pattern>/callopen</url-pattern>
         <url-pattern>/callsigninpage</url-pattern>
+        <url-pattern>/addcart</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
 

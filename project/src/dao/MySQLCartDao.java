@@ -19,7 +19,7 @@ public class MySQLCartDao implements CartDao {
         	cn = Connector.getInstance().beginTransaction();
             //
 
-            String sql="insert into cart(use_id,item_id)" + " values(?,?) ";
+            String sql="insert into cart(user_id,item_id)" + " values(?,?) ";
 
             st=cn.prepareStatement(sql);
 
@@ -28,6 +28,8 @@ public class MySQLCartDao implements CartDao {
             st.setInt(2, i_id);
 
             st.executeUpdate();
+
+            //System.out.println("正常にカートにコミットできた");
 
             Connector.getInstance().commit();
 

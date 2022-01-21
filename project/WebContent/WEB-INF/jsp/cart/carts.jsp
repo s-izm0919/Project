@@ -6,33 +6,38 @@
 
 <html>
     <head>
-        <title>商品一覧</title>
+        <title>カート一覧</title>
     </head>
     <body>
-        <h1>商品一覧</h1>
+        <h1>カート一覧</h1>
    		<br>
 
-   		対象商品が  ${result["itemcount"]}  件ヒットしました。
+   		カート内の商品は  ${result["itemcount"]}  件あります。
 
    		<table border="1">
 
-        <c:forEach var="item" items="${result['itemsearch']}">
+        <c:forEach var="cart" items="${result['viewcart']}">
             <tr>
-                <td>${item.mainImagePath}</td>
+                <td>${cart.}</td>
                 <td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
                 <td>${item.itemName}</td>
                 <td>${item.itemPrice}</td>
                 <td>${item.shopName}</td>
-                <td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>
+
+                <!-- 	private String shopName;
+						private String shopId;
+						private String itemName;
+						private String itemId;
+						private String mainImagePath;
+						private int itemPrice;
+						private int orderPrice;
+						private int orderCount; -->
 
             </tr>
         </c:forEach>
 
 
         </table>
-
-
-
 
     </body>
 </html>
