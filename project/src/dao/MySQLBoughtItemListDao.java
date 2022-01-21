@@ -25,7 +25,7 @@ public class MySQLBoughtItemListDao implements BoughtItemListDao{
         				"INNER JOIN order_detail AS od ON os.order_id = od.order_id " +
         				"INNER JOIN item AS i ON od.item_id=i.item_id " +
         				"WHERE i.item_id IN (SELECT item_id FROM order_detail WHERE order_id IN (SELECT order_id FROM orders WHERE user_id='U1')) " +
-        				"AND os.order_id IN (SELECT order_id FROM orders WHERE user_id='U1');";
+        				"AND os.order_id IN (SELECT order_id FROM orders WHERE user_id='"+userid+"');";
 
             st=cn.prepareStatement(sql);
 
