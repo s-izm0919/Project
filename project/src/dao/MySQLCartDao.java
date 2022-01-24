@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bean.Cart;
+import bean.Shop;
 import utility.Connector;
 
 public class MySQLCartDao implements CartDao {
@@ -98,6 +101,61 @@ public class MySQLCartDao implements CartDao {
             }
         }
         return c;
+	}
+	public List getShopId(String userid) {
+		Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        ArrayList list = new ArrayList();
+
+        Shop s = null;
+
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
+            String sql="SELECT DISTINCT i.shop_id, s.shop_name FROM item i LEFT OUTER JOIN cart c ON i.item_id=c.item_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id WHERE c.user_id = '"+userid+"'";
+
+            //System.out.println(sql);
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+
+            while(rs.next()) {
+
+            	s=new Shop();
+
+            	s.setShopId(rs.getString(1));
+            	s.setShopName(rs.getString(2));
+            	System.out.println(s.getShopName());
+
+            	list.add(s);
+
+            }
+
+
+            Connector.getInstance().commit();
+
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
+                }
+            }
+        }
+        return list;
 	}
 	//ショップが商品を非公開または削除したとき
 	public void removeItemShop(String itemid) {

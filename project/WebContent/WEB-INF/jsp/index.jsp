@@ -38,7 +38,7 @@
 	<a href="items">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
-	<a href="carts.jsp">カート</a>
+	<a href="callcart">カート</a>
 	<p>ショップ</p>
 	<a href="shopopen">ショップ開設ガイド</a>
 	<a href="callopen">ショップ解説ページ</a>

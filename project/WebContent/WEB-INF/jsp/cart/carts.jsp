@@ -4,6 +4,8 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@ page isErrorPage="true" %>
+
 <html>
     <head>
         <title>カート一覧</title>
@@ -11,33 +13,18 @@
     <body>
         <h1>カート一覧</h1>
    		<br>
+	<c:forEach var="shop" items="${result['viewcart']}">
+		<c:out value="${shop[0].shopName}"/><br>
+		<c:forEach var="shopitem" items="${shop[1]}">
+			商品名：<c:out value="${shopitem.itemName}"/><br>
+			商品価格<c:out value="${shopitem.itemPrice}"/><br>
+		</c:forEach>
+		<c:forEach var="total" items="${shop[1]}" begin="0" end="0">
+			買上点数：<c:out value="${total.orderCount}"/><br>
+			合計金額：<c:out value="${total.orderPrice}"/><br>
+		</c:forEach>
+	</c:forEach>
 
-   		カート内の商品は  ${result["itemcount"]}  件あります。
-
-   		<table border="1">
-
-        <c:forEach var="cart" items="${result['viewcart']}">
-            <tr>
-                <td>${cart.}</td>
-                <td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
-                <td>${item.itemName}</td>
-                <td>${item.itemPrice}</td>
-                <td>${item.shopName}</td>
-
-                <!-- 	private String shopName;
-						private String shopId;
-						private String itemName;
-						private String itemId;
-						private String mainImagePath;
-						private int itemPrice;
-						private int orderPrice;
-						private int orderCount; -->
-
-            </tr>
-        </c:forEach>
-
-
-        </table>
 
     </body>
 </html>
