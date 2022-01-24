@@ -18,10 +18,12 @@
 		<c:forEach var="shopitem" items="${shop[1]}">
 			商品名：<c:out value="${shopitem.itemName}"/><br>
 			商品価格<c:out value="${shopitem.itemPrice}"/><br>
+			<a href="removecartitem?itemId=${shopitem.itemId}">カートから取り除く</a><br>
 		</c:forEach>
 		<c:forEach var="total" items="${shop[1]}" begin="0" end="0">
 			買上点数：<c:out value="${total.orderCount}"/><br>
 			合計金額：<c:out value="${total.orderPrice}"/><br>
+			<a href="removecartitemshop?shopId=${total.shopId}">ショップごとカートから取り除く</a><br>
 		</c:forEach>
 	</c:forEach>
 
