@@ -3,7 +3,7 @@ package commands.call;
 import commands.AbstractCommand;
 import context.ResponseContext;
 
- public class CallShopItemDetailsCommand extends AbstractCommand {
+ public class CallEditItemCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("---CallShopitemDetailscommand---");
@@ -13,6 +13,7 @@ import context.ResponseContext;
 
 	}
 }
+
 
 
 
