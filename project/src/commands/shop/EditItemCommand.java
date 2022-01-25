@@ -28,6 +28,7 @@ import utility.SessionManager;
 
 
 		String itemName=reqc.getParameter("itemName")[0];
+		System.out.println("itemName: " + itemName);
 
 		String itemPrice =reqc.getParameter("itemPrice")[0];
 
@@ -48,7 +49,7 @@ import utility.SessionManager;
 
 
 
-		System.out.println("itemName: " + itemName);
+		//System.out.println("itemName: " + itemName);
 		System.out.println("explanation: " + itemExplanation);
 		System.out.println("imagePath: " + mainImagePath);
 		System.out.println("price: " + itemPrice);
