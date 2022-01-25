@@ -41,7 +41,7 @@ public class DisplayItemCommand extends AbstractCommand {
 		String itemIsOpen=reqc.getParameter("itemIsOpen")[0];
 
 
-		System.out.println("shopId: " + shopId);
+
 		System.out.println("itemName: " + itemName);
 		System.out.println("explanation: " + itemExplanation);
 		System.out.println("imagePath: " + mainImagePath);

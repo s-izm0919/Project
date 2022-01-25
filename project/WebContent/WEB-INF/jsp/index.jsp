@@ -38,6 +38,8 @@
 	<a href="shop/setting">ショップ情報編集</a>
 	<a href="shop/items.jsp">商品管理</a>
 	<a href="calldisplayitem">商品登録</a>
+	<a href="shopitemdetails">商品一覧</a>
+
 	<a href="shop/itwems/edit.jsp">商品編集</a>
 	<a href="shop/orders_list.jsp">注文一覧</a>
 	<a href="users/orders">注文詳細</a>
