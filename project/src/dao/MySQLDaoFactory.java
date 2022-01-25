@@ -107,6 +107,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
 		return new MySQLUserOrderItemDetailsDao();
 	}
+	public HistoryListDao getHistoryListDao(){
+		return new MySQLHistoryListDao();
+	}
 
 	*/
 }

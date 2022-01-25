@@ -47,10 +47,39 @@ public abstract class AbstractDaoFactory{
         public abstract ItemDao getItemDao();
         public  abstract ShopDao getShopDao();
         public abstract  ShopItemListDao getShopItemListDao();
+
         public abstract ItemSearchDao getItemSearchDao();
         public abstract ItemDetailsDao getItemDetailsDao();
+        public abstract FavoriteDao getFavoriteDao();
+        public abstract ItemImageDao getItemImageDao();
+
         public abstract CartDao getCartDao();
         public abstract ViewCartDao getViewCartDao();
-
+        /*
+        public abstract CartDao getCartDao();
+        public abstract CategoryDao getCategoryDao();
+        public abstract OrdersDao getOrdersDao();
+        public abstract OrderDetailDao getOrderDetailDao();
+        public abstract ChatDao getChatDao();
+        public abstract UserChatMessageDao getUserChatMessageDao();
+        public abstract ShopChatMessageDao getShopChatMessageDao();
+        public abstract UserChatNotificationDao getUserChatNotificationDao();
+        public abstract ShopChatNotificationDao getShopChatNotificationDao();
+        public abstract FollowDao getFollowDao();
+        public abstract HistoryDao getHistoryDao();
+        public abstract AdministratorDao getAdministratorDao();
+        public abstract AdministratorMessageDao getAdministratorMessageDao();
+        public abstract NewItemDao getNewItemDao();
+        public abstract ShopItemListDao getShopItemListDao();
+        public abstract ItemEditDao getItemEditDao();
+        public abstract OrderLIstDao getOrderLIstDao();
+        public abstract ShopOrderItemDetailsDao getShopOrderItemDetailsDao();
+        public abstract ViewCartDao getViewCartDao();
+        public abstract OrderConfirmDao getOrderConfirmDao();
+        public abstract OrderCompleteDao getOrderCompleteDao();
+        public abstract BoughtItemListDao getBoughtItemListDao();
+        public abstract UserOrderItemDetailsDao getUserOrderItemDetailsDao();
+        public abstract HistoryListDao getHistoryListDao();
+        */
 
     }

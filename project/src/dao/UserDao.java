@@ -11,6 +11,7 @@ public interface UserDao{
     public User getUserPassword(String email);
     public User getPoint(String userid);
     public void updatePoint(String userid,String point);
+    public User getPass(String userid);
     //public List getAllUsers();
 }
 //
