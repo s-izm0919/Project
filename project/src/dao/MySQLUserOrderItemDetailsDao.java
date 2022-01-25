@@ -26,7 +26,8 @@ public class MySQLUserOrderItemDetailsDao implements UserOrderItemDetailsDao{
         				"INNER JOIN order_detail AS od ON os.order_id=od.order_id " +
         				"INNER JOIN item AS i ON od.item_id=i.item_id " +
         				"INNER JOIN shop AS s ON i.shop_id=s.shop_id " +
-        				"WHERE os.order_id=(SELECT order_id FROM order_detail WHERE item_id='"+itemid+"' AND order_id IN (SELECT order_id FROM orders WHERE user_id='"+userid+"'));";
+        				"WHERE os.order_id=(SELECT order_id FROM order_detail WHERE item_id='"+itemid+"' AND order_id IN (SELECT order_id FROM orders WHERE user_id='"+userid+"')) " +
+        				"AND i.item_is_open='1' AND s.shop_is_open='1';";
 
             st=cn.prepareStatement(sql);
 
