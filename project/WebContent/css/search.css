@@ -115,7 +115,11 @@ div.sent
 .example{
     display: flex;
 }
-.example>div{
+.example>.a{
+
+    padding:15px;
+}}
+.example>.b{
 
     padding:15px;
 }

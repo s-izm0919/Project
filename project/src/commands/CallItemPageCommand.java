@@ -2,7 +2,7 @@ package commands;
 
 import context.ResponseContext;
 
-public class CallItemCommand extends AbstractCommand {
+public class CallItemPageCommand extends AbstractCommand {
 	@SuppressWarnings("unchecked")
 	public ResponseContext execute(ResponseContext resc) {
 

@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>商品の詳細ページ</title>
-		<%@include file="..//../../css/item.css" %>
+		<%@include file="../../../css/item.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
@@ -61,47 +61,28 @@
 				<p class="item">
 					<img src="<%=application.getRealPath("/")%>images\item.jpg">
 				</p>
-				<p>商品テキスト</p>
+				Explanation:<p>${result['itemdetails'].itemExplanation}</p>
 				</div>
 				<!--カートに入れるなど -->
-				<div><a>test</a>
-				<p>ショップ情報</p>
-				<p>商品名</p>
-				<input type="submit" value="いいねする">
-				<p>商品の値段</p>
+				<div>
+				ShopName<p>${result['itemdetails'].shopName}</p>
+				Name:<p>${result['itemdetails'].itemName}</p>
+				<input type="submit" value="いいねする"><br>
+				Price<p>${result['itemdetails'].itemPrice}</p>
 				<input type="submit" value="カートに入れる">
 				</div>
 				</div>
 				</div>
 			</div>
 		</div>
-    </body>
 
-<!--
-こっちは和泉がサンプル用に作ったデータです。参考資料として残しておきます
-=======
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>商品詳細</title>
-</head>
-<body>
 	<h1>商品データ</h1>
 	ID;<p>${result['itemdetails'].itemId}</p>
-	Name:<p>${result['itemdetails'].itemName}</p>
-	Explanation:<p>${result['itemdetails'].itemExplanation}</p>
-	Price<p>${result['itemdetails'].itemPrice}</p>
-	ShopName<p>${result['itemdetails'].shopName}</p>
+
+
+
+
 	ShopID:<p>${result['itemdetails'].shopId}</p>
 
 </body>
-
 </html>
-
--->
