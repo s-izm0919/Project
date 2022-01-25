@@ -56,14 +56,7 @@
 		        </ul>
 	        </nav>
     </header>
-	<table border="1">
-		<c:forEach var = "product" items = "${result}">
-			<tr><th>商品名</th><th>サムネ</th></tr>
-			<tr><td>${product.item_name}</td><td><img src="${product.main_image_path}"></td></tr>
-		</c:forEach>
-       </table>
-  </body>
-<!-- 和泉が作ったサンプル残しておきます
+
     <body>
         <h1>商品一覧</h1>
    		<br>
@@ -91,5 +84,4 @@
 
 
     </body>
-	-->
 </html>
