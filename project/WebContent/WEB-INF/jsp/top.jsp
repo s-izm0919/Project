@@ -65,7 +65,7 @@
 			<p><img src="images\toku.jpg"></p>
         </h2>
 
-        <h3 class="history">りれき</h3>
+        <h3 class="history">履歴</h3>
 
         <ul class="historyimg">
 		  <c:forEach begin="1" end="10" step="1" var="i">
