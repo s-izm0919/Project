@@ -74,18 +74,19 @@ div.sent
 /* レイアウト用スタイル */
 .boxwrap{
   margin:40px auto;
-  width:400px;
+  width:50%;
   padding:20px 60px;
 
 }
 .wrap{
      margin: auto;
-    width: 300px;
+    width: auto;
     background-color: white;
     color: #fff;
     border-radius: 15px;
-
+    padding:15px;;
     border:1px solid #ddd;
+
 
 }
 
@@ -108,9 +109,18 @@ div.sent
   vertical-align:middle;
 }
 
+.item img {
+    width: 200px;  /* 横幅を200pxに */
+}
+.example{
+    display: flex;
+}
+.example>div{
+
+    padding:15px;
+}
 .color
 {
 	color: Black;
 }
-
 </style>

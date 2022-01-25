@@ -31,7 +31,8 @@
    		<form method="POST" action="searchshop">
     	ショップ検索項目<input type="text" name="shopName" maxlength="20" ><br>
       			<input type="submit" value="検索">
-   	</form>商品検索ページ
+      	</form>
+
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
 	<a href="callcart">カート</a>
@@ -57,6 +58,9 @@
 	<c:forEach var="list" items='${result["list"]}'>
         <th><c:out value="${list}"/></th>
         </c:forEach>
+
+	<a href="callsearch">あ</a>
+	<a href="callitempage">a</a>
 
 
 </body>
