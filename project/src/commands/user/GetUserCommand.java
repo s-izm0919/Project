@@ -25,6 +25,7 @@ import utility.SessionManager;
 
 
 
+
 		resc.setResult(user);
 
 		resc.setTarget("users/settings");

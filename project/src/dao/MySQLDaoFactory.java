@@ -16,6 +16,12 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ItemImageDao getItemImageDao() {
 		return new MySQLItemImageDao();
 	}
+
+	public ShopItemListDao getShopItemListDao() {
+		// TODO 自動生成されたメソッド・スタブ
+		return new  MySQLShopItemListDao();
+	}
+
 	public CartDao getCartDao() {
 		return new MySQLCartDao();
 	}
