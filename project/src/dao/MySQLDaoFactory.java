@@ -69,7 +69,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ItemDetailsDao getItemDetailsDao() {
 		return new MySQLItemDetailsDao();
 	}
-	
+
 	/*
 	public ShopItemListDao getShopItemListDao() {
 		return new MySQLShopItemListDao();
@@ -97,6 +97,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	}
 	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
 		return new MySQLUserOrderItemDetailsDao();
+	}
+	public HistoryListDao getHistoryListDao(){
+		return new MySQLHistoryListDao();
 	}
 
 	*/
