@@ -11,7 +11,8 @@
 <body>
 
 	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
-	user名:${user.userName}
+	user名:${user.userName}<br>
+	shop名:${shop.shopName}
 	<a href=""></a>
 	<p>ユーザー系</p>
 	<a href="callnew">ユーザー登録</a>
