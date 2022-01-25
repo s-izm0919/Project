@@ -13,9 +13,9 @@
             サムネイル<input type="file" name="mainImagePath" required><br>
             商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
             カテゴリ<select name="categoryId" required>
-                        <option value="猫">猫</option>
-                        <option value="犬">犬</option>
-                        <option value="金">金</option>
+                        <option value="cat">猫</option>
+                        <option value="dog">犬</option>
+                        <option value="gold">金</option>
                     </select><br>
             データ本体<input type="file" name="itemDataPath" required><br>
 

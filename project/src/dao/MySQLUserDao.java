@@ -22,7 +22,7 @@ public class MySQLUserDao implements UserDao{
 
             st=cn.prepareStatement(sql);
 
-           // st.setString(1, "U34");
+           // st.setString(1, "U");
             st.setString(1, userInfo.getUserIdentifiedName());
             st.setString(2, userInfo.getUserName());
             st.setString(3, userInfo.getUserPassword());
