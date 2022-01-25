@@ -342,4 +342,42 @@ public class MySQLShopDao implements ShopDao {
         }
         return Shop;
     }
+    public void updateEarning(int earning,String shopId) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
+            String sql="update shop set shop_earning=shop_earning+'"+earning+"' where shop_id='"+shopId+"'";
+            st=cn.prepareStatement(sql);
+
+
+            st=cn.prepareStatement(sql);
+
+            Shop s = new Shop();
+            st.setInt(1, s.getShopEarning());
+
+            st.executeUpdate();
+
+            Connector.getInstance().commit();
+
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+
+            }finally{
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
+                }
+            }
+        }
+    }
 }
