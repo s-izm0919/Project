@@ -29,6 +29,7 @@ public class MySQLItemDao implements ItemDao{
             	sql="select item_id, item_name, item_price, main_image_path, shop_id from item where item_is_open=1 AND unused=1 AND item_name like '%"+itemname+"%' ORDER BY item_register_date DESC";
             }
 
+
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
@@ -43,7 +44,7 @@ public class MySQLItemDao implements ItemDao{
 
                 BigDecimal _itemprice =rs.getBigDecimal(3);
 				int itemprice=_itemprice.intValue();
-				i.setItemId(itemprice);
+				i.setItemPrice(itemprice);
 
                 i.setMainImagePath(rs.getString(4));
 

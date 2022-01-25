@@ -4,7 +4,7 @@ import java.io.Serializable;
 public class BoughtItemList implements Serializable{
 	private String itemImagePath;
 	private String itemName;
-	private String itemId;
+	private int itemId;
 	private String purchaseDate;
 	public BoughtItemList(){
 		super();
@@ -15,7 +15,7 @@ public class BoughtItemList implements Serializable{
 	public String getItemName() {
 		return itemName;
 	}
-	public String getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
 	public String getPurchaseDate() {
@@ -27,7 +27,7 @@ public class BoughtItemList implements Serializable{
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	public void setItemId(String itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 	public void setPurchaseDate(String purchaseDate) {

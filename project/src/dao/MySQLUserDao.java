@@ -275,6 +275,86 @@ public class MySQLUserDao implements UserDao{
         }
         return u;
     }
+    public User getPoint(String userid) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        User u = null;
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
+            cn.setAutoCommit(false);
+
+            String sql="select user_id, user_password from user where user_id='"+userid+"'";
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+            while(rs.next()) {
+	            u=new User();
+
+	            u.setUserId(rs.getString(1));
+	            u.setUserPoint(rs.getInt(2));
+            }
+            Connector.getInstance().commit();
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
+                }
+            }
+        }
+        return u;
+    }
+    public void updatePoint(String userid,String point) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+            //
+
+            String sql="UPDATE user SET user_point=? WHERE user_id='"+userid+"'";
+
+
+            st=cn.prepareStatement(sql);
+            st.setInt(1, Integer.parseInt(point));
+
+            st.executeUpdate();
+
+            Connector.getInstance().commit();
+
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }
+        finally{
+            try{
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+
+            }finally{
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
+                }
+            }
+        }
+    }
 }
 
     /*

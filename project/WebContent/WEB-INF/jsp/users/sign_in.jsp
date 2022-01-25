@@ -6,6 +6,22 @@
         <title>ログインページ</title>
         <%@include file="../../../css/sign_in.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<script type="text/javascript">
+	    function getdata(){
+	        if(window.location.search){
+	            /* URLの「?」以降のパラメータを変数nに代入 */
+	            var n=window.location.search.substring(0,window.location.search.length);
+	            var par = "/project${requestScope.target}"+n;
+	            /* テキストボックスにパラメータを表示 */
+	            //document.form3.elements["getpram"].value=par;
+	            document.form.action=par;
+	        }
+	    }
+	    /* オンロード時に実行 */
+	    window.onload=getdata;
+
+	    </script>
+
     </head>
     <body>
           <header>
@@ -39,13 +55,17 @@
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20">
        		<h1 class="yohaku">ログイン</h1>
-       			<form method="POST" action="/project${requestScope.target}">
+       			<form method="POST" action="" name="form">
            			<input type="text" name="userIdenNameOrEmail"  placeholder="ユーザーIDまたはメールアドレス"><br><br>
            			<input type="password" name="userPassword" placeholder="パスワード" required><br><br>
            			<input type="submit" value="ログイン"><br><br>
            			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
+
+				<form name="form3" action="#">
+				取得したパラメータ：<input type="text" name="getpram" size="50" />
+				</form>
         	</div>
         </div>
     </body>
