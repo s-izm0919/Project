@@ -19,9 +19,14 @@ public class SessionManager {
 	}
 	public static void setAttribute(User user){
 		session.setAttribute("user",user);
+		session.setAttribute("token","ok");
+
 	}
 	public static void setAttribute(Shop shop) {
 		session.setAttribute("shop", shop);
+	}
+	public static void setAttribute(String token) {
+		session.setAttribute("token", token);
 	}
 
 	public static Object getAttribute(String name){
