@@ -56,12 +56,14 @@
 	        </nav>
     </header>
     <br><br><br><br>
+
     <div class="example">
+ 		<div class="wrap">
+ 		<div class="color">
     			<div class="a">
     				<p>カテゴリ(大まかなカテゴリ)</p>
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">指定なし</option>
-			            <option ></option>
 			            <option >1</option>
 			            <option >2</option>
 			            <option >3</option>
@@ -71,12 +73,15 @@
     				<p>サブカテゴリ(詳細なカテゴリ)</p>
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">指定なし</option>
-			            <option ></option>
 			            <option >1</option>
 			            <option >2</option>
 			            <option >3</option>
 			            <option >4</option>
-			        </select>
+			        </select><br>
+			        <a>金額</a><br>
+			        <input type="range" name="speed" min="0" max="20">
+			        </div>
+			        </div>
 			        </div>
 		<div class="boxwrap">
 			<div class="wrap pattern-3 mhb-20">
