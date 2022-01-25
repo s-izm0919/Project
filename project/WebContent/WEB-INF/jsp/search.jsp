@@ -1,17 +1,38 @@
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
-        <%@taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core" %>
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
     <head>
-        <title>検索結果ページ</title>
+        <title>商品一覧</title>
     </head>
-  	<body>
-	<table border="1">
-		<c:forEach var = "product" items = "${result}">
-			<tr><th>商品名</th><th>サムネ</th></tr>
-			<tr><td>${product.item_name}</td><td><img src="${product.main_image_path}"></td></tr>
-		</c:forEach>
-       </table>
-  </body>
+    <body>
+        <h1>商品一覧</h1>
+   		<br>
+
+   		対象商品が  ${result["itemcount"]}  件ヒットしました。
+
+   		<table border="1">
+
+        <c:forEach var="item" items="${result['itemsearch']}">
+            <tr>
+                <td>${item.mainImagePath}</td>
+                <td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
+                <td>${item.itemName}</td>
+                <td>${item.itemPrice}</td>
+                <td>${item.shopName}</td>
+                <td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>
+
+            </tr>
+        </c:forEach>
+
+
+        </table>
+
+
+
+
+    </body>
 </html>

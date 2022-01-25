@@ -92,7 +92,7 @@ public class LoginCheckFilter implements Filter {
 
 			}
 
-			System.out.println("start shop session");
+			//System.out.println("start shop session");
 
 
 

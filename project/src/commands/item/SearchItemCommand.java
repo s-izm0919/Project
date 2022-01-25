@@ -38,7 +38,7 @@ public class SearchItemCommand extends AbstractCommand{
 
 		resc.setResult(result);
 
-		resc.setTarget("items/items");
+		resc.setTarget("search");
 
 		return resc;
 

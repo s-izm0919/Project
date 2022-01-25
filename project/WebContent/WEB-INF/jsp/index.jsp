@@ -9,10 +9,7 @@
 <title>ページ移動画面</title>
 </head>
 <body>
-	<h1>簡易ページリンク一覧(html式)</h1>
-	user名:${user.userName}
-	<br>
-	shop名:${shop }
+
 	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
 	user名:${user.userName}
 	<a href=""></a>
@@ -35,17 +32,18 @@
     	ショップ検索項目<input type="text" name="shopName" maxlength="20" ><br>
       			<input type="submit" value="検索">
    	</form>商品検索ページ
-	<a href="items">商品ページ</a>
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
-	<a href="carts.jsp">カート</a>
+	<a href="callcart">カート</a>
 	<p>ショップ</p>
 	<a href="shopopen">ショップ開設ガイド</a>
 	<a href="callopen">ショップ解説ページ</a>
 	<a href="callshopsettings">ショップ管理</a>
 	<a href="shop/setting">ショップ情報編集</a>
 	<a href="shop/items.jsp">商品管理</a>
-	<a href="additem">商品登録</a>
+	<a href="calldisplayitem">商品登録</a>
+	<a href="shopitemdetails">商品一覧</a>
+
 	<a href="shop/itwems/edit.jsp">商品編集</a>
 	<a href="shop/orders_list.jsp">注文一覧</a>
 	<a href="users/orders">注文詳細</a>
