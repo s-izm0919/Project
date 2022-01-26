@@ -1,3 +1,5 @@
+<!-- これは検索結果のJSPです。 -->
+
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
 
@@ -6,15 +8,16 @@
 
 <html>
     <head>
-        <title>検索結果ページ-</title>
-		<%@include file="../../css/search.css" %>
+        <title>商品検索結果</title>
+		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
+		<script>
+
+		</script>
     </head>
-
-  	<body>
-
-    <header>
+    <body>
+     <header>
 
     		<h1>
 			<a href="top">
@@ -56,40 +59,63 @@
 		        </ul>
 	        </nav>
     </header>
-	<table border="1">
-		<c:forEach var = "product" items = "${result}">
-			<tr><th>商品名</th><th>サムネ</th></tr>
-			<tr><td>${product.item_name}</td><td><img src="${product.main_image_path}"></td></tr>
-		</c:forEach>
-       </table>
-  </body>
-<!-- 和泉が作ったサンプル残しておきます
-    <body>
-        <h1>商品一覧</h1>
-   		<br>
+    <br><br><br><br>
 
-   		対象商品が  ${result["itemcount"]}  件ヒットしました。
+ <div class="nonemargin">
+ 	<div class="example">
+    	<div class="a">
+			<div class="wrapleft">
+ 				<div class="color">
+    				<p>カテゴリ(大まかなカテゴリ)</p>
+					<div class="cp_ipselect cp_sl01">
+						<select name="select" onChange="location.href=value;">
+							<option value="#">指定なし</option>
+							<option >1</option>
+							<option >2</option>
+							<option >3</option>
+							<option >4</option>
+							</select><br>
+					</div>
+    				<p>サブカテゴリ(詳細なカテゴリ)</p>
 
-   		<table border="1">
+					<div class="cp_ipselect cp_sl01">
+						<select name="select" onChange="location.href=value;">
+							<option value="#">指定なし</option>
+							<option >1</option>
+							<option >2</option>
+							<option >3</option>
+							<option >4</option>
+						</select><br>
+					</div>
+					<a>金額</a><br>
+					<input type="range" id="volumeSlider" name="speed" min="0" max="5000" step="250" value="5000">
 
-        <c:forEach var="item" items="${result['itemsearch']}">
-            <tr>
-                <td>${item.mainImagePath}</td>
-                <td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
-                <td>${item.itemName}</td>
-                <td>${item.itemPrice}</td>
-                <td>${item.shopName}</td>
-                <td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>
-
-            </tr>
-        </c:forEach>
-
-
-        </table>
-
-
-
-
-    </body>
-	-->
+				</div>
+			</div>
+		</div>
+		<div class="b">
+			<div class="boxwrap">
+				<div class="wrap pattern-3 mhb-20">
+					<div class="color">
+        				<h1>商品一覧</h1><br>
+				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
+   						<table border="1">
+        					<c:forEach var="item" items="${result['itemsearch']}">
+            					<tr>
+                					<td>${item.mainImagePath}</td>
+                					<td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
+                					<td>${item.itemName}</td>
+                					<td>${item.itemPrice}</td>
+                					<td>${item.shopName}</td>
+	                				<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>
+    	        				</tr>
+        					</c:forEach>
+        				</table>
+        			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
 </html>
