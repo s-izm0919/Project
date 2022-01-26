@@ -17,10 +17,15 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 		return new MySQLItemImageDao();
 	}
 
-	/*
+	public ShopItemListDao getShopItemListDao() {
+		// TODO 自動生成されたメソッド・スタブ
+		return new  MySQLShopItemListDao();
+	}
+
 	public CartDao getCartDao() {
 		return new MySQLCartDao();
 	}
+	/*
 	public CategoryDao getCategoryDao() {
 		return new MySQLCategoryDao();
 	}
@@ -30,9 +35,11 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public OrderDetailDao getOrderDetailDao() {
 		return new MySQLOrderDetailDao();
 	}
+
 	public ChatDao getChatDao() {
 		return new MySQLChatDao();
 	}
+
 	public UserChatMessageDao getUserChatMessageDao() {
 		return new MySQLUserChatMessageDao();
 	}
@@ -69,7 +76,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ItemDetailsDao getItemDetailsDao() {
 		return new MySQLItemDetailsDao();
 	}
-	
+
 	/*
 	public ShopItemListDao getShopItemListDao() {
 		return new MySQLShopItemListDao();
@@ -83,9 +90,11 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ShopOrderItemDetailsDao getShopOrderItemDetailsDao() {
 		return new MySQLShopOrderItemDetailsDao();
 	}
+	*/
 	public ViewCartDao getViewCartDao() {
 		return new MySQLViewCartDao();
 	}
+	/*
 	public OrderConfirmDao getOrderConfirmDao() {
 		return new MySQLOrderConfirmDao();
 	}
@@ -97,6 +106,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	}
 	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
 		return new MySQLUserOrderItemDetailsDao();
+	}
+	public HistoryListDao getHistoryListDao(){
+		return new MySQLHistoryListDao();
 	}
 
 	*/

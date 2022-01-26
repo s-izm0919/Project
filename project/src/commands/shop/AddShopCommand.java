@@ -34,7 +34,7 @@ public class AddShopCommand extends AbstractCommand {
 		else shopIsopen=""+1;
 
 
-		System.out.println("userId: " + userId);
+
 		System.out.println("shopName: " + shopName);
 		System.out.println("explanation: " + shopExplanation);
 		System.out.println("sellerword: " + sellerWord);
