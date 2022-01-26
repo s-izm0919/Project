@@ -16,7 +16,7 @@ public class MySQLOrderDetailDao implements OrderDetailDao {
         	cn = Connector.getInstance().beginTransaction();
             //
         	if(orderid!=null && itemid!=null) {
-	            String sql="INSERT INTO user VALUES(?,?)";
+	            String sql="INSERT INTO order_detail VALUES(?,?)";
 
 	            st=cn.prepareStatement(sql);
 	            st.setString(1, orderid);
