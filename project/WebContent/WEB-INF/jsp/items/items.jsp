@@ -62,15 +62,9 @@
  		<div class="color">
     			<div class="a">
     				<p>カテゴリ(大まかなカテゴリ)</p>
-			        <select name="select" onChange="location.href=value;">
-			        	<option value="#">指定なし</option>
-			            <option >1</option>
-			            <option >2</option>
-			            <option >3</option>
-			            <option >4</option>
-			        </select><br>
 
-    				<p>サブカテゴリ(詳細なカテゴリ)</p>
+
+					<div class="cp_ipselect cp_sl01">
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">指定なし</option>
 			            <option >1</option>
@@ -78,6 +72,19 @@
 			            <option >3</option>
 			            <option >4</option>
 			        </select><br>
+					</div>
+    				<p>サブカテゴリ(詳細なカテゴリ)</p>
+
+
+					<div class="cp_ipselect cp_sl01">
+			        <select name="select" onChange="location.href=value;">
+			        	<option value="#">指定なし</option>
+			            <option >1</option>
+			            <option >2</option>
+			            <option >3</option>
+			            <option >4</option>
+			        </select><br>
+			        </div>
 			        <a>金額</a><br>
 			        <input type="range" name="speed" min="0" max="20">
 			        </div>
