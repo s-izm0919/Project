@@ -7,12 +7,13 @@
     </head>
     <body>
         <h1>商品編集</h1>
-        <form method="POST" action="edititem">
+        <form method="POST" action="edititem?itemId=${result['singleItemResult'].itemId }">
 
-            商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
-            価格<input type="number" name="itemPrice" value="0" required><br>
-            サムネイル<input type="text" name="mainImagePath" required><br>
-            商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
+            商品タイトル<input type="text" name="itemName" value="${result['singleItemResult'].itemName}" maxlength="50" required><br>
+            価格<input type="number" name="itemPrice" value="${ result['singleItemResult'].itemPrice}" required><br>
+            サムネイル<input type="text" name="mainImagePath" value="${ result['singleItemResult'].mainImagePath}" required><br>
+              explanation<input type="text"  value="${ result['singleItemResult'].itemExplanation}" required><br>
+            商品説明<br><textarea cols="25" rows="8" name="itemExplanation" value="${ result['singleItemResult'].itemExplanation}" required> </textarea><br>
             カテゴリ
             <select name="categoryName">
                         <option name="categoryName" value="1"> painting</option>
@@ -26,7 +27,7 @@
 
 
 
-            データ本体<input type="text" name="itemDataPath" required><br>
+            データ本体<input type="text" name="itemDataPath" value="${ result['singleItemResult'].itemDataPath}" required><br>
 
             <input type="radio" name="itemIsOpen" value="1">公開
 
