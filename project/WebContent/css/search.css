@@ -93,8 +93,8 @@ div.sent
     border:1px solid #ddd;
 }
 .wrapleft{
-    margin: 30px auto;
-    width: 240px;
+	margin: 30px auto;
+    width: 70%;;
     height: 500px;
     background-color: white;
     color: #fff;
@@ -129,11 +129,11 @@ div.sent
     display: flex;
 }
 .example>.a{
-	width: 15%;
-    padding:15px;
+	width: 25%;
+    padding25px;
 }
 .example>.b{
-	width: 85%;
+	width: 75%;
     padding:15px;
 }
 .color
