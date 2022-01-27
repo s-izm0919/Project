@@ -88,8 +88,33 @@
 						</select><br>
 					</div>
 					<a>金額</a><br>
-					<input type="range" id="volumeSlider" name="speed" min="0" max="5000" step="250" value="5000">
+					<p>\0 ～ \<span id="current-value"></span></p>
+					<input type="range" id="Money" name="speed" min="0" max="5000" step="250" value="5000">
+					<script>
+						const inputElem = document.getElementById('Money'); // input要素
+						const currentValueElem = document.getElementById('current-value'); // 埋め込む先のspan要素
 
+						// 現在の値をspanに埋め込む関数
+						const setCurrentValue = (val) => {
+							var money = Money.value;
+	  						if(money > 4900)
+	  						{
+		  						currentValueElem.innerText = val + '+';
+	  						}else{
+		  						currentValueElem.innerText = val;
+	 						}
+						}
+
+						// inputイベント時に値をセットする関数
+						const rangeOnChange = (e) =>{
+  							setCurrentValue(e.target.value);
+						}
+
+						window.onload = () => {
+  							inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
+  							setCurrentValue(inputElem.value); // ページ読み込み時に値をセット
+						}
+					</script>
 				</div>
 			</div>
 		</div>
