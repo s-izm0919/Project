@@ -22,7 +22,7 @@ public class MySQLUserDao implements UserDao{
 
             st=cn.prepareStatement(sql);
 
-           // st.setString(1, "U34");
+           // st.setString(1, "U");
             st.setString(1, userInfo.getUserIdentifiedName());
             st.setString(2, userInfo.getUserName());
             st.setString(3, userInfo.getUserPassword());
@@ -286,7 +286,7 @@ public class MySQLUserDao implements UserDao{
 
             cn.setAutoCommit(false);
 
-            String sql="select user_id, user_password from user where user_id='"+userid+"'";
+            String sql="select user_id, user_point from user where user_id='"+userid+"'";
 
             st=cn.prepareStatement(sql);
 
@@ -354,6 +354,51 @@ public class MySQLUserDao implements UserDao{
                 }
             }
         }
+    }
+    //購入前のパスワード確認用
+    public User getPass(String userid) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        User u = null;
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
+            cn.setAutoCommit(false);
+
+            String sql="select user_id, user_password from user where user_id='"+userid+"'";
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+            while(rs.next()) {
+	            u=new User();
+
+	            u.setUserId(rs.getString(1));
+	            u.setUserPassword(rs.getString(2));
+            }
+            Connector.getInstance().commit();
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+            	if(cn !=null){
+                    Connector.getInstance().closeConnection();
+                }
+            }
+        }
+        return u;
     }
 }
 

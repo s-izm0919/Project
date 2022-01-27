@@ -38,8 +38,9 @@ public class AddUserCommand extends AbstractCommand {
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
 		dao.addUser(user);
-
+		//SessionManager.setAttribute("ok");
 		SessionManager.setAttribute(user);
+
 
 		System.out.println("-- AddUserCommand --");
 

@@ -21,11 +21,11 @@ import utility.SessionManager;;
 
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
-		System.out.println("userId"+userId);
+		System.out.println("userId:"+userId);
 
 
 		String shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
-		System.out.println("shop"+shopId);
+		System.out.println("shopID:"+shopId);
 
 
 
@@ -33,7 +33,7 @@ import utility.SessionManager;;
 		String shopExplanation  = reqc.getParameter("shopExplanation")[0];
 		String sellerWord=reqc.getParameter("sellerWord")[0];
 
-		System.out.println("shopid:"+shopId);
+
 		System.out.println("userId:"+userId);
 
 

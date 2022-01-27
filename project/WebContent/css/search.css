@@ -70,23 +70,37 @@ div.sent
     justify-content: center;
 
 }
+.nonemargin
+{
+	margin: 30px 50px;
+}}
 
 /* レイアウト用スタイル */
 .boxwrap{
   margin:40px auto;
-  width:400px;
-  padding:20px 60px;
+  width:100%;
+  padding:20px 20px;
 
 }
+
 .wrap{
-     margin: auto;
-    width: 300px;
+    margin:auto;
+    width: 96%;
     background-color: white;
     color: #fff;
     border-radius: 15px;
-
+    padding:15px;;
     border:1px solid #ddd;
-
+}
+.wrapleft{
+    margin: 30px auto;
+    width: 240px;
+    height: 500px;
+    background-color: white;
+    color: #fff;
+    border-radius: 15px;
+    padding:15px;;
+    border:1px solid #ddd;
 }
 
 .mgb-20{
@@ -108,9 +122,110 @@ div.sent
   vertical-align:middle;
 }
 
+.item img {
+    width: 200px;  /* 横幅を200pxに */
+}
+.example{
+    display: flex;
+}
+.example>.a{
+	width: 15%;
+    padding:15px;
+}
+.example>.b{
+	width: 85%;
+    padding:15px;
+}
 .color
 {
 	color: Black;
 }
+ div.0
+ {
 
+ }
+
+input[type="range"] {
+  -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+  appearance: none;
+
+  outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+  height: 14px; /* バーの高さ */
+  width: 100%; /* バーの幅 */
+  background: #8acdff; /* バーの背景色 */
+  border-radius: 10px; /* バーの両端の丸み */
+  border: solid 1px #dff1ff; /* バー周囲の線 */
+}
+/* WebKit向けのつまみ */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /*  🚩デフォルトのつまみのスタイルを解除 */
+  background: #53aeff; /* 背景色 */
+  width: 24px; /* 幅 */
+  height: 24px; /* 高さ */
+  border-radius: 50%; /* 円形に */
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
+}
+/* Moz向けのつまみ */
+input[type="range"]::-moz-range-thumb {
+  background: #53aeff; /* 背景色 */
+  width: 24px; /* 幅 */
+  height: 24px; /* 高さ */
+  border-radius: 50%; /* 円形に */
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
+  border: none; /* デフォルトの線を消す */
+}
+/* Firefoxで点線が周りに表示されてしまう問題の解消 */
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+/* つまみをドラッグしているときのスタイル */
+input[type="range"]:active::-webkit-slider-thumb {
+  box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
+}
+.cp_ipselect {
+	overflow: hidden;
+	width: 90%;
+	margin: 2em auto;
+	text-align: center;
+}
+.cp_ipselect select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect.cp_sl01 {
+	position: relative;
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	background: #ffffff;
+}
+.cp_ipselect.cp_sl01::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.9em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #666666;
+	pointer-events: none;
+}
+.cp_ipselect.cp_sl01 select {
+	padding: 8px 38px 8px 8px;
+	color: #666666;
+}
 </style>
