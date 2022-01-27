@@ -19,8 +19,8 @@ public class MySQLOrderDetailDao implements OrderDetailDao {
 	            String sql="INSERT INTO order_detail VALUES(?,?)";
 
 	            st=cn.prepareStatement(sql);
-	            st.setString(1, orderid);
-	            st.setInt(2, Integer.parseInt(itemid));
+	            st.setString(2, orderid);
+	            st.setInt(1, Integer.parseInt(itemid));
 
 	            st.executeUpdate();
         	}

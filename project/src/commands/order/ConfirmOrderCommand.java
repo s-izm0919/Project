@@ -13,6 +13,7 @@ import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.CartDao;
+import dao.OrderCompleteDao;
 import dao.OrderConfirmDao;
 import dao.OrderDetailDao;
 import dao.OrdersDao;
@@ -99,6 +100,9 @@ public class ConfirmOrderCommand extends AbstractCommand{
 
 
 	//注文完了画面を表示する
+	OrderCompleteDao ordercompletedao = (OrderCompleteDao)factory.getOrderCompleteDao();
+	ordercompletedao.getOrderDetail(orderId);
+
 
 	Map result = new HashMap();
 
