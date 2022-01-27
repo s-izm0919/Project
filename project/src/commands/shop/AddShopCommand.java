@@ -40,13 +40,6 @@ public class AddShopCommand extends AbstractCommand {
 		System.out.println("sellerword: " + sellerWord);
 		System.out.println("isOpen: " + shopIsopen);
 
-/*
-		User user = new User();
-		user.setUserIdentifiedName(nickName);
-		user.setUserName(userName);
-		user.setUserPassword(password);
-		user.setUserMail(mail);
-		*/
 
 		Shop shop=new Shop();
 		shop.setUserId(userId);
@@ -59,8 +52,10 @@ public class AddShopCommand extends AbstractCommand {
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopDao dao=factory.getShopDao();
 		dao.addShop(shop);
+		Shop shopInfo=dao.getUserShopInfo(userId);
+		System.out.println("shopId:"+shopInfo.getShopId());
 
-		SessionManager.setAttribute(shop);
+		SessionManager.setAttribute(shopInfo);
 
 
 
