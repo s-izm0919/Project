@@ -37,7 +37,6 @@
 			            <option value="shop_orders">注文一覧</option>
 			            <option value="shop_sales">売上管理</option>
 			            <option value="shop_chatlist">ユーザーとのチャット</option>
-			            <option value="callopen">ショップ解説ページ</option>
 			            <option value="logoutuser">ログアウト</option>
 			        </select>
 					</li>
