@@ -25,6 +25,12 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public CartDao getCartDao() {
 		return new MySQLCartDao();
 	}
+	public BoughtItemListDao getBoughtItemListDao() {
+		return new MySQLBoughtItemListDao();
+	}
+	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
+		return new MySQLUserOrderItemDetailsDao();
+	}
 	/*
 	public CategoryDao getCategoryDao() {
 		return new MySQLCategoryDao();
@@ -102,12 +108,8 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public OrderCompleteDao getOrderCompleteDao() {
 		return new MySQLOrderCompleteDao();
 	}
-	public BoughtItemListDao getBoughtItemListDao() {
-		return new MySQLBoughtItemListDao();
-	}
-	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
-		return new MySQLUserOrderItemDetailsDao();
-	}
+
+
 
 	*/
 
