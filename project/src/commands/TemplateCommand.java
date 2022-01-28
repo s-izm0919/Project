@@ -29,7 +29,7 @@ public class TemplateCommand extends AbstractCommand{
 	resc.setTarget("orders/confirmpassword");
 
 	return resc;
-
+	}
 }
 */
 

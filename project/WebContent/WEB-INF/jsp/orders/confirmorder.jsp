@@ -28,8 +28,8 @@
 	ユーザーのポイント:<c:out value="${result['confirmorder'][0].userPoint}"/><br>
 	<a href="">入金画面へ</a><br>
 	<form action="confirmorder?shopId=${requestScope.shopId}" method="POST">
-		<input type="text" name="boost" value="0"/>
-		<input type="submit" value="購入する"/>
+		<input type="text" name="boost" value="0"/><br>
+		<input type="submit" value="購入する"/><br>
 	</form>
 
 

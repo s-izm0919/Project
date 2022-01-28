@@ -101,10 +101,11 @@ public class ConfirmOrderCommand extends AbstractCommand{
 
 	//注文完了画面を表示する
 	OrderCompleteDao ordercompletedao = (OrderCompleteDao)factory.getOrderCompleteDao();
-	ordercompletedao.getOrderDetail(orderId);
-
+	ArrayList orderdetail = (ArrayList)ordercompletedao.getOrderDetail(orderId.toString());
 
 	Map result = new HashMap();
+
+	result.put("ordercomplete",orderdetail);
 
 	resc.setResult(result);
 
