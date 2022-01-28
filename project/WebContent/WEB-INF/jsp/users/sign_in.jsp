@@ -55,7 +55,7 @@
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20">
        		<h1 class="yohaku">ログイン</h1>
-       			<form method="POST" action="" name="form">
+       			<form method="POST" action="callsigninpage" name="form">
            			<input type="text" name="userIdenNameOrEmail"  placeholder="ユーザーIDまたはメールアドレス"><br><br>
            			<input type="password" name="userPassword" placeholder="パスワード" required><br><br>
            			<input type="submit" value="ログイン"><br><br>

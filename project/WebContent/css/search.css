@@ -228,4 +228,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 	padding: 8px 38px 8px 8px;
 	color: #666666;
 }
+.wrapa {
+    height: 1080px;
+    width: 1920px;
+    position: absolute;
+    transform-origin: 0% 0%;
+}
 </style>
