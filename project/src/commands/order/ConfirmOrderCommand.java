@@ -98,6 +98,10 @@ public class ConfirmOrderCommand extends AbstractCommand{
 
 	userdao.updatePoint(shop_userid, shoppoint.toString());
 
+	//セッション更新
+	User newuser = userdao.getUserInfo(userId);
+	SessionManager.setAttribute(newuser);
+
 
 	//注文完了画面を表示する
 	OrderCompleteDao ordercompletedao = (OrderCompleteDao)factory.getOrderCompleteDao();
