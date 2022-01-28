@@ -8,7 +8,7 @@ body {
    padding: 0;
    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
    background-color: #EEEEEE;
-
+   width: 100vw;
 }
 /*--ヘッダー設定*/
 header {
@@ -73,10 +73,7 @@ div.sent
 .nonemargin
 {
 	margin: 30px 50px;
-	height: 1080px;
-    width: 1920px;
-    position: absolute;
-    transform-origin: 0% 0%;
+
 }}
 
 /* レイアウト用スタイル */
