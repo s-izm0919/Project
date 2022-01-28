@@ -25,6 +25,8 @@ import utility.SessionManager;
 
 		String shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
 		System.out.println("shopId"+shopId);
+		String itemId=reqc.getParameter("itemId")[0];
+		System.out.println("itemId"+itemId);
 
 
 		String itemName=reqc.getParameter("itemName")[0];
@@ -44,8 +46,7 @@ import utility.SessionManager;
 
 		String itemIsOpen=reqc.getParameter("itemIsOpen")[0];
 
-		String itemId=reqc.getParameter("itemId")[0];
-		System.out.println("itemId"+itemId);
+
 
 
 
@@ -90,7 +91,7 @@ import utility.SessionManager;
 
 		System.out.println("-- EditItemCommand --");
 
-		resc.setTarget("index");
+
 		return resc;
 
 
