@@ -22,6 +22,7 @@
 	<a href="users/deposite.jsp">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<a href="top">トップ</a>
+	<a href="displaypurchaseditem">user注文一覧</a>
 	<p>商品関係</p>
 	<form method="POST" action="searchitem">
     	アイテム検索項目<input type="text" name="itemName" maxlength="20" ><br>
@@ -45,7 +46,7 @@
 	<a href="shopitemdetails">商品一覧</a>
 
 	<a href="shop/itwems/edit.jsp">商品編集</a>
-	<a href="displaypurchaseditem">注文一覧</a>
+	<a href="displaypurchaseditem">shop注文一覧</a>
 	<a href="users/orders">注文詳細</a>
 	<a href="shop/sales.jsp">売上管理</a>
 	<a href="shop/chatlist.jsp">ユーザーとのチャット一覧</a>
