@@ -1,6 +1,5 @@
 package commands.shop;
 import bean.Shop;
-
 import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
@@ -27,11 +26,13 @@ public class AddShopCommand extends AbstractCommand {
 		String sellerWord=reqc.getParameter("shopSellerword")[0];
 
 		String shopIsopen=reqc.getParameter("shopIsOpen")[0];
+		/*
 		if("close".equals(shopIsopen)) {
 			shopIsopen=""+0;
 
 		}
 		else shopIsopen=""+1;
+		*/
 
 
 
