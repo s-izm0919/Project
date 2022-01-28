@@ -21,9 +21,14 @@
 	<a href="callforgotpassword">パスワードの再発行</a>
 	<a href="callusersettings" >ユーザーの編集</a>
 	<a href="calldeposite">入金</a>
-	<a href="users/following.jsp">フォローしたショップ</a>
 	<a href="top">トップ</a>
-	<a href="displaypurchaseditem">user注文一覧</a>
+
+		<p>ユーザー注文管理</p>
+
+	<a href="displaypurchaseditem">注文一覧</a>
+	<a href="callcart">カート</a>
+
+
 	<p>商品関係</p>
 	<form method="POST" action="searchitem">
     	アイテム検索項目<input type="text" name="itemName" maxlength="20" ><br>
@@ -35,24 +40,24 @@
       			<input type="submit" value="検索">
       	</form>
 
+	<!--
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
 	<a href="callcart">カート</a>
+	-->
+
 	<p>ショップ</p>
-	<a href="shopopen">ショップ開設ガイド</a>
-	<a href="callopen">ショップ解説ページ</a>
-	<a href="callshopsettings">ショップ管理</a>
-	<a href="shop/setting">ショップ情報編集</a>
-	<a href="shop/items.jsp">商品管理</a>
+	<a href="callopen">ショップ開設ページ</a>
+	<a href="callshopsettings">ショップ情報を編集する</a>
 	<a href="calldisplayitem">商品登録</a>
 	<a href="shopitemdetails">商品一覧</a>
+	<a href="">受注した注文一覧</a>
+	<a href="">売上管理（月単位）</a>
+	<a href="">商品別売上管理</a>
 
-	<a href="shop/itwems/edit.jsp">商品編集</a>
-	<a href="displaypurchaseditem">shop注文一覧</a>
-	<a href="users/orders">注文詳細</a>
-	<a href="shop/sales.jsp">売上管理</a>
-	<a href="shop/chatlist.jsp">ユーザーとのチャット一覧</a>
-	<a href=""></a>
+
+
+	<!--
 	<p>いずみ</p>
 	<a href="try">実験</a><br>
 	${result["item"].itemName}<br>
@@ -63,7 +68,6 @@
 
 	<a href="callsearch">あ</a>
 	<a href="callitempage">a</a>
-
-
+	-->
 </body>
 </html>
