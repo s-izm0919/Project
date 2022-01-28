@@ -13,7 +13,7 @@
 
     		<h1>
 			<a href="top">
-			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
+			<img src="images\icon.jpg"></a>
 			</h1>
 			<nav class="hd-nav">
 				<ul>
