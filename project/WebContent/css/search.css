@@ -73,6 +73,10 @@ div.sent
 .nonemargin
 {
 	margin: 30px 50px;
+	height: 1080px;
+    width: 1920px;
+    position: absolute;
+    transform-origin: 0% 0%;
 }}
 
 /* レイアウト用スタイル */
