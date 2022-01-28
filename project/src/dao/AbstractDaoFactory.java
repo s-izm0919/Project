@@ -55,13 +55,16 @@ public abstract class AbstractDaoFactory{
 
         public abstract CartDao getCartDao();
         public abstract ViewCartDao getViewCartDao();
+        public abstract ItemEditDao getItemEditDao();
+        public abstract  BoughtItemListDao getBoughtItemListDao();
+        public abstract UserOrderItemDetailsDao getUserOrderItemDetailsDao();
         public abstract OrderConfirmDao getOrderConfirmDao();
         public abstract OrdersDao getOrdersDao();
         public abstract OrderDetailDao getOrderDetailDao();
         public abstract OrderCompleteDao getOrderCompleteDao();
         /*
-        public abstract CartDao getCartDao();
         public abstract CategoryDao getCategoryDao();
+
 
 
         public abstract ChatDao getChatDao();

@@ -8,7 +8,7 @@ import context.ResponseContext;
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("---CallShopitemDetailscommand---");
 
-	resc.setTarget("shop/items/shopitemdetails");
+	resc.setTarget("shop/items/edit/edit");
 		return resc;
 
 	}
