@@ -10,28 +10,17 @@
         <form method="POST" action="additem">
             商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="0" required><br>
-            サムネイル<input type="text" name="mainImagePath" required><br>
+            サムネイル<input type="file" name="mainImagePath" required><br>
             商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
             カテゴリ
             <select name="categoryName">
                         <option name="categoryName" value="1"> painting</option>
                         <option name="categoryName" value="2"> manga</option>
                         <option name="categoryName" value="3">photo</option>
-
-
-
   </select><br>
-
-
-
-
-            データ本体<input type="text" name="itemDataPath" required><br>
-
+            データ本体<input type="file" name="itemDataPath" required><br>
             <input type="radio" name="itemIsOpen" value="1">公開
-
             <input type="radio" name="itemIsOpen" value="0" checked>非公開
-
-
             <input type="submit" value="登録">
         </form>
     </body>
