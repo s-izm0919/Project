@@ -14,10 +14,10 @@ public class AddUserCommand extends AbstractCommand {
 		RequestContext reqc = getRequestContext();
 
 
-		//String[] names = reqc.getParameter("name");
-		//String name=names[0];
-		String nickName=reqc.getParameter("userName")[0];
-		String userName =reqc.getParameter("userIdentifiedName")[0];
+
+
+		String userName=reqc.getParameter("userName")[0];
+		String nickName =reqc.getParameter("userIdentifiedName")[0];
 		String password=reqc.getParameter("userPassword")[0];
 		String mail=reqc.getParameter("userMail")[0];
 
@@ -30,16 +30,18 @@ public class AddUserCommand extends AbstractCommand {
 
 
 		User user = new User();
-		user.setUserIdentifiedName(nickName);
 		user.setUserName(userName);
+		user.setUserIdentifiedName(nickName);
 		user.setUserPassword(password);
 		user.setUserMail(mail);
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
 		dao.addUser(user);
+		User userInfo=dao.login(null, mail,password);
+		System.out.println("userId:"+userInfo.getUserId());
 		//SessionManager.setAttribute("ok");
-		SessionManager.setAttribute(user);
+		SessionManager.setAttribute(userInfo);
 
 
 		System.out.println("-- AddUserCommand --");

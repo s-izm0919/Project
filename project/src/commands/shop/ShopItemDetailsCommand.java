@@ -1,12 +1,9 @@
 package commands.shop;
 import java.util.ArrayList;
 
-
-
 import bean.Shop;
 import bean.ShopItemList;
 import java.util.HashMap;
-
 
 import commands.AbstractCommand;
 import context.RequestContext;

@@ -35,6 +35,7 @@ public class MySQLOrderConfirmDao implements OrderConfirmDao {
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
+
             while(rs.next()){
             	OrderConfirm o=new OrderConfirm();
 
