@@ -24,6 +24,7 @@
 			買上点数：<c:out value="${total.orderCount}"/><br>
 			合計金額：<c:out value="${total.orderPrice}"/><br>
 			<a href="removecartitemshop?shopId=${total.shopId}">ショップごとカートから取り除く</a><br>
+			<a href="callconfirmpassword?shopId=${total.shopId}">購入画面を進む</a><br><br>
 		</c:forEach>
 	</c:forEach>
 

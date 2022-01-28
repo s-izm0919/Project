@@ -59,7 +59,12 @@
 		        </ul>
 	        </nav>
     </header>
+
     <br><br><br><br>
+
+    <body>
+        <h1>商品一覧</h1>
+   		<br>
 
  <div class="nonemargin">
  	<div class="example">
@@ -109,7 +114,6 @@
 						const rangeOnChange = (e) =>{
   							setCurrentValue(e.target.value);
 						}
-
 						window.onload = () => {
   							inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
   							setCurrentValue(inputElem.value); // ページ読み込み時に値をセット
@@ -143,4 +147,5 @@
 	</div>
 </div>
 </body>
+
 </html>
