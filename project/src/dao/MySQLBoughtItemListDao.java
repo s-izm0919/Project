@@ -28,6 +28,7 @@ public class MySQLBoughtItemListDao implements BoughtItemListDao{
         				"AND os.order_id IN (SELECT order_id FROM orders WHERE user_id='"+userid+"');";
         	//sSystem.out.println(sql);
 
+
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
