@@ -69,7 +69,5 @@
 	<a href="callsearch">あ</a>
 	<a href="callitempage">a</a>
 	-->
-
-
 </body>
 </html>
