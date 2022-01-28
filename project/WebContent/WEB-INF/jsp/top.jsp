@@ -144,7 +144,7 @@
     </body>
     <footer>
 		<h2>guide page</h2>
-			<div>shop open</div>
+			<div><a href="shopopen">shop open</a></div>
 
 
     </footer>
