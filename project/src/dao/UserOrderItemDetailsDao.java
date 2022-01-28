@@ -1,6 +1,6 @@
 package dao;
-import java.util.List;
+import bean.UserOrderItemDetails;
 
 public interface UserOrderItemDetailsDao{
-	public List getOrderInfo(String itemid,String userid);
+	public UserOrderItemDetails getOrderInfo(String itemid,String userid);
 }

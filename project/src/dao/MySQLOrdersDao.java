@@ -66,7 +66,7 @@ public class MySQLOrdersDao implements OrdersDao {
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-            String sql="SELECT o.user_id, o.order_id, MAX(purchase_date) FROM orders o LEFT OUTER JOIN item i ON o.shop_id=i.shop_id WHERE o.user_id='"+userid+"' AND o.shop_id='"+shopid+"' GROUP BY o.user_id,i.shop_id";
+            String sql="SELECT user_id, order_id, purchase_date FROM orders WHERE purchase_date = (SELECT MAX(purchase_date) FROM orders WHERE user_id='"+userid+"' AND shop_id='"+shopid+"') AND user_id='"+userid+"' AND shop_id='"+shopid+"'";
 
             st=cn.prepareStatement(sql);
 

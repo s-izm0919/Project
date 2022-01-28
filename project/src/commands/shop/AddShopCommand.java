@@ -1,6 +1,5 @@
 package commands.shop;
 import bean.Shop;
-
 import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
@@ -27,11 +26,13 @@ public class AddShopCommand extends AbstractCommand {
 		String sellerWord=reqc.getParameter("shopSellerword")[0];
 
 		String shopIsopen=reqc.getParameter("shopIsOpen")[0];
+		/*
 		if("close".equals(shopIsopen)) {
 			shopIsopen=""+0;
 
 		}
 		else shopIsopen=""+1;
+		*/
 
 
 
@@ -40,13 +41,6 @@ public class AddShopCommand extends AbstractCommand {
 		System.out.println("sellerword: " + sellerWord);
 		System.out.println("isOpen: " + shopIsopen);
 
-/*
-		User user = new User();
-		user.setUserIdentifiedName(nickName);
-		user.setUserName(userName);
-		user.setUserPassword(password);
-		user.setUserMail(mail);
-		*/
 
 		Shop shop=new Shop();
 		shop.setUserId(userId);
@@ -59,8 +53,10 @@ public class AddShopCommand extends AbstractCommand {
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopDao dao=factory.getShopDao();
 		dao.addShop(shop);
+		Shop shopInfo=dao.getUserShopInfo(userId);
+		System.out.println("shopId:"+shopInfo.getShopId());
 
-		SessionManager.setAttribute(shop);
+		SessionManager.setAttribute(shopInfo);
 
 
 

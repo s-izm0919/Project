@@ -22,12 +22,20 @@ public class MySQLOrderConfirmDao implements OrderConfirmDao {
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-        	String sql="SELECT u.user_point, s.shop_name, s.shop_id, i.item_name, i.item_id, i.main_image_path, i.item_price, (SELECT SUM(its.item_price) FROM item its LEFT OUTER JOIN cart cs ON its.item_id=cs.item_id LEFT OUTER JOIN user us ON cs.user_id=us.user_id WHERE u.user_id=us.user_id GROUP BY us.user_id) as itemprice, (SELECT COUNT(its.item_id) FROM item its LEFT OUTER JOIN cart cs ON its.item_id=cs.item_id LEFT OUTER JOIN user us ON cs.user_id=us.user_id WHERE u.user_id=us.user_id GROUP BY us.user_id) as itemcount FROM cart c LEFT OUTER JOIN item i ON c.item_id=i.item_id LEFT OUTER JOIN user u ON c.user_id=u.user_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id WHERE u.user_id='"+userid+"' AND i.item_is_open=1 AND i.unused=1 AND s.shop_is_open=1 AND s.unused=1";
+        	String sql="SELECT u.user_point, s.shop_name, s.shop_id, i.item_name, i.item_id, i.main_image_path, i.item_price, " +
+        				"(SELECT SUM(its.item_price) FROM item its LEFT OUTER JOIN cart cs ON its.item_id=cs.item_id LEFT OUTER JOIN user us ON cs.user_id=us.user_id WHERE u.user_id=us.user_id AND s.shop_id=its.shop_id GROUP BY us.user_id) as itemprice, " +
+        				"(SELECT COUNT(its.item_id) FROM item its LEFT OUTER JOIN cart cs ON its.item_id=cs.item_id LEFT OUTER JOIN user us ON cs.user_id=us.user_id WHERE u.user_id=us.user_id AND s.shop_id=its.shop_id GROUP BY us.user_id) as itemcount " +
+        				"FROM cart c " +
+        				"LEFT OUTER JOIN item i ON c.item_id=i.item_id " +
+        				"LEFT OUTER JOIN user u ON c.user_id=u.user_id " +
+        				"LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id " +
+        				"WHERE u.user_id='"+userid+"' AND i.item_is_open=1 AND i.unused=1 AND s.shop_is_open=1 AND s.unused=1 AND s.shop_id='"+shopid+"';";
 
 
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();
+
             while(rs.next()){
             	OrderConfirm o=new OrderConfirm();
 

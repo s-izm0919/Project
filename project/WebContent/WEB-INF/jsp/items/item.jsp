@@ -69,7 +69,7 @@
 				Name:<p>${result['itemdetails'].itemName}</p>
 				<input type="submit" value="いいねする"><br>
 				Price<p>${result['itemdetails'].itemPrice}</p>
-				<input type="submit" value="カートに入れる">
+				<input type="submit" value="カートに入れる" onclick="location.href='addcart?itemId=${result['itemdetails'].itemId}'">
 				</div>
 				</div>
 				</div>
