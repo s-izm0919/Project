@@ -20,7 +20,7 @@
 	<a href="logoutuser">ログアウト</a>
 	<a href="callforgotpassword">パスワードの再発行</a>
 	<a href="callusersettings" >ユーザーの編集</a>
-	<a href="users/deposite.jsp">入金</a>
+	<a href="calldeposite">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<a href="top">トップ</a>
 	<p>商品関係</p>
