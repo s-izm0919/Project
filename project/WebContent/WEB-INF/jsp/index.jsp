@@ -11,7 +11,8 @@
 <body>
 
 	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
-	user名:${user.userName}
+	user名:${user.userName}<br>
+	shop名:${shop.shopName}
 	<a href=""></a>
 	<p>ユーザー系</p>
 	<a href="callnew">ユーザー登録</a>
@@ -19,7 +20,7 @@
 	<a href="logoutuser">ログアウト</a>
 	<a href="callforgotpassword">パスワードの再発行</a>
 	<a href="callusersettings" >ユーザーの編集</a>
-	<a href="users/deposite.jsp">入金</a>
+	<a href="calldeposite">入金</a>
 	<a href="users/following.jsp">フォローしたショップ</a>
 	<a href="top">トップ</a>
 	<a href="displaypurchaseditem">user注文一覧</a>
@@ -32,7 +33,8 @@
    		<form method="POST" action="searchshop">
     	ショップ検索項目<input type="text" name="shopName" maxlength="20" ><br>
       			<input type="submit" value="検索">
-   	</form>商品検索ページ
+      	</form>
+
 	<a href="users/goodlist">いいねした商品</a>
 	<a href="users/follownewitems.jsp">フォローしたショップの商品</a>
 	<a href="callcart">カート</a>
@@ -58,6 +60,9 @@
 	<c:forEach var="list" items='${result["list"]}'>
         <th><c:out value="${list}"/></th>
         </c:forEach>
+
+	<a href="callsearch">あ</a>
+	<a href="callitempage">a</a>
 
 
 </body>

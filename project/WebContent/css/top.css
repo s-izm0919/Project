@@ -1,4 +1,3 @@
-<style>
 * {
    box-sizing: border-box;
 }
@@ -7,7 +6,10 @@ body {
    margin: 0;
    padding: 0;
    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
-   background-color: #e6e6e6;
+   <!--font-family: 'Mochiy Pop P One', sans-serif;-->
+   text-align:	center;
+   background-color: #EEEEEE;
+
 }
 /*--ヘッダー設定*/
 header {
@@ -21,6 +23,10 @@ header {
    	display: flex;
     align-items: center;
     z-index:100;
+    border: 1.25px solid #ddd;
+}
+ul.ser{
+
 }
 
 /* aタグの設定*/
@@ -31,24 +37,28 @@ a {
 
 /* iconの設定*/
 h1 img{
-    width: 35px;
+  width:  32.5px;
+  height: 32.5px;
+  object-fit: contain;
+  position: absolute;
+  top: 0px;
+
 }
 /* ul要素の設定*/
 ul {
-   list-style: none;
-   margin: 0;
-   display: flex;
+	display: flex;
+	list-style: none;
+	margin-top: 50px;
 }
 /* li要素の設定*/
 li {
-   margin: 0 0 0 15px;
+   margin: 0 0 20px 15px;
    font-size: 14px;
 }
 /* nav要素の設定*/
 nav {
    margin: 0 0 0 auto;
 }
-
 
 /* 特集の設定*/
 h2 img{
@@ -61,23 +71,302 @@ h2.future {
 	z-index:10;
 	position: relative;
 	top: 50px;
-	left: 30px;
 	overflow: auto;
 }
 /* 閲覧履歴の設定*/
 ul.historyimg{
-	justify-content:center;
+justify-content:center;
 }
-
+.k{
+	transition: 0.3s;
+}
+.k:hover{
+transform: scale(2.5);
+}
 ul.historyimg li {
 	display: flex;
-
 }
-
-
 h3.history{
 	text-align: center;
+}
+
+/* カテゴリーの設定*/
+
+h1.cate_title {
+	text-align: center;
+}
+
+img.human {
+	width: 280px;
+	height: 188px;
+}
+img.animal {
+	width: 280px;
+	height: 188px;
+}
+img.wallpaper {
+	width: 280px;
+	height: 188px;
+}img.comic {
+	width: 280px;
+	height: 188px;
+}
+img.other {
+	width: 280px;
+	height: 188px;
+}
+img.human-p {
+	width: 280px;
+	height: 188px;
+}
+img.animal-p {
+	width: 280px;
+	height: 188px;
+}
+img.landscape {
+	width: 280px;
+	height: 188px;
+}
+
+.cate {
+	justify-content:center;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap
 
 }
 
-</style>
+
+.cate_human {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_human .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_human .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_human:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.cate_animal {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_animal .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_animal .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_animal:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.cate_wallpaper {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_wallpaper .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_wallpaper .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_wallpaper:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.cate_comic {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_comic .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_comic .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_comic:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.cate_other {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_other .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_other .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_other:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.cate_human-p {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_human-p .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_human-p .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_human-p:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+
+.cate_animal-p {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_animal-p .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_animal-p .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_animal-p:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+.cate_landscape {
+	width:			280px;
+	height:			188px;
+	overflow:		hidden;
+	margin:			10px 8px 10px 16px;
+	position:		relative;	/* 相対位置指定 */
+}
+.cate_landscape .caption {
+	font-size:		130%;
+	text-align: 		center;
+	padding-top:		80px;
+	color:			#fff;
+}
+.cate_landscape .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;	/* 絶対位置指定 */
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+	-webkit-transition:	all 0.2s ease;
+	transition:		all 0.2s ease;
+}
+.cate_landscape:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+}
+
+footer {
+  background-color: white;
+}
