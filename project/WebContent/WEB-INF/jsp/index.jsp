@@ -68,6 +68,9 @@
 -->
 	<a href="callsearch">あ</a>
 	<a href="callitempage">商品ページ</a>
+	<br>
+	<a href="calldeposite">商品ページ</a>
+	<a href="calldepositeresult">商品ページ</a>
 
 </body>
 </html>
