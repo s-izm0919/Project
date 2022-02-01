@@ -48,6 +48,7 @@
 
 	<p>ショップ</p>
 	<a href="callopen">ショップ開設ページ</a>
+		<a href="shopinfo">ショップ情報を見る</a>
 	<a href="callshopsettings">ショップ情報を編集する</a>
 	<a href="calldisplayitem">商品登録</a>
 	<a href="shopitemdetails">商品一覧</a>
