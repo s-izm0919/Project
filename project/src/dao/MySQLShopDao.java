@@ -1,7 +1,6 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -121,12 +120,7 @@ public class MySQLShopDao implements ShopDao {
 
         Shop s = null;
         try{
-        	Class.forName("com.mysql.cj.jdbc.Driver");
-             cn = DriverManager.getConnection(
-			"jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST",
-			"booth","pass");
-
-            cn.setAutoCommit(false);
+        	cn = Connector.getInstance().beginTransaction();
 
             String sql="select * from shop where shop_id='"+shopId+"'";
 
@@ -146,17 +140,10 @@ public class MySQLShopDao implements ShopDao {
             s.setShopSellerword(rs.getString(7));
            }
 
+           Connector.getInstance().commit();
 
-
-            cn.commit();
-        }catch(ClassNotFoundException e){
-        	System.out.println(e.getMessage());
         }catch(SQLException e){
-            try{
-                cn.rollback();
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }
+            Connector.getInstance().rollback();
             System.out.println(e.getMessage());
         }finally{
             try{
@@ -169,12 +156,8 @@ public class MySQLShopDao implements ShopDao {
             }catch(SQLException e2){
             	System.out.println(e2.getMessage());
             }finally{
-                try{
-                    if(cn !=null){
-                        cn.close();
-                    }
-                }catch(SQLException e3){
-                	System.out.println(e3.getMessage());
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
                 }
             }
         }
@@ -341,5 +324,54 @@ public class MySQLShopDao implements ShopDao {
             }
         }
         return Shop;
+    }
+    public int getShopEarning(String shopId) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        int total_earning = 0;
+
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
+            String sql="select count(od.item_id)*i.item_price " +
+            			"from order_detail od " +
+            			"INNER JOIN item i ON od.item_id=i.item_id " +
+            			"INNER JOIN shop s ON i.shop_id=s.shop_id " +
+            			"where od.order_id IN (select order_id from orders where purchase_date > (NOW() - INTERVAL 1 MONTH)) AND i.shop_id='"+shopId+"' " +
+	            		"group by od.item_id;";
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+
+           while( rs.next()) {
+        	   total_earning += rs.getInt(1);
+           }
+
+
+            Connector.getInstance().commit();
+
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
+                }
+            }
+        }
+        return total_earning;
     }
 }

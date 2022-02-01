@@ -12,13 +12,23 @@
 
     		<h1>
 			<a href="top">
-			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
+			<img src="images\icon.jpg"></a>
 			</h1>
 			<nav class="hd-nav">
 				<ul>
-				<li>
-		        <input type="text" name="search" value="検索" >
-		        </li>
+					<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+					<li>
 
 				<li>
 			        <select name="select" onChange="location.href=value;">
@@ -69,7 +79,7 @@
 				Name:<p>${result['itemdetails'].itemName}</p>
 				<input type="submit" value="いいねする"><br>
 				Price<p>${result['itemdetails'].itemPrice}</p>
-				<input type="submit" value="カートに入れる">
+				<input type="submit" value="カートに入れる" onclick="location.href='addcart?itemId=${result['itemdetails'].itemId}'">
 				</div>
 				</div>
 				</div>

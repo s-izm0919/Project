@@ -23,7 +23,7 @@ public class MySQLOrderCompleteDao implements OrderCompleteDao {
         	cn = Connector.getInstance().beginTransaction();
 
         	//notnullとunusedはいれていない
-        	String sql="SELECT s.shop_explanation, s.shop_name, s.shop_id, o.order_id, i.item_data_path, i.item_id, i.item_name FROM orders o LEFT OUTER JOIN order_detail od ON o.order_id=od.order_id LEFT OUTER JOIN item i ON od.item_id=i.item_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id  WHERE o.order_id="+orderid;
+        	String sql="SELECT s.shop_sellerword, s.shop_name, s.shop_id, o.order_id, i.item_data_path, i.item_id, i.item_name FROM orders o LEFT OUTER JOIN order_detail od ON o.order_id=od.order_id LEFT OUTER JOIN item i ON od.item_id=i.item_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id  WHERE o.order_id="+orderid;
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();

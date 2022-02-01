@@ -13,13 +13,23 @@
 
     		<h1>
 			<a href="top">
-			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
+			<img src="images\icon.jpg"></a>
 			</h1>
 			<nav class="hd-nav">
 				<ul>
-				<li>
-		        <input type="text" name="search" value="検索" >
-		        </li>
+					<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+					<li>
 
 				<li>
 			        <select name="select" onChange="location.href=value;">
@@ -61,9 +71,9 @@
 	           			紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
 	            		お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
 
-	            		<input type="radio" name="shopIsOpen" value="open">公開
+	            		<input type="radio" name="shopIsOpen" value="1">公開
 
-	            		<input type="radio" name="shopIsOpen" value="close" checked>非公開
+	            		<input type="radio" name="shopIsOpen" value="0" checked>非公開
 
             			<input type="submit" value="ショップを開設する">
 	        		</form>

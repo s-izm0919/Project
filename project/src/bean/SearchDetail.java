@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class SearchDetail implements Serializable {
 	private String searchWord;
-	private String sort;
+	private int sort;
 	private int selectCategory;
 	private int maxPrice;
 	public SearchDetail() {
@@ -16,10 +16,10 @@ public class SearchDetail implements Serializable {
 	public void setSearchWord(String searchWord) {
 		this.searchWord = searchWord;
 	}
-	public String getSort() {
+	public int getSort() {
 		return sort;
 	}
-	public void setSort(String sort) {
+	public void setSort(int sort) {
 		this.sort = sort;
 	}
 	public int getSelectCategory() {

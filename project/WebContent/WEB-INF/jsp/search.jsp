@@ -12,9 +12,9 @@
 		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-		<script>
-
+		<script src="../../../js/search.js">
 		</script>
+
     </head>
     <body>
      <header>
@@ -25,10 +25,19 @@
 			</h1>
 			<nav class="hd-nav">
 				<ul>
-				<li>
-		        <input type="text" name="search" value="検索" >
-		        </li>
-
+							<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+					<li>
 				<li>
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">${user.userName}</option>
@@ -59,7 +68,12 @@
 		        </ul>
 	        </nav>
     </header>
+
     <br><br><br><br>
+
+    <body>
+        <h1>商品一覧</h1>
+   		<br>
 
  <div class="nonemargin">
  	<div class="example">
@@ -109,7 +123,6 @@
 						const rangeOnChange = (e) =>{
   							setCurrentValue(e.target.value);
 						}
-
 						window.onload = () => {
   							inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
   							setCurrentValue(inputElem.value); // ページ読み込み時に値をセット
@@ -143,4 +156,5 @@
 	</div>
 </div>
 </body>
+
 </html>
