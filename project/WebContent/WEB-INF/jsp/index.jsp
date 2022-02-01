@@ -65,9 +65,9 @@
 	<c:forEach var="list" items='${result["list"]}'>
         <th><c:out value="${list}"/></th>
         </c:forEach>
-
+-->
 	<a href="callsearch">あ</a>
-	<a href="callitempage">a</a>
-	-->
+	<a href="callitempage">商品ページ</a>
+
 </body>
 </html>
