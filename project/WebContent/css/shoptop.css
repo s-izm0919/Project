@@ -1,0 +1,26 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   font-family: "Mochiy Pop P One", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial,'Mochiy Pop P One', sans-serif;
+   text-align:	center;
+   background-color: #EEEEEE;
+
+}
+/*--ヘッダー設定*/
+header {
+	background-color:white;
+	position: fixed; top: 0;
+   	top: 0;
+   	left: 0; /* 左から配置の基準位置を決める */
+	width: 100%; /* ヘッダーの横幅を指定する */
+	height: 35px; /* ヘッダーの高さを指定する */
+	padding: 10px; /* ヘッダーの余白を指定する(上下左右) */
+   	display: flex;
+    align-items: center;
+    z-index:100;
+    border: 1.25px solid #ddd;
+}
