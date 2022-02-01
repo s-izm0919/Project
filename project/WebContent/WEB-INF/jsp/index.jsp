@@ -72,6 +72,6 @@
 	<a href="calldeposite">商品ページ</a>
 	<a href="calldepositeresult">商品ページ</a>
 	<a href="callshoptop">shoptop</a>
-
+<a href="shopinfo">ショップ情報を見る</a>
 </body>
 </html>
