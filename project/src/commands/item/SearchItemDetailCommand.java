@@ -27,6 +27,16 @@ public class SearchItemDetailCommand extends AbstractCommand{
 	String selectCategory = reqc.getParameter("category")[0];
 	String maxPrice = reqc.getParameter("maxprice")[0];
 
+	if(sort == "") {
+		sort = "0";
+	}
+	if(selectCategory =="") {
+		selectCategory = "0";
+	}
+	if(maxPrice == "") {
+		maxPrice = "42949672";
+	}
+
 	System.out.println(searchWord);
 	System.out.println(sort);
 
