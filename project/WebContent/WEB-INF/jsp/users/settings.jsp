@@ -13,7 +13,7 @@
 
     		<h1>
 			<a href="top">
-			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
+			<img src="images\icon.jpg"></a>
 			</h1>
 			<nav class="hd-nav">
 				<ul>
@@ -37,7 +37,6 @@
 			            <option value="shop_orders">注文一覧</option>
 			            <option value="shop_sales">売上管理</option>
 			            <option value="shop_chatlist">ユーザーとのチャット</option>
-			            <option value="callopen">ショップ解説ページ</option>
 			            <option value="logoutuser">ログアウト</option>
 			        </select>
 					</li>

@@ -17,7 +17,7 @@
 
     		<h1>
 			<a href="top">
-			<img src="<%=application.getRealPath("/")%>images\icon.jpg"></a>
+			<img src="images\icon.jpg"></a>
 			</h1>
 			<nav class="hd-nav">
 				<ul>
@@ -56,27 +56,39 @@
 	        </nav>
     </header>
     <br><br><br><br>
+
     <div class="example">
+ 		<div class="wrap">
+ 		<div class="color">
     			<div class="a">
     				<p>カテゴリ(大まかなカテゴリ)</p>
+
+
+					<div class="cp_ipselect cp_sl01">
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">指定なし</option>
-			            <option ></option>
 			            <option >1</option>
 			            <option >2</option>
 			            <option >3</option>
 			            <option >4</option>
 			        </select><br>
-
+					</div>
     				<p>サブカテゴリ(詳細なカテゴリ)</p>
+
+
+					<div class="cp_ipselect cp_sl01">
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">指定なし</option>
-			            <option ></option>
 			            <option >1</option>
 			            <option >2</option>
 			            <option >3</option>
 			            <option >4</option>
-			        </select>
+			        </select><br>
+			        </div>
+			        <a>金額</a><br>
+			        <input type="range" name="speed" min="0" max="20">
+			        </div>
+			        </div>
 			        </div>
 		<div class="boxwrap">
 			<div class="wrap pattern-3 mhb-20">

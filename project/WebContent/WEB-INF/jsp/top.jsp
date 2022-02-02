@@ -22,13 +22,13 @@
 				<ul>
 					<li>
 						<form method="POST" action="searchitem">
-				    		<input type="text" name="itemName" value="商品検索" maxlength="20" >
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
 				      		<input type="submit" value="検索">
 				   		</form>
 					</li>
 		   			<li>
 		   				<form method="POST" action="searchshop">
-			    			<input type="text" name="shopName" value="ショップ検索" maxlength="20" >
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
@@ -65,7 +65,7 @@
 			<p><img src="images\toku.jpg"></p>
         </h2>
 
-        <h3 class="history">りれき</h3>
+        <h3 class="history">履歴</h3>
 
         <ul class="historyimg">
 		  <c:forEach begin="1" end="10" step="1" var="i">
@@ -144,7 +144,7 @@
     </body>
     <footer>
 		<h2>guide page</h2>
-			<div>shop open</div>
+			<div><a href="shopopen">shop open</a></div>
 
 
     </footer>
