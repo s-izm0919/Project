@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import bean.User;
 import bean.HistoryList;
-import bean.ShopItemList;
+
 import java.util.HashMap;
 
 import commands.AbstractCommand;
