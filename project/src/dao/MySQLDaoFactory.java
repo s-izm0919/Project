@@ -50,6 +50,12 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ShopOrderItemDetailsDao getShopOrderItemDetailsDao() {
 		return new MySQLShopOrderItemDetailsDao();
 	}
+	public HistoryDao getHistoryDao() {
+		return new MySQLHistoryDao();
+	}
+	public HistoryListDao getHistoryListDao(){
+		return new MySQLHistoryListDao();
+	}
 	/*
 	public CategoryDao getCategoryDao() {
 		return new MySQLCategoryDao();
@@ -77,9 +83,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public FollowDao getFollowDao() {
 		return new MySQLFollowDao();
 	}
-	public HistoryDao getHistoryDao() {
-		return new MySQLHistoryDao();
-	}
+
 	public AdministratorDao getAdministratorDao() {
 		return new MySQLAdministratorDao();
 	}
@@ -126,9 +130,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public UserOrderItemDetailsDao getUserOrderItemDetailsDao() {
 		return new MySQLUserOrderItemDetailsDao();
 	}
-	public HistoryListDao getHistoryListDao(){
-		return new MySQLHistoryListDao();
-	}
+
 >>>>>>> refs/remotes/origin/master
 
 	*/
