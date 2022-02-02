@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>ショップ管理ページ-</title>
-        <link rel="stylesheet" href="css/shoptop.css">
+        <%@include file="../../../css/shoptop.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     	<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,12 +58,17 @@
 		        </ul>
 	        </nav>
     </header>
+    <br>
+    	<div class="siro">
         <h1>ショップ管理ページ</h1>
-	<p><a href="top">ショップ管理のページ</a></p>
-	<p><a href="open">ショップ情報編集のページ</a></p>
-    <p><a href="item">商品管理のページ</a></p>
-    <p><a href="orders">注文一覧ページ</a></p>
-    <p><a href="open">売上管理ページ</a></p>
-    <p><a href="chat_list">ユーザーとのチャット一覧ページ</a></p>
+        <ul class="d">
+			<p><a href="top">ショップ管理のページ</a></p>
+			<p><a href="open">ショップ情報編集のページ</a></p>
+	    	<p><a href="item">商品管理のページ</a></p>
+		    <p><a href="orders">注文一覧ページ</a></p>
+    		<p><a href="open">売上管理ページ</a></p>
+		    <p><a href="chat_list">ユーザーとのチャット一覧ページ</a></p>
+		</ul>
+		</div>
     </body>
 </html>

@@ -48,10 +48,11 @@
 
 	<p>ショップ</p>
 	<a href="callopen">ショップ開設ページ</a>
+		<a href="shopinfo">ショップ情報を見る</a>
 	<a href="callshopsettings">ショップ情報を編集する</a>
 	<a href="calldisplayitem">商品登録</a>
 	<a href="shopitemdetails">商品一覧</a>
-	<a href="">受注した注文一覧</a>
+	<a href="showshoporders">受注した注文一覧</a>
 	<a href="">売上管理（月単位）</a>
 	<a href="">商品別売上管理</a>
 

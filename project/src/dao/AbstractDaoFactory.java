@@ -62,6 +62,8 @@ public abstract class AbstractDaoFactory{
         public abstract OrdersDao getOrdersDao();
         public abstract OrderDetailDao getOrderDetailDao();
         public abstract OrderCompleteDao getOrderCompleteDao();
+        public abstract OrderLIstDao getOrderListDao();
+        public abstract ShopOrderItemDetailsDao getShopOrderItemDetailsDao();
         /*
         public abstract CategoryDao getCategoryDao();
 
@@ -79,8 +81,8 @@ public abstract class AbstractDaoFactory{
         public abstract NewItemDao getNewItemDao();
         public abstract ShopItemListDao getShopItemListDao();
         public abstract ItemEditDao getItemEditDao();
-        public abstract OrderLIstDao getOrderLIstDao();
-        public abstract ShopOrderItemDetailsDao getShopOrderItemDetailsDao();
+
+
         public abstract ViewCartDao getViewCartDao();
 
 

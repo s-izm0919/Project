@@ -32,7 +32,7 @@ import utility.SessionManager;
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserOrderItemDetailsDao dao=factory.getUserOrderItemDetailsDao();
 		 itemDetails= dao.getOrderInfo(itemId, userId);
-		 System.out.println("itemInfo:"+itemDetails.getItemPrice());
+		 System.out.println("itemPrice:"+itemDetails.getItemPrice());
 		 System.out.println("itemName:"+itemDetails.getItemName());
 
 		 if(itemDetails!=null) {

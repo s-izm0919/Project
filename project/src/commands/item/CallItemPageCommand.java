@@ -13,6 +13,8 @@ import dao.ItemDetailsDao;
 public class CallItemPageCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 
+		//商品単体を呼ぶページ
+
 		System.out.println("-- CallItemPageCommand -- ");
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();

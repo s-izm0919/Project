@@ -82,7 +82,6 @@ div.sent
 
 /* レイアウト用スタイル */
 .boxwrap{
-.boxwrap{
   margin:40px auto;
   width:100%;
   padding:20px 60px;
@@ -100,7 +99,7 @@ div.sent
 }
 .wrapleft{
 	margin: 30px auto;
-    width: 70%;;
+    width: 100%;;
     height: 500px;
     background-color: white;
     color: #fff;
@@ -136,7 +135,7 @@ div.sent
 }
 .example>.a{
 	width: 25%;
-    padding25px;
+    padding:25px;
 }
 .example>.b{
 	width: 75%;
