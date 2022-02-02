@@ -148,4 +148,17 @@
 </div>
 </body>
 
+<!-- ここからは和泉のサンプル
+
+		<p>検索設定</p>
+        <form method="POST" action="searchitemdetail">
+        	<input type="hidden" name="searchword" value="${result['searchword']}">
+        	ソート:<input type="text" name="sort"><!-- 1:新着 2:いいね順 3:価格が高い順 4:価格が低い順--><br>
+        	カテゴリー:<input type="text" name="category"><!-- カテゴリ―番号を入力する --><br>
+        	最大価格:<input type="text" name="maxprice"><br>
+        	<input type="submit" value="検索">
+        </form>
+
+    </body>
+-->
 </html>
