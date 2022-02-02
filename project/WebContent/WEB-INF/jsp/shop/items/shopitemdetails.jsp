@@ -22,6 +22,7 @@
 				<td>${item.itemName}</td>
 				<td>${item.itemPrice}</td>
 				 <td><a href="itemdetails?itemId=${item.itemId}">編集</a></td>
+				 <td><a href="removeitem?itemId=${item.itemId}">削除</a></td>
 			</tr>
 		</c:forEach>
 	</table>

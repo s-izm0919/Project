@@ -26,10 +26,11 @@ public class MySQLOrderListDao implements OrderLIstDao {
             String sql="SELECT o.order_id, o.purchase_date, o.total_payment, u.user_name, u.user_id FROM orders o LEFT OUTER JOIN user u ON o.user_id=u.user_id WHERE o.shop_id='"+shopid+"' ORDER BY purchase_date DESC";
 
             st=cn.prepareStatement(sql);
-
+            rs=st.executeQuery();
+            OrderList o=null;
             while(rs.next()){
-	            rs=st.executeQuery();
-	            OrderList o=new OrderList();
+
+	             o=new OrderList();
 
 	            o.setOrderId(rs.getInt(1));
 	            o.setPurchaseDate(rs.getString(2));

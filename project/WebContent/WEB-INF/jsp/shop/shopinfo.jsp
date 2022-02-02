@@ -9,7 +9,8 @@
 </head>
 <body>
 shopId:${shop.shopId}<br>
-shopName:${shop.shopName}
+shopName:${shop.shopName}<br>
+userId:${shop.userId}
 
 </body>
 </html>

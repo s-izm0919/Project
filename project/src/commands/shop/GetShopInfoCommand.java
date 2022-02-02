@@ -8,7 +8,7 @@ import dao.AbstractDaoFactory;
 //import dao.MySQLUserDao;
 import dao.ShopDao;
 import utility.SessionManager;
-//import dao.MySQLShopDao;
+
 
 
  public class GetShopInfoCommand extends AbstractCommand {
@@ -16,8 +16,6 @@ import utility.SessionManager;
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- GetShopInfoCommand -- ");
 		RequestContext reqc = getRequestContext();
-		//String userId = reqc.getParameter("user_id")[0];
-		//System.out.println("userId"+userId);
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId"+userId);
@@ -27,16 +25,13 @@ import utility.SessionManager;
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopDao dao=factory.getShopDao();
 
-
-
-
 		shop = dao.getUserShopInfo(userId);
 		System.out.println(shop);
 		System.out.println("shopId:"+shop.getShopId());
 
 
 
-		//resc.setResult(shop);
+
 		if(shop!=null) {
 			SessionManager.setAttribute( shop);
 		}
