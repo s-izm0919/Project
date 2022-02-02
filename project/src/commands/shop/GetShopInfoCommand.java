@@ -1,13 +1,16 @@
 package commands.shop;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import bean.Shop;
-import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 //import dao.MySQLUserDao;
 import dao.ShopDao;
-import utility.SessionManager;
+import dao.ShopItemListDao;
 
 
 
@@ -17,27 +20,30 @@ import utility.SessionManager;
 		System.out.println("-- GetShopInfoCommand -- ");
 		RequestContext reqc = getRequestContext();
 
-		String userId=((User)SessionManager.getAttribute("user")).getUserId();
-		System.out.println("userId"+userId);
-
-		Shop shop=null;
+		Shop shopInfo=null;
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopDao dao=factory.getShopDao();
 
-		shop = dao.getUserShopInfo(userId);
-		System.out.println(shop);
-		System.out.println("shopId:"+shop.getShopId());
+		String shopId = reqc.getParameter("shopId")[0];
 
+		shopInfo = dao.getShopInfo(shopId);
 
+		Map result = new HashMap();
 
+		result.put("shopInfo",shopInfo);
 
-		if(shop!=null) {
-			SessionManager.setAttribute( shop);
-		}
+		System.out.println("shopId:"+shopInfo.getShopId());
 
+		ShopItemListDao shopitemlistdao = factory.getShopItemListDao();
 
+		ArrayList itemList = (ArrayList)shopitemlistdao.getItemList(shopId);
 
+		System.out.println(itemList);
+
+		result.put("itemList",itemList);
+
+		resc.setResult(result);
 
 		resc.setTarget("shop/shopinfo");
 		return resc;

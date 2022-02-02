@@ -48,7 +48,7 @@
 
 	<p>ショップ</p>
 	<a href="callopen">ショップ開設ページ</a>
-		<a href="shopinfo">ショップ情報を見る</a>
+	<a href="shopinfo?shopId=S1">ショップ情報を見る※サンプルなので強制的にs1を表示</a>
 	<a href="callshopsettings">ショップ情報を編集する</a>
 	<a href="calldisplayitem">商品登録</a>
 	<a href="shopitemdetails">商品一覧</a>
@@ -67,6 +67,8 @@
         <th><c:out value="${list}"/></th>
         </c:forEach>
 -->
+
+	<br><br><br><br>
 	<a href="callsearch">あ</a>
 	<a href="callitempage">商品ページ</a>
 	<br>
