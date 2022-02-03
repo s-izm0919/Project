@@ -11,10 +11,6 @@
         <title>商品検索結果</title>
 		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-		<script>
-
-		</script>
     </head>
     <body>
      <header>
@@ -25,10 +21,19 @@
 			</h1>
 			<nav class="hd-nav">
 				<ul>
-				<li>
-		        <input type="text" name="search" value="検索" >
-		        </li>
-
+							<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+					<li>
 				<li>
 			        <select name="select" onChange="location.href=value;">
 			        	<option value="#">${user.userName}</option>
@@ -148,4 +153,17 @@
 </div>
 </body>
 
+<!-- ここからは和泉のサンプル
+
+		<p>検索設定</p>
+        <form method="POST" action="searchitemdetail">
+        	<input type="hidden" name="searchword" value="${result['searchword']}">
+        	ソート:<input type="text" name="sort"><!-- 1:新着 2:いいね順 3:価格が高い順 4:価格が低い順--><br>
+        	カテゴリー:<input type="text" name="category"><!-- カテゴリ―番号を入力する --><br>
+        	最大価格:<input type="text" name="maxprice"><br>
+        	<input type="submit" value="検索">
+        </form>
+
+    </body>
+-->
 </html>

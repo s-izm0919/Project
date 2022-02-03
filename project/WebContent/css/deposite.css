@@ -84,13 +84,12 @@ div.sent
 }
 .wrap{
      margin: auto;
-    width: auto;
+    width: 300px;
     background-color: white;
     color: #fff;
     border-radius: 15px;
-    padding:15px;;
-    border:1px solid #ddd;
 
+    border:1px solid #ddd;
 
 }
 
@@ -103,7 +102,7 @@ div.sent
 }
 /* ③tableレイアウトとvertical-alignで中央配置 */
 .wrap.pattern-3{
-  height:60px;
+  height:200px;
   display:table;
   text-align:center;
 }
@@ -113,18 +112,9 @@ div.sent
   vertical-align:middle;
 }
 
-.item img {
-    width: 200px;  /* 横幅を200pxに */
-}
-.example{
-    display: flex;
-}
-.example>div{
-
-    padding:15px;
-}
 .color
 {
 	color: Black;
 }
+
 </style>

@@ -32,9 +32,19 @@
 			</h1>
 			<nav class="hd-nav">
 				<ul>
-				<li>
-		        <input type="text" name="search" value="検索" >
-		        </li>
+					<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+					<li>
 
 		        <li><a href="callnew">ユーザー登録</a></li>
 

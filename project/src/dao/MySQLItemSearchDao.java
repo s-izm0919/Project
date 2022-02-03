@@ -179,7 +179,7 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	//価格上限
         	//ユーザーが指定しなかったときは4294967295とセットする(priceに入力できる最大値(int unsigned))
         	//価格上限0円と見分けるため
-        	sql+=" AND i.item_price>="+maxPrice;
+        	sql+=" AND i.item_price<="+maxPrice;
 
         	sql+=" GROUP BY item_id";
 
