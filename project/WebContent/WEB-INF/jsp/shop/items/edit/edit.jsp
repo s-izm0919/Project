@@ -12,8 +12,7 @@
             商品タイトル<input type="text" name="itemName" value="${result['singleItemResult'].itemName}" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="${ result['singleItemResult'].itemPrice}" required><br>
             サムネイル<input type="text" name="mainImagePath" value="${ result['singleItemResult'].mainImagePath}" required><br>
-              explanation<input type="text"  value="${ result['singleItemResult'].itemExplanation}" required><br>
-            商品説明<br><textarea cols="25" rows="8" name="itemExplanation" value="${ result['singleItemResult'].itemExplanation}" required> </textarea><br>
+            商品説明<br><textarea cols="25" rows="8" name="itemExplanation"  required>${ result['singleItemResult'].itemExplanation}</textarea><br>
             カテゴリ
             <select name="categoryName" required>
             			<option name="categoryName"></option>
