@@ -69,6 +69,7 @@
 	    		<li><a href="open">売上管理ページ</a></li>
 			    <li><a href="chat_list">ユーザーとのチャット一覧ページ</a></li>
 			</ul>
+			<br>
 			<footer>
 		<h2>guide page</h2>
 
