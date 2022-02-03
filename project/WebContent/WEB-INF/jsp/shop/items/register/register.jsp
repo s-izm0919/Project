@@ -14,9 +14,16 @@
             商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
             カテゴリ
             <select name="categoryName">
-                        <option name="categoryName" value="1"> painting</option>
-                        <option name="categoryName" value="2"> manga</option>
-                        <option name="categoryName" value="3">photo</option>
+                        <option name="categoryName" value="1">風景・自然の写真</option>
+                        <option name="categoryName" value="2">人物・キャラクターの写真</option>
+                        <option name="categoryName" value="3">食べ物の写真</option>
+                        <option name="categoryName" value="4">植物・動物の写真</option>
+                        <option name="categoryName" value="5">その他の写真</option>
+                        <option name="categoryName" value="6">風景・自然のイラスト</option>
+                        <option name="categoryName" value="7">人物・キャラクターのイラスト</option>
+                        <option name="categoryName" value="8">食べ物のイラスト</option>
+                        <option name="categoryName" value="9">植物・動物のイラスト</option>
+                        <option name="categoryName" value="10">その他のイラスト</option>
   </select><br>
             データ本体<input type="file" name="itemDataPath" required><br>
             <input type="radio" name="itemIsOpen" value="1">公開
