@@ -56,6 +56,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public HistoryListDao getHistoryListDao(){
 		return new MySQLHistoryListDao();
 	}
+	public NewItemDao getNewItemDao() {
+		return new MySQLNewItemDao();
+	}
 	/*
 	public CategoryDao getCategoryDao() {
 		return new MySQLCategoryDao();
@@ -95,9 +98,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 		return new MySQLItemSearchDao();
 	}
 	/*
-	public NewItemDao getNewItemDao() {
-		return new MySQLNewItemDao();
-	}
+
 	*/
 	public ItemDetailsDao getItemDetailsDao() {
 		return new MySQLItemDetailsDao();
