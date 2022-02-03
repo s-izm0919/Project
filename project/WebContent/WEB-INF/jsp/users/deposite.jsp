@@ -69,7 +69,7 @@
 		<div class="color">
 	あなたのポイント:${user.userPoint}<br>
 
-	<form method="POST" action="calldepositeresult">
+	<form method="POST" action="deposite">
 		<input type="text" name="userPoint"/>
 		<input type="submit" value="入金する"/>
  	</form>
