@@ -40,7 +40,7 @@ import bean.NewItem;
 
 		ArrayList<NewItem> newItem=(ArrayList<NewItem>) newDao.getShopNewItems(shopId);
 		HashMap result = new HashMap();
-		result.put("historyList", newItem);
+		result.put("newItemList", newItem);
 		resc.setResult(result);
 		resc.setTarget("shop/items/newitem");
 
