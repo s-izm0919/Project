@@ -64,6 +64,10 @@ public abstract class AbstractDaoFactory{
         public abstract OrderCompleteDao getOrderCompleteDao();
         public abstract OrderLIstDao getOrderListDao();
         public abstract ShopOrderItemDetailsDao getShopOrderItemDetailsDao();
+        public abstract HistoryDao getHistoryDao();
+        public abstract HistoryListDao getHistoryListDao();
+        public abstract NewItemDao getNewItemDao();
+        
         /*
         public abstract CategoryDao getCategoryDao();
 
@@ -75,10 +79,10 @@ public abstract class AbstractDaoFactory{
         public abstract UserChatNotificationDao getUserChatNotificationDao();
         public abstract ShopChatNotificationDao getShopChatNotificationDao();
         public abstract FollowDao getFollowDao();
-        public abstract HistoryDao getHistoryDao();
+
         public abstract AdministratorDao getAdministratorDao();
         public abstract AdministratorMessageDao getAdministratorMessageDao();
-        public abstract NewItemDao getNewItemDao();
+
         public abstract ShopItemListDao getShopItemListDao();
         public abstract ItemEditDao getItemEditDao();
 
@@ -88,7 +92,7 @@ public abstract class AbstractDaoFactory{
 
         public abstract BoughtItemListDao getBoughtItemListDao();
         public abstract UserOrderItemDetailsDao getUserOrderItemDetailsDao();
-        public abstract HistoryListDao getHistoryListDao();
+
         */
 
     }

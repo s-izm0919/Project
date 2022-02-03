@@ -4,11 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 import bean.ItemDetails;
+import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.ItemDetailsDao;
+import dao.HistoryDao;
+
+
+import utility.SessionManager;
 
 public class CallItemPageCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
@@ -23,6 +28,14 @@ public class CallItemPageCommand extends AbstractCommand{
 		RequestContext reqc = getRequestContext();
 		String itemId = reqc.getParameter("itemId")[0];
 		System.out.println("itemID="+itemId);
+
+		String userId=((User)SessionManager.getAttribute("user")).getUserId();
+		System.out.println("userId"+userId);
+
+		AbstractDaoFactory historyFactory=AbstractDaoFactory.getFactory();
+		HistoryDao historyDao = historyFactory.getHistoryDao();
+		historyDao.addHistoryItem(userId, itemId);
+
 
 		Map result = new HashMap();
 
