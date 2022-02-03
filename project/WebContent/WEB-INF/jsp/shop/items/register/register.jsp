@@ -13,7 +13,8 @@
             サムネイル<input type="file" name="mainImagePath" required><br>
             商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
             カテゴリ
-            <select name="categoryName">
+            <select name="categoryName" required>
+            			<option name="categoryName"></option>
                         <option name="categoryName" value="1">風景・自然の写真</option>
                         <option name="categoryName" value="2">人物・キャラクターの写真</option>
                         <option name="categoryName" value="3">食べ物の写真</option>
@@ -24,7 +25,7 @@
                         <option name="categoryName" value="8">食べ物のイラスト</option>
                         <option name="categoryName" value="9">植物・動物のイラスト</option>
                         <option name="categoryName" value="10">その他のイラスト</option>
-  </select><br>
+			</select><br>
             データ本体<input type="file" name="itemDataPath" required><br>
             <input type="radio" name="itemIsOpen" value="1">公開
             <input type="radio" name="itemIsOpen" value="0" checked>非公開
