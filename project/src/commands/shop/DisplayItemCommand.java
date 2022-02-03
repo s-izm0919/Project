@@ -1,13 +1,14 @@
 package commands.shop;
+import java.util.Map;
+
 import bean.Item;
-
 import bean.Shop;
-
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.ItemDao;
+import utility.ImageUpload;
 import utility.SessionManager;
 
 public class DisplayItemCommand extends AbstractCommand {
@@ -22,23 +23,26 @@ public class DisplayItemCommand extends AbstractCommand {
 
 /*  itemName,itemPrice,mainImagePath,itemExplanation,categoryName,imageDataPath,itemIsOpen */
 
+		/*以下2文は画像処理*/
+		ImageUpload ium = new ImageUpload();
+		Map field = ium.upload(reqc);
 
 
-		String itemName=reqc.getParameter("itemName")[0];
+		String itemName=(String)field.get("itemName");
 
-		String itemPrice =reqc.getParameter("itemPrice")[0];
+		String itemPrice =(String)field.get("itemPrice");
 
-		String mainImagePath=reqc.getParameter("mainImagePath")[0];
-
-
-		String itemExplanation=reqc.getParameter("itemExplanation")[0];
-
-		String categoryId=reqc.getParameter("categoryName")[0];
+		String mainImagePath=(String)field.get("mainImagePath");
 
 
-		String itemDataPath=reqc.getParameter("itemDataPath")[0];
+		String itemExplanation=(String)field.get("itemExplanation");
 
-		String itemIsOpen=reqc.getParameter("itemIsOpen")[0];
+		String categoryId=(String)field.get("categoryName");
+
+
+		String itemDataPath=(String)field.get("itemDataPath");
+
+		String itemIsOpen=(String)field.get("itemIsOpen");
 
 
 

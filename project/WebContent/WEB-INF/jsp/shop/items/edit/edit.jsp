@@ -7,7 +7,8 @@
     </head>
     <body>
         <h1>商品編集</h1>
-        <form method="POST" action="edititem?itemId=${result['singleItemResult'].itemId }">
+<!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
+        <form method="POST" action="edititem?itemId=${result['singleItemResult'].itemId }" enctype="multipart/form-data">
 
             商品タイトル<input type="text" name="itemName" value="${result['singleItemResult'].itemName}" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="${ result['singleItemResult'].itemPrice}" required><br>
