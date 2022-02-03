@@ -60,7 +60,7 @@
     </header>
     <br>
         <h1>ショップ管理ページ</h1>
-        <h2>${shop.shopName}</h2>
+        <h2>${shop.shopName}のショップ管理画面</h2>
 	        <ul class="cont_nav">
 				<li><a href="top">ショップ管理のページ</a></li>
 				<li><a href="open">ショップ情報編集のページ</a></li>
@@ -69,5 +69,11 @@
 	    		<li><a href="open">売上管理ページ</a></li>
 			    <li><a href="chat_list">ユーザーとのチャット一覧ページ</a></li>
 			</ul>
+			<footer>
+		<h2>guide page</h2>
+
+			<div><a href="shopopen">shop open</a></div>
+			<br>
+    </footer>
     </body>
 </html>
