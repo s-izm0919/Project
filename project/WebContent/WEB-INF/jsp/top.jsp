@@ -154,13 +154,11 @@
 				</div>
 			</div>
 		</div>
-    </body>
-    <footer>
-		<h2>guide page</h2>
-
+		<footer>
+			<h2>guide page</h2>
 			<div><a href="shopopen">shop open</a></div>
 			<br>
+    	</footer>
+    </body>
 
-
-    </footer>
 </html>
