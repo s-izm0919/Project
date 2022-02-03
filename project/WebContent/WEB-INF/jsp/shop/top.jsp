@@ -62,12 +62,12 @@
         <h1>ショップ管理ページ</h1>
         <h2>${shop.shopName}のショップ管理画面</h2>
 	        <ul class="cont_nav">
-				<li><a href="top">ショップ管理のページ</a></li>
-				<li><a href="open">ショップ情報編集のページ</a></li>
-		    	<li><a href="item">商品管理のページ</a></li>
-			    <li><a href="orders">注文一覧ページ</a></li>
-	    		<li><a href="open">売上管理ページ</a></li>
-			    <li><a href="chat_list">ユーザーとのチャット一覧ページ</a></li>
+				<li><a href="callshoptop">ショップ管理のページ</a></li>
+				<li><a href="callshopsettings">ショップ情報編集のページ</a></li>
+		    	<li><a href="shopitemdetails">商品管理のページ</a></li>
+			    <li><a href="showshoporders">注文一覧ページ</a></li>
+	    		<li><a href="">売上管理ページ</a></li>
+			    <li><a href="">ユーザーとのチャット一覧ページ</a></li>
 			</ul>
 			<br>
 			<footer>
