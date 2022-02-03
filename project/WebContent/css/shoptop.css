@@ -117,4 +117,13 @@ div.sent
 	color: Black;
 }
 
+ul.cont_nav {
+  	display: flex;
+    justify-content: center;
+	z-index:10;
+	position: relative;
+	top: 50px;
+	overflow: auto;
+}
+
 </style>
