@@ -7,7 +7,8 @@
     </head>
     <body>
         <h1>商品登録</h1>
-        <form method="POST" action="additem">
+<!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
+        <form method="POST" action="additem" enctype="multipart/form-data">
             商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="0" required><br>
             サムネイル<input type="file" name="mainImagePath" required><br>
