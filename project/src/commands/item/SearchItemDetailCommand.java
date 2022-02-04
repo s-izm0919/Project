@@ -33,10 +33,14 @@ public class SearchItemDetailCommand extends AbstractCommand{
 	if(selectCategory =="") {
 		selectCategory = "0";
 	}
-	if(maxPrice == "") {
-		maxPrice = "42949672";
-	}
 
+	int price = Integer.parseInt(maxPrice);
+
+
+	if(price >= 4900) {
+		price = 42949672;
+	}
+	System.out.println(price);
 	System.out.println(searchWord);
 	System.out.println(sort);
 
@@ -45,7 +49,7 @@ public class SearchItemDetailCommand extends AbstractCommand{
 	searchDetail.setSearchWord(searchWord);
 	searchDetail.setSort(Integer.parseInt(sort));
 	searchDetail.setSelectCategory(Integer.parseInt(selectCategory));
-	searchDetail.setMaxPrice(Integer.parseInt(maxPrice));
+	searchDetail.setMaxPrice(price);
 
 	ArrayList itemlist = (ArrayList)dao.getItemSearchDetail(searchDetail);
 
