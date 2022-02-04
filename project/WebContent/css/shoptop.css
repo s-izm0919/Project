@@ -126,6 +126,16 @@ ul.cont_nav {
 	overflow: auto;
 }
 
+div.content{
+	margin: auto;
+    width: 800px;
+    height:300px;
+    background-color: white;
+    color: #fff;
+    border-radius: 15px;
+    border:1px solid #ddd;
+}
+
 footer {
  width: 100%;
  background-color: #89c7de;

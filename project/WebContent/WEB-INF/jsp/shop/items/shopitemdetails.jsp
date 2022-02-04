@@ -10,6 +10,7 @@
 <body>
 	<h1>商品一覧</h1>
 	<table border="1">
+	<a href="calldisplayitem">商品登録</a>
 		<tr>
 		 <th>itemId</th>
 		 <th>productName</th>
