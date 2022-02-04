@@ -53,7 +53,7 @@ public class MySQLHistoryDao implements HistoryDao {
         	cn = Connector.getInstance().beginTransaction();
 
         	int i_id=Integer.parseInt(itemid);
-        	String sql="INSERT INTO history VALUES('"+userid+"',"+itemid+",DEFAULT";
+        	String sql="INSERT INTO history VALUES('"+userid+"',"+itemid+",DEFAULT)";
 
             st=cn.prepareStatement(sql);
 
@@ -120,7 +120,7 @@ public class MySQLHistoryDao implements HistoryDao {
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-            String sql="DELETE FROM history WHERE user_id="+userid;
+            String sql="DELETE FROM history WHERE user_id='"+userid+"'";
 
             st=cn.prepareStatement(sql);
             st.executeUpdate();

@@ -50,6 +50,7 @@
 				            <option value="shop_chatlist">ユーザーとのチャット</option>
 				            <option value="callopen">ショップ解説ページ</option>
 				            <option value="logoutuser">ログアウト</option>
+				            <option value="callindex">デバック</option>
 				        </select>
 					</li>
 			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
