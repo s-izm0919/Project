@@ -1,11 +1,9 @@
 package commands.user;
 import java.util.ArrayList;
-
-import bean.User;
-import bean.HistoryList;
-
 import java.util.HashMap;
 
+import bean.HistoryList;
+import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -30,10 +28,11 @@ import utility.SessionManager;
 		HistoryListDao dao=factory.getHistoryListDao();
 
 		ArrayList<HistoryList> viewedItem=(ArrayList<HistoryList>) dao.getHistory(userId);
-		HashMap result = new HashMap();
+		System.out.println(viewedItem);
+;		HashMap result = new HashMap();
 		result.put("historyList", viewedItem);
 		resc.setResult(result);
-		resc.setTarget("shop/items/history");
+		resc.setTarget("users/vieweditem");
 
 
 

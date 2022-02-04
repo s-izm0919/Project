@@ -22,6 +22,7 @@
 	<a href="callusersettings" >ユーザーの編集</a>
 	<a href="calldeposite">入金</a>
 	<a href="top">トップ</a>
+	<a href="vieweditem">閲覧履歴</a>
 
 		<p>ユーザー注文管理</p>
 
@@ -57,8 +58,7 @@
 	<a href="">商品別売上管理</a>
 
 
-
-	<!--
+<!--
 	<p>いずみ</p>
 	<a href="try">実験</a><br>
 	${result["item"].itemName}<br>
