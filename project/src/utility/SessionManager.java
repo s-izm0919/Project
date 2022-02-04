@@ -41,6 +41,9 @@ public class SessionManager {
 		return session.getAttribute(name);
 	}
 
+	public static Object getToken(String token) {
+		return session.getAttribute("token");
+	}
 	public static void invalidate(){
 		session.invalidate();
 	}

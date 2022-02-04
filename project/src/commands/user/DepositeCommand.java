@@ -37,7 +37,7 @@ public class DepositeCommand extends AbstractCommand{
 
 	SessionManager.setAttribute(user);
 
-	resc.setTarget("index");
+	resc.setTarget("users/deposit_verification");
 
 	return resc;
 	}
