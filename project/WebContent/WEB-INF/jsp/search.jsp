@@ -83,15 +83,16 @@
 					<div class="cp_ipselect cp_sl01">
 						<select name="category">
 							<option value="0">指定なし</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
+							<option value="1">風景・自然の写真</option>
+							<option value="2">人物・キャラクターの写真</option>
+							<option value="3">食べ物の写真</option>
+							<option value="4">植物・動物の写真</option>
+							<option value="5">その他の写真</option>
+							<option value="6">風景・自然のイラスト</option>
+							<option value="7">人物・キャラクターのイラスト</option>
+							<option value="8">食べ物のイラスト</option>
+							<option value="9">植物・動物のイラスト</option>
+							<option value="10">その他のイラスト</option>
 							</select><br>
 					</div>
     				<p>ソート</p><!-- 1:新着 2:いいね順 3:価格が高い順 4:価格が低い順-->

@@ -59,8 +59,7 @@
 	        </nav>
     </header>
     <br>
-        <h1>ショップ管理ページ</h1>
-        <h2>${shop.shopName}のショップ管理画面</h2>
+        <h1>${shop.shopName}のショップ管理ページ</h1>
 	        <ul class="cont_nav">
 				<li><a href="callshoptop">ショップ管理のページ</a></li>
 				<li><a href="callshopsettings">ショップ情報編集のページ</a></li>
