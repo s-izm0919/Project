@@ -76,30 +76,38 @@
     	<div class="a">
 			<div class="wrapleft">
  				<div class="color">
-    				<p>カテゴリ(大まかなカテゴリ)</p>
+ 				<p>検索設定</p>
+				<form method="POST" action="searchitemdetail">
+    				<input type="hidden" name="searchword" value="${result['searchword']}">
+    				<p>カテゴリ</p>
 					<div class="cp_ipselect cp_sl01">
-						<select name="select" onChange="location.href=value;">
-							<option value="#">指定なし</option>
-							<option >1</option>
-							<option >2</option>
-							<option >3</option>
-							<option >4</option>
+						<select name="category">
+							<option value="0">指定なし</option>
+							<option value="1">風景・自然の写真</option>
+							<option value="2">人物・キャラクターの写真</option>
+							<option value="3">食べ物の写真</option>
+							<option value="4">植物・動物の写真</option>
+							<option value="5">その他の写真</option>
+							<option value="6">風景・自然のイラスト</option>
+							<option value="7">人物・キャラクターのイラスト</option>
+							<option value="8">食べ物のイラスト</option>
+							<option value="9">植物・動物のイラスト</option>
+							<option value="10">その他のイラスト</option>
 							</select><br>
 					</div>
-    				<p>サブカテゴリ(詳細なカテゴリ)</p>
+    				<p>ソート</p><!-- 1:新着 2:いいね順 3:価格が高い順 4:価格が低い順-->
 
 					<div class="cp_ipselect cp_sl01">
-						<select name="select" onChange="location.href=value;">
-							<option value="#">指定なし</option>
-							<option >1</option>
-							<option >2</option>
-							<option >3</option>
-							<option >4</option>
+						<select name="sort">
+							<option value="1">新着</option>
+							<option value="2">いいね順</option>
+							<option value="3">価格が高い順</option>
+							<option value="4">価格が低い順</option>
 						</select><br>
 					</div>
 					<a>金額</a><br>
-					<p>\0 ～ \<span id="current-value"></span></p>
-					<input type="range" id="Money" name="speed" min="0" max="5000" step="250" value="5000">
+					<p>\0 ～ \<span id="current-value" name="maxprice"></span></p>
+					<input type="range" id="Money" name="maxprice" min="0" max="5000" step="250" value="5000">
 					<script>
 						const inputElem = document.getElementById('Money'); // input要素
 						const currentValueElem = document.getElementById('current-value'); // 埋め込む先のspan要素
@@ -123,7 +131,9 @@
   							inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
   							setCurrentValue(inputElem.value); // ページ読み込み時に値をセット
 						}
-					</script>
+					</script><br><br>
+					<input type="submit" value="検索">
+				</form>
 				</div>
 			</div>
 		</div>
@@ -153,15 +163,10 @@
 </div>
 </body>
 
-<!-- ここからは和泉のサンプル
+ここからは和泉のサンプル
 
-		<p>検索設定</p>
-        <form method="POST" action="searchitemdetail">
-        	<input type="hidden" name="searchword" value="${result['searchword']}">
-        	ソート:<input type="text" name="sort"><!-- 1:新着 2:いいね順 3:価格が高い順 4:価格が低い順--><br>
-        	カテゴリー:<input type="text" name="category"><!-- カテゴリ―番号を入力する --><br>
-        	最大価格:<input type="text" name="maxprice"><br>
-        	<input type="submit" value="検索">
+
+
         </form>
 
     </body>

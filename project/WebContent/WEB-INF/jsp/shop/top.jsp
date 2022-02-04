@@ -59,16 +59,21 @@
 	        </nav>
     </header>
     <br>
-    	<div class="siro">
-        <h1>ショップ管理ページ</h1>
-        <ul class="d">
-			<p><a href="top">ショップ管理のページ</a></p>
-			<p><a href="open">ショップ情報編集のページ</a></p>
-	    	<p><a href="item">商品管理のページ</a></p>
-		    <p><a href="orders">注文一覧ページ</a></p>
-    		<p><a href="open">売上管理ページ</a></p>
-		    <p><a href="chat_list">ユーザーとのチャット一覧ページ</a></p>
-		</ul>
-		</div>
+        <h1>${shop.shopName}のショップ管理ページ</h1>
+	        <ul class="cont_nav">
+				<li><a href="callshoptop">ショップ管理のページ</a></li>
+				<li><a href="callshopsettings">ショップ情報編集のページ</a></li>
+		    	<li><a href="shopitemdetails">商品管理のページ</a></li>
+			    <li><a href="showshoporders">注文一覧ページ</a></li>
+	    		<li><a href="">売上管理ページ</a></li>
+			    <li><a href="">ユーザーとのチャット一覧ページ</a></li>
+			</ul>
+			<br>
+			<footer>
+		<h2>guide page</h2>
+
+			<div><a href="shopopen">shop open</a></div>
+			<br>
+    </footer>
     </body>
 </html>

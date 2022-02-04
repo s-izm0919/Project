@@ -10,6 +10,7 @@
     	<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
     </head>
     <body>
     <header>
@@ -66,7 +67,9 @@
 			<p><img src="images\toku.jpg"></p>
         </h2>
 
-        <h3 class="history">履歴</h3>
+        <br>
+
+        <h2 class="history">history</h2>
 
         <ul class="historyimg">
 		  <c:forEach begin="1" end="10" step="1" var="i">
@@ -75,40 +78,40 @@
 		</ul>
 
 		<h1 class="cate_title">category</h1>
-		<h2>illustration</h2>
+		<h2>photograph</h2>
 
 		<div class="cate">
 
-			<div class="cate_human">
-				<img src="images\human.jpg" class="human">
+			<div class="cate_child">
+				<img src="images\category_01.jpg" class="ca">
+				<div class="mask">
+					<div class="caption">nature</div>
+				</div>
+			</div>
+
+			<div class="cate_child">
+				<img src="images\category_02.jpg" class="ca">
 				<div class="mask">
 					<div class="caption">human</div>
 				</div>
 			</div>
 
-			<div class="cate_animal">
-				<img src="images\animal.jpg" class="animal">
+			<div class="cate_child">
+				<img src="images\category_03.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">animal</div>
+					<div class="caption">food</div>
 				</div>
 			</div>
 
-			<div class="cate_wallpaper">
-				<img src="images\wallpaper.jpg" class="wallpaper">
+			<div class="cate_child">
+				<img src="images\category_04.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">wallpaper</div>
+					<div class="caption">Animals and plants</div>
 				</div>
 			</div>
 
-			<div class="cate_comic">
-				<img src="images\comic.jpg" class="comic">
-				<div class="mask">
-					<div class="caption">comic</div>
-				</div>
-			</div>
-
-			<div class="cate_other">
-				<img src="images\other.jpg" class="other">
+			<div class="cate_child">
+				<img src="images\category_05.jpg" class="ca">
 				<div class="mask">
 					<div class="caption">other</div>
 				</div>
@@ -116,37 +119,53 @@
 
 		</div>
 
-		<h2>photograph</h2>
+		<h2>illustration</h2>
 
 		<div class="cate">
 
-			<div class="cate_human-p">
-				<img src="images\human-p.jpg" class="human-p">
+			<div class="cate_child">
+				<img src="images\category_06.jpg" class="ca">
+				<div class="mask">
+					<div class="caption">nature</div>
+				</div>
+			</div>
+
+			<div class="cate_child">
+				<img src="images\category_07.jpg" class="ca">
 				<div class="mask">
 					<div class="caption">human</div>
 				</div>
 			</div>
 
-			<div class="cate_animal-p">
-				<img src="images\animal-p.jpg" class="animal-p">
+			<div class="cate_child">
+				<img src="images\category_08.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">animal</div>
+					<div class="caption">food</div>
 				</div>
 			</div>
 
-			<div class="cate_landscape">
-				<img src="images\landscape.jpg" class="landscape">
+			<div class="cate_child">
+				<img src="images\category_09.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">landscape</div>
+					<div class="caption">Animals and plants</div>
 				</div>
 			</div>
 
+			<div class="cate_child">
+				<img src="images\category_10.jpg" class="ca">
+				<div class="mask">
+					<div class="caption">other</div>
+				</div>
+			</div>
 		</div>
-    </body>
-    <footer>
-		<h2>guide page</h2>
+		<br>
+		<br>
+		<br>
+		<footer>
+			<h2>guide page</h2>
 			<div><a href="shopopen">shop open</a></div>
+			<br>
+    	</footer>
+    </body>
 
-
-    </footer>
 </html>
