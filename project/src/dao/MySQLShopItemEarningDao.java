@@ -18,6 +18,7 @@ public class MySQLShopItemEarningDao implements ShopItemEarningDao{
 
         List shopitemearning =new ArrayList();
 
+
         try{
         	cn = Connector.getInstance().beginTransaction();
 

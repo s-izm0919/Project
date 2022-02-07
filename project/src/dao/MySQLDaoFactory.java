@@ -106,6 +106,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory {
 	public ItemEditDao getItemEditDao() {
 		return new MySQLItemEditDao();
 	}
+	public ShopItemEarningDao getShopItemEarningDao() {
+		return new  MySQLShopItemEarningDao();
+	}
 
 	/*
 	public ShopItemListDao getShopItemListDao() {
