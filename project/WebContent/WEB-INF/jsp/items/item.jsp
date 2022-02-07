@@ -72,7 +72,7 @@
 			<!--商品画像など -->
 			<div><a></a>
 				<p class="item">
-					<img src="<%=application.getRealPath("/")%>images\item.jpg">
+					<img src='upload\<c:out value="${result['itemdetails'].mainImagePath}"/>'>
 				</p>
 				Explanation:<p>${result['itemdetails'].itemExplanation}</p>
 				</div>
@@ -90,6 +90,7 @@
 		</div>
 
 	<p>-ショップ新着情報も</p>
+
 	<br>
 
 	<c:forEach var="newItemList" items="${result['newItemList']}">
