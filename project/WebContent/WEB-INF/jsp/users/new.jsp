@@ -28,7 +28,6 @@
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
-					<li>
 
 		        <li><a href="callnew">ユーザー登録</a></li>
 

@@ -72,10 +72,6 @@
            			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
-
-				<form name="form3" action="#">
-				取得したパラメータ：<input type="text" name="getpram" size="50" />
-				</form>
         	</div>
         </div>
     </body>

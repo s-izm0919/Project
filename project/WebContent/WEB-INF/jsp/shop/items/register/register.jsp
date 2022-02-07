@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>商品登録</h1>
-        <form method="POST" action="calldisplayitem">
+        <form method="POST" action="additem">
             商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="0" required><br>
             サムネイル<input type="file" name="mainImagePath" required><br>

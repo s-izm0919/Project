@@ -239,4 +239,17 @@ input[type="range"]:active::-webkit-slider-thumb {
     position: absolute;
     transform-origin: 0% 0%;
 }
+
+.else{
+    display: flex;
+}
+.li1
+{
+width:50;
+}
+.li2
+{
+width:50;
+}
+
 </style>
