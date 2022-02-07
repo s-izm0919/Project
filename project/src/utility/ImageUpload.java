@@ -55,8 +55,11 @@ public class ImageUpload {
 						SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 						String date = dateformat.format(nowdate);
 						String date2 = date.replace("-", "").replace(":", "").replace(" ", "");
-						item.write(new File("C:\\Users\\dai24\\git\\Project\\project\\WebContent\\images\\" + date2 + "_main_image_" + filename));
-						filename = "C:\\Users\\dai24\\git\\Project\\project\\WebContent\\images\\" + date2 + "_main_image_" + filename;
+
+
+						item.write(new File("C:\\Users\\delig\\git\\project\\project\\WebContent\\upload\\" + date2 + "_main_image_" + filename));
+						filename = date2 + "_main_image_" + filename;
+						//filename = "C:\\Users\\delig\\git\\project\\project\\WebContent\\upload\\" + date2 + "_main_image_" + filename;
 						//"C:\\Users\\????\\git\\project\\project\\WebContent\\images\\"  ?の部分に自分のPCのユーザー名を入れて上の二文と入れ替えてください
 						//"\\***.**.***.**\\public\\2021\\卒業制作\\mercari\\images\\"  //AWS-version
 						fields.put("mainImagePath",filename);
@@ -65,11 +68,13 @@ public class ImageUpload {
 						SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 						String date = dateformat.format(nowdate);
 						String date2 = date.replace("-", "").replace(":", "").replace(" ", "");
-						item.write(new File("C:\\Users\\dai24\\git\\Project\\project\\WebContent\\images\\" + date2 + "_data_" + filename));
-						filename = "C:\\Users\\dai24\\git\\project\\Project\\WebContent\\images\\" + date2 + "_data_" + filename;
+						item.write(new File("C:\\Users\\delig\\git\\project\\project\\WebContent\\download\\" + date2 + "_data_" + filename));
+						filename =date2 + "_data_" + filename;
+						//filename = "C:\\Users\\delig\\git\\project\\project\\WebContent\\upload\\" + date2 + "_data_" + filename;
 						//"C:\\Users\\????\\git\\project\\project\\WebContent\\images\\"  ?の部分に自分のPCのユーザー名を入れて上の二文と入れ替えてください
 						//"\\***.**.***.**\\public\\2021\\卒業制作\\mercari\\images\\"  //AWS-version
 						fields.put("itemDataPath",filename);
+
 					}
 				}else if (item.isFormField()) {
 					this.setFormField(item);

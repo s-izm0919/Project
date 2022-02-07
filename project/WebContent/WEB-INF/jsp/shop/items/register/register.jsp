@@ -28,8 +28,8 @@
                         <option name="categoryName" value="10">その他のイラスト</option>
 			</select><br>
             データ本体<input type="file" name="itemDataPath" required><br>
-            <input type="radio" name="itemIsOpen" value="1">公開
-            <input type="radio" name="itemIsOpen" value="0" checked>非公開
+            <input type="radio" name="itemIsOpen" value="1" checked>公開
+            <input type="radio" name="itemIsOpen" value="0">非公開
             <input type="submit" value="登録">
         </form>
     </body>

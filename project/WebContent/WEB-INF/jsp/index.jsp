@@ -57,8 +57,6 @@
 	<a href="">売上管理（月単位）</a>
 	<a href="">商品別売上管理</a>
 
-
-<!--
 	<p>いずみ</p>
 	<a href="try">実験</a><br>
 	${result["item"].itemName}<br>
@@ -66,7 +64,6 @@
 	<c:forEach var="list" items='${result["list"]}'>
         <th><c:out value="${list}"/></th>
         </c:forEach>
--->
 
 	<br><br><br><br>
 	<a href="callsearch">あ</a>
