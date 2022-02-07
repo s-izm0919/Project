@@ -325,4 +325,55 @@ public class MySQLShopDao implements ShopDao {
         }
         return Shop;
     }
+
+    public int getShopEarning(String shopId) {
+    	Connection cn=null;
+        PreparedStatement st=null;
+        ResultSet rs=null;
+
+        int total_earning = 0;
+
+        try{
+        	cn = Connector.getInstance().beginTransaction();
+
+            String sql="select count(od.item_id)*i.item_price " +
+            			"from order_detail od " +
+            			"INNER JOIN item i ON od.item_id=i.item_id " +
+            			"INNER JOIN shop s ON i.shop_id=s.shop_id " +
+            			"where od.order_id IN (select order_id from orders where purchase_date > (NOW() - INTERVAL 1 MONTH)) AND i.shop_id='"+shopId+"' " +
+	            		"group by od.item_id;";
+            System.out.println(sql);
+
+            st=cn.prepareStatement(sql);
+
+            rs=st.executeQuery();
+
+           while( rs.next()) {
+        	   total_earning += rs.getInt(1);
+           }
+
+
+            Connector.getInstance().commit();
+
+        }catch(SQLException e){
+            Connector.getInstance().rollback();
+            System.out.println(e.getMessage());
+        }finally{
+            try{
+                if(rs !=null){
+                    rs.close();
+                }
+                if(st !=null){
+                    st.close();
+                }
+            }catch(SQLException e2){
+            	System.out.println(e2.getMessage());
+            }finally{
+                if(cn !=null){
+                	Connector.getInstance().closeConnection();
+                }
+            }
+        }
+        return total_earning;
+    }
 }
