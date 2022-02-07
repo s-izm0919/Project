@@ -22,6 +22,7 @@
 	<a href="callusersettings" >ユーザーの編集</a>
 	<a href="calldeposite">入金</a>
 	<a href="top">トップ</a>
+	<a href="vieweditem">閲覧履歴</a>
 
 		<p>ユーザー注文管理</p>
 
@@ -48,7 +49,7 @@
 
 	<p>ショップ</p>
 	<a href="callopen">ショップ開設ページ</a>
-		<a href="shopinfo">ショップ情報を見る</a>
+	<a href="shopinfo?shopId=S1">ショップ情報を見る※サンプルなので強制的にs1を表示</a>
 	<a href="callshopsettings">ショップ情報を編集する</a>
 	<a href="calldisplayitem">商品登録</a>
 	<a href="shopitemdetails">商品一覧</a>
@@ -57,8 +58,7 @@
 	<a href="">商品別売上管理</a>
 
 
-
-	<!--
+<!--
 	<p>いずみ</p>
 	<a href="try">実験</a><br>
 	${result["item"].itemName}<br>
@@ -67,6 +67,8 @@
         <th><c:out value="${list}"/></th>
         </c:forEach>
 -->
+
+	<br><br><br><br>
 	<a href="callsearch">あ</a>
 	<a href="callitempage">商品ページ</a>
 	<br>

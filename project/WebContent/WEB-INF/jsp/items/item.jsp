@@ -1,6 +1,9 @@
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <html>
     <head>
         <title>商品の詳細ページ</title>
@@ -86,13 +89,12 @@
 			</div>
 		</div>
 
-	<h1>商品データ</h1>
-	ID;<p>${result['itemdetails'].itemId}</p>
+	<p>-ショップ新着情報も</p>
+	<br>
 
-
-
-
-	ShopID:<p>${result['itemdetails'].shopId}</p>
-
+	<c:forEach var="newItemList" items="${result['newItemList']}">
+		<c:out value="${newItemList.itemName}"/><br>
+		<c:out value="${newItemList.itemPrice}"/><br>
+	</c:forEach>
 </body>
 </html>

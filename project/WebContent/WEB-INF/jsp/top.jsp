@@ -10,6 +10,7 @@
     	<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
     </head>
     <body>
     <header>
@@ -50,6 +51,7 @@
 				            <option value="shop_chatlist">ユーザーとのチャット</option>
 				            <option value="callopen">ショップ解説ページ</option>
 				            <option value="logoutuser">ログアウト</option>
+				            <option value="callindex">デバック</option>
 				        </select>
 					</li>
 			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
@@ -65,7 +67,9 @@
 			<p><img src="images\toku.jpg"></p>
         </h2>
 
-        <h3 class="history">履歴</h3>
+        <br>
+
+        <h2 class="history">history</h2>
 
         <ul class="historyimg">
 		  <c:forEach begin="1" end="10" step="1" var="i">
