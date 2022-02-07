@@ -12,5 +12,4 @@ public interface ShopDao {
     //public void removeShop(String User);//ユーザー管理名、パスワードを入力する仮
     public List getShopNamesSearchItem(String searchWord);//検索時の商品表示に使用
     public List getShopNamesSearchShop(String searchWord);//検索時の商品表示に使用
-    public int getShopEarning(String shopId);
 }

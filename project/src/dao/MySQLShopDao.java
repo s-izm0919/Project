@@ -325,6 +325,7 @@ public class MySQLShopDao implements ShopDao {
         }
         return Shop;
     }
+
     public int getShopEarning(String shopId) {
     	Connection cn=null;
         PreparedStatement st=null;
