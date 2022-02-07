@@ -71,9 +71,9 @@
 	           			紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
 	            		お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
 
-	            		<input type="radio" name="shopIsOpen" value="1">公開
+	            		<input type="radio" name="shopIsOpen" value="1" checked>公開
 
-	            		<input type="radio" name="shopIsOpen" value="0" checked>非公開
+	            		<input type="radio" name="shopIsOpen" value="0">非公開
 
             			<input type="submit" value="ショップを開設する">
 	        		</form>
