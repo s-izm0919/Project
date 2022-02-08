@@ -34,7 +34,6 @@
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
-<<<<<<< HEAD
 			        <div id="greet" class="else">
 						<li>
 				 			<select name="select" onChange="location.href=value;">
@@ -69,31 +68,6 @@
 						greet.innerHTML = '<li class="li1"><a href="callnew">ユーザー登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-
-=======
-					<li>
-				<li>
-			        <select name="select" onChange="location.href=value;">
-				        	<option value="#">${user.userName}</option>
-				            <option value="callnew">ユーザー登録</option>
-				            <option value="callsigninpage">ログイン</option>
-				            <option value="shopopen">ショップ開設ガイド</option>
-				            <option value="callusersettings">ユーザーアカウント設定</option>
-				            <option value="following">フォローしたショップ</option>
-				            <option value="follow_items">フォローしたショップの新着商品</option>
-				            <option value="users_chatlist">ショップとのチャット</option>
-				            <option value="uders_orders">購入履歴</option>
-				            <option value="callshoptop">ショップ管理</option>
-				            <option value="shopitemdetails">商品管理</option>
-				            <option value="showshoporders">注文一覧</option>
-				            <option value="shop_sales">売上管理</option>
-				            <option value="shop_chatlist">ユーザーとのチャット</option>
-				            <option value="callopen">ショップ解説ページ</option>
-				            <option value="logoutuser">ログアウト</option>
-				        </select>
-				</li>
->>>>>>> branch 'JSP' of git@github.com:s-izm0919/Project.git
-
 		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
 		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
