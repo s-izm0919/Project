@@ -6,6 +6,7 @@
         <title>商品登録ページ</title>
 		<%@include file="../../../css/open.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     </head>
     <body>
 
@@ -71,9 +72,9 @@
 	           			紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
 	            		お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
 
-	            		<input type="radio" name="shopIsOpen" value="1">公開
+	            		<input type="radio" name="shopIsOpen" value="1" checked>公開
 
-	            		<input type="radio" name="shopIsOpen" value="0" checked>非公開
+	            		<input type="radio" name="shopIsOpen" value="0">非公開
 
             			<input type="submit" value="ショップを開設する">
 	        		</form>

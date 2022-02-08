@@ -9,6 +9,7 @@
         <title>商品の詳細ページ</title>
 		<%@include file="../../../css/item.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     </head>
     <body>
     <header>
@@ -72,7 +73,7 @@
 			<!--商品画像など -->
 			<div><a></a>
 				<p class="item">
-					<img src="<%=application.getRealPath("/")%>images\item.jpg">
+					<img src='upload\<c:out value="${result['itemdetails'].mainImagePath}"/>'>
 				</p>
 				Explanation:<p>${result['itemdetails'].itemExplanation}</p>
 				</div>
@@ -90,6 +91,7 @@
 		</div>
 
 	<p>-ショップ新着情報も</p>
+
 	<br>
 
 	<c:forEach var="newItemList" items="${result['newItemList']}">

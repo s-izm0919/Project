@@ -325,6 +325,7 @@ public class MySQLShopDao implements ShopDao {
         }
         return Shop;
     }
+
     public int getShopEarning(String shopId) {
     	Connection cn=null;
         PreparedStatement st=null;
@@ -341,6 +342,7 @@ public class MySQLShopDao implements ShopDao {
             			"INNER JOIN shop s ON i.shop_id=s.shop_id " +
             			"where od.order_id IN (select order_id from orders where purchase_date > (NOW() - INTERVAL 1 MONTH)) AND i.shop_id='"+shopId+"' " +
 	            		"group by od.item_id;";
+            System.out.println(sql);
 
             st=cn.prepareStatement(sql);
 

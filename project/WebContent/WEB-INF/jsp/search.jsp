@@ -11,6 +11,7 @@
         <title>商品検索結果</title>
 		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     </head>
     <body>
      <header>
@@ -33,6 +34,7 @@
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
+<<<<<<< HEAD
 			        <div id="greet" class="else">
 						<li>
 				 			<select name="select" onChange="location.href=value;">
@@ -68,6 +70,29 @@
 					}
 					</script>
 
+=======
+					<li>
+				<li>
+			        <select name="select" onChange="location.href=value;">
+				        	<option value="#">${user.userName}</option>
+				            <option value="callnew">ユーザー登録</option>
+				            <option value="callsigninpage">ログイン</option>
+				            <option value="shopopen">ショップ開設ガイド</option>
+				            <option value="callusersettings">ユーザーアカウント設定</option>
+				            <option value="following">フォローしたショップ</option>
+				            <option value="follow_items">フォローしたショップの新着商品</option>
+				            <option value="users_chatlist">ショップとのチャット</option>
+				            <option value="uders_orders">購入履歴</option>
+				            <option value="callshoptop">ショップ管理</option>
+				            <option value="shopitemdetails">商品管理</option>
+				            <option value="showshoporders">注文一覧</option>
+				            <option value="shop_sales">売上管理</option>
+				            <option value="shop_chatlist">ユーザーとのチャット</option>
+				            <option value="callopen">ショップ解説ページ</option>
+				            <option value="logoutuser">ログアウト</option>
+				        </select>
+				</li>
+>>>>>>> branch 'JSP' of git@github.com:s-izm0919/Project.git
 
 		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
@@ -164,11 +189,12 @@
         					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
                 					<td>${item.mainImagePath}</td>
-                					<td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
+                					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
                 					<td>${item.itemName}</td>
                 					<td>${item.itemPrice}</td>
+                					<td><a href="shopinfo?shopId=${item.shopId}">ショップ詳細情報へ${item.shopId}</td>
                 					<td>${item.shopName}</td>
-	                				<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>
+	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>
         				</table>
