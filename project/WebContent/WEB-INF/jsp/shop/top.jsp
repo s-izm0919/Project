@@ -69,6 +69,8 @@
 			    <li><a href="">ユーザーとのチャット一覧ページ</a></li>
 			</ul>
 			<br>
+			<div class="content"><a href="calldisplayitem">商品登録</a></div>
+			<br>
 			<footer>
 		<h2>guide page</h2>
 

@@ -93,8 +93,10 @@ public class ConfirmOrderCommand extends AbstractCommand{
 	ShopDao shopdao = factory.getShopDao();
 	Shop shop = shopdao.getShopInfo(shopId);
 	String shop_userid = shop.getUserId();
+	User shopUser = userdao.getPoint(shop_userid);
+	int shopUserPoint = shopUser.getUserPoint();
 
-	Integer shoppoint = totalPayment+boostAmount;
+	Integer shoppoint = shopUserPoint+totalPayment+boostAmount;
 
 	userdao.updatePoint(shop_userid, shoppoint.toString());
 
