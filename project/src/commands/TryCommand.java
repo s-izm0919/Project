@@ -1,6 +1,9 @@
 package commands;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,6 +41,21 @@ class TryCommand extends AbstractCommand {
 	String path=request.getServletContext().getRealPath("/upload");
 	//実際にファイルが保存されるパス確認
 	System.out.println(path);
+
+	//今月
+	Date nowdate = new Date();
+	SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM");
+	String thisMonth = dateformat.format(nowdate);
+	System.out.println(thisMonth);
+
+	//先月
+	Calendar calendar = Calendar.getInstance();
+	calendar.setTime(nowdate);
+	calendar.add(Calendar.MONTH, -1);
+	String lastMonth = dateformat.format(calendar.getTime());
+	System.out.println(lastMonth);
+
+
 
 	resc.setTarget("index");
 		return resc;

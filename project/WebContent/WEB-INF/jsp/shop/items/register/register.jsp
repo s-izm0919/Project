@@ -7,7 +7,8 @@
     </head>
     <body>
         <h1>商品登録</h1>
-        <form method="POST" action="calldisplayitem">
+<!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
+        <form method="POST" action="additem" enctype="multipart/form-data">
             商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="0" required><br>
             サムネイル<input type="file" name="mainImagePath" required><br>
@@ -27,8 +28,8 @@
                         <option name="categoryName" value="10">その他のイラスト</option>
 			</select><br>
             データ本体<input type="file" name="itemDataPath" required><br>
-            <input type="radio" name="itemIsOpen" value="1">公開
-            <input type="radio" name="itemIsOpen" value="0" checked>非公開
+            <input type="radio" name="itemIsOpen" value="1" checked>公開
+            <input type="radio" name="itemIsOpen" value="0">非公開
             <input type="submit" value="登録">
         </form>
     </body>

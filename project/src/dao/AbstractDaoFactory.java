@@ -67,7 +67,8 @@ public abstract class AbstractDaoFactory{
         public abstract HistoryDao getHistoryDao();
         public abstract HistoryListDao getHistoryListDao();
         public abstract NewItemDao getNewItemDao();
-        
+        public  abstract ShopItemEarningDao getShopItemEarningDao();
+
         /*
         public abstract CategoryDao getCategoryDao();
 

@@ -148,11 +148,12 @@
         					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
                 					<td>${item.mainImagePath}</td>
-                					<td><a href="callitempage?itemId=${item.itemId}">${item.itemId}</a></td>
+                					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
                 					<td>${item.itemName}</td>
                 					<td>${item.itemPrice}</td>
+                					<td><a href="shopinfo?shopId=${item.shopId}">ショップ詳細情報へ${item.shopId}</td>
                 					<td>${item.shopName}</td>
-	                				<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>
+	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>
         				</table>
