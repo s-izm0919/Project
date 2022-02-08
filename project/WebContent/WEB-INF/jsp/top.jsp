@@ -56,7 +56,7 @@
 					</li>
 			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
 			        <li><a href="goodlist"><i class="far fa-heart"></i> like</a></li>
-			        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i> cart</a></li>
+			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> cart</a></li>
 		        </ul>
 	        </nav>
     </header>
