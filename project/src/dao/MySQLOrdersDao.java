@@ -104,8 +104,7 @@ public class MySQLOrdersDao implements OrdersDao {
         }
         return o;
 	}
-<<<<<<< HEAD
-=======
+
 /*
     public List getShopEarning(String shopId,Date month) {
     	Connection cn=null;
@@ -159,7 +158,7 @@ public class MySQLOrdersDao implements OrdersDao {
         return Orders;
     }
 */
->>>>>>> branch 'kandel_command' of git@github.com:s-izm0919/Project.git
+
     public List getShopEarning(String shopId,String month) {
     	Connection cn=null;
         PreparedStatement st=null;
