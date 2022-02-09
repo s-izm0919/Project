@@ -146,7 +146,7 @@
    						<table border="1">
         					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
-                					<td>${item.mainImagePath}</td>
+                					<td><img src="upload/${item.mainImagePath}" class="img"></td>
                 					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
                 					<td>${item.itemName}</td>
                 					<td>${item.itemPrice}</td>

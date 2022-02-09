@@ -239,4 +239,9 @@ input[type="range"]:active::-webkit-slider-thumb {
     position: absolute;
     transform-origin: 0% 0%;
 }
+
+.img {
+	width:100px;
+	height:auto;
+}}
 </style>

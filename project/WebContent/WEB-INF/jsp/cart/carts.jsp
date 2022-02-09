@@ -68,7 +68,7 @@
    		<br>
 	<c:forEach var="shop" items="${result['viewcart']}">
 	<div class="boxwrap">
-		<div class="wrap pattern-3 mhb-20">
+		<div class="wrap pattern-3 mhb-20 color">
 		<c:out value="${shop[0].shopName}"/><br>
 		<c:forEach var="shopitem" items="${shop[1]}">
 			商品名：<c:out value="${shopitem.itemName}"/><br>
