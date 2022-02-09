@@ -169,7 +169,7 @@ public class MySQLOrdersDao implements OrdersDao {
 
             String sql="select os.total_payment " +
             			"from orders os " +
-            			"INNER JOIN order_detail od ON os.order_id=od.order_id " +
+            			//"INNER JOIN order_detail od ON os.order_id=od.order_id " +
             			"where purchase_date LIKE '"+month+"%' AND os.shop_id='"+shopId+"';";
 
             st=cn.prepareStatement(sql);
