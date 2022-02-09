@@ -20,7 +20,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import context.RequestContext;
 
 public class ImageUpload {
-	Map fields = new HashMap();
+	Map<String, String> fields = new HashMap();
 	public Map upload(RequestContext reqc){
 		HttpServletRequest req = (HttpServletRequest)reqc.getRequest();
 		try {
