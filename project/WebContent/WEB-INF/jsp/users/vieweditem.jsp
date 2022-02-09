@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <title>閲覧履歴</title>
 </head>
