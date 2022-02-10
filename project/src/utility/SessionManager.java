@@ -36,6 +36,10 @@ public class SessionManager {
 		session.setAttribute("token", token);
 	}
 
+	public static void setMessage(String  message) {
+		session.setAttribute("mess",message);
+	}
+
 
 	public static Object getAttribute(String name){
 		return session.getAttribute(name);

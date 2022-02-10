@@ -104,62 +104,7 @@ public class MySQLOrdersDao implements OrdersDao {
         }
         return o;
 	}
-<<<<<<< HEAD
-=======
-/*
-    public List getShopEarning(String shopId,Date month) {
-    	Connection cn=null;
-        PreparedStatement st=null;
-        ResultSet rs=null;
 
-        List Orders=new ArrayList();
-
-        try{
-        	cn = Connector.getInstance().beginTransaction();
-
-            String sql="select os.total_payment " +
-            			"from orders os " +
-            			"INNER JOIN order_detail od ON os.order_id=od.order_id " +
-            			"where purchase_date LIKE '"+month+"%' AND os.shop_id='"+shopId+"';";
-
-            st=cn.prepareStatement(sql);
-
-            rs=st.executeQuery();
-
-            while(rs.next()){
-                Orders o=new Orders();
-
-                o.setTotalPayment(rs.getInt(1));
-
-                Orders.add(o);
-            }
-
-
-            Connector.getInstance().commit();
-
-        }catch(SQLException e){
-            Connector.getInstance().rollback();
-            System.out.println(e.getMessage());
-        }finally{
-            try{
-                if(rs !=null){
-                    rs.close();
-                }
-                if(st !=null){
-                    st.close();
-                }
-            }catch(SQLException e2){
-            	System.out.println(e2.getMessage());
-            }finally{
-                if(cn !=null){
-                	Connector.getInstance().closeConnection();
-                }
-            }
-        }
-        return Orders;
-    }
-*/
->>>>>>> branch 'kandel_command' of git@github.com:s-izm0919/Project.git
     public List getShopEarning(String shopId,String month) {
     	Connection cn=null;
         PreparedStatement st=null;
