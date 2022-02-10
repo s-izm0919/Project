@@ -25,7 +25,8 @@ public class AddShopCommand extends AbstractCommand {
 		String shopExplanation =reqc.getParameter("shopExplanation")[0];
 		String sellerWord=reqc.getParameter("shopSellerword")[0];
 
-		String shopIsopen=reqc.getParameter("shopIsOpen")[0];
+		String shopIsopen="1";
+		shopIsopen=reqc.getParameter("shopIsOpen")[0];
 		/*
 		if("close".equals(shopIsopen)) {
 			shopIsopen=""+0;

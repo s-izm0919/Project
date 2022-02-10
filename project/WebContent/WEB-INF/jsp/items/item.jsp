@@ -10,6 +10,17 @@
 		<%@include file="../../../css/item.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+	<script>
+		(window.onload = function() {
+			console.log(${result['checkBought']});
+			if(${result['checkBought']}==true){
+				document.getElementById("cart").style.visibility ="hidden";
+				document.getElementById("order").innerHTML = '<a href="showorderdetail?itemId=${result['itemdetails'].itemId}">購入済み商品</a>'
+			}
+
+	    })();
+	</script>
     </head>
     <body>
     <header>
@@ -97,7 +108,8 @@
 				Name:<p>${result['itemdetails'].itemName}</p>
 				<input type="submit" value="いいねする"><br>
 				Price<p>${result['itemdetails'].itemPrice}</p>
-				<input type="submit" value="カートに入れる" onclick="location.href='addcart?itemId=${result['itemdetails'].itemId}'">
+				<input type="submit" value="カートに入れる" onclick="location.href='addcart?itemId=${result['itemdetails'].itemId}'" id="cart">
+				<div id="order"></div>
 				</div>
 				</div>
 				</div>

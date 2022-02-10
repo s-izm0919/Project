@@ -32,6 +32,9 @@ public class SearchItemCommand extends AbstractCommand{
 		result.put("itemsearch", list);
 
 		int itemcount = list.size();
+		if(itemcount == 0){
+			itemcount = 0;
+		}
 		System.out.println(itemcount+"件ヒット");
 
 		result.put("itemcount", itemcount);

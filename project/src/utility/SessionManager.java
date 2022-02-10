@@ -41,6 +41,14 @@ public class SessionManager {
 		return session.getAttribute(name);
 	}
 
+	public static void setToken() {
+		session.setAttribute("token","OK");
+	}
+
+	public static Object getToken() {
+		return session.getAttribute("token");
+	}
+
 	public static Object getToken(String token) {
 		return session.getAttribute("token");
 	}
