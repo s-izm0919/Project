@@ -82,6 +82,7 @@
         <h1>カート一覧</h1>
    		<br>
 	<c:forEach var="shop" items="${result['viewcart']}">
+
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20 color">
 		<c:out value="${shop[0].shopName}"/><br>
@@ -96,6 +97,7 @@
 			<a href="removecartitemshop?shopId=${total.shopId}">ショップごとカートから取り除く</a><br>
 			<a href="callconfirmpassword?shopId=${total.shopId}">購入画面を進む</a><br><br>
 		</c:forEach>
+		</div>
 		</div>
 		</div>
 	</c:forEach>
