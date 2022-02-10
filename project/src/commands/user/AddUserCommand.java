@@ -43,7 +43,6 @@ public class AddUserCommand extends AbstractCommand {
 			}
 
 
-
 		//メアドが登録されてない場合
 
 
@@ -67,17 +66,6 @@ public class AddUserCommand extends AbstractCommand {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-
-
-
-
-		/*dao.addUser(user);
-		User userInfo=dao.login(null, mail,password);
-		System.out.println("userId:"+userInfo.getUserId());
-		//SessionManager.setAttribute("ok");
-		SessionManager.setAttribute(userInfo);
-		*/
-
 
 
 
