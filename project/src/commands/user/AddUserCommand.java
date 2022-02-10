@@ -29,9 +29,9 @@ public class AddUserCommand extends AbstractCommand {
 		System.out.println("email: " + mail);
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
-//メアドが登録されている場合
 
-			 User checkUser=dao.getUserPassword(mail);
+
+			/* User checkUser=dao.getUserPassword(mail);
 			 System.out.println(checkUser);
 			System.out.println("userIdIs:"+checkUser.getUserId());
 			System.out.println("userMailis:"+checkUser.getUserMail());
@@ -42,30 +42,36 @@ public class AddUserCommand extends AbstractCommand {
 				resc.setTarget("users/new");
 			}
 
+*/
+		boolean checkUser=dao.checkEmail(mail);
 
-		//メアドが登録されてない場合
+		 if(checkUser) {
+			 User user = new User();
+				user.setUserName(userName);
+				user.setUserIdentifiedName(nickName);
+				user.setUserPassword(password);
+				user.setUserMail(mail);
 
 
-		User user = new User();
-		user.setUserName(userName);
-		user.setUserIdentifiedName(nickName);
-		user.setUserPassword(password);
-		user.setUserMail(mail);
 
 
+					try {	dao.addUser(user);
+					User userInfo=dao.login(null, mail,password);
 
-		/*AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
-		UserDao dao=factory.getUserDao();*/
+					//SessionManager.setAttribute("ok");
+					SessionManager.setAttribute(userInfo);
+					resc.setTarget("index");
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
 
-			try {	dao.addUser(user);
-			User userInfo=dao.login(null, mail,password);
+		 }else
+		 {
+			 System.out.println("Email id exist");
+			 resc.setResult("メアドがすでに登録されています。");
+				resc.setTarget("users/new");
+		 }
 
-			//SessionManager.setAttribute("ok");
-			SessionManager.setAttribute(userInfo);
-			resc.setTarget("index");
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
 
 
 
