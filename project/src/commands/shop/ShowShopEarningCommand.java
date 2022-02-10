@@ -46,12 +46,13 @@ public class ShowShopEarningCommand extends AbstractCommand {
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		OrdersDao dao=factory.getOrdersDao();
 		ArrayList<Orders> shopEarning=(ArrayList<Orders>)dao.getShopEarning(shopId, thisMonth);
+
 		System.out.println(shopEarning);
+		System.out.println(shopEarning.size());
 		for( Orders index: shopEarning) {
 		     totalEarning += index.getTotalPayment();
 		   }
 		System.out.println("totalEarning:"+totalEarning);
-
 
 		HashMap result = new HashMap();
 		result.put("shopEarning", shopEarning);

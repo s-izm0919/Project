@@ -118,7 +118,7 @@
 						</select><br>
 					</div>
 					<a>金額</a><br>
-					<p>\0 ～ \<span id="current-value" name="maxprice"></span></p>
+					<p>0 ～ \<span id="current-value" name="maxprice"></span></p>
 					<input type="range" id="Money" name="maxprice" min="0" max="5000" step="250" value="5000">
 					<script>
 						const inputElem = document.getElementById('Money'); // input要素
@@ -162,7 +162,7 @@
    						<table border="1">
         					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
-                					<td>${item.mainImagePath}</td>
+                					<td><img src="upload/${item.mainImagePath}" class="img"></td>
                 					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
                 					<td>${item.itemName}</td>
                 					<td>${item.itemPrice}</td>

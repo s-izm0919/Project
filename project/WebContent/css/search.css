@@ -240,16 +240,23 @@ input[type="range"]:active::-webkit-slider-thumb {
     transform-origin: 0% 0%;
 }
 
+
 .else{
     display: flex;
 }
-.li1
+.else >.li1
 {
 width:50;
 }
-.li2
+.else >.li2
 {
 width:50;
+}
+
+.img
+{
+	width:100px;
+	height:auto;
 }
 
 </style>

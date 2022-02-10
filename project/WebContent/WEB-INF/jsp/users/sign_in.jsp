@@ -73,11 +73,6 @@
            			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> branch 'JSP' of git@github.com:s-izm0919/Project.git
         	</div>
         </div>
     </body>

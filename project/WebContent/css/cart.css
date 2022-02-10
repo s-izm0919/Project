@@ -88,13 +88,14 @@ div.sent
     background-color: white;
     color: #fff;
     border-radius: 15px;
-
+	font-color:black;
     border:1px solid #ddd;
 
 }
 
 .mgb-20{
-  margin-bottom: 20px;
+  	margin-bottom: 20px;
+
 }
 
 .mgb-80{
@@ -105,16 +106,19 @@ div.sent
   height:60px;
   display:table;
   text-align:center;
+
 }
 
 .wrap.pattern-3 div{
   display:table-cell;
   vertical-align:middle;
+
 }
 
 .color
 {
 	color: Black;
 }
+
 
 </style>

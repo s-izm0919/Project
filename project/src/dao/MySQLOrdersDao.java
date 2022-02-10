@@ -104,6 +104,7 @@ public class MySQLOrdersDao implements OrdersDao {
         }
         return o;
 	}
+
 /*
     public List getShopEarning(String shopId,Date month) {
     	Connection cn=null;
@@ -157,6 +158,7 @@ public class MySQLOrdersDao implements OrdersDao {
         return Orders;
     }
 */
+
     public List getShopEarning(String shopId,String month) {
     	Connection cn=null;
         PreparedStatement st=null;
@@ -167,10 +169,12 @@ public class MySQLOrdersDao implements OrdersDao {
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-            String sql="select os.total_payment " +
+            String sql="select * " +
             			"from orders os " +
-            			"INNER JOIN order_detail od ON os.order_id=od.order_id " +
+            			//"INNER JOIN order_detail od ON os.order_id=od.order_id " +
             			"where purchase_date LIKE '"+month+"%' AND os.shop_id='"+shopId+"';";
+
+
 
             st=cn.prepareStatement(sql);
 
@@ -178,8 +182,13 @@ public class MySQLOrdersDao implements OrdersDao {
 
             while(rs.next()){
                 Orders o=new Orders();
+                o.setOrderId(rs.getInt(1));
+                o.setUserId(rs.getString(2));
+                o.setShopId(rs.getString(3));
+                o.setTotalPayment(rs.getInt(4));
+                o.setPurchaseDate(rs.getString(5));
+                o.setBoostAmount(rs.getInt(6));
 
-                o.setTotalPayment(rs.getInt(1));
 
                 Orders.add(o);
             }
