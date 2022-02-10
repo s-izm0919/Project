@@ -105,6 +105,8 @@ public class MySQLOrdersDao implements OrdersDao {
         return o;
 	}
 
+
+
     public List getShopEarning(String shopId,String month) {
     	Connection cn=null;
         PreparedStatement st=null;

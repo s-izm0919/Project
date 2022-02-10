@@ -11,6 +11,7 @@
         <title>商品検索結果</title>
 		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     </head>
     <body>
      <header>
@@ -33,28 +34,40 @@
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
-					<li>
-				<li>
-			        <select name="select" onChange="location.href=value;">
-			        	<option value="#">${user.userName}</option>
-			            <option value="callnew">ユーザー登録</option>
-			            <option value="callsigninpage">ログイン</option>
-			            <option value="shopopen">ショップ開設ガイド</option>
-			            <option value="callusersettings">ユーザーアカウント設定</option>
-			            <option value="following">フォローしたショップ</option>
-			            <option value="follow_items">フォローしたショップの新着商品</option>
-			            <option value="users_chatlist">ショップとのチャット</option>
-			            <option value="uders_orders">購入履歴</option>
-			            <option value="shop_top">ショップ管理</option>
-			            <option value="shop_items">商品管理</option>
-			            <option value="shop_orders">注文一覧</option>
-			            <option value="shop_sales">売上管理</option>
-			            <option value="shop_chatlist">ユーザーとのチャット</option>
-			            <option value="callopen">ショップ解説ページ</option>
-			            <option value="logoutuser">ログアウト</option>
-			        </select>
-				</li>
+			        <div id="greet" class="else">
+						<li>
+				 			<select name="select" onChange="location.href=value;">
+				    	    	<option value="${user.userName}" id="user">${user.userName}</option>
+				        		<option value="${shop.shopName}" id="shop">${shop.shopName}</option>
+				        	</select>
+				        </li>
+					</div>
+					<script>
+					var greet = document.getElementById('greet');
 
+					var user = 0;
+					user = document.getElementById('user').textContent;
+					console.log(user);
+					var shop = 0;
+					shop = document.getElementById('shop').value;
+					console.log(shop);
+					if(user != ""){
+						console.log("if文1");
+						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="shopopen">ショップ開設ガイド</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="logoutuser">ログアウト</option></select></li>';
+						if(shop != ""){
+							console.log("if文2");
+								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="shop_top">ショップ管理</option><option value="shop_items">商品管理</option><option value="shop_orders">注文一覧</option><option value="shop_sales">売上管理</option><option value="shop_chatlist">ユーザーとのチャット</option><option value="callopen">ショップ解説ページ</option><option value="logoutuser">ログアウト</option></select></li>';
+						}else{
+							console.log("userのみ");
+
+						}
+
+					}
+					else{
+						console.log("else");
+						greet.innerHTML = '<li class="li1"><a href="callnew">ユーザー登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
+					}
+					</script>
 		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
 
 		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
@@ -67,7 +80,6 @@
 
     <br><br><br><br>
 
-    <body>
         <h1>商品一覧</h1>
    		<br>
 
@@ -131,7 +143,11 @@
   							inputElem.addEventListener('input', rangeOnChange); // スライダー変化時にイベントを発火
   							setCurrentValue(inputElem.value); // ページ読み込み時に値をセット
 						}
-					</script><br><br>
+
+
+						</script><br><br>
+
+
 					<input type="submit" value="検索">
 				</form>
 				</div>
@@ -146,7 +162,7 @@
    						<table border="1">
         					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
-                					<td>${item.mainImagePath}</td>
+                					<td><img src="upload/${item.mainImagePath}" class="img"></td>
                 					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
                 					<td>${item.itemName}</td>
                 					<td>${item.itemPrice}</td>
@@ -163,13 +179,4 @@
 	</div>
 </div>
 </body>
-
-ここからは和泉のサンプル
-
-
-
-        </form>
-
-    </body>
--->
 </html>

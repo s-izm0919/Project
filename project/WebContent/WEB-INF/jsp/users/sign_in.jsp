@@ -3,6 +3,7 @@
 
 <html>
     <head>
+    	<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
         <title>ログインページ</title>
         <%@include file="../../../css/sign_in.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -72,8 +73,6 @@
            			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
-
-
         	</div>
         </div>
     </body>
