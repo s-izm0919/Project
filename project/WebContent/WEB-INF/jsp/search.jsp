@@ -118,7 +118,7 @@
 						</select><br>
 					</div>
 					<a>金額</a><br>
-					<p>0 ～ \<span id="current-value" name="maxprice"></span></p>
+					<p>&yen;0 ～ &yen;<span id="current-value" name="maxprice"></span></p>
 					<input type="range" id="Money" name="maxprice" min="0" max="5000" step="250" value="5000">
 					<script>
 						const inputElem = document.getElementById('Money'); // input要素
