@@ -122,6 +122,9 @@ img.ca {
 	padding-top:		80px;
 	color:			#fff;
 }
+.cate_child .caption a{
+	color:			#fff;
+}
 .cate_child .mask {
 	width:			100%;
 	height:			100%;
