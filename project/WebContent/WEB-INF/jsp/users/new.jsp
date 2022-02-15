@@ -33,6 +33,7 @@
 
 		        <li><a href="callnew">ユーザー登録</a></li>
 
+
 		        <li><a href="callsigninpage">ログイン</a></li>
 
 		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
@@ -55,6 +56,7 @@
             <input type="text" name="userIdentifiedName" placeholder="ユーザーID（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><br>
             <input type="password" name="userPassword" placeholder="パスワード（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$"  required><br><br>
             <input type="email" name="userMail" placeholder="メールアドレス" maxlength="300" required><br><br>
+            <h1>${result}</h1>
             <input type="submit" value="登録する">
         </form>
         </div>
