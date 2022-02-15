@@ -74,14 +74,14 @@
     </header>
     <br>
         <h1>${shop.shopName}のショップ管理ページ</h1>
-	        <ul class="cont_nav">
-				<li><a href="callshoptop">ショップ管理のページ</a></li>
-				<li><a href="callshopsettings">ショップ情報編集のページ</a></li>
-		    	<li><a href="shopitemdetails">商品管理のページ</a></li>
-			    <li><a href="showshoporders">注文一覧ページ</a></li>
-	    		<li><a href="">売上管理ページ</a></li>
-			    <li><a href="">ユーザーとのチャット一覧ページ</a></li>
-			</ul>
+	        <div class="cont_nav size1 ">
+				<a class="backgra true" href="callshoptop">ショップ管理</a>
+				<a class="backgra false" href="callshopsettings">ショップ情報編集</a>
+		    	<a class="backgra false" href="shopitemdetails">商品管理</a>
+			    <a class="backgra false" href="showshoporders">注文一覧</a>
+	    		<a class="backgra false" href="">売上管理</a>
+			    <a class="backgra false" href="">ユーザーとのチャット一覧</a>
+			</div>
 			<br>
 			<div class="content"><a href="calldisplayitem">商品登録</a></div>
 			<br>

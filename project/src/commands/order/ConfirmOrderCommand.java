@@ -103,6 +103,7 @@ public class ConfirmOrderCommand extends AbstractCommand{
 	//セッション更新
 	User newuser = userdao.getUserInfo(userId);
 	SessionManager.setAttribute(newuser);
+	SessionManager.setToken();
 
 
 	//注文完了画面を表示する

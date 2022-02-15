@@ -119,4 +119,18 @@ a.color
 {
 	color: Black;
 }
+
+
+.else{
+    display: flex;
+}
+.else >.li1
+{
+width:50;
+}
+.else >.li2
+{
+width:50;
+}
+
 </style>

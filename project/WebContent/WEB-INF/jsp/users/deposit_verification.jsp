@@ -81,8 +81,8 @@
 			<div class="color">
     			<h2>入金が完了しました</h2>
     			<h3>所持ポイント</h3>
-    			<a href="calldeposite">入金を続ける</a>
-    			<a href="top">トップに戻る</a>
+    			<a href="" class="btn btn--orange" href="calldeposite">入金を続ける</a>
+    			<a href="" class="btn btn--orange" href="top">トップに戻る</a>
     		</div>
     	</div>
     </div>

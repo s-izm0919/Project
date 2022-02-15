@@ -33,6 +33,10 @@ public class SearchShopCommand extends AbstractCommand{
 
 		int itemcount = list.size();
 
+		if(itemcount == 0) {
+			itemcount = 0;
+		}
+
 		result.put("itemcount", itemcount);
 
 		resc.setResult(result);
