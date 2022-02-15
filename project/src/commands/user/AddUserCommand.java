@@ -13,9 +13,6 @@ public class AddUserCommand extends AbstractCommand {
 
 		RequestContext reqc = getRequestContext();
 
-
-
-
 		String userName=reqc.getParameter("userName")[0];
 		String nickName =reqc.getParameter("userIdentifiedName")[0];
 		String password=reqc.getParameter("userPassword")[0];
@@ -42,7 +39,7 @@ public class AddUserCommand extends AbstractCommand {
 		System.out.println("userId:"+userInfo.getUserId());
 		//SessionManager.setAttribute("ok");
 		SessionManager.setAttribute(userInfo);
-
+		SessionManager.setToken();
 
 		System.out.println("-- AddUserCommand --");
 

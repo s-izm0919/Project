@@ -72,8 +72,8 @@
         <h2 class="history">history</h2>
 
         <ul class="historyimg">
-		  <c:forEach begin="1" end="10" step="1" var="i">
-		    <li class="flex-item item${i}"><img class="k" src="images\rireki.jpg" width="50" height="50"></li>
+		  <c:forEach begin="0" end="4" step="1" var="item" items="${result['historyList']}">
+		    <li><a href="callitempage?itemId=${item.itemId}"><img src='upload/${item.mainImagePath}'></a></li>
 		  </c:forEach>
 		</ul>
 
@@ -85,35 +85,35 @@
 			<div class="cate_child">
 				<img src="images\category_01.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">nature</div>
+					<div class="caption"><a href="searchcategory?categoryId=1">nature</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_02.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">human</div>
+					<div class="caption"><a href="searchcategory?categoryId=2">human</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_03.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">food</div>
+					<div class="caption"><a href="searchcategory?categoryId=3">food</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_04.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">Animals and plants</div>
+					<div class="caption"><a href="searchcategory?categoryId=4">Animals and plants</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_05.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">other</div>
+					<div class="caption"><a href="searchcategory?categoryId=5">other</a></div>
 				</div>
 			</div>
 
@@ -126,35 +126,35 @@
 			<div class="cate_child">
 				<img src="images\category_06.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">nature</div>
+					<div class="caption"><a href="searchcategory?categoryId=6">nature</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_07.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">human</div>
+					<div class="caption"><a href="searchcategory?categoryId=7">human</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_08.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">food</div>
+					<div class="caption"><a href="searchcategory?categoryId=8">food</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_09.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">Animals and plants</div>
+					<div class="caption"><a href="searchcategory?categoryId=9">Animals and plants</a></div>
 				</div>
 			</div>
 
 			<div class="cate_child">
 				<img src="images\category_10.jpg" class="ca">
 				<div class="mask">
-					<div class="caption">other</div>
+					<div class="caption"><a href="searchcategory?categoryId=10">other</a></div>
 				</div>
 			</div>
 		</div>

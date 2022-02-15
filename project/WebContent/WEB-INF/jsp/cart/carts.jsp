@@ -12,6 +12,15 @@
 		<%@include file="../../../css/new.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+	<script>
+		(window.onload = function() {
+    	if(${result['noitem']} == true){
+    		document.getElementById("noitem").innerHTML = "カートは空です";
+    	}
+
+    })();
+	</script>
     </head>
     <body>
 
@@ -81,11 +90,15 @@
 		<div class="color">
         <h1>カート一覧</h1>
    		<br>
+   		<div id="noitem"></div>
 	<c:forEach var="shop" items="${result['viewcart']}">
+
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20 color">
 		<c:out value="${shop[0].shopName}"/><br>
+
 		<c:forEach var="shopitem" items="${shop[1]}">
+		<img src='upload\<c:out value="${shopitem.mainImagePath}"/>'><br>
 			商品名：<c:out value="${shopitem.itemName}"/><br>
 			商品価格<c:out value="${shopitem.itemPrice}"/><br>
 			<a href="removecartitem?itemId=${shopitem.itemId}">カートから取り除く</a><br>
@@ -96,6 +109,7 @@
 			<a href="removecartitemshop?shopId=${total.shopId}">ショップごとカートから取り除く</a><br>
 			<a href="callconfirmpassword?shopId=${total.shopId}">購入画面を進む</a><br><br>
 		</c:forEach>
+		</div>
 		</div>
 		</div>
 	</c:forEach>

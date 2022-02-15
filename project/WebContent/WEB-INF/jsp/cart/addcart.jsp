@@ -69,6 +69,7 @@
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20 color">
          	ショップ名：${result['viewcart'].shopName}<br>
+         	<img src='upload\<c:out value="${result['viewcart'].mainImagePath}"/>'><br>
         		商品名：${result['viewcart'].itemName}<br>
          	商品価格：${result['viewcart'].itemPrice}<br>
 
