@@ -60,7 +60,12 @@ nav {
    margin: 0 0 0 auto;
 }
 
-
+body{
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
 h1.yohaku {
 	z-index:10;
 	position: relative;
@@ -80,10 +85,9 @@ div.sent
   margin:40px auto;
   width:100%;
   padding:20px 60px;
-
 }
 .wrap{
-     margin: auto;
+    margin: auto;
     width: 300px;
     background-color: white;
     color: #fff;
@@ -102,7 +106,7 @@ div.sent
 }
 /* ③tableレイアウトとvertical-alignで中央配置 */
 .wrap.pattern-3{
-  height:200px;
+  height:60px;
   display:table;
   text-align:center;
 }
