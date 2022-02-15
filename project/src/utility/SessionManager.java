@@ -19,7 +19,7 @@ public class SessionManager {
 	}
 	public static void setAttribute(User user){
 		session.setAttribute("user",user);
-		session.setAttribute("token","ok");
+		session.setAttribute("token","OK");
 
 	}
 	public static void setAttribute(Shop shop) {
@@ -36,9 +36,21 @@ public class SessionManager {
 		session.setAttribute("token", token);
 	}
 
+	public static void setMessage(String  message) {
+		session.setAttribute("mess",message);
+	}
+
 
 	public static Object getAttribute(String name){
 		return session.getAttribute(name);
+	}
+
+	public static void setToken() {
+		session.setAttribute("token","OK");
+	}
+
+	public static Object getToken() {
+		return session.getAttribute("token");
 	}
 
 	public static Object getToken(String token) {

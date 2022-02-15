@@ -10,7 +10,7 @@ import context.ResponseContext;
 import dao.AbstractDaoFactory;
 import dao.ItemSearchDao;
 
-public class SearchItemCommand extends AbstractCommand{
+public class SearchCategoryCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 
 		System.out.println("-- SearchItemCommand -- ");
@@ -19,15 +19,11 @@ public class SearchItemCommand extends AbstractCommand{
 		ItemSearchDao dao = factory.getItemSearchDao();
 
 		RequestContext reqc = getRequestContext();
-		String itemName = reqc.getParameter("itemName")[0];
-
-		if(itemName=="") {
-			itemName=null;
-		}
+		String categoryId = reqc.getParameter("categoryId")[0];
 
 		Map result = new HashMap();
 
-		ArrayList list = (ArrayList)dao.getItemSearch(itemName);
+		ArrayList list = (ArrayList)dao.getCategorySearch(Integer.parseInt(categoryId));
 
 		result.put("itemsearch", list);
 
@@ -38,7 +34,6 @@ public class SearchItemCommand extends AbstractCommand{
 		System.out.println(itemcount+"件ヒット");
 
 		result.put("itemcount", itemcount);
-		result.put("searchword", itemName);
 
 		resc.setResult(result);
 

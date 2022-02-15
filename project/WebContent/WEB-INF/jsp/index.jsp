@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>簡易ページリンク一覧(未作成はhtml方式)</h1>
+	<h1>簡易ページリンク一覧</h1>
 	user名:${user.userName}<br>
 	shop名:${shop.shopName}
 	<a href=""></a>
@@ -49,14 +49,13 @@
 
 	<p>ショップ</p>
 	<a href="callopen">ショップ開設ページ</a>
-	<a href="shopinfo?shopId=S1">ショップ情報を見る※サンプルなので強制的にs1を表示</a>
 	<a href="callshopsettings">ショップ情報を編集する</a>
 	<a href="calldisplayitem">商品登録</a>
 	<a href="shopitemdetails">商品一覧</a>
 	<a href="showshoporders">受注した注文一覧</a>
 	<a href="showshopearning">売上管理（月単位）</a>
-	<a href="">商品別売上管理</a>
 
+	<!--
 	<p>いずみ</p>
 	<a href="try">実験</a><br>
 	${result["item"].itemName}<br>
@@ -64,7 +63,9 @@
 	<c:forEach var="list" items='${result["list"]}'>
         <th><c:out value="${list}"/></th>
         </c:forEach>
+    -->
 
+	<h1>JSP班</h1>
 	<br><br><br><br>
 	<a href="callsearch">あ</a>
 	<a href="callitempage">商品ページ</a>

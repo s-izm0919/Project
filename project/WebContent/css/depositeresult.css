@@ -117,4 +117,51 @@ div.sent
 	color: Black;
 }
 
+.btn,
+a.btn,
+button.btn {
+  line-height: 2;
+  width: 120;
+  position: relative;
+  display: inline-block;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.else{
+    display: flex;
+}
+.else >.li1
+{
+width:50;
+}
+.else >.li2
+{
+width:50;
+}
+
 </style>

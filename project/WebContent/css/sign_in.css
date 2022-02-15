@@ -116,6 +116,21 @@ div.sent
 
 a.help
 {
-	font-size: 15px;}
+	font-size: 15px;
+}
+
+
+
+.else{
+    display: flex;
+}
+.else >.li1
+{
+width:50;
+}
+.else >.li2
+{
+width:50;
+}
 
 </style>

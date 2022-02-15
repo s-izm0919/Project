@@ -1,11 +1,9 @@
 package commands.order;
 
-import bean.UserOrderItemDetails;
-import bean.ItemEdit;
-import bean.User;
-
 import java.util.HashMap;
 
+import bean.User;
+import bean.UserOrderItemDetails;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -32,6 +30,7 @@ import utility.SessionManager;
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserOrderItemDetailsDao dao=factory.getUserOrderItemDetailsDao();
 		 itemDetails= dao.getOrderInfo(itemId, userId);
+		 System.out.println(itemDetails);
 		 System.out.println("itemPrice:"+itemDetails.getItemPrice());
 		 System.out.println("itemName:"+itemDetails.getItemName());
 

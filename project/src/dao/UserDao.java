@@ -12,6 +12,7 @@ public interface UserDao{
     public User getPoint(String userid);
     public void updatePoint(String userid,String point);
     public User getPass(String userid);
+    public boolean checkEmail(String email);
     //public List getAllUsers();
 }
 //
