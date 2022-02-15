@@ -90,7 +90,8 @@
  				<div class="color">
  				<p>検索設定</p>
 				<form method="POST" action="searchitemdetail">
-    				<input type="hidden" name="searchword" value="${result['searchword']}">
+    				<input type="hidden" name="itemsearchword" value="${result['itemsearchword']}">
+    				<input type="hidden" name="shopsearchword" value="${result['shopsearchword']}">
     				<p>カテゴリ</p>
 					<div class="cp_ipselect cp_sl01">
 						<select name="category">
@@ -111,10 +112,10 @@
 
 					<div class="cp_ipselect cp_sl01">
 						<select name="sort">
-							<option value="1">新着</option>
-							<option value="2">いいね順</option>
-							<option value="3">価格が高い順</option>
-							<option value="4">価格が低い順</option>
+							<option value="0">新着</option>
+							<option value="1">いいね順</option>
+							<option value="2">価格が高い順</option>
+							<option value="3">価格が低い順</option>
 						</select><br>
 					</div>
 					<a>金額</a><br>
