@@ -72,7 +72,7 @@
         <h2 class="history">history</h2>
 
         <ul class="historyimg">
-		  <c:forEach begin="1" end="5" step="1" var="item" items="${result['historyList']}">
+		  <c:forEach begin="0" end="4" step="1" var="item" items="${result['historyList']}">
 		    <li><a href="callitempage?itemId=${item.itemId}"><img src='upload/${item.mainImagePath}'></a></li>
 		  </c:forEach>
 		</ul>

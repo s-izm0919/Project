@@ -116,13 +116,14 @@
 			</div>
 		</div>
 
-	<p>-ショップ新着情報も</p>
+	<p>--ショップ新着情報--</p>
 
 	<br>
 
 	<c:forEach var="newItemList" items="${result['newItemList']}">
-		<c:out value="${newItemList.itemName}"/><br>
-		<c:out value="${newItemList.itemPrice}"/><br>
+		<img src='upload\<c:out value="${newItemList.mainImagePath}"/>'><br>
+		商品名:<c:out value="${newItemList.itemName}"/>
+		価格:<c:out value="${newItemList.itemPrice}"/><br>
 	</c:forEach>
 </body>
 </html>

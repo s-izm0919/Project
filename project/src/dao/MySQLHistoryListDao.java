@@ -22,7 +22,7 @@ public class MySQLHistoryListDao implements HistoryListDao {
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-        	String sql="SELECT i.main_image_path, i.category_id, i.item_name, h.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM history h INNER JOIN item i ON h.item_id=i.item_id INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE h.user_id='"+userid+"' AND shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id,h.user_id ORDER BY h.history_date DESC limit 20";
+        	String sql="SELECT i.main_image_path, i.category_id, i.item_name, h.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM history h INNER JOIN item i ON h.item_id=i.item_id INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE h.user_id='"+userid+"' AND shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id,h.user_id ORDER BY h.history_date DESC limit 5";
 
         	/*
         	SELECT i.main_image_path, i.category_id, i.item_name, h.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM history h INNER JOIN item i ON h.item_id=i.item_id INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id,h.user_id ORDER BY h.history_date DESC limit 20
