@@ -60,14 +60,13 @@
 							console.log("userのみ");
 
 						}
-
 					}
 					else{
 						console.log("else");
-						greet.innerHTML = '<li class="li1"><a href="callnew">登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
+						greet.innerHTML = '<li class="li1"><a href="callnew">登録</a></li><li class="li2"><a href="callsigninpage"><i class="fa-solid fa-arrow-right-to-bracket"></i>ログイン</a></li>';
 					}
 					</script>
-			        <li><a href="notification"><i class="far fa-bell"></i> 通知</a></li>
+			        <li><a href="notification"><i class="far fa-bell"></i> おしらせ</a></li>
 			        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
 			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
