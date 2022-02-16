@@ -42,7 +42,7 @@
 				            <option value="callusersettings">ユーザーアカウント設定</option>
 				            <option value="following">フォローしたショップ</option>
 				            <option value="follow_items">フォローしたショップの新着商品</option>
-				            <option value="users_chatlist">ショップとのチャット</option>
+				            <option value="calldeposite">入金</option>
 				            <option value="uders_orders">購入履歴</option>
 				            <option value="callshoptop">ショップ管理</option>
 				            <option value="shopitemdetails">商品管理</option>
@@ -54,9 +54,9 @@
 				            <option value="callindex">デバック</option>
 				        </select>
 					</li>
-			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
-			        <li><a href="goodlist"><i class="far fa-heart"></i> like</a></li>
-			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> cart</a></li>
+			        <li><a href="notification"><i class="far fa-bell"></i> 通知</a></li>
+			        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
+			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
 	        </nav>
     </header>
