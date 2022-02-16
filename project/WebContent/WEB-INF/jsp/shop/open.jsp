@@ -78,22 +78,17 @@
     </header>
 	<br><br><br><br>
 		<div class="boxwrap">
-			<div class="wrap pattern-3 mhb-20">
-				<div class="color">
-        			<h1 class="yohaku">ショップ開設</h1>
-        		        		<form method="POST" action="addshop">
-	            		ショップ名<input type="text" name="shopName" maxlength="40" required><br>
-	           			紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
-	            		お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
-
-	            		<input type="radio" name="shopIsOpen" value="1" checked>公開
-
-	            		<input type="radio" name="shopIsOpen" value="0">非公開
-
-            			<input type="submit" value="ショップを開設する">
-	        		</form>
-        		</div>
-        	</div>
-        </div>
+			<div class="wrap pattern-3 mhb-20 color">
+        		<h1 class="yohaku">ショップ開設</h1>
+        		       		<form method="POST" action="addshop">
+	            	ショップ名<input type="text" name="shopName" maxlength="40" required><br>
+	           		紹介文<br><textarea  cols="25" rows="8" name="shopExplanation" maxlength="500" ></textarea><br>
+	            	お礼の一言<input type="text" name="shopSellerword" maxlength="400" ><br>
+            		<input type="radio" name="shopIsOpen" value="1" checked>公開
+            		<input type="radio" name="shopIsOpen" value="0">非公開
+           			<input type="submit" value="ショップを開設する">
+        		</form>
+       		</div>
+       	</div>
     </body>
 </html>
