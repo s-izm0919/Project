@@ -14,11 +14,10 @@
     </head>
     <body>
     <header>
-
-    		<h1>
+    	<h1>
 			<a href="top">
 			<img src="images\icon.jpg"></a>
-			</h1>
+		</h1>
 			<nav class="hd-nav">
 				<ul>
 					<li>
@@ -63,7 +62,7 @@
 					}
 					else{
 						console.log("else");
-						greet.innerHTML = '<li class="li1"><a href="callnew">登録</a></li><li class="li2"><a href="callsigninpage"><i class="fa-solid fa-arrow-right-to-bracket"></i>ログイン</a></li>';
+						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
 			        <li><a href="notification"><i class="far fa-bell"></i> おしらせ</a></li>
