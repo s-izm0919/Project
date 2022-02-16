@@ -90,7 +90,7 @@ Map result=new HashMap();
 
 				}
 				// user=dao.login(userIdentifiedName,null,password);
-				System.out.println("user:"+user.getUserName());
+				//System.out.println("user:"+user.getUserName());
 			}else if(userIdentifiedName==null&&mail!=null) {
 				if(checkLogin==false) {
 					 System.out.println(" mail or password not matched");

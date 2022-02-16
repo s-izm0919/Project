@@ -117,13 +117,8 @@ div.sent
 	color: Black;
 }
 
-ul.cont_nav {
-  	display: flex;
-    justify-content: center;
-	z-index:10;
-	position: relative;
-	top: 50px;
-	overflow: auto;
+.cont_nav {
+	font-size: 19px
 }
 
 div.content{
@@ -145,4 +140,36 @@ footer {
  bottom: 0; /*下に固定*/
 }
 
+.else{
+    display: flex;
+}
+.else >.li1
+{
+width:50;
+}
+.else >.li2
+{
+width:50;
+}
+.size
+{
+	    font-size: 19px;
+}
+.backgra
+{
+	margin: 2;
+    padding: 6;
+
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    color: Black;
+}
+.false
+{
+	background-color: white;
+}
+.true
+{
+	background-color: #b0e0e6;
+}
 </style>

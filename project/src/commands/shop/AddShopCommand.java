@@ -1,4 +1,7 @@
 package commands.shop;
+import java.util.HashMap;
+import java.util.Map;
+
 import bean.Shop;
 import bean.User;
 import commands.AbstractCommand;
@@ -13,7 +16,8 @@ public class AddShopCommand extends AbstractCommand {
 		System.out.println("-- AddShopCommand --");
 
 		RequestContext reqc = getRequestContext();
-		boolean f=false;
+		Map result=new HashMap();
+
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId"+userId);
@@ -25,7 +29,8 @@ public class AddShopCommand extends AbstractCommand {
 		String shopExplanation =reqc.getParameter("shopExplanation")[0];
 		String sellerWord=reqc.getParameter("shopSellerword")[0];
 
-		String shopIsopen=reqc.getParameter("shopIsOpen")[0];
+		String shopIsopen="1";
+		shopIsopen=reqc.getParameter("shopIsOpen")[0];
 		/*
 		if("close".equals(shopIsopen)) {
 			shopIsopen=""+0;
@@ -52,15 +57,22 @@ public class AddShopCommand extends AbstractCommand {
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopDao dao=factory.getShopDao();
-		dao.addShop(shop);
+		boolean checkUserId=dao.checkUserId(userId);
+		if(checkUserId==false) {
+			 System.out.println("shop already exist");
+			 result.put("mess", "ショップがすでに登録されています");
+			 resc.setResult(result);
+				resc.setTarget("shop/open");
+				return resc;
+
+		}
+
+		else  dao.addShop(shop);
 		Shop shopInfo=dao.getUserShopInfo(userId);
 		System.out.println("shopId:"+shopInfo.getShopId());
 
 		SessionManager.setAttribute(shopInfo);
 
-
-
-		//reqc.setSession(shop);
 
 		System.out.println("-- AddShopCommand --");
 

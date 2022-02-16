@@ -1,4 +1,5 @@
 package commands.shop;
+import java.util.HashMap;
 import java.util.Map;
 
 import bean.Item;
@@ -16,16 +17,31 @@ public class DisplayItemCommand extends AbstractCommand {
 		System.out.println("-- DisplayItemCommand --");
 
 		RequestContext reqc = getRequestContext();
+		String shopId=null;
 
+		 shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
 
-		String shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
 		System.out.println("shopId:"+shopId);
+		if(shopId==null) {
+			Map result=new HashMap();
 
-/*  itemName,itemPrice,mainImagePath,itemExplanation,categoryName,imageDataPath,itemIsOpen */
+				 System.out.println("shop does not exist");
+				 result.put("mess", "まずはショップ登録してください。");
+				 resc.setResult(result);
+					resc.setTarget("shop/open");
+					return resc;
+		}
+
+
+
+
+
 
 		/*以下2文は画像処理*/
+
 		ImageUpload ium = new ImageUpload();
 		Map field = ium.upload(reqc);
+
 
 
 		String itemName=(String)field.get("itemName");
@@ -70,7 +86,19 @@ public class DisplayItemCommand extends AbstractCommand {
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ItemDao dao=factory.getItemDao();
-		dao.addItem(item);
+/*
+		if(checkShopId==false) {
+			 System.out.println("shop does not exist");
+			 result.put("mess", "まずはショップ登録してください。");
+			 resc.setResult(result);
+				resc.setTarget("shop/open");
+				return resc;
+
+		}
+		*/
+
+
+	 dao.addItem(item);
 
 		System.out.println("item registered sucessfully");
 

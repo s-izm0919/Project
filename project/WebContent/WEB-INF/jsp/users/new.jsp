@@ -1,6 +1,11 @@
 <%@ page language="java" pageEncoding="UTF-8"
         contentType="text/html;charset=UTF-8" %>
+
 <%@page isELIgnored="false"%>
+=======
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <html>
     <head>
         <title>ユーザー登録</title>
@@ -55,7 +60,7 @@
             <input type="text" name="userIdentifiedName" placeholder="ユーザーID（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$" required><br><br>
             <input type="password" name="userPassword" placeholder="パスワード（半角英数）" maxlength="20" pattern="^[a-zA-Z0-9]+$"  required><br><br>
             <input type="email" name="userMail" placeholder="メールアドレス" maxlength="300" required><br><br>
-            <h1>${mess}</h1>
+            <h1 style="color:red">${result['mess']}</h1>
             <input type="submit" value="登録する">
         </form>
         </div>

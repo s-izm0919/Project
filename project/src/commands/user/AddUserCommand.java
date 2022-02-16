@@ -17,9 +17,6 @@ public class AddUserCommand extends AbstractCommand {
 		RequestContext reqc = getRequestContext();
 		Map result=new HashMap();
 
-
-
-
 		String userName=reqc.getParameter("userName")[0];
 		String nickName =reqc.getParameter("userIdentifiedName")[0];
 		String password=reqc.getParameter("userPassword")[0];
@@ -35,6 +32,19 @@ public class AddUserCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 
 
+
+			/* User checkUser=dao.getUserPassword(mail);
+			 System.out.println(checkUser);
+			System.out.println("userIdIs:"+checkUser.getUserId());
+			System.out.println("userMailis:"+checkUser.getUserMail());
+			if(checkUser.getUserMail().equals(mail)==true) {
+
+
+				SessionManager.setMessage("このメアドはすでに登録されています。");
+				resc.setTarget("users/new");
+			}
+
+*/
 
 
 		boolean checkUser=dao.checkEmail(mail);
@@ -104,7 +114,14 @@ public class AddUserCommand extends AbstractCommand {
 		 }
 */
 
-
+		/*
+		dao.addUser(user);
+		User userInfo=dao.login(null, mail,password);
+		System.out.println("userId:"+userInfo.getUserId());
+		//SessionManager.setAttribute("ok");
+		SessionManager.setAttribute(userInfo);
+		SessionManager.setToken();
+		*/
 
 		System.out.println("-- AddUserCommand --");
 

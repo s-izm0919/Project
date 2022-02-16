@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import bean.Shop;
 import bean.OrderList;
 import java.util.HashMap;
+import java.util.Map;
 
 import commands.AbstractCommand;
 import context.RequestContext;
@@ -19,9 +20,19 @@ import utility.SessionManager;
 	public ResponseContext execute(ResponseContext resc) {
 		System.out.println("-- DisplayPurchasedItemCommand -- ");
 		RequestContext reqc = getRequestContext();
-
-		String shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
+String shopId=null;
+		 shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
 		System.out.println("ShopId:"+shopId);
+		if(shopId==null) {
+			Map result=new HashMap();
+
+				 System.out.println("shop does not exist");
+				 result.put("mess", "まずはショップ登録してください。");
+				 resc.setResult(result);
+					resc.setTarget("shop/open");
+					return resc;
+		}
+
 
 		ArrayList<OrderList> shopOrdersList=null;
 

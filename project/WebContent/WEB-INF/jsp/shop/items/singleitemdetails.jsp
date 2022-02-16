@@ -1,24 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<%@ page language="java" pageEncoding="UTF-8"
+        contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>注文詳細</title>
-</head>
-<body>
-	<h1>注文	詳細</h1>
-	itemImage;<p><img src='upload\<c:out value="${result['singleItemDetails'].itemImagePath}"/>'/><br>
-	purchasedtime;<p>${result['singleItemDetails'].purchaseDate}</p><br>
-	orderNumber:<p>${result['singleItemDetails'].orderId}</p><br>
-	price:<p>${result['singleItemDetails'].itemPrice}</p><br>
-	itemName:<p>${result['singleItemDetails'].itemName}</p><br>
-	shopId:<p>${result['singleItemDetails'].shopId}</p><br>
-	shopName:<p>${result['singleItemDetails'].shopName}</p><br>
+    <head>
+        <title>ユーザー登録</title>
+		<%@include file="../../../../css/singleitemdetails.css" %>
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+
+    		<h1>
+			<a href="top">
+			<img src="images\icon.jpg"></a>
+			</h1>
+			<nav class="hd-nav">
+				<ul>
+					<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+
+		        <li><a href="callnew">ユーザー登録</a></li>
+
+		        <li><a href="callsigninpage">ログイン</a></li>
+
+		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
+
+		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
+
+
+		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
+
+		        </ul>
+	        </nav>
+    </header>
+	<br><br><br><br>
+	<div class="boxwrap">
+		<div class="wrap pattern-3 mhb-20">
+	<h1>注文詳細</h1>
+	ショップ名:${result['singleItemDetails'].shopName}<br>
+	<img src='upload\<c:out value="${result['singleItemDetails'].itemImagePath}"/>'/><br>
+	注文日時;${result['singleItemDetails'].purchaseDate}<br>
+	注文番号:${result['singleItemDetails'].orderId}<br>
+	価格:${result['singleItemDetails'].itemPrice}<br>
+	商品名:${result['singleItemDetails'].itemName}<br>
 	<a href='<%=application.getRealPath("/")%>download\<c:out value="${result['singleItemDetails'].itemDataPath}"/>' download='download.jpg'>PDFをダウンロード</a>
 
-</body>
+ 	</div>
+
+	</div>
+
+    </body>
+
+
 </html>

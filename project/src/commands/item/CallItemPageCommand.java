@@ -10,6 +10,7 @@ import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
 import dao.AbstractDaoFactory;
+import dao.BoughtItemListDao;
 import dao.HistoryDao;
 import dao.ItemDetailsDao;
 import dao.NewItemDao;
@@ -17,12 +18,11 @@ import utility.SessionManager;
 
 public class CallItemPageCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
+		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 
 		//商品単体を呼ぶページ
 
 		System.out.println("-- CallItemPageCommand -- ");
-
-		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ItemDetailsDao dao = factory.getItemDetailsDao();
 
 		RequestContext reqc = getRequestContext();
@@ -45,6 +45,20 @@ public class CallItemPageCommand extends AbstractCommand{
 		ItemDetails bean = (ItemDetails)dao.getItemDetails(itemId);
 
 		System.out.println(bean.getItemName());
+
+		//ユーザーの購入履歴を確認する。あればtrue返す
+
+		boolean _boolean = false;
+		if(SessionManager.getToken() == "OK") {
+			User user = (User)SessionManager.getAttribute("user");
+			String userId = user.getUserId();
+			BoughtItemListDao itemlistdao = factory.getBoughtItemListDao();
+			_boolean = itemlistdao.checkOrderInfo(userId, itemId);
+		}
+
+		System.out.println("購入履歴ある？"+_boolean);
+
+		result.put("checkBought",_boolean);
 
 		//ショップの新着情報も送る
 

@@ -70,7 +70,7 @@
            			<input type="text" name="userIdenNameOrEmail"  placeholder="ユーザーIDまたはメールアドレス"><br><br>
            			<input type="password" name="userPassword" placeholder="パスワード" required><br><br>
            			<input type="submit" value="ログイン"><br><br>
-           			 <h1>${mess}</h1>
+           			 <h1 style="color:red">${mess}</h1>
            			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
