@@ -18,6 +18,12 @@
 	            document.form.action=par;
 	        }
 	    }
+
+	    (window.onload = function() {
+    		if("${requestScope.error}" == "error"){
+    			document.getElementById("error").innerHTML = "ログイン情報が間違っています";
+    		}
+    	})();
 	    /* オンロード時に実行 */
 	    window.onload=getdata;
 
@@ -66,10 +72,12 @@
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20">
        		<h1 class="yohaku">ログイン</h1>
-       			<form method="POST" action="callsigninpage" name="form">
+       			<form method="POST" action="/project${requestScope.target}" name="form">
            			<input type="text" name="userIdenNameOrEmail"  placeholder="ユーザーIDまたはメールアドレス"><br><br>
            			<input type="password" name="userPassword" placeholder="パスワード" required><br><br>
+           			<input type="hidden" name="loginaction" value="action"/>
            			<input type="submit" value="ログイン"><br><br>
+           			<div id="error"></div>
            			<a href="callforgotpassword" class="help">パスワードをお忘れのの方</a><br>
            			<a href="callnew" class="help">アカウントをお持ちでない方</a>
         		</form>
