@@ -1,4 +1,7 @@
 package commands.user;
+import java.util.HashMap;
+import java.util.Map;
+
 import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
@@ -12,6 +15,7 @@ public class AddUserCommand extends AbstractCommand {
 		System.out.println("-- AddUserCommand --");
 
 		RequestContext reqc = getRequestContext();
+		Map result=new HashMap();
 
 
 
@@ -31,21 +35,48 @@ public class AddUserCommand extends AbstractCommand {
 		UserDao dao=factory.getUserDao();
 
 
-			/* User checkUser=dao.getUserPassword(mail);
-			 System.out.println(checkUser);
-			System.out.println("userIdIs:"+checkUser.getUserId());
-			System.out.println("userMailis:"+checkUser.getUserMail());
-			if(checkUser.getUserMail().equals(mail)==true) {
 
 
-				SessionManager.setMessage("このメアドはすでに登録されています。");
-				resc.setTarget("users/new");
-			}
-
-*/
 		boolean checkUser=dao.checkEmail(mail);
+		boolean checkIdentifiedName=dao.checkIdentifiedName(nickName);
+		if(checkUser==false) {
+			 System.out.println("Email id exist");
+			 result.put("mess", "メアドがすでに登録されています");
+			 resc.setResult("result");
+				resc.setTarget("users/new");
 
-		 if(checkUser) {
+		} else if(checkIdentifiedName==false) {
+			System.out.println("identifiedName exist");
+
+			 result.put("mess", "IDがすでに登録されています");
+			 resc.setResult("result");
+				resc.setTarget("users/new");
+				resc.setTarget("users/new");
+
+		}
+		else {
+			 User user = new User();
+				user.setUserName(userName);
+				user.setUserIdentifiedName(nickName);
+				user.setUserPassword(password);
+				user.setUserMail(mail);
+
+
+
+
+					try {	dao.addUser(user);
+					User userInfo=dao.login(null, mail,password);
+
+					//SessionManager.setAttribute("ok");
+					SessionManager.setAttribute(userInfo);
+					resc.setTarget("index");
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+
+		}
+
+		/* if(checkUser==false) {
 			 User user = new User();
 				user.setUserName(userName);
 				user.setUserIdentifiedName(nickName);
@@ -71,7 +102,7 @@ public class AddUserCommand extends AbstractCommand {
 			 resc.setResult("メアドがすでに登録されています。");
 				resc.setTarget("users/new");
 		 }
-
+*/
 
 
 
