@@ -142,14 +142,14 @@ button.btn {
 
 .btn--orange,
 a.btn--orange {
-  color: #fff;
-  background-color: #eb6100;
+  color: #000;
+  background-color: #bbb;
 }
 
 .btn--orange:hover,
 a.btn--orange:hover {
-  color: #fff;
-  background: #f56500;
+  color: #000;
+  background: #87cefa;
 }
 
 .else{
