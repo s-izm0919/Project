@@ -79,11 +79,9 @@ div.sent
 
 /* レイアウト用スタイル */
 .boxwrap{
-.boxwrap{
   margin:40px auto;
   width:100%;
   padding:20px 60px;
-
 }
 .wrap{
      margin: auto;
