@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import bean.User;
+import bean.Shop;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -76,9 +77,13 @@ public class AddUserCommand extends AbstractCommand {
 
 					try {	dao.addUser(user);
 					User userInfo=dao.login(null, mail,password);
+					Shop shop=new Shop();
 
 					//SessionManager.setAttribute("ok");
 					SessionManager.setAttribute(userInfo);
+					SessionManager.setAttribute(shop);
+
+
 					resc.setTarget("index");
 				}catch(Exception e) {
 					e.printStackTrace();

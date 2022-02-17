@@ -70,8 +70,9 @@ Map result=new HashMap();
 
 			AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 			UserDao dao=factory.getUserDao();
-			boolean checkLogin=dao.confirmLogin(userIdentifiedName, mail, password);
+
 			if(userIdentifiedName!=null&&mail==null) {
+				boolean checkLogin=dao.confirmLogin(userIdentifiedName, mail, password);
 				if(checkLogin==false) {
 					 System.out.println(" id or password not matched");
 					// req.setAttribute("result","IDまたはパスワードが違います	");
@@ -92,6 +93,7 @@ Map result=new HashMap();
 				// user=dao.login(userIdentifiedName,null,password);
 				//System.out.println("user:"+user.getUserName());
 			}else if(userIdentifiedName==null&&mail!=null) {
+				boolean checkLogin=dao.confirmLogin(userIdentifiedName, mail, password);
 				if(checkLogin==false) {
 					 System.out.println(" mail or password not matched");
 
