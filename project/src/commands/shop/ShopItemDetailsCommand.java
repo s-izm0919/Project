@@ -38,7 +38,6 @@ String shopId=null;
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopItemListDao dao=factory.getShopItemListDao();
-		//List<ShopItemList> itemList=(List<ShopItemList>) dao.getItemList(shopId);
 		ArrayList<ShopItemList> shopItemList=(ArrayList<ShopItemList>) dao.getItemList(shopId);
 		HashMap result = new HashMap();
 		result.put("shopItemResult", shopItemList);

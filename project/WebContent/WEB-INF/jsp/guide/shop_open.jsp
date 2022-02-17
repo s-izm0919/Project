@@ -88,7 +88,7 @@
 			<a>また、利用規約等は<a href="callshopguide">こちら</a>からご覧ください。</a><br>
 			</p>
 			<h1 style="color:red">${result['mess']}</h1>
-
+		
 				<a href="callopen">ショップを開く</a><br>
 				<a>　</a>
 			</div>

@@ -53,16 +53,18 @@ public class AddUserCommand extends AbstractCommand {
 		if(checkUser==false) {
 			 System.out.println("Email id exist");
 			 result.put("mess", "メアドがすでに登録されています");
-			 resc.setResult("result");
+			 resc.setResult(result);
 				resc.setTarget("users/new");
+				return resc;
 
 		} else if(checkIdentifiedName==false) {
 			System.out.println("identifiedName exist");
 
 			 result.put("mess", "IDがすでに登録されています");
-			 resc.setResult("result");
+			 resc.setResult(result);
 				resc.setTarget("users/new");
-				resc.setTarget("users/new");
+				return resc;
+
 
 		}
 		else {
@@ -79,7 +81,7 @@ public class AddUserCommand extends AbstractCommand {
 					User userInfo=dao.login(null, mail,password);
 					Shop shop=new Shop(); //新規userのsessionのため
 
-					//SessionManager.setAttribute("ok");
+
 					SessionManager.setAttribute(userInfo);
 					SessionManager.setAttribute(shop);
 
