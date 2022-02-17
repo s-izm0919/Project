@@ -259,4 +259,11 @@ width:50;
 	height:auto;
 }
 
+.itemsdata
+{
+	width: 80%;
+  	margin: 0 auto;
+  	max-width: 500px;
+}
+
 </style>

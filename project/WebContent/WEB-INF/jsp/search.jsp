@@ -158,15 +158,13 @@
 					<div class="color">
         				<h1>商品一覧</h1><br>
 				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
-   						<table border="1">
+   						<table class="itemsdata" border="1">
         					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
-                					<td><img src="upload/${item.mainImagePath}" class="img"></td>
-                					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
-                					<td>${item.itemName}</td>
+                					<td><a href="callitempage?itemId=${item.itemId}"><img src="upload/${item.mainImagePath}" class="img"></a></td>
+                					<td><a href="callitempage?itemId=${item.itemId}">${item.itemName}</a></td>
                 					<td>${item.itemPrice}</td>
-                					<td><a href="shopinfo?shopId=${item.shopId}">ショップ詳細情報へ${item.shopId}</td>
-                					<td>${item.shopName}</td>
+                					<td><a href="shopinfo?shopId=${item.shopId}">${item.shopName}</a></td>
 	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>
