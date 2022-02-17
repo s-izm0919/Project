@@ -71,7 +71,7 @@
 
 		        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
 
-		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
+		        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 
 		        </ul>
 	        </nav>
