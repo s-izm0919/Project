@@ -77,7 +77,7 @@ public class AddUserCommand extends AbstractCommand {
 
 					try {	dao.addUser(user);
 					User userInfo=dao.login(null, mail,password);
-					Shop shop=new Shop();
+					Shop shop=new Shop(); //新規userのsessionのため
 
 					//SessionManager.setAttribute("ok");
 					SessionManager.setAttribute(userInfo);

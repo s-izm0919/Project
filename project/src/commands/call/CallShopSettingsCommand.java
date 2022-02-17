@@ -19,7 +19,7 @@ public class CallShopSettingsCommand extends AbstractCommand {
 				 System.out.println("shop does not exist");
 				 result.put("mess", "まずはショップ登録してください。");
 				 resc.setResult(result);
-					resc.setTarget("shop/open");
+					resc.setTarget("guide/shop_open");
 					return resc;
 		}
 

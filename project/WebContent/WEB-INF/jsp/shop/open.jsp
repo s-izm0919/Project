@@ -91,7 +91,7 @@
 	            		<input type="radio" name="shopIsOpen" value="0">非公開
 
             			<input type="submit" value="ショップを開設する">
-            			<h1 style="color:red">${result['mess']}</h1>
+
 	        		</form>
         		</div>
         	</div>
