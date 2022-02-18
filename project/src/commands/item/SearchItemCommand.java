@@ -38,7 +38,8 @@ public class SearchItemCommand extends AbstractCommand{
 		System.out.println(itemcount+"件ヒット");
 
 		result.put("itemcount", itemcount);
-		result.put("searchword", itemName);
+		result.put("itemsearchword", itemName);
+		result.put("shopsearchword", new String(""));
 
 		resc.setResult(result);
 

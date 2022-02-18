@@ -39,6 +39,9 @@ public class SearchShopCommand extends AbstractCommand{
 
 		result.put("itemcount", itemcount);
 
+		result.put("shopsearchword", shopName);
+		result.put("itemsearchword", new String(""));
+
 		resc.setResult(result);
 
 		resc.setTarget("search");
