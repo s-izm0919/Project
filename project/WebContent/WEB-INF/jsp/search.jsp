@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="../../../js/jquery.pagination.js"></script>
 		<script type="text/javascript" src="../../../js/pagination.min.js"></script>
-
+		<script type="text/javascript" src="../../../js/paginathing.min.js"></script>
     </head>
     <body>
      <header>
@@ -173,8 +173,6 @@
 	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>
-
-        					</div>
         				</table>
         				<div id="pages"></div>
         			</div>
@@ -184,6 +182,7 @@
 	</div>
 </div>
 <script>
+
 		var showpages = 10;
 		var pages = ${result["itemcount"]};
 		var allpages = 1;
@@ -220,6 +219,48 @@
 			console.log(page);
 		}
 
-		</script>
+</script>
+<script>
+	/*
+	sessionStorage.setItem('name','太郎');
+	console.log(sessionStorage.getItem('name'));
+	*/
+	var itemcount = ${result["itemcount"]};
+	var items = [];
+	(function(){
+		<c:forEach var="item" items="${result['itemsearch']}" varStatus="status">
+			i=0;
+			sessionStorage.setItem(i+'_path','${item.mainImagePath}');
+			sessionStorage.setItem(i+'_itemname','${item.itemName}');
+			sessionStorage.setItem(i+'_price','${item.itemPrice}');
+			sessionStorage.setItem(i+'_shooname','${item.shopName}');
+			items.push('${item.mainImagePath}');
+			items.push('${item.itemName}');
+			items.push('${item.itemPrice}');
+			items.push('${item.shopName}');
+			i++;
+        </c:forEach>
+        console.log(sessionStorage.getItem('3_path'));
+        console.log(sessionStorage.getItem('2_path'));
+        console.log(sessionStorage.getItem('1_path'));
+        console.log(sessionStorage.getItem('0_path'));
+        console.log(items[0]);
+        console.log(items[5]);
+        /*
+		for(var i = 1; i <= itemcount; i++){
+			item = ${result['itemsearch']};
+			items.push(item);
+		}
+		for(var i = 1; i <= itemcount; i++){
+			j = i-1;
+			sessionStorage.setItem(i,items[j]);
+		}
+		console.log("hey");
+		console.log(${sessionStorage.getItem(1).shopName});
+		sessionStorage.setItem('name','太郎');
+		console.log(sessionStorage.getItem('name'));
+		*/
+	}());
+</script>
 </body>
 </html>
