@@ -57,26 +57,25 @@
 					console.log(shop);
 					if(user != ""){
 						console.log("if文1");
-						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="shopopen">ショップ開設ガイド</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="logoutuser">ログアウト</option></select></li>';
+						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="uders_orders">購入履歴</option><option value="shopopen">ショップ開設ガイド</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						if(shop != ""){
 							console.log("if文2");
-								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="shop_top">ショップ管理</option><option value="shop_items">商品管理</option><option value="shop_orders">注文一覧</option><option value="shop_sales">売上管理</option><option value="shop_chatlist">ユーザーとのチャット</option><option value="callopen">ショップ解説ページ</option><option value="logoutuser">ログアウト</option></select></li>';
+								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="callshoptop">ショップ管理</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						}else{
 							console.log("userのみ");
 
 						}
-
 					}
 					else{
 						console.log("else");
-						greet.innerHTML = '<li class="li1"><a href="callnew">ユーザー登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
+						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
+		        <li><a href="notification"><i class="far fa-bell"></i> お知らせ</a></li>
 
-		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
+		        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
 
-		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
+		        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 
 		        </ul>
 	        </nav>
@@ -164,17 +163,13 @@
 					<div class="color">
         				<h1>商品一覧</h1><br>
 				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
-   						<table border="1">
-   							<div class="pagenation">
-   							
-        					<c:forEach var="item" items="${result['itemsearch']}" begin="1" end="5">
+   						<table class="itemsdata" border="1">
+        					<c:forEach var="item" items="${result['itemsearch']}">
             					<tr>
-                					<td><img src="upload/${item.mainImagePath}" class="img"></td>
-                					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
-                					<td>${item.itemName}</td>
+                					<td><a href="callitempage?itemId=${item.itemId}"><img src="upload/${item.mainImagePath}" class="img"></a></td>
+                					<td><a href="callitempage?itemId=${item.itemId}">${item.itemName}</a></td>
                 					<td>${item.itemPrice}</td>
-                					<td><a href="shopinfo?shopId=${item.shopId}">ショップ詳細情報へ${item.shopId}</td>
-                					<td>${item.shopName}</td>
+                					<td><a href="shopinfo?shopId=${item.shopId}">${item.shopName}</a></td>
 	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>

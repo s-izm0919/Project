@@ -51,10 +51,10 @@
 					console.log(shop);
 					if(user != ""){
 						console.log("if文1");
-						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="shopopen">ショップ開設ガイド</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="logoutuser">ログアウト</option></select></li>';
+						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="uders_orders">購入履歴</option><option value="shopopen">ショップ開設ガイド</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						if(shop != ""){
 							console.log("if文2");
-								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="shop_top">ショップ管理</option><option value="shop_items">商品管理</option><option value="shop_orders">注文一覧</option><option value="shop_sales">売上管理</option><option value="shop_chatlist">ユーザーとのチャット</option><option value="callopen">ショップ解説ページ</option><option value="logoutuser">ログアウト</option></select></li>';
+								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="callshoptop">ショップ管理</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						}else{
 							console.log("userのみ");
 
@@ -63,7 +63,7 @@
 					}
 					else{
 						console.log("else");
-						greet.innerHTML = '<li class="li1"><a href="callnew">ユーザー登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
+						greet.innerHTML = '<li class="li1"><a href="callnew">登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
 			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
@@ -79,11 +79,15 @@
 				<a class="backgra false" href="callshopsettings">ショップ情報編集</a>
 		    	<a class="backgra false" href="shopitemdetails">商品管理</a>
 			    <a class="backgra false" href="showshoporders">注文一覧</a>
-	    		<a class="backgra false" href="">売上管理</a>
+	    		<a class="backgra false" href="showshopearning">売上管理</a>
 			    <a class="backgra false" href="">ユーザーとのチャット一覧</a>
 			</div>
 			<br>
-			<div class="content"><a href="calldisplayitem">商品登録</a></div>
+			<div class="content">
+				<br>
+				<br>
+				<h2><a href="calldisplayitem">商品登録</a></h2>
+			</div>
 			<br>
 			<footer>
 		<h2>guide page</h2>

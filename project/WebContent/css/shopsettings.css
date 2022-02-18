@@ -80,9 +80,10 @@ div.sent
   margin:40px auto;
   width:100%;
   padding:20px 60px;
+
 }
 .wrap{
-    margin: auto;
+     margin: auto;
     width: 300px;
     background-color: white;
     color: #fff;
@@ -116,6 +117,28 @@ div.sent
 	color: Black;
 }
 
+.cont_nav {
+	font-size: 19px
+}
+
+div.content{
+	margin: auto;
+    width: 800px;
+    height:300px;
+    background-color: white;
+    color: #fff;
+    border-radius: 15px;
+    border:1px solid #ddd;
+}
+
+footer {
+ width: 100%;
+ background-color: #89c7de;
+ text-align: center;
+ padding: 30px 0;
+ position: absolute;/*←絶対位置*/
+ bottom: 0; /*下に固定*/
+}
 
 .else{
     display: flex;
@@ -128,5 +151,25 @@ width:50;
 {
 width:50;
 }
+.size
+{
+	    font-size: 19px;
+}
+.backgra
+{
+	margin: 2;
+    padding: 6;
 
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    color: Black;
+}
+.false
+{
+	background-color: white;
+}
+.true
+{
+	background-color: #b0e0e6;
+}
 </style>
