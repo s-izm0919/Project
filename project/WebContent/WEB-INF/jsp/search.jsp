@@ -12,6 +12,10 @@
 		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../../js/pagination.min.js"></script>
+
     </head>
     <body>
      <header>
@@ -161,7 +165,9 @@
         				<h1>商品一覧</h1><br>
 				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
    						<table border="1">
-        					<c:forEach var="item" items="${result['itemsearch']}">
+   							<div class="pagenation">
+   							
+        					<c:forEach var="item" items="${result['itemsearch']}" begin="1" end="5">
             					<tr>
                 					<td><img src="upload/${item.mainImagePath}" class="img"></td>
                 					<td><a href="callitempage?itemId=${item.itemId}">アイテム詳細情報へ${item.itemId}</a></td>
@@ -172,12 +178,53 @@
 	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>
+
+        					</div>
         				</table>
+        				<div id="pages"></div>
         			</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+		var showpages = 10;
+		var pages = ${result["itemcount"]};
+		var allpages = 1;
+
+		(function(){
+
+			if(pages<showpages){
+				allpages += 1;
+			}else{
+				allpages = Math.floor(pages/showpages)+1
+			}
+
+			if(pages%showpages == 0){
+				allpages -= 1;
+			}
+
+			console.log(showpages);
+			console.log(pages);
+			console.log(allpages);
+
+
+			var pagenation = document.getElementById("pages")
+			for(var i= 1; i <= allpages; i++){
+				var ele = document.createElement('input');
+			    ele.setAttribute("type", "button");
+			    ele.setAttribute("value", i);
+			    ele.setAttribute("onclick","pageChange("+i+")");
+			    pagenation.appendChild(ele);
+			}
+
+		}());
+
+		function pageChange(page){
+			console.log(page);
+		}
+
+		</script>
 </body>
 </html>
