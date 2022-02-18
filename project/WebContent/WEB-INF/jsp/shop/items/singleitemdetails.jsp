@@ -55,7 +55,7 @@
 	注文番号:${result['singleItemDetails'].orderId}<br>
 	価格:${result['singleItemDetails'].itemPrice}<br>
 	商品名:${result['singleItemDetails'].itemName}<br>
-	<a href='<%=application.getRealPath("/")%>download\<c:out value="${result['singleItemDetails'].itemDataPath}"/>' download='download.jpg'>PDFをダウンロード</a>
+	<a href='upload\<c:out value="${result['singleItemDetails'].itemDataPath}"/>' download>データをダウンロード</a>
 
  	</div>
 
