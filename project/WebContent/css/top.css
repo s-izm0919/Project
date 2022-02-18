@@ -76,7 +76,6 @@ h2.future {
 ul.historyimg{
 	justify-content:center;
 }
-
 .k{
 	transition: 0.3s;
 }
@@ -88,7 +87,7 @@ ul.historyimg li {
 }
 ul.historyimg li a img{
 	width:100px;
-	height:auto:
+	height:auto;
 }
 h3.history{
 	text-align: center;
@@ -110,7 +109,6 @@ img.ca {
 	display: inline-flex;
 	flex-direction: row;
 	flex-wrap: wrap
-
 }
 
 

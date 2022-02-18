@@ -139,5 +139,15 @@ width:50;
 {
 width:50;
 }
-
+.ni img
+{
+	width: 280px;
+	height: 188px;
+}
+.ni {
+	justify-content:center;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap
+}
 </style>
