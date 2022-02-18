@@ -1,4 +1,7 @@
 package commands.shop;
+import java.util.HashMap;
+import java.util.Map;
+
 import bean.Shop;
 import bean.User;
 import commands.AbstractCommand;
@@ -15,23 +18,34 @@ import utility.SessionManager;;
 
 
 		RequestContext reqc = getRequestContext();
-		//String shopId=reqc.getParameter("shopId")[0];
-		//String userId = reqc.getParameter("userId")[0];
+
 		System.out.println("testsetting");
 
 
 		String userId=((User)SessionManager.getAttribute("user")).getUserId();
 		System.out.println("userId:"+userId);
 
-
-		String shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
+String shopId=null;
+		 shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
 		System.out.println("shopID:"+shopId);
+		if(shopId==null) {
+			Map result=new HashMap();
+
+				 System.out.println("shop does not exist");
+				 result.put("mess", "まずはショップ登録してください。");
+				 resc.setResult(result);
+					resc.setTarget("guide/shop_open");
+					return resc;
+		}
+
 
 
 
 		String shopName= reqc.getParameter("shopName")[0];
 		String shopExplanation  = reqc.getParameter("shopExplanation")[0];
 		String sellerWord=reqc.getParameter("sellerWord")[0];
+		String shopIsopen="1";
+		shopIsopen=reqc.getParameter("shopIsOpen")[0];
 
 
 		System.out.println("userId:"+userId);
@@ -47,6 +61,7 @@ import utility.SessionManager;;
 		shop.setShopName(shopName);
 		shop.setShopExplanation(shopExplanation);
 		shop.setShopSellerword(sellerWord);
+		shop.setShopIsOpen(Integer.parseInt(shopIsopen));
 
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();

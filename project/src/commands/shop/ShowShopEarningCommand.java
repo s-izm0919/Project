@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bean.Shop;
 import bean.Orders;
@@ -21,9 +22,19 @@ public class ShowShopEarningCommand extends AbstractCommand {
 
 		RequestContext reqc = getRequestContext();
 
-
-		String shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
+String shopId=null;
+		 shopId=((Shop)SessionManager.getAttribute("shop")).getShopId();
 		System.out.println("shopId"+shopId);
+		if(shopId==null) {
+			Map result=new HashMap();
+
+				 System.out.println("shop does not exist");
+				 result.put("mess", "まずはショップ登録してください。");
+				 resc.setResult(result);
+					resc.setTarget("guide/shop_open");
+					return resc;
+		}
+
 
 
 

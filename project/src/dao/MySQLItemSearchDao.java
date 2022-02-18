@@ -408,7 +408,7 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	//価格上限
         	//ユーザーが指定しなかったときは4294967295とセットする(priceに入力できる最大値(int unsigned))
         	//価格上限0円と見分けるため
-        	sql+=" AND i.item_price>="+maxPrice;
+        	sql+=" AND i.item_price<="+maxPrice;
 
         	sql+=" GROUP BY item_id";
 
@@ -427,6 +427,8 @@ public class MySQLItemSearchDao implements ItemSearchDao {
         	/*
         	SELECT i.main_image_path, i.category_id, i.item_name, i.item_id, i.shop_id, i.item_price, c.category_name, s.shop_name, (SELECT COUNT(f.item_id) FROM favorite f WHERE i.item_id=f.item_id) FROM item i INNER JOIN category c ON i.category_id=c.category_id INNER JOIN shop s ON i.shop_id=s.shop_id WHERE shop_is_open=1 AND s.unused=1 AND item_is_open=1 AND i.unused=1 GROUP BY item_id ORDER BY i.item_register_date DESC
         	*/
+
+        	System.out.println(sql);
 
             st=cn.prepareStatement(sql);
 

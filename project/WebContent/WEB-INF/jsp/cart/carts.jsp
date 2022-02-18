@@ -15,11 +15,11 @@
 
 	<script>
 		(window.onload = function() {
-    	if(${result['noitem']} == true){
-    		document.getElementById("noitem").innerHTML = "カートは空です";
-    	}
+    		if(${result['noitem']} == true){
+    			document.getElementById("noitem").innerHTML = "カートは空です";
+    		}
 
-    })();
+    	})();
 	</script>
     </head>
     <body>
