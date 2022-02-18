@@ -15,7 +15,7 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 		<script type="text/javascript" src="../../../js/jquery.pagination.js"></script>
 		<script type="text/javascript" src="../../../js/pagination.min.js"></script>
-
+		<script type="text/javascript" src="../../../js/paginathing.min.js"></script>
     </head>
     <body>
      <header>
@@ -164,17 +164,6 @@
         				<h1>商品一覧</h1><br>
 				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
    						<table class="itemsdata" border="1">
-        					<c:forEach var="item" items="${result['itemsearch']}">
-            					<tr>
-                					<td><a href="callitempage?itemId=${item.itemId}"><img src="upload/${item.mainImagePath}" class="img"></a></td>
-                					<td><a href="callitempage?itemId=${item.itemId}">${item.itemName}</a></td>
-                					<td>${item.itemPrice}</td>
-                					<td><a href="shopinfo?shopId=${item.shopId}">${item.shopName}</a></td>
-	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
-    	        				</tr>
-        					</c:forEach>
-
-        					</div>
         				</table>
         				<div id="pages"></div>
         			</div>
@@ -183,43 +172,94 @@
 		</div>
 	</div>
 </div>
+
+
 <script>
-		var showpages = 10;
-		var pages = ${result["itemcount"]};
-		var allpages = 1;
+	var showpages = 10;
+	var pages = ${result["itemcount"]};
+	var allpages = 1;
 
-		(function(){
+    var pagelist = [];
 
-			if(pages<showpages){
-				allpages += 1;
-			}else{
-				allpages = Math.floor(pages/showpages)+1
-			}
+	(function(){
 
-			if(pages%showpages == 0){
-				allpages -= 1;
-			}
-
-			console.log(showpages);
-			console.log(pages);
-			console.log(allpages);
-
-
-			var pagenation = document.getElementById("pages")
-			for(var i= 1; i <= allpages; i++){
-				var ele = document.createElement('input');
-			    ele.setAttribute("type", "button");
-			    ele.setAttribute("value", i);
-			    ele.setAttribute("onclick","pageChange("+i+")");
-			    pagenation.appendChild(ele);
-			}
-
-		}());
-
-		function pageChange(page){
-			console.log(page);
+		if(pages<showpages){
+			allpages += 1;
+		}else{
+			allpages = Math.floor(pages/showpages)+1
 		}
 
-		</script>
+		if(pages%showpages == 0){
+			allpages -= 1;
+		}
+
+		var pagenation = document.getElementById("pages")
+		for(let j= 1; j <= allpages; j++){
+			ele = document.createElement('input');
+		    ele.setAttribute("type", "button");
+		    ele.setAttribute("value", j);
+		    ele.setAttribute("onclick","changePage("+j+")");
+		    pagenation.appendChild(ele);
+		}
+
+	}());
+
+	var itemlist = [];
+	var obj = [];
+
+
+	(function(){
+
+
+		<c:forEach var="item" items="${result['itemsearch']}" varStatus="status">
+		obj = {
+			itemId:'${item.itemId}',
+			path:'${item.mainImagePath}',
+			name:'${item.itemName}',
+			price:'${item.itemPrice}',
+			shopId:'${item.shopId}',
+			shopName:'${item.shopName}'
+		}
+		itemlist.push(obj);
+        </c:forEach>
+
+        var pageitems = [];
+
+		for(let k=0;k<pages;k++){
+			pageitems.push(itemlist[k]);
+			if(pageitems.length == showpages || k==(pages-1)){
+				pagelist.push(pageitems);
+				pageitems = [];
+			}
+
+		}
+
+	}());
+
+	function changePage(_pageNo){
+		pageNo = _pageNo-1;
+		$("tr").remove("tr");
+
+		thisItemlist = [];
+		console.log(thisItemlist);
+		thisItemlist = pagelist[pageNo];
+		console.log(thisItemlist);
+
+		for(let i=0;i<thisItemlist.length;i++){
+			//console.log(thisItemlist[i].name);
+			//console.log(thisItemlist[i].price);
+			$(".itemsdata").append("<tr id='itemData"+i+"'>");
+			$("#itemData"+i+"").html("<td><a href='callitempage?itemId="+thisItemlist[i].itemId+"'><img src='upload/"+thisItemlist[i].path+"' class='img'></a></td>"+
+									  "<td><a href='callitempage?itemId="+thisItemlist[i].itemId+"'>"+thisItemlist[i].name+"</td>"+
+									  "<td>"+thisItemlist[i].price+"</td>"+
+			                          "<td><a href='shopinfo?shopId="+thisItemlist[i].shopId+"'>"+thisItemlist[i].shopName+"</a></td>");
+		}
+
+	}
+
+    changePage(1);
+
+
+</script>
 </body>
 </html>
