@@ -13,8 +13,6 @@
     <body>
 
     <header>
-
-<<<<<<< HEAD
     		<h1>
 			<a href="top">
 			<img src="images\icon.jpg"></a>
