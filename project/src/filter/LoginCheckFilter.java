@@ -52,7 +52,7 @@ public class LoginCheckFilter implements Filter {
 			System.out.println("identifidname: " + userIdentifiedName);
 			System.out.println("password: " + password);
 			System.out.println("email: " + mail);
-			
+
 
 
 

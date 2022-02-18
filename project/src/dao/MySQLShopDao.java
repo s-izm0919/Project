@@ -190,7 +190,7 @@ public class MySQLShopDao implements ShopDao {
 
             st.setString(3, shopInfo.getShopSellerword());
 
-            st.setInt(4, 0);
+            st.setInt(4, shopInfo.getShopIsOpen());
 
             st.setString(5, shopInfo.getShopId());
 
@@ -376,4 +376,53 @@ public class MySQLShopDao implements ShopDao {
         }
         return total_earning;
     }
+
+
+
+public boolean checkUserId(String userId) {
+	Connection cn = null;
+	PreparedStatement st = null;
+	ResultSet rs = null;
+
+	boolean f = true;
+	try {
+		cn = Connector.getInstance().beginTransaction();
+
+		cn.setAutoCommit(false);
+
+		String sql = "select * from shop where user_id ='" + userId + "'";
+
+		st = cn.prepareStatement(sql);
+
+		rs = st.executeQuery();
+		while (rs.next()) {
+			f = false;
+
+		}
+		Connector.getInstance().commit();
+	} catch (SQLException e) {
+		Connector.getInstance().rollback();
+		System.out.println(e.getMessage());
+	} finally {
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (st != null) {
+				st.close();
+			}
+		} catch (SQLException e2) {
+			System.out.println(e2.getMessage());
+		} finally {
+			if (cn != null) {
+				Connector.getInstance().closeConnection();
+			}
+		}
+	}
+	return f;
+}
+
+
+
+
 }
