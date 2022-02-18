@@ -19,7 +19,7 @@
         <url-pattern>/addcart</url-pattern>
         <url-pattern>/callcart</url-pattern>
          <url-pattern>/calldeposite</url-pattern>
-         <url-pattern>/callforgotpassword</url-pattern>
+
          <url-pattern>/vieweditem</url-pattern>
          <url-pattern>/displaypurchaseditem</url-pattern>
          <url-pattern>/calldisplayitem</url-pattern>
@@ -48,7 +48,8 @@
          <url-pattern>/shopitemdetails</url-pattern>
          <url-pattern>/showshoporders</url-pattern>
          <url-pattern>/showshopearning</url-pattern>
-         <url-pattern>/callforgotpassword</url-pattern>
+
+           <url-pattern>/callshopsettings</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
 
