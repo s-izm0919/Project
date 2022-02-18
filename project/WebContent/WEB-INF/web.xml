@@ -13,12 +13,20 @@
     <filter-mapping>
         <filter-name>loginCheckFilter</filter-name>
         <url-pattern>/callusersettings</url-pattern>
-        <url-pattern>/callsignin</url-pattern>
         <url-pattern>/callsigninpage</url-pattern>
         <url-pattern>/callopen</url-pattern>
         <url-pattern>/callshopsettings</url-pattern>
         <url-pattern>/addcart</url-pattern>
         <url-pattern>/callcart</url-pattern>
+         <url-pattern>/calldeposite</url-pattern>
+         <url-pattern>/callforgotpassword</url-pattern>
+         <url-pattern>/vieweditem</url-pattern>
+         <url-pattern>/displaypurchaseditem</url-pattern>
+         <url-pattern>/calldisplayitem</url-pattern>
+         <url-pattern>/shopitemdetails</url-pattern>
+         <url-pattern>/showshoporders</url-pattern>
+         <url-pattern>/showshopearning</url-pattern>
+
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
@@ -33,6 +41,14 @@
         <url-pattern>/callsigninpage</url-pattern>
         <url-pattern>/addcart</url-pattern>
         <url-pattern>/callcart</url-pattern>
+        <url-pattern>/calldeposite</url-pattern>
+         <url-pattern>/vieweditem</url-pattern>
+         <url-pattern>/displaypurchaseditem</url-pattern>
+         <url-pattern>/calldisplayitem</url-pattern>
+         <url-pattern>/shopitemdetails</url-pattern>
+         <url-pattern>/showshoporders</url-pattern>
+         <url-pattern>/showshopearning</url-pattern>
+         <url-pattern>/callforgotpassword</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
 
@@ -74,6 +90,18 @@
 		<url-pattern>/upload/*</url-pattern>
 	</servlet-mapping>
 
+	<error-page>
+		<error-code>500</error-code>
+    	<location>/WEB-INF/jsp/error.jsp</location>
+	</error-page>
+	<error-page>
+    	<error-code>404</error-code>
+    	<location>/WEB-INF/jsp/error.jsp</location>
+    </error-page>
+	<error-page>
+    	<exception-type>javax.servlet.ServletException</exception-type>
+    	<location>/WEB-INF/jsp/error.jsp</location>
+	</error-page>
 
 
 </web-app>

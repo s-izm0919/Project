@@ -110,9 +110,11 @@ div.sent
 }
 
 .wrap.pattern-3 div{
-  display:table-cell;
+  /*display:table-cell;まんなかいかなくなるから*/
   vertical-align:middle;
+  color:red;
 }
+
 
 a.help
 {

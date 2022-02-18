@@ -1,5 +1,9 @@
 package commands.user;
+import java.util.HashMap;
+import java.util.Map;
+
 import bean.User;
+import bean.Shop;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -12,6 +16,7 @@ public class AddUserCommand extends AbstractCommand {
 		System.out.println("-- AddUserCommand --");
 
 		RequestContext reqc = getRequestContext();
+		Map result=new HashMap();
 
 		String userName=reqc.getParameter("userName")[0];
 		String nickName =reqc.getParameter("userIdentifiedName")[0];
@@ -27,6 +32,8 @@ public class AddUserCommand extends AbstractCommand {
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
 
+
+
 			/* User checkUser=dao.getUserPassword(mail);
 			 System.out.println(checkUser);
 			System.out.println("userIdIs:"+checkUser.getUserId());
@@ -40,9 +47,53 @@ public class AddUserCommand extends AbstractCommand {
 
 */
 
-		boolean checkUser=dao.checkEmail(mail);
 
-		 if(checkUser) {
+		boolean checkUser=dao.checkEmail(mail);
+		boolean checkIdentifiedName=dao.checkIdentifiedName(nickName);
+		if(checkUser==false) {
+			 System.out.println("Email id exist");
+			 result.put("mess", "メアドがすでに登録されています");
+			 resc.setResult(result);
+				resc.setTarget("users/new");
+				return resc;
+
+		} else if(checkIdentifiedName==false) {
+			System.out.println("identifiedName exist");
+
+			 result.put("mess", "IDがすでに登録されています");
+			 resc.setResult(result);
+				resc.setTarget("users/new");
+				return resc;
+
+
+		}
+		else {
+			 User user = new User();
+				user.setUserName(userName);
+				user.setUserIdentifiedName(nickName);
+				user.setUserPassword(password);
+				user.setUserMail(mail);
+
+
+
+
+					try {	dao.addUser(user);
+					User userInfo=dao.login(null, mail,password);
+					Shop shop=new Shop(); //新規userのsessionのため
+
+
+					SessionManager.setAttribute(userInfo);
+					SessionManager.setAttribute(shop);
+
+
+					resc.setTarget("index");
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+
+		}
+
+		/* if(checkUser==false) {
 			 User user = new User();
 				user.setUserName(userName);
 				user.setUserIdentifiedName(nickName);
@@ -68,7 +119,7 @@ public class AddUserCommand extends AbstractCommand {
 			 resc.setResult("メアドがすでに登録されています。");
 				resc.setTarget("users/new");
 		 }
-
+*/
 
 		/*
 		dao.addUser(user);

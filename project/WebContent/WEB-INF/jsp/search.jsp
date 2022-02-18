@@ -12,6 +12,10 @@
 		<%@include file="../../../css/search.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../js/jquery.pagination.js"></script>
+		<script type="text/javascript" src="../../../js/pagination.min.js"></script>
+
     </head>
     <body>
      <header>
@@ -89,7 +93,8 @@
  				<div class="color">
  				<p>検索設定</p>
 				<form method="POST" action="searchitemdetail">
-    				<input type="hidden" name="searchword" value="${result['searchword']}">
+    				<input type="hidden" name="itemsearchword" value="${result['itemsearchword']}">
+    				<input type="hidden" name="shopsearchword" value="${result['shopsearchword']}">
     				<p>カテゴリ</p>
 					<div class="cp_ipselect cp_sl01">
 						<select name="category">
@@ -110,10 +115,10 @@
 
 					<div class="cp_ipselect cp_sl01">
 						<select name="sort">
-							<option value="1">新着</option>
-							<option value="2">いいね順</option>
-							<option value="3">価格が高い順</option>
-							<option value="4">価格が低い順</option>
+							<option value="0">新着</option>
+							<option value="1">いいね順</option>
+							<option value="2">価格が高い順</option>
+							<option value="3">価格が低い順</option>
 						</select><br>
 					</div>
 					<a>金額</a><br>
@@ -168,12 +173,53 @@
 	                				<!--使わない<td><a href="addcart?itemId=${item.itemId}">カートに入れる</a>-->
     	        				</tr>
         					</c:forEach>
+
+        					</div>
         				</table>
+        				<div id="pages"></div>
         			</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+		var showpages = 10;
+		var pages = ${result["itemcount"]};
+		var allpages = 1;
+
+		(function(){
+
+			if(pages<showpages){
+				allpages += 1;
+			}else{
+				allpages = Math.floor(pages/showpages)+1
+			}
+
+			if(pages%showpages == 0){
+				allpages -= 1;
+			}
+
+			console.log(showpages);
+			console.log(pages);
+			console.log(allpages);
+
+
+			var pagenation = document.getElementById("pages")
+			for(var i= 1; i <= allpages; i++){
+				var ele = document.createElement('input');
+			    ele.setAttribute("type", "button");
+			    ele.setAttribute("value", i);
+			    ele.setAttribute("onclick","pageChange("+i+")");
+			    pagenation.appendChild(ele);
+			}
+
+		}());
+
+		function pageChange(page){
+			console.log(page);
+		}
+
+		</script>
 </body>
 </html>
