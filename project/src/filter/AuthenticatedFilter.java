@@ -36,6 +36,16 @@ public class AuthenticatedFilter implements Filter {
 
             hreq.setAttribute("target",servletPath);
 
+            String loginaction = req.getParameter("loginaction");
+
+            System.out.println(loginaction);
+
+            if(loginaction != null) {
+            	hreq.setAttribute("error","error");
+            	System.out.println("動作");
+            	System.out.println(hreq.getAttribute("error"));
+            }
+
             RequestDispatcher dis = req.getRequestDispatcher("callsignin");
             dis.forward(req,res);
 

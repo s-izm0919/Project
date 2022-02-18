@@ -52,6 +52,7 @@ public class LoginCheckFilter implements Filter {
 			System.out.println("identifidname: " + userIdentifiedName);
 			System.out.println("password: " + password);
 			System.out.println("email: " + mail);
+			
 
 
 
@@ -63,10 +64,10 @@ public class LoginCheckFilter implements Filter {
 			UserDao dao=factory.getUserDao();
 			if(userIdentifiedName!=null&&mail==null) {
 				user=dao.login(userIdentifiedName,null,password);
-				System.out.println("user:"+user.getUserName());
+				//System.out.println("user:"+user.getUserName());
 			}else if(userIdentifiedName==null&&mail!=null) {
 				user=dao.login(null,mail,password);
-				System.out.println("user:"+user.getUserName());
+				//System.out.println("user:"+user.getUserName());
 			}
 			else {
 				System.out.println("loginできない");

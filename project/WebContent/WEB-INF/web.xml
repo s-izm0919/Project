@@ -13,12 +13,14 @@
     <filter-mapping>
         <filter-name>loginCheckFilter</filter-name>
         <url-pattern>/callusersettings</url-pattern>
-        <url-pattern>/callsignin</url-pattern>
         <url-pattern>/callsigninpage</url-pattern>
         <url-pattern>/callopen</url-pattern>
         <url-pattern>/callshopsettings</url-pattern>
         <url-pattern>/addcart</url-pattern>
         <url-pattern>/callcart</url-pattern>
+        <url-pattern>/displaypurchaseditem</url-pattern>
+        <url-pattern>/calldeposite</url-pattern>
+        <url-pattern>/callforgotpassword</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
 
@@ -33,6 +35,9 @@
         <url-pattern>/callsigninpage</url-pattern>
         <url-pattern>/addcart</url-pattern>
         <url-pattern>/callcart</url-pattern>
+        <url-pattern>/displaypurchaseditem</url-pattern>
+        <url-pattern>/calldeposite</url-pattern>
+        <url-pattern>/callforgotpassword</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
 
