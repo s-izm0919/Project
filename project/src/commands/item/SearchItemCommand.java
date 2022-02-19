@@ -26,8 +26,12 @@ public class SearchItemCommand extends AbstractCommand{
 		}
 
 		Map result = new HashMap();
+		ArrayList list=null;
+		System.out.println(list);
 
-		ArrayList list = (ArrayList)dao.getItemSearch(itemName);
+
+		 list = (ArrayList)dao.getItemSearch(itemName);
+
 
 		result.put("itemsearch", list);
 
