@@ -12,14 +12,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
 	<script>
-		(window.onload = function() {
-			console.log(${result['checkBought']});
-			if(${result['checkBought']}==true){
-				document.getElementById("cart").style.visibility ="hidden";
-				document.getElementById("order").innerHTML = '<a href="showorderdetail?itemId=${result['itemdetails'].itemId}">購入済み商品</a>'
-			}
-
-	    })();
+		(window.onload = function() {console.log(${result['checkBought']});
+		if(${result['checkBought']}==true){document.getElementById("cart").style.visibility ="hidden";
+		document.getElementById("order").innerHTML = '<a href="showorderdetail?itemId=${result['itemdetails'].itemId}">購入済み商品</a>'}})();
 	</script>
     </head>
     <body>
@@ -119,11 +114,10 @@
 	<p>--ショップ新着情報--</p>
 
 	<br>
-
-	<c:forEach var="newItemList" items="${result['newItemList']}">
-		<img src='upload\<c:out value="${newItemList.mainImagePath}"/>'><br>
-		商品名:<c:out value="${newItemList.itemName}"/>
-		価格:<c:out value="${newItemList.itemPrice}"/><br>
-	</c:forEach>
+	<p class="ni">
+		<c:forEach var="newItemList" items="${result['newItemList']}">
+			<a href="callitempage?itemId=${newItemList.itemId}"><img src='upload\<c:out value="${newItemList.mainImagePath}" />'></a>
+		</c:forEach>
+	</p>
 </body>
 </html>
