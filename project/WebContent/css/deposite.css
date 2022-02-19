@@ -80,10 +80,9 @@ div.sent
   margin:40px auto;
   width:100%;
   padding:20px 60px;
-
 }
 .wrap{
-     margin: auto;
+    margin: auto;
     width: 300px;
     background-color: white;
     color: #fff;
@@ -102,7 +101,7 @@ div.sent
 }
 /* ③tableレイアウトとvertical-alignで中央配置 */
 .wrap.pattern-3{
-  height:200px;
+  height:60px;
   display:table;
   text-align:center;
 }

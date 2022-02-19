@@ -105,7 +105,7 @@
 			<a href="">入金画面へ</a><br><br>
 			<form action="confirmorder?shopId=${requestScope.shopId}" method="POST" onSubmit="return check()">
 				ブースト金額を入力<br>
-				<input type="text" name="boost" value="0" id="boost"/><br>
+				<input type="number" name="boost" value="0" id="boost"/><br>
 				<input id="submit_button" type="submit" value="購入する" /><br>
 				<div id="notenough"></div>
 			</form>

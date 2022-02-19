@@ -26,8 +26,12 @@ public class SearchItemCommand extends AbstractCommand{
 		}
 
 		Map result = new HashMap();
+		ArrayList list=null;
+		System.out.println(list);
 
-		ArrayList list = (ArrayList)dao.getItemSearch(itemName);
+
+		 list = (ArrayList)dao.getItemSearch(itemName);
+
 
 		result.put("itemsearch", list);
 
@@ -38,7 +42,8 @@ public class SearchItemCommand extends AbstractCommand{
 		System.out.println(itemcount+"件ヒット");
 
 		result.put("itemcount", itemcount);
-		result.put("searchword", itemName);
+		result.put("itemsearchword", itemName);
+		result.put("shopsearchword", new String(""));
 
 		resc.setResult(result);
 

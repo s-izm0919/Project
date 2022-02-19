@@ -122,7 +122,7 @@ div.sent
   text-align:center;
 }
 
-.wrap.pattern-3 div{
+.wrap.pattern-3 div {
   display:table-cell;
   vertical-align:middle;
 }
@@ -257,6 +257,13 @@ width:50;
 {
 	width:100px;
 	height:auto;
+}
+
+.itemsdata
+{
+	width: 80%;
+  	margin: 0 auto;
+  	max-width: 500px;
 }
 
 </style>
