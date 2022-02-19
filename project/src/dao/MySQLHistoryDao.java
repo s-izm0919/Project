@@ -165,11 +165,15 @@ public class MySQLHistoryDao implements HistoryDao {
             rs=st.executeQuery();
             h=new History();
 
-            rs.next();
 
-            h.setUserId(rs.getString(1));
-            h.setItemId(rs.getInt(2));
-            h.setHistoryDate(rs.getString(3));
+            if(rs.next()==true) {
+
+            	h.setUserId(rs.getString(1));
+            	h.setItemId(rs.getInt(2));
+            	h.setHistoryDate(rs.getString(3));
+            }else {
+            	h=null;
+            }
 
             Connector.getInstance().commit();
 

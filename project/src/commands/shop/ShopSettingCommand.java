@@ -76,7 +76,7 @@ String shopId=null;
 
 
 
-			resc.setTarget("index");
+			resc.setTarget("top");
 
 		}
 return resc;

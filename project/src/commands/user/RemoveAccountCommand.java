@@ -38,7 +38,7 @@ public class RemoveAccountCommand extends AbstractCommand {
 			return resc;
 		}
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 
 		return resc;
 	}

@@ -39,9 +39,12 @@ public class CallItemPageCommand extends AbstractCommand{
 		if(SessionManager.getToken("token")=="OK") {
 			String userId=((User)SessionManager.getAttribute("user")).getUserId();
 			HistoryDao historyDao = historyFactory.getHistoryDao();
+			System.out.println(historyDao.getHistory(userId, itemId));
 			if(historyDao.getHistory(userId, itemId)==null) {
+				System.out.println("addhistory");
 				historyDao.addHistoryItem(userId, itemId);
 			}else {
+				System.out.println("updatehistory");
 				historyDao.updateHistoryItem(userId, itemId);
 			}
 		}

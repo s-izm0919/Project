@@ -53,7 +53,7 @@ import utility.SessionManager;
 
 		SessionManager.setAttribute(updatedser);
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 
 	}
