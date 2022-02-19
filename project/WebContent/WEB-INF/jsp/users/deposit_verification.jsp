@@ -75,7 +75,7 @@
 		<div class="wrap pattern-3 mhb-20">
 			<div class="color">
     			<h2>入金が完了しました</h2>
-    			<h3>所持ポイント</h3>
+    			<h3>所持ポイント:${user.userPoint}</h3>
     			<a class="btn btn--orange" href="calldeposite">入金を続ける</a>
     			<a class="btn btn--orange" href="top">トップに戻る</a>
     		</div>

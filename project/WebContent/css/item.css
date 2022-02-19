@@ -141,13 +141,16 @@ width:50;
 }
 .ni img
 {
-	width: 280px;
-	height: 188px;
+	width: 150px;
+	height: auto;
+	margin: 0px 15px;
 }
 .ni {
 	justify-content:center;
 	display: inline-flex;
 	flex-direction: row;
-	flex-wrap: wrap
+	flex-wrap: wrap;
+
 }
+
 </style>

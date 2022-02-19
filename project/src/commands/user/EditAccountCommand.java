@@ -1,4 +1,7 @@
 package commands.user;
+import java.util.HashMap;
+import java.util.Map;
+
 import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
@@ -14,6 +17,8 @@ import utility.SessionManager;
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		UserDao dao=factory.getUserDao();
+
+		User userInfo = (User)SessionManager.getAttribute("user");
 
 		RequestContext reqc = getRequestContext();
 
@@ -31,7 +36,18 @@ import utility.SessionManager;
 		System.out.println("userName:"+userName);
 		System.out.println("usermail:"+userMail);
 
-		dao.updateUser(userId, userName, userMail);
+		boolean check = dao.duplicateCheck(userMail);
+
+		if(check==true) {
+			Map result = new HashMap();
+			result.put("duplicateCheck", "true");
+			result.put("ngpass", "false");
+			resc.setResult(result);
+			resc.setTarget("users/settings");
+			return resc;
+		}else {
+			dao.updateUser(userId, userName, userMail);
+		}
 
 		User updatedser=dao.getUserInfo(userId);
 

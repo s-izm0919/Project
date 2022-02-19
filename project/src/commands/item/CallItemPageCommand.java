@@ -34,10 +34,16 @@ public class CallItemPageCommand extends AbstractCommand{
 
 		AbstractDaoFactory historyFactory=AbstractDaoFactory.getFactory();
 
+		//historyの処理
+
 		if(SessionManager.getToken("token")=="OK") {
 			String userId=((User)SessionManager.getAttribute("user")).getUserId();
 			HistoryDao historyDao = historyFactory.getHistoryDao();
-			historyDao.addHistoryItem(userId, itemId);
+			if(historyDao.getHistory(userId, itemId)==null) {
+				historyDao.addHistoryItem(userId, itemId);
+			}else {
+				historyDao.updateHistoryItem(userId, itemId);
+			}
 		}
 
 		Map result = new HashMap();

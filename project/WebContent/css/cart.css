@@ -120,5 +120,11 @@ div.sent
 	color: Black;
 }
 
+.boxwrap img
+{
+	width: 300px;
+	height: auto;
+}
+
 
 </style>

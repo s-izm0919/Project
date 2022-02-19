@@ -114,7 +114,9 @@ public class MySQLCartDao implements CartDao {
         try{
         	cn = Connector.getInstance().beginTransaction();
 
-            String sql="SELECT DISTINCT i.shop_id, s.shop_name FROM item i LEFT OUTER JOIN cart c ON i.item_id=c.item_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id WHERE c.user_id = '"+userid+"'";
+            String sql="SELECT DISTINCT i.shop_id, s.shop_name FROM item i LEFT OUTER JOIN cart c ON i.item_id=c.item_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id WHERE c.user_id = '"+userid+"' and i.unused = 1";
+
+            System.out.println(sql);
 
             //System.out.println(sql);
             st=cn.prepareStatement(sql);

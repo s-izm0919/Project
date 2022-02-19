@@ -65,12 +65,13 @@ public class CallCartCommand extends AbstractCommand{
 		if(viewcart.size() == 0) {
 			noitem = true;
 		}
+		
+		result.put("noitem", noitem);
 
 		System.out.println(viewcart);
 
 		result.put("viewcart", viewcart);
 
-		result.put("noitem", noitem);
 
 		resc.setResult(result);
 
