@@ -177,7 +177,7 @@
 <script>
 	var showpages = 10;
 	var pages = ${result["itemcount"]};
-	var allpages = 1;
+	var allpages = 0;
 
     var pagelist = [];
 
