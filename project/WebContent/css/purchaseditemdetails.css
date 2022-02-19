@@ -80,20 +80,22 @@ div.sent
   margin:40px auto;
   width:100%;
   padding:20px 60px;
+
 }
 .wrap{
-    margin: auto;
+     margin: auto;
     width: 300px;
     background-color: white;
-    color: black; //ここ黒に替えました
+    color: #fff;
     border-radius: 15px;
-
+	font-color:black;
     border:1px solid #ddd;
 
 }
 
 .mgb-20{
-  margin-bottom: 20px;
+  	margin-bottom: 20px;
+
 }
 
 .mgb-80{
@@ -104,16 +106,13 @@ div.sent
   height:60px;
   display:table;
   text-align:center;
+
 }
 
 .wrap.pattern-3 div{
   display:table-cell;
   vertical-align:middle;
-}
 
-.wrap.pattern-3 img{
-  width: 300px;
-	height: auto;
 }
 
 .color
@@ -121,16 +120,16 @@ div.sent
 	color: Black;
 }
 
-.else{
-    display: flex;
-}
-.else >.li1
+.color h2
 {
-width:50;
+	color: Black;
 }
-.else >.li2
+
+.boxwrap img
 {
-width:50;
+	width: 200px;
+	height: auto;
 }
+
 
 </style>
