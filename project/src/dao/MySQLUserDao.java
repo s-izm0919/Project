@@ -538,6 +538,54 @@ public boolean  confirmLogin(String userIdentifiedName,String userMail,String us
 		}
 	}return f;
 }
+
+public boolean  duplicateCheck(String userMail){
+
+    Connection cn=null;
+    PreparedStatement st=null;
+    ResultSet rs=null;
+
+   boolean check=false;
+
+    try{
+    	cn = Connector.getInstance().beginTransaction();
+
+        cn.setAutoCommit(false);
+
+        String sql = "select * from user where user_mail='"+ userMail + "'";
+
+        st=cn.prepareStatement(sql);
+
+        rs=st.executeQuery();
+
+        if(rs.next()) {
+        	check = true;
+        }
+
+
+
+
+    }catch(SQLException e){
+        Connector.getInstance().rollback();
+        System.out.println(e.getMessage());
+    }finally
+	{
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (st != null) {
+				st.close();
+			}
+		} catch (SQLException e2) {
+			System.out.println(e2.getMessage());
+		} finally {
+			if (cn != null) {
+				Connector.getInstance().closeConnection();
+			}
+		}
+	}return check;
+}
 }
 /*
  * public List getAllUsers(){ Connection cn=null; PreparedStatement st=null;

@@ -8,6 +8,20 @@
 <%@include file="../../../css/settings.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+<script>
+		(window.onload = function() {
+
+    		if(${result['duplicateCheck']} == true){
+    			console.log("dep動いてる");
+    			document.getElementById("nginfo").innerHTML = "そのメールアドレスはすでに使われています";
+    		}
+
+    		if(${result['ngpass']} == true){
+    			console.log("動いてる");
+    			document.getElementById("ngpass").innerHTML = "パスワードが違います";
+    		}
+    	})();
+</script>
 </head>
 <body>
         <header>
@@ -87,11 +101,14 @@
 				<a class="color">メールアドレスの変更</a><input type="email" name="mail" maxlength="300"  value="${user.userMail}"  required><br>
 				<input type="submit" value="更新"><br><br>
 			</form>
+			<p id="delete">ユーザー情報を削除したい場合はパスワードを再入力してください</p>
 			<form method="POST" action="removeaccount">
-				<a class="color">ユーザーの削除</a><input type="text" name="userPassword"><br>
+				<a class="color">パスワード</a><input type="text" name="userPassword"><br>
 				<input type="submit" value="ユーザーを削除する"><br>
-				<a>　</a>
+				<a> </a>
 			</form>
+			<p id="nginfo"></p>
+			<p id="ngpass"></p>
 		</div>
 	</div>
 </body>

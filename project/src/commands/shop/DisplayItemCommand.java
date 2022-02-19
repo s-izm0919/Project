@@ -104,7 +104,7 @@ public class DisplayItemCommand extends AbstractCommand {
 
 		System.out.println("-- DisplayItemCommand --");
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 	}
 }

@@ -51,7 +51,7 @@
 
 	<h1>注文完了画面</h1>
 
-	注文者からのメッセージ<c:out value="${result['ordercomplete'][0].shopExplanation}"/><br>
+	注文者からのメッセージ:<c:out value="${result['ordercomplete'][0].shopExplanation}"/><br>
 	注文番号:<c:out value="${result['ordercomplete'][0].orderId}"/><br>
 
 	<br><br>
@@ -59,11 +59,14 @@
 			<div class="wrap pattern-3 mhb-20 color">
 			<p>購入した商品</p>
 				<c:forEach var="item" items="${result['ordercomplete']}">
-					商品名:<c:out value="${item.itemName}"/><br>
+					<a href="showorderdetail?itemId=${item.itemId}">商品名:<c:out value="${item.itemName}"/></a><br>
 					<c:out value="-----------------------------------------"/><br>
 				</c:forEach>
 		     </div>
 		</div>
+
+		<button type="button" onclick="location.href='displaypurchaseditem'">注文一覧を見る</button>
+		<button type="button" onclick="location.href='top'">トップへ戻る</button>
 
     </body>
 

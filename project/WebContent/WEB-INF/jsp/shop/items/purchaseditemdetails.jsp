@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>購入商品一覧</title>
-		<%@include file="../../../../css/new.css" %>
+		<%@include file="../../../../css/purchaseditemdetails.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     </head>
@@ -45,28 +45,31 @@
 	        </nav>
     </header>
 <br><br><br><br>
+<div class="color">
 	<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20">
 
-        <h1>注文一覧</h1>
+        <h2>注文一覧</h2>
 		<table border="1">
 		<tr>
 		 <th>商品イメージ</th>
 		 <th>商品名</th>
 		 <th>購入日時</th>
+		 <th></th>
 		</tr>
 		<c:forEach var="item" items="${result['purchasedItemResult']}">
 			<tr>
-			<td><img src="upload/${item.itemImagePath}"></td>
+				<td><img src="upload/${item.itemImagePath}"></td>
 				<td><a href="callitempage?itemId=${item.itemId}">${item.itemName}</a></td>
 				<td>${item.purchaseDate}</td>
-				 <td><a href="showorderdetail?itemId=${item.itemId}">詳細を見る</a></td>
+				<td nowrap><a href="showorderdetail?itemId=${item.itemId}">詳細を見る</a></td>
 			</tr>
 		</c:forEach>
 		</table>
         </div>
 
 	</div>
+</div>
 
     </body>
 

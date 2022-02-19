@@ -9,7 +9,7 @@
 <html>
     <head>
         <title>カート一覧</title>
-		<%@include file="../../../css/new.css" %>
+		<%@include file="../../../css/cart.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
@@ -66,9 +66,9 @@
 		<div class="color">
         <h1>カートに追加</h1>
    		<br>
-	<div class="boxwrap">
+		<div class="boxwrap">
 		<div class="wrap pattern-3 mhb-20 color">
-         	ショップ名：${result['viewcart'].shopName}<br>
+         	${result['viewcart'].shopName}<br>
          	<img src='upload\<c:out value="${result['viewcart'].mainImagePath}"/>'><br>
         		商品名：${result['viewcart'].itemName}<br>
          	商品価格：${result['viewcart'].itemPrice}<br>

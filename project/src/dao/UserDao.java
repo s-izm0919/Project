@@ -15,6 +15,7 @@ public interface UserDao{
     public boolean checkEmail(String email);
      public boolean checkIdentifiedName(String identifiedName);
      public boolean  confirmLogin(String userIdentifiedName,String userMail,String userPassword);
+     public boolean  duplicateCheck(String userMail);
     //public List getAllUsers();
 }
 //

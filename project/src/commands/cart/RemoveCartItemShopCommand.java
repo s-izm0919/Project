@@ -63,6 +63,14 @@ public class RemoveCartItemShopCommand extends AbstractCommand{
 
 		}
 
+		Boolean noitem = false;
+
+		if(viewcart.size() == 0) {
+			noitem = true;
+		}
+
+		result.put("noitem", noitem);
+
 
 		result.put("viewcart", viewcart);
 

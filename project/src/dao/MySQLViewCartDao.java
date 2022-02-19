@@ -83,6 +83,8 @@ public class MySQLViewCartDao implements ViewCartDao {
 
             String sql="SELECT s.shop_name, s.shop_id, i.item_name, i.item_id, i.main_image_path, i.item_price, (SELECT SUM(its.item_price) FROM cart cs LEFT OUTER JOIN item its ON cs.item_id=its.item_id LEFT OUTER JOIN shop ss ON its.shop_id=ss.shop_id WHERE i.shop_id=ss.shop_id AND c.user_id=cs.user_id GROUP BY ss.shop_id, cs.user_id),(SELECT COUNT(its.item_id) FROM cart cs LEFT OUTER JOIN item its ON cs.item_id=its.item_id LEFT OUTER JOIN shop ss ON its.shop_id=ss.shop_id WHERE i.shop_id=ss.shop_id AND c.user_id=cs.user_id GROUP BY ss.shop_id, cs.user_id) FROM cart c LEFT OUTER JOIN item i ON c.item_id=i.item_id LEFT OUTER JOIN shop s ON i.shop_id=s.shop_id WHERE c.user_id='"+userid+"' AND s.shop_id = '"+shopid+"' AND i.item_is_open=1 AND i.unused=1 AND s.shop_is_open=1 AND s.unused=1";
 
+            //System.out.println(sql);
+
             st=cn.prepareStatement(sql);
 
             rs=st.executeQuery();

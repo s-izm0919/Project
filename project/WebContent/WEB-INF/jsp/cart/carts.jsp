@@ -9,7 +9,7 @@
 <html>
     <head>
         <title>カート一覧</title>
-		<%@include file="../../../css/new.css" %>
+		<%@include file="../../../css/cart.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 
@@ -106,9 +106,8 @@
 			買上点数：<c:out value="${total.orderCount}"/><br>
 			合計金額：<c:out value="${total.orderPrice}"/><br>
 			<a href="removecartitemshop?shopId=${total.shopId}">ショップごとカートから取り除く</a><br>
-			<a href="callconfirmpassword?shopId=${total.shopId}">購入画面に進む</a><br><br>
+			<button type=“button” onclick="location.href='callconfirmpassword?shopId=${total.shopId}'">購入手続きへ進む</button><br><br>
 		</c:forEach>
-		</div>
 		</div>
 		</div>
 	</c:forEach>

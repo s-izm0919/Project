@@ -11,7 +11,7 @@ public class LogoutUserCommand extends AbstractCommand {
 
 		SessionManager.invalidate();
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 
 		return resc;
 	}

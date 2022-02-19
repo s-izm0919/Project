@@ -102,7 +102,7 @@
 		<div class="boxwrap">
 			<div class="wrap pattern-3 mhb-20 color">
 			あなたのポイント:<c:out value="${result['confirmorder'][0].userPoint}"/><br>
-			<a href="">入金画面へ</a><br><br>
+			<a href="calldeposite">入金画面へ</a><br><br>
 			<form action="confirmorder?shopId=${requestScope.shopId}" method="POST" onSubmit="return check()">
 				ブースト金額を入力<br>
 				<input type="number" name="boost" value="0" id="boost"/><br>

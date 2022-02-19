@@ -116,7 +116,10 @@
 	<br>
 	<p class="ni">
 		<c:forEach var="newItemList" items="${result['newItemList']}">
-			<a href="callitempage?itemId=${newItemList.itemId}"><img src='upload\<c:out value="${newItemList.mainImagePath}" />'></a>
+			<a href="callitempage?itemId=${newItemList.itemId}"><img src='upload\<c:out value="${newItemList.mainImagePath}" />'><br>
+			商品名：${newItemList.itemName}<br>
+			価格：${newItemList.itemPrice}<br>
+			</a>
 		</c:forEach>
 	</p>
 </body>
