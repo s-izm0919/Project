@@ -1,14 +1,87 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%--JSTL 1.1.2 core タグライブラリ--%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+<%@ page language="java" pageEncoding="UTF-8"
+        contentType="text/html;charset=UTF-8" %>
+        <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>エラーページ</title>
-</head>
-<body>
-	<h1>エラーが発生しました。トップに戻ります。</h1>
-</body>
+    <head>
+        <title>エラーページ</title>
+		<link rel="stylesheet" href="css/top.css">
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    	<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+    <header>
+    	<h1>
+			<a href="top">
+			<img src="images\icon.jpg"></a>
+		</h1>
+			<nav class="hd-nav">
+				<ul>
+					<li>
+						<form method="POST" action="searchitem">
+				    		<input type="text" name="itemName" placeholder="商品検索" maxlength="20" >
+				      		<input type="submit" value="検索">
+				   		</form>
+					</li>
+		   			<li>
+		   				<form method="POST" action="searchshop">
+			    			<input type="text" name="shopName" placeholder="ショップ検索" maxlength="20" >
+			      			<input type="submit" value="検索">
+		   				</form>
+			        </li>
+			        <div id="greet" class="else">
+						<li>
+				 			<select name="select" onChange="location.href=value;">
+				    	    	<option value="${user.userName}" id="user">${user.userName}</option>
+				        		<option value="${shop.shopName}" id="shop">${shop.shopName}</option>
+				        	</select>
+				        </li>
+					</div>
+					<script>
+					var greet = document.getElementById('greet');
+
+					var user = 0;
+					user = document.getElementById('user').textContent;
+					console.log(user);
+					var shop = 0;
+					shop = document.getElementById('shop').value;
+					console.log(shop);
+					if(user != ""){
+						console.log("if文1");
+						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="shopopen">ショップ開設ガイド</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
+						if(shop != ""){
+							console.log("if文2");
+								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="callshoptop">ショップ管理</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
+						}else{
+							console.log("userのみ");
+
+						}
+					}
+					else{
+						console.log("else");
+						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
+					}
+					</script>
+			        <li><a href="notification"><i class="far fa-bell"></i> おしらせ</a></li>
+			        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
+			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
+		        </ul>
+	        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <h1><a href="top">エラーが発生しました。こちらをクリックしてトップページに戻ってください。</a></h1>
+		<br>
+		<br>
+		<br>
+		<footer>
+			<h2>guide page</h2>
+			<br>
+    	</footer>
+    </body>
+
 </html>
