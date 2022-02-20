@@ -93,7 +93,7 @@
             商品タイトル<input type="text" name="itemName" value="${result['singleItemResult'].itemName}" maxlength="50" required><br>
             価格<input type="number" name="itemPrice" value="${ result['singleItemResult'].itemPrice}" required><br>
             サムネイル<input type="file" name="mainImagePath" required><br>
-            商品説明<br><textarea cols="25" rows="8" name="itemExplanation"  required>${ result['singleItemResult'].itemExplanation}</textarea><br>
+            商品説明<br><textarea cols="25" rows="8" name="itemExplanation">${ result['singleItemResult'].itemExplanation}</textarea><br>
             カテゴリ <select name="categoryName" required>
             			<option name="categoryName"></option>
                         <option name="categoryName" value="1">風景・自然の写真</option>

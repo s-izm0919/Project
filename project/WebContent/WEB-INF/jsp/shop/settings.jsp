@@ -86,8 +86,8 @@
 
 <br>
 		ショップ名　　　　<input type="text" name="shopName" maxlength="20" value="${shop.shopName}" required><br>
-		<br>ショップの紹介文　<input type="text" name="shopExplanation" maxlength="300"  value="${shop.shopExplanation}"  required><br>
-		<br>お礼の一言　　　 <input type="text" name="sellerWord" maxlength="300"  value="${shop.shopSellerword}"  required><br>
+		<br>ショップの紹介文　<input type="text" name="shopExplanation" maxlength="300"  value="${shop.shopExplanation}"><br>
+		<br>お礼の一言　　　 <input type="text" name="sellerWord" maxlength="300"  value="${shop.shopSellerword}"><br>
 		<br>ショップの状態　　　　<input type="radio" name="shopIsOpen" value="1" checked>公開
             <input type="radio" name="shopIsOpen" value="0">非公開
 <br>

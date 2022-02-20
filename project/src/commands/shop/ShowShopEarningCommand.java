@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-import bean.Shop;
 import bean.Orders;
+import bean.Shop;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -52,6 +51,7 @@ String shopId=null;
 		System.out.println(lastMonth);
 
 
+		//当月の処理
 		int totalEarning=0;
 
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
@@ -65,9 +65,24 @@ String shopId=null;
 		   }
 		System.out.println("totalEarning:"+totalEarning);
 
+		//前月の処理
+
+		int lastMonthTotalEarning = 0;
+
+		ArrayList<Orders> lastMonthEarning=(ArrayList<Orders>)dao.getShopEarning(shopId, lastMonth);
+		for( Orders index: lastMonthEarning) {
+			lastMonthTotalEarning += index.getTotalPayment();
+		   }
+
+
 		HashMap result = new HashMap();
 		result.put("shopEarning", shopEarning);
 		result.put("totalEarning", totalEarning);
+
+		result.put("lastMonthEarning",lastMonthEarning);
+		result.put("lastMonthTotalEarning", lastMonthTotalEarning);
+		System.out.println(lastMonthEarning);
+
 		resc.setResult(result);
 		resc.setTarget("shop/items/shopearning");
 
