@@ -25,7 +25,11 @@ public class RemoveAccountCommand extends AbstractCommand {
 
 		String inputPassword = reqc.getParameter("userPassword")[0];
 
-		if(inputPassword == user.getUserPassword()) {
+		System.out.println(inputPassword);
+		System.out.println(user.getUserPassword());
+
+		if(inputPassword.equals(user.getUserPassword())) {
+
 			dao.removeUser(user.getUserIdentifiedName(),user.getUserMail(),user.getUserPassword());
 			System.out.println("ユーザーの削除(unused)");
 			SessionManager.invalidate();

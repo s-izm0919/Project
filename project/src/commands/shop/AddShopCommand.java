@@ -76,7 +76,7 @@ public class AddShopCommand extends AbstractCommand {
 
 		System.out.println("-- AddShopCommand --");
 
-		resc.setTarget("index");
+		resc.setTarget("top");
 		return resc;
 	}
 }

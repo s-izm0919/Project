@@ -2,8 +2,8 @@ package commands.user;
 import java.util.HashMap;
 import java.util.Map;
 
-import bean.User;
 import bean.Shop;
+import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -86,7 +86,7 @@ public class AddUserCommand extends AbstractCommand {
 					SessionManager.setAttribute(shop);
 
 
-					resc.setTarget("index");
+					resc.setTarget("top");
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
