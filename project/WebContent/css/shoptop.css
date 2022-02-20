@@ -124,7 +124,7 @@ div.sent
 div.content{
 	margin: auto;
     width: 800px;
-    height:300px;
+    height:auto;
     background-color: white;
     color: #fff;
     border-radius: 15px;
@@ -136,8 +136,8 @@ footer {
  background-color: #89c7de;
  text-align: center;
  padding: 30px 0;
- position: absolute;/*←絶対位置*/
- bottom: 0; /*下に固定*/
+ /*position: absolute;/*←絶対位置*/
+ /*bottom: 0; /*下に固定*/
 }
 
 .else{

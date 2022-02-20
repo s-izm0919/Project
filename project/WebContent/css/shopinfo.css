@@ -1,3 +1,5 @@
+
+
 <style>
 * {
    box-sizing: border-box;
@@ -84,18 +86,17 @@ div.sent
 }
 .wrap{
      margin: auto;
-    width: 300px;
+    width: 40%;
     background-color: white;
     color: #fff;
     border-radius: 15px;
-	font-color:black;
+
     border:1px solid #ddd;
 
 }
 
 .mgb-20{
-  	margin-bottom: 20px;
-
+  margin-bottom: 20px;
 }
 
 .mgb-80{
@@ -106,32 +107,44 @@ div.sent
   height:60px;
   display:table;
   text-align:center;
-
 }
 
 .wrap.pattern-3 div{
-  display:table-cell;
+  /*display:table-cell;まんなかいかなくなるから*/
   vertical-align:middle;
+  color:red;
+}
 
+.wrap.pattern-3 p{
+  color:black;
 }
 
 .wrap.pattern-3 img{
   width: 200px;
-  height: auto;
+  height:auto;
 }
 
-.wrap.pattern-3 table{
-  width: 800px;
-}
-
-.color
+a.help
 {
-	color: Black;
+	font-size: 15px;
 }
 
-.color h2
+.tablecss
 {
-	color: Black;
+	width: 100%;
+    table-layout: fixed;
+}
+
+.else{
+    display: flex;
+}
+.else >.li1
+{
+width:50;
+}
+.else >.li2
+{
+width:50;
 }
 
 </style>

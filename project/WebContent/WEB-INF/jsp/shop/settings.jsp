@@ -74,12 +74,11 @@
     <br>
         <h1 class="color">shop編集画面</h1>
 	        <div class="cont_nav size1 ">
-				<a class="backgra false" href="callshoptop">ショップ管理</a>
+				<a class="backgra false" href="callshoptop">商品登録</a>
 				<a class="backgra true" href="callshopsettings">ショップ情報編集</a>
 		    	<a class="backgra false" href="shopitemdetails">商品管理</a>
 			    <a class="backgra false" href="showshoporders">注文一覧</a>
 	    		<a class="backgra false" href="">売上管理</a>
-			    <a class="backgra false" href="">ユーザーとのチャット一覧</a>
 			</div>
 			<br>
 			<div class="content">
@@ -89,6 +88,8 @@
 		ショップ名　　　　<input type="text" name="shopName" maxlength="20" value="${shop.shopName}" required><br>
 		<br>ショップの紹介文　<input type="text" name="shopExplanation" maxlength="300"  value="${shop.shopExplanation}"  required><br>
 		<br>お礼の一言　　　 <input type="text" name="sellerWord" maxlength="300"  value="${shop.shopSellerword}"  required><br>
+		<br>ショップの状態　　　　<input type="radio" name="shopIsOpen" value="1" checked>公開
+            <input type="radio" name="shopIsOpen" value="0">非公開
 <br>
 
 		<input type="submit" value="更新">
@@ -97,8 +98,6 @@
 			<footer>
 		<h2>guide page</h2>
 
-			<div><a href="shopopen">shop open</a></div>
-			<br>
     </footer>
     </body>
 </html>

@@ -88,14 +88,13 @@ div.sent
     background-color: white;
     color: #fff;
     border-radius: 15px;
-	font-color:black;
+
     border:1px solid #ddd;
 
 }
 
 .mgb-20{
-  	margin-bottom: 20px;
-
+  margin-bottom: 20px;
 }
 
 .mgb-80{
@@ -106,22 +105,11 @@ div.sent
   height:60px;
   display:table;
   text-align:center;
-
 }
 
 .wrap.pattern-3 div{
   display:table-cell;
   vertical-align:middle;
-
-}
-
-.wrap.pattern-3 img{
-  width: 200px;
-  height: auto;
-}
-
-.wrap.pattern-3 table{
-  width: 800px;
 }
 
 .color
@@ -129,9 +117,65 @@ div.sent
 	color: Black;
 }
 
-.color h2
-{
-	color: Black;
+.cont_nav {
+	font-size: 19px
 }
 
+div.content{
+	margin: auto;
+    width: 800px;
+    height:auto;
+    background-color: white;
+    color: #fff;
+    border-radius: 15px;
+    border:1px solid #ddd;
+}
+
+.content img
+{
+	width: 200px;
+	height: auto;
+}
+
+footer {
+ width: 100%;
+ background-color: #89c7de;
+ text-align: center;
+ padding: 30px 0;
+ /*position: absolute;/*←絶対位置*/
+ /*bottom: 0; /*下に固定*/
+}
+
+.else{
+    display: flex;
+}
+.else >.li1
+{
+width:50;
+}
+.else >.li2
+{
+width:50;
+}
+.size
+{
+	    font-size: 19px;
+}
+.backgra
+{
+	margin: 2;
+    padding: 6;
+
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    color: Black;
+}
+.false
+{
+	background-color: white;
+}
+.true
+{
+	background-color: #b0e0e6;
+}
 </style>
