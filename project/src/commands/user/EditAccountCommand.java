@@ -38,7 +38,7 @@ import utility.SessionManager;
 
 		boolean check = dao.duplicateCheck(userMail);
 
-		if(check==true) {
+		if(check==true && userInfo.getUserMail().equals(userMail) != true) {
 			Map result = new HashMap();
 			result.put("duplicateCheck", "true");
 			result.put("ngpass", "false");
