@@ -4,17 +4,22 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import bean.ShopOrderItemDetails;
-import bean.UserOrderItemDetails;
 import utility.Connector;
 
 public class MySQLShopOrderItemDetailsDao implements ShopOrderItemDetailsDao {
-	public ShopOrderItemDetails getShopOrderDetails(String orderid) {
+	public List getShopOrderDetails(String orderid) {
 		Connection cn = null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
 
 		ShopOrderItemDetails o = null;
+
+		ArrayList list = new ArrayList();
+
 		try {
 			cn = Connector.getInstance().beginTransaction();
 
@@ -26,9 +31,9 @@ public class MySQLShopOrderItemDetailsDao implements ShopOrderItemDetailsDao {
 			st = cn.prepareStatement(sql);
 
 
-				rs = st.executeQuery();
+			rs = st.executeQuery();
+		    while(rs.next()) {
 				o = new ShopOrderItemDetails();
-				rs.next();
 
 				o.setOrderId(rs.getInt(1));
 				o.setPurchaseDate(rs.getString(2));
@@ -38,6 +43,9 @@ public class MySQLShopOrderItemDetailsDao implements ShopOrderItemDetailsDao {
 				o.setItemId(rs.getInt(6));
 				o.setMainImagePath(rs.getString(7));
 				o.setItemPrice(rs.getInt(8));
+
+				list.add(o);
+		    }
 
 
 
@@ -70,6 +78,6 @@ public class MySQLShopOrderItemDetailsDao implements ShopOrderItemDetailsDao {
 				}
 			}
 		}
-		return o;
+		return list;
 	}
 }
