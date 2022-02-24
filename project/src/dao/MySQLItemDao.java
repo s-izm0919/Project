@@ -510,6 +510,7 @@ public class MySQLItemDao implements ItemDao{
             //item_register_dateはデフォルトでsysdateが設定されているので入れていない
             String sql="insert into item(item_id, item_name, item_price, item_explanation, main_image_path, category_id, item_data_path, shop_id, item_is_open)" + " values(?,?,?,?,?,?,?,?,?) ";
 
+            System.out.println(sql);
             st=cn.prepareStatement(sql);
 
             st.setString(1, null);	//AUTO_INCREMENTのため
