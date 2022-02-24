@@ -25,11 +25,10 @@
 </head>
 <body>
         <header>
-
-    		<h1>
+    	<h1>
 			<a href="top">
 			<img src="images\icon.jpg"></a>
-			</h1>
+		</h1>
 			<nav class="hd-nav">
 				<ul>
 					<li>
@@ -44,9 +43,7 @@
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
-					<li>
-
-					<div id="greet" class="else">
+			        <div id="greet" class="else">
 						<li>
 				 			<select name="select" onChange="location.href=value;">
 				    	    	<option value="${user.userName}" id="user">${user.userName}</option>
@@ -65,7 +62,7 @@
 					console.log(shop);
 					if(user != ""){
 						console.log("if文1");
-						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="uders_orders">購入履歴</option><option value="shopopen">ショップ開設ガイド</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
+						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="shopopen">ショップ開設ガイド</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						if(shop != ""){
 							console.log("if文2");
 								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="callshoptop">ショップ管理</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
@@ -79,14 +76,9 @@
 						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-
-		        <!-- <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
-
-		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li> -->
-
-
-		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
-
+			        <!--<li><a href="notification"><i class="far fa-bell"></i> おしらせ</a></li>
+			        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>  -->
+			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
 	        </nav>
     </header>
