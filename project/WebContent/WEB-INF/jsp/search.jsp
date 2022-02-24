@@ -71,10 +71,6 @@
 						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-		        <li><a href="notification"><i class="far fa-bell"></i> お知らせ</a></li>
-
-		        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
-
 		        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 
 		        </ul>
@@ -116,7 +112,7 @@
 					<div class="cp_ipselect cp_sl01">
 						<select name="sort">
 							<option value="0">新着</option>
-							<option value="1">いいね順</option>
+							<!--  <option value="1">いいね順</option> -->
 							<option value="2">価格が高い順</option>
 							<option value="3">価格が低い順</option>
 						</select><br>
@@ -261,5 +257,10 @@
 
 
 </script>
+<footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
 </body>
 </html>

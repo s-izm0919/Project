@@ -63,8 +63,6 @@
 						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-			        <li><a href="notification"><i class="far fa-bell"></i> おしらせ</a></li>
-			        <li><a href="goodlist"><i class="far fa-heart"></i> いいね</a></li>
 			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
 	        </nav>
@@ -76,8 +74,8 @@
 			<h1 class="yohaku">ショップを開設するにあたって。</h1>
 			<p>
 			<a>販売可能なものは、電子コンテンツのダウンロード販売のみに限定されています。</a><br>
-			<a>売上から5%が、利用料として差し引かれた売上が振り込まれます。</a><br>
-			<a>また、利用規約等は<a href="callshopguide">こちら</a>からご覧ください。</a><br>
+			<!-- <a>売上から5%が、利用料として差し引かれた売上が振り込まれます。</a><br>
+			<a>また、利用規約等は<a href="callshopguide">こちら</a>からご覧ください。</a><br>-->
 			</p>
 			<h1 style="color:red">${result['mess']}</h1>
 
@@ -118,5 +116,10 @@
 			</div>
 		</div>
 	</div>
+	<footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
 </body>
 </html>

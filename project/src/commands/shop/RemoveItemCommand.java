@@ -17,7 +17,7 @@ public class RemoveItemCommand extends AbstractCommand {
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ItemDao dao=factory.getItemDao();
 		dao.removeItem(Integer.parseInt(itemId));
-		resc.setTarget("top");
+		resc.setTarget("shop/items/shopitemdetails");
 
 		return resc;
 
