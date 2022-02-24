@@ -114,10 +114,10 @@
 			</a>
 		</c:forEach>
 	</p>
-	<footer>
+</body>
+<footer>
 			<h2> </h2>
 			<div></div>
 			<br>
-    	</footer>
-</body>
+</footer>
 </html>

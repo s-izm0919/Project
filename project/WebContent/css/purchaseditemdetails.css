@@ -133,6 +133,12 @@ div.sent
 {
 	color: Black;
 }
+body{
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
 footer{
     width: 100%;
     background-color: #89c7de;
