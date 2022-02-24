@@ -25,6 +25,10 @@
 			</tr>
 		</c:forEach>
 	</table>
-
+<footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
 </body>
 </html>

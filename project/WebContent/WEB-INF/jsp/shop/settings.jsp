@@ -65,9 +65,7 @@
 						greet.innerHTML = '<li class="li1"><a href="callnew">ユーザー登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
-			        <li><a href="goodlist"><i class="far fa-heart"></i> like</a></li>
-			        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i> cart</a></li>
+			        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
 	        </nav>
     </header>
@@ -96,8 +94,9 @@
 		</form></div>
 			<br>
 			<footer>
-		<h2>guide page</h2>
-
-    </footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
     </body>
 </html>

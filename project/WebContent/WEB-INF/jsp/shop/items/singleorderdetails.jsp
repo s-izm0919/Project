@@ -97,7 +97,9 @@
 			</div>
 			<br>
 			<footer>
-		<h2>guide page</h2>
-    </footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
     </body>
 </html>
