@@ -57,7 +57,7 @@ public class ImageUpload {
 						String date2 = date.replace("-", "").replace(":", "").replace(" ", "");
 
 
-						item.write(new File("C:\\Users\\delig\\git\\project\\project\\WebContent\\upload\\" + date2 + "_main_image_" + filename));
+						item.write(new File("/usr/share/tomcat/webapps/project/upload/" + date2 + "_main_image_" + filename));
 						filename = date2 + "_main_image_" + filename;
 						//filename = "C:\\Users\\delig\\git\\project\\project\\WebContent\\upload\\" + date2 + "_main_image_" + filename;
 						//"C:\\Users\\????\\git\\project\\project\\WebContent\\images\\"  ?の部分に自分のPCのユーザー名を入れて上の二文と入れ替えてください
@@ -68,7 +68,7 @@ public class ImageUpload {
 						SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 						String date = dateformat.format(nowdate);
 						String date2 = date.replace("-", "").replace(":", "").replace(" ", "");
-						item.write(new File("C:\\Users\\delig\\git\\project\\project\\WebContent\\download\\" + date2 + "_data_" + filename));
+						item.write(new File("/usr/share/tomcat/webapps/project/upload/" + date2 + "_data_" + filename));
 						filename =date2 + "_data_" + filename;
 						//filename = "C:\\Users\\delig\\git\\project\\project\\WebContent\\upload\\" + date2 + "_data_" + filename;
 						//"C:\\Users\\????\\git\\project\\project\\WebContent\\images\\"  ?の部分に自分のPCのユーザー名を入れて上の二文と入れ替えてください

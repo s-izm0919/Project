@@ -8,9 +8,9 @@ import java.sql.SQLException;
 public class Connector{
 
 	private static String driver = "com.mysql.cj.jdbc.Driver";
-	private static String user = "infox";
-	private static String pass = "prox";
-	private static String url = "jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=JST";
+	private static String user = "booth";
+	private static String pass = "pass";
+	private static String url = "jdbc:mysql://booth.clr3j5ckwsss.us-east-2.rds.amazonaws.com/project?characterEncoding=UTF-8&serverTimezone=JST";
 	//AWSに移行する際に接続記述子を変える。githubに公開するときは危険なので書かないこと
 
 	private static Connector connector = null;
