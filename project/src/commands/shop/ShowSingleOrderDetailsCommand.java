@@ -1,9 +1,7 @@
 package commands.shop;
 
-import bean.ShopOrderItemDetails;
-
+import java.util.ArrayList;
 import java.util.HashMap;
-
 
 import commands.AbstractCommand;
 import context.RequestContext;
@@ -22,19 +20,20 @@ import dao.ShopOrderItemDetailsDao;
 		 System.out.println("orderId:"+orderId);
 
 
-		 ShopOrderItemDetails itemDetails=null;
+		ArrayList list = new ArrayList();
 		AbstractDaoFactory factory=AbstractDaoFactory.getFactory();
 		ShopOrderItemDetailsDao dao=factory.getShopOrderItemDetailsDao();
 
-		 itemDetails=dao.getShopOrderDetails(orderId);
-		 System.out.println(itemDetails);
+		 list=(ArrayList)dao.getShopOrderDetails(orderId);
+		 System.out.println(list);
+		 //System.out.println(itemDetails);
 
 
-		 System.out.println("itemName:"+itemDetails.getItemName());
+		 //System.out.println("itemName:"+itemDetails.getItemName());
 
-		 if(itemDetails!=null) {
+		 if(list.size()>0) {
 		HashMap result = new HashMap();
-		result.put("singleOrderDetails", itemDetails);
+		result.put("singleOrderDetails", list);
 		resc.setResult(result);
 		resc.setTarget("shop/items/singleorderdetails");
 		 }

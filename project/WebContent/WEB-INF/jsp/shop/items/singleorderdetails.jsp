@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <html>
     <head>
         <title>注文詳細</title>
@@ -65,9 +68,7 @@
 						greet.innerHTML = '<li class="li1"><a href="callnew">登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-			        <li><a href="notification"><i class="far fa-bell"></i> notice</a></li>
-			        <li><a href="goodlist"><i class="far fa-heart"></i> like</a></li>
-			        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i> cart</a></li>
+			        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
 	        </nav>
     </header>
@@ -87,17 +88,23 @@
 		<div class="wrap pattern-3 mhb-20 color">
         <h1>注文詳細</h1>
         <!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
-		    受注日時;<p>${result['singleOrderDetails'].purchaseDate}</p><br>
-			注文番号:<p>${result['singleOrderDetails'].orderId}</p><br>
-			商品金額:<p>${result['singleOrderDetails'].itemPrice}</p><br>
-			商品名:<p>${result['singleOrderDetails'].itemName}</p><br>
-			購入したユーザー名:<p>${result['singleOrderDetails'].userName}</p><br>
+			受注日時;<p>${result['singleOrderDetails'][0].purchaseDate}</p><br>
+			注文番号:<p>${result['singleOrderDetails'][0].orderId}</p><br>
+
+		<c:forEach var="item" items="${result['singleOrderDetails']}">
+			商品金額:<p>${item.itemPrice}</p><br>
+			商品名:<p>${item.itemName}</p><br>
+		</c:forEach>
+
+			購入したユーザー名:<p>${result['singleOrderDetails'][0].userName}</p><br>
         </div>
         </div>
 			</div>
 			<br>
 			<footer>
-		<h2>guide page</h2>
-    </footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
     </body>
 </html>

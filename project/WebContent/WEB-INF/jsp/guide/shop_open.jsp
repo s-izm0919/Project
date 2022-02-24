@@ -30,9 +30,7 @@
 			      			<input type="submit" value="検索">
 		   				</form>
 			        </li>
-					<li>
-
-				<div id="greet" class="else">
+			        <div id="greet" class="else">
 						<li>
 				 			<select name="select" onChange="location.href=value;">
 				    	    	<option value="${user.userName}" id="user">${user.userName}</option>
@@ -51,29 +49,21 @@
 					console.log(shop);
 					if(user != ""){
 						console.log("if文1");
-						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="shopopen">ショップ開設ガイド</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="logoutuser">ログアウト</option></select></li>';
+						greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="shopopen">ショップ開設ガイド</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						if(shop != ""){
 							console.log("if文2");
-								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザー設定</option><option value="following">フォローしたショップ</option><option value="follow_items">フォローしたショップの新着商品</option><option value="users_chatlist">ショップとのチャット</option><option value="uders_orders">購入履歴</option><option value="shop_top">ショップ管理</option><option value="shop_items">商品管理</option><option value="shop_orders">注文一覧</option><option value="shop_sales">売上管理</option><option value="shop_chatlist">ユーザーとのチャット</option><option value="callopen">ショップ解説ページ</option><option value="logoutuser">ログアウト</option></select></li>';
+								greet.innerHTML = '<li><select name="select" onChange="location.href=value;"><option value="#">${user.userName}</option><option value="callusersettings">ユーザーアカウント設定</option><option value="calldeposite">入金</option><option value="displaypurchaseditem">購入履歴</option><option value="callshoptop">ショップ管理</option><option value="logoutuser">ログアウト</option><option value="callindex">デバック</option></select></li>';
 						}else{
 							console.log("userのみ");
 
 						}
-
 					}
 					else{
 						console.log("else");
-						greet.innerHTML = '<li class="li1"><a href="callnew">ユーザー登録</a></li><li class="li2"><a href="callsigninpage">ログイン</a></li>';
+						greet.innerHTML = '<li><a href="callnew">ユーザー登録</a></li><li><a href="callsigninpage">ログイン</a></li>';
 					}
 					</script>
-
-		        <li><a href="notification"><i class="far fa-bell"></i>お知らせ</a></li>
-
-		        <li><a href="goodlist"><i class="far fa-heart"></i>いいね</a></li>
-
-
-		        <li><a href="cart"><i class="fas fa-cart-arrow-down"></i>カート</a></li>
-
+			        <li><a href="callcart"><i class="fas fa-cart-arrow-down"></i> カート</a></li>
 		        </ul>
 	        </nav>
     </header>
@@ -84,15 +74,52 @@
 			<h1 class="yohaku">ショップを開設するにあたって。</h1>
 			<p>
 			<a>販売可能なものは、電子コンテンツのダウンロード販売のみに限定されています。</a><br>
-			<a>売上から5%が、利用料として差し引かれた売上が、振り込まれます。</a><br>
-			<a>また、利用規約等は<a href="callshopguide">こちら</a>からご覧ください。</a><br>
+			<!-- <a>売上から5%が、利用料として差し引かれた売上が振り込まれます。</a><br>
+			<a>また、利用規約等は<a href="callshopguide">こちら</a>からご覧ください。</a><br>-->
 			</p>
 			<h1 style="color:red">${result['mess']}</h1>
-		
-				<a href="callopen">ショップを開く</a><br>
+
+				<a id="greet2">
+
+				 			<select name="select" onChange="location.href=value;">
+				    	    	<option value="${user.userName}" id="user">${user.userName}</option>
+				        		<option value="${shop.shopName}" id="shop">${shop.shopName}</option>
+				        	</select>
+				</a>
+				<script>
+					var greet = document.getElementById('greet2');
+
+					var user = 0;
+					user = document.getElementById('user').textContent;
+					console.log(user);
+					var shop = 0;
+					shop = document.getElementById('shop').value;
+					console.log(shop);
+					if(user != ""){
+						console.log("if文1");
+						greet.innerHTML = '<a href="callopen">ショップを開く</a><br>';
+						if(shop != ""){
+							console.log("if文2");
+								greet.innerHTML = '<a>すでにショップは開設されています</a><br>';
+						}else{
+							console.log("userのみ");
+
+						}
+
+					}
+					else{
+						console.log("何もなし");
+						greet.innerHTML = '<a href="callsigninpage">ログインする</a>';
+					}
+					</script>
 				<a>　</a>
 			</div>
 		</div>
 	</div>
+	<footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
 </body>
 </html>
