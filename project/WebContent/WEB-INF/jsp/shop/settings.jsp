@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>ショップ情報の編集</title>
+        <title>ショップ管理ページ-</title>
         <%@include file="../../../css/shoptop.css" %>
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,13 +70,13 @@
 	        </nav>
     </header>
     <br>
-        <h1 class="color">shop編集画面</h1>
+        <h1 class="color">${shop.shopName}のショップ管理ページ</h1>
 	        <div class="cont_nav size1 ">
 				<a class="backgra false" href="callshoptop">商品登録</a>
 				<a class="backgra true" href="callshopsettings">ショップ情報編集</a>
 		    	<a class="backgra false" href="shopitemdetails">商品管理</a>
 			    <a class="backgra false" href="showshoporders">注文一覧</a>
-	    		<a class="backgra false" href="">売上管理</a>
+	    		<a class="backgra false" href="showshopearning">売上管理</a>
 			</div>
 			<br>
 			<div class="content">
