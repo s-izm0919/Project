@@ -23,5 +23,10 @@
 <br>
 <a href="deleteallhistory">履歴をすべて消す</a>
 </table>
+<footer>
+			<h2> </h2>
+			<div></div>
+			<br>
+    	</footer>
 </body>
 </html>
