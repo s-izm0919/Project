@@ -1,5 +1,7 @@
 package dao;
-import bean.ShopOrderItemDetails;
+
+import java.util.List;
+
 public interface ShopOrderItemDetailsDao {
-	public ShopOrderItemDetails getShopOrderDetails(String orderid);
+	public List getShopOrderDetails(String orderid);
 }
