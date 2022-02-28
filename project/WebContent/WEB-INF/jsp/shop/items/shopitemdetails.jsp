@@ -111,11 +111,11 @@
 									<img src='upload\<c:out value="${item.mainImagePath}"/>'>
 								</div>
 								<div class="b">
-								<br><br>
+								<br>
 									<a href="callitempage?itemId=${item.itemId}"></a>
-									<a>${item.itemName}</a>
-									<a>売値：${item.itemPrice}円</a><br>
-						 			<a href="itemdetails?itemId=${item.itemId}">編集する</a>
+									<a>商品名<br>${item.itemName}</a><br><br>
+									<a>売値<br>${item.itemPrice}円</a><br><br>
+						 			<a href="itemdetails?itemId=${item.itemId}">編集する　</a>
 									<a href="removeitem?itemId=${item.itemId}" onclick="return check()">削除する</a>
 								</div>
 							</div>
