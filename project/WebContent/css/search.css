@@ -129,6 +129,8 @@ div.sent
 
 .item img {
     width: 200px;  /* 横幅を200pxに */
+    height: 200px;
+    object-fit: cover;
 }
 .example{
     display: flex;
@@ -256,7 +258,8 @@ width:50;
 .img
 {
 	width:100px;
-	height:auto;
+	height:100px;
+	object-fit: cover;
 }
 
 .itemsdata
