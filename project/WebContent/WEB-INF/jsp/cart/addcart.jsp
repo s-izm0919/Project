@@ -82,7 +82,7 @@
          	${result['viewcart'].shopName}<br>
          	<img src='upload\<c:out value="${result['viewcart'].mainImagePath}"/>'><br>
         		商品名：${result['viewcart'].itemName}<br>
-         	商品価格：${result['viewcart'].itemPrice}<br>
+         	商品価格：${result['viewcart'].itemPrice}円<br>
 
 		 	<a href="callcart">カート全体を見る</a>
 		</div>

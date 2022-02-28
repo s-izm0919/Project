@@ -94,7 +94,7 @@
 				ショップ名<p><a href="shopinfo?shopId=${result['itemdetails'].shopId}">${result['itemdetails'].shopName}</a></p>
 				商品名:<p>${result['itemdetails'].itemName}</p>
 				<!-- <input type="submit" value="いいねする"><br>-->
-				価格<p>${result['itemdetails'].itemPrice}</p>
+				価格<p>${result['itemdetails'].itemPrice}円</p>
 				<input type="submit" value="カートに入れる" onclick="location.href='addcart?itemId=${result['itemdetails'].itemId}'" id="cart">
 				<div id="order"></div>
 				</div>
@@ -110,7 +110,7 @@
 		<c:forEach var="newItemList" items="${result['newItemList']}">
 			<a href="callitempage?itemId=${newItemList.itemId}"><img src='upload\<c:out value="${newItemList.mainImagePath}" />'><br>
 			商品名：${newItemList.itemName}<br>
-			価格：${newItemList.itemPrice}<br>
+			価格：${newItemList.itemPrice}円<br>
 			</a>
 		</c:forEach>
 	</p>

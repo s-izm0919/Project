@@ -115,7 +115,7 @@
 
 				<c:forEach var="order" items="${result['confirmorder']}">
 					商品名：<c:out value="${order.itemName}"/><br>
-					商品価格：<c:out value="${order.totalPayment}"/><br>
+					商品価格：<c:out value="${order.totalPayment}"/>円<br>
 					<c:out value="---------------------------------------"/><br>
 				</c:forEach>
 		     </div>
@@ -126,7 +126,7 @@
 			<a href="calldeposite">入金画面へ</a><br><br>
 			<form action="confirmorder?shopId=${requestScope.shopId}" method="POST" onSubmit="return check()">
 				ブースト金額を入力<br>
-				<input type="number" name="boost" value="0" id="boost"/><br>
+				<input type="number" name="boost" min="0" max="1000000" value="0" id="boost"/>
 				<input id="submit_button" type="submit" value="購入する" /><br>
 				<div id="notenough"></div>
 			</form>
