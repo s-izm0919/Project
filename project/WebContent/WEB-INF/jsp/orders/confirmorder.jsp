@@ -109,7 +109,7 @@
 		<div class="boxwrap">
 			<div class="wrap pattern-3 mhb-20 color">
 				ショップ名:<c:out value="${result['confirmorder'][0].shopName}"/><br><br>
-				合計支払金額：<c:out value="${result['confirmorder'][0].orderPrice}"/><br>
+				合計支払金額：<c:out value="${result['confirmorder'][0].orderPrice}"/>円<br>
 				注文件数:<c:out value="${result['confirmorder'][0].orderCount}"/><br>
 				---------------------------------------<br>
 
