@@ -1,10 +1,9 @@
 package commands.order;
 import java.util.ArrayList;
-
-import bean.User;
-import bean.BoughtItemList;
 import java.util.HashMap;
 
+import bean.BoughtItemList;
+import bean.User;
 import commands.AbstractCommand;
 import context.RequestContext;
 import context.ResponseContext;
@@ -33,7 +32,7 @@ import utility.SessionManager;
 		HashMap result = new HashMap();
 		result.put("purchasedItemResult", purchasedItem);
 		resc.setResult(result);
-		resc.setTarget("shop/items/purchaseditemdetails");
+		resc.setTarget("orders/purchaseditemdetails");
 
 
 
