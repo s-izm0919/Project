@@ -300,8 +300,8 @@ footer{
  	bottom: 0;
 }
 .flex{
-
 	display: flex;
-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content:center;
 }
 </style>
