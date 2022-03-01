@@ -108,8 +108,8 @@
 
 					<tr>
 					<td><a href="callitempage?itemId=${itemlist.itemId}"><img src='upload\<c:out value="${itemlist.mainImagePath}"/>'></a></td>
-					<td><c:out value="${itemlist.itemName }"/></td>
-					<td><c:out value="${itemlist.itemPrice }"/></td>
+					<td><a href="callitempage?itemId=${itemlist.itemId}"><c:out value="${itemlist.itemName }"/></td>
+					<td><c:out value="${itemlist.itemPrice }"/>円</td>
 					</tr>
 					</a>
 				</c:forEach>

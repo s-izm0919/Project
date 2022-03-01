@@ -76,7 +76,7 @@
         <!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
         <form method="POST" action="additem" enctype="multipart/form-data">
             商品タイトル<input type="text" name="itemName" maxlength="50" required><br>
-            価格<input type="number" name="itemPrice" value="0" required><br>
+            価格<input type="number" min="0" max="1000000"name="itemPrice" value="0" required><br>
             サムネイル<input type="file" name="mainImagePath" required><br>
             商品説明<br><textarea cols="25" rows="8" name="itemExplanation"></textarea><br>
             カテゴリ

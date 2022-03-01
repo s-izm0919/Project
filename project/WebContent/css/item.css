@@ -142,8 +142,9 @@ width:50;
 .ni img
 {
 	width: 150px;
-	height: auto;
+	height: 150px;
 	margin: 0px 15px;
+	object-fit: cover;
 }
 .ni {
 	justify-content:center;

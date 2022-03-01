@@ -247,7 +247,7 @@
 			$(".itemsdata").append("<tr id='itemData"+i+"'>");
 			$("#itemData"+i+"").html("<td><a href='callitempage?itemId="+thisItemlist[i].itemId+"'><img src='upload/"+thisItemlist[i].path+"' class='img'></a></td>"+
 									  "<td><a href='callitempage?itemId="+thisItemlist[i].itemId+"'>"+thisItemlist[i].name+"</td>"+
-									  "<td>"+thisItemlist[i].price+"</td>"+
+									  "<td>"+thisItemlist[i].price+"円</td>"+
 			                          "<td><a href='shopinfo?shopId="+thisItemlist[i].shopId+"'>"+thisItemlist[i].shopName+"</a></td>");
 		}
 

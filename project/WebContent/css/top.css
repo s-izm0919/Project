@@ -75,6 +75,7 @@ h2.future {
 /* 閲覧履歴の設定*/
 ul.historyimg{
 	justify-content:center;
+	object-fit: cover;
 }
 .k{
 	transition: 0.3s;
@@ -86,8 +87,9 @@ ul.historyimg li {
 	display: flex;
 }
 ul.historyimg li a img{
-	width:100px;
-	height:auto;
+	width:150px;
+	height:150px;
+	object-fit: cover;
 }
 h3.history{
 	text-align: center;
