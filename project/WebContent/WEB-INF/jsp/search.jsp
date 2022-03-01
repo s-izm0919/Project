@@ -159,8 +159,9 @@
 					<div class="color">
         				<h1>商品一覧</h1><br>
 				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
-   						<table class="itemsdata" border="1">
-        				</table>
+				   		<div>
+   						<div id="itemsdata" class="flex">
+        				</div><br>
         				<div id="pages"></div>
         			</div>
 				</div>
@@ -171,7 +172,7 @@
 
 
 <script>
-	var showpages = 10;
+	var showpages = 12;
 	var pages = ${result["itemcount"]};
 	var allpages = 0;
 
@@ -208,6 +209,7 @@
 
 
 		<c:forEach var="item" items="${result['itemsearch']}" varStatus="status">
+
 		obj = {
 			itemId:'${item.itemId}',
 			path:'${item.mainImagePath}',
@@ -217,6 +219,7 @@
 			shopName:'${item.shopName}'
 		}
 		itemlist.push(obj);
+
         </c:forEach>
 
         var pageitems = [];
@@ -234,7 +237,7 @@
 
 	function changePage(_pageNo){
 		pageNo = _pageNo-1;
-		$("tr").remove("tr");
+		$("div").remove("#remove");
 
 		thisItemlist = [];
 		console.log(thisItemlist);
@@ -244,11 +247,11 @@
 		for(let i=0;i<thisItemlist.length;i++){
 			//console.log(thisItemlist[i].name);
 			//console.log(thisItemlist[i].price);
-			$(".itemsdata").append("<tr id='itemData"+i+"'>");
-			$("#itemData"+i+"").html("<td><a href='callitempage?itemId="+thisItemlist[i].itemId+"'><img src='upload/"+thisItemlist[i].path+"' class='img'></a></td>"+
-									  "<td><a href='callitempage?itemId="+thisItemlist[i].itemId+"'>"+thisItemlist[i].name+"</td>"+
-									  "<td>"+thisItemlist[i].price+"円</td>"+
-			                          "<td><a href='shopinfo?shopId="+thisItemlist[i].shopId+"'>"+thisItemlist[i].shopName+"</a></td>");
+			$("#itemsdata").append("<div id='remove' class='margin' >"+"<div id='itemData"+i+"'class='wrap2 pattern-3 mhb-20 color' >"+"<div id='A'>"+"<div id='B'>");
+			$("#itemData"+i+"").html("<a href='callitempage?itemId="+thisItemlist[i].itemId+"'><img src='upload/"+thisItemlist[i].path+"' class='img'></a><br>"+
+									  "<a href='callitempage?itemId="+thisItemlist[i].itemId+"'>"+thisItemlist[i].name+"</a><br>"+
+									  "<a>"+thisItemlist[i].price+"円</a><br>"+
+			                          "<a href='shopinfo?shopId="+thisItemlist[i].shopId+"'>"+thisItemlist[i].shopName+"</a>");
 		}
 
 	}

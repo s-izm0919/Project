@@ -97,6 +97,15 @@ div.sent
     padding:15px;;
     border:1px solid #ddd;
 }
+.wrap2{
+    margin:auto;
+    width: 300px;
+    background-color: ;
+    color: #fff;
+    border-radius: 15px;
+    padding:15px;;
+    border:1px solid #676767;
+}
 .wrapleft{
 	margin: 30px auto;
     width: 100%;;
@@ -123,7 +132,6 @@ div.sent
 }
 
 .wrap.pattern-3 div {
-  display:table-cell;
   vertical-align:middle;
 }
 
@@ -143,9 +151,24 @@ div.sent
 	width: 75%;
     padding:15px;
 }
+.example2{
+    display: flex;
+}
+.example2>.A{
+	width: 25%;
+    padding:25px;
+}
+.example2>.B{
+	width: 75%;
+    padding:15px;
+}
 .color
 {
 	color: Black;
+}
+.margin
+{
+	margin:4.65px;
 }
  div.0
  {
@@ -262,12 +285,7 @@ width:50;
 	object-fit: cover;
 }
 
-.itemsdata
-{
-	width: 80%;
-  	margin: 0 auto;
-  	max-width: 500px;
-}
+
 body{
     min-height: 100vh;
     position: relative;/*←相対位置*/
@@ -282,5 +300,9 @@ footer{
  	position: absolute;
  	bottom: 0;
 }
+.flex{
 
+	display: flex;
+flex-wrap: wrap;
+}
 </style>
