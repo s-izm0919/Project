@@ -77,7 +77,7 @@
 		あなたのポイント:${user.userPoint}<br><br>
 
 		<form method="POST" action="deposite">
-			<input type="number" min="0" max="1000000"name="userPoint"/>
+			<input type="number" min="0" max="1000000"name="userPoint" required/>
 			<input type="submit" value="入金する"/>
 	 	</form>
 	 	</div>

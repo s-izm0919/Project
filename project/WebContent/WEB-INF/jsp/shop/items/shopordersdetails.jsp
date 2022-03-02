@@ -83,19 +83,33 @@
 			<br>
 			<div class="content">
 				<div class="boxwrap">
-		<div class="wrap pattern-3 mhb-20 color">
+				<div class="color">
+
         <h1>注文一覧</h1><br>
         <!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
 
+
 			<c:forEach var="item" items="${result['shopOrdersResult']}">
-				<div class="wrap2 pattern-3 mhb-20 color">
-							<div class="example">
-				<a>${item.purchaseDate}</a>
-				<a>${item.orderPrice}</a>
-				<a>${item.userName}</a>
- 				<a href="showsingleorderdetails?orderId=${item.orderId}">詳細を見る</a>
-			</div></div>
+<div class="wrap pattern-3 mhb-20 color">
+			<div class="example">
+			<div class="a">
+				<a>注文日時　</a><br>
+		 		<a>価格　</a><br>
+		 		<a>ユーザー名　</a><br>
+
+		 		</div>
+				<div class="b">
+				<a>： 　${item.purchaseDate}</a><br>
+				<a>： 　${item.orderPrice}円 </a><br>
+				<a>： 　${item.userName}</a><br>
+ 				<div class="left">
+ 				<a href="showsingleorderdetails?orderId=${item.orderId}" >詳細を見る</a><br>
+				</div>
+				</div>
+				</div>
+				</div>
 			</c:forEach>
+			</div>
         </div>
         </div>
 			</div>
