@@ -120,7 +120,6 @@ div.sent
 .mgb-20{
   margin-bottom: 20px;
 }
-
 .mgb-80{
   margin-bottom: 80px;
 }
@@ -301,8 +300,8 @@ footer{
  	bottom: 0;
 }
 .flex{
-
 	display: flex;
-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content:center;
 }
 </style>

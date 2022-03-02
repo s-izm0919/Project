@@ -84,7 +84,7 @@ div.sent
 }
 .wrap{
      margin: auto;
-    width: 300px;
+    width: 700px;
     background-color: white;
     color: #fff;
     border-radius: 15px;
@@ -110,7 +110,6 @@ div.sent
 }
 
 .wrap.pattern-3 div{
-  display:table-cell;
   vertical-align:middle;
 
 }
@@ -146,5 +145,26 @@ footer{
     padding: 30px 0;
  	position: absolute;
  	bottom: 0;
+}
+.wrap2{
+     margin: auto;
+    width: 80%;
+    background-color: white;
+    color: #fff;
+    border-radius: 15px;
+
+    border:1px solid #ddd;
+
+}
+.example{
+    display: flex;
+}
+.example>.a{
+	width: 50%;
+    padding:15px;
+}
+.example>.b{
+	width: 50%;
+    padding:15px;
 }
 </style>

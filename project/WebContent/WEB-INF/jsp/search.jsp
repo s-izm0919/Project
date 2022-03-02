@@ -156,9 +156,8 @@
 		<div class="b">
 			<div class="boxwrap">
 				<div class="wrap pattern-3 mhb-20">
-					<div class="color">
-        				<h1>商品一覧</h1><br>
-				   		対象商品が  ${result["itemcount"]}  件ヒットしました。
+					<div class="color"><br>
+				   		<h1>対象商品が  ${result["itemcount"]}  件ヒットしました。</h1>
 				   		<div>
    						<div id="itemsdata" class="flex">
         				</div><br>
