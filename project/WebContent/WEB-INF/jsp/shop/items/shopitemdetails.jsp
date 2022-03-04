@@ -100,28 +100,29 @@
 			<br>
 			<div class="content">
 				<div class="boxwrap">
-		<div class="wrap pattern-3 mhb-20 color">
-        <h1>出品商品一覧</h1>
+					<div class="color">
         <!-- formの属性に[enctype="multipart/form-data"]を追加しました。 -->
-        <table border="1">
-						<tr>
-						 <th>商品イメージ</th>
-						 <th>商品名</th>
-						 <th>価格</th>
-						</tr>
+        <h1>出品商品一覧</h1>
 						<c:forEach var="item" items="${result['shopItemResult']}">
-							<tr>
-							<td><a href="callitempage?itemId=${item.itemId}"><img src='upload\<c:out value="${item.mainImagePath}"/>'></a></td>
-							<td nowrap>${item.itemName}</td>
-							<td nowrap>${item.itemPrice}</td>
-				 			<td nowrap><a href="itemdetails?itemId=${item.itemId}">編集する</a></td>
-							<td nowrap><a href="removeitem?itemId=${item.itemId}" onclick="return check()">削除する
-							</a></td>
-							</tr>
+
+							<div class="wrap2 pattern-3 mhb-20 color">
+							<div class="example">
+								<div class="a">
+									<img src='upload\<c:out value="${item.mainImagePath}"/>'>
+								</div>
+								<div class="b">
+								<br>
+									<a href="callitempage?itemId=${item.itemId}"></a>
+									<a>商品名<br>${item.itemName}</a><br><br>
+									<a>売値<br>${item.itemPrice}円</a><br><br>
+						 			<a href="itemdetails?itemId=${item.itemId}">編集する　</a>
+									<a href="removeitem?itemId=${item.itemId}" onclick="return check()">削除する</a>
+								</div>
+							</div>
+							</div>
 						</c:forEach>
-					</table>
-        </div>
-        </div>
+					</div>
+				</div>
 			</div>
 			<br>
 			<footer>

@@ -121,7 +121,8 @@ div.sent
 
 .wrap.pattern-3 img{
   width: 200px;
-  height:auto;
+  height:200px;
+  object-fit: cover;
 }
 
 a.help

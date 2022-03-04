@@ -109,13 +109,13 @@
 		<div class="boxwrap">
 			<div class="wrap pattern-3 mhb-20 color">
 				ショップ名:<c:out value="${result['confirmorder'][0].shopName}"/><br><br>
-				合計支払金額：<c:out value="${result['confirmorder'][0].orderPrice}"/><br>
+				合計支払金額：<c:out value="${result['confirmorder'][0].orderPrice}"/>円<br>
 				注文件数:<c:out value="${result['confirmorder'][0].orderCount}"/><br>
 				---------------------------------------<br>
 
 				<c:forEach var="order" items="${result['confirmorder']}">
 					商品名：<c:out value="${order.itemName}"/><br>
-					商品価格：<c:out value="${order.totalPayment}"/><br>
+					商品価格：<c:out value="${order.totalPayment}"/>円<br>
 					<c:out value="---------------------------------------"/><br>
 				</c:forEach>
 		     </div>
@@ -126,7 +126,7 @@
 			<a href="calldeposite">入金画面へ</a><br><br>
 			<form action="confirmorder?shopId=${requestScope.shopId}" method="POST" onSubmit="return check()">
 				ブースト金額を入力<br>
-				<input type="number" name="boost" value="0" id="boost"/><br>
+				<input type="number" name="boost" min="0" max="1000000" value="0" id="boost"/>
 				<input id="submit_button" type="submit" value="購入する" /><br>
 				<div id="notenough"></div>
 			</form>
